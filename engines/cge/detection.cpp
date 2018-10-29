@@ -35,7 +35,7 @@ namespace CGE {
 #define GAMEOPTION_COLOR_BLIND_DEFAULT_OFF  GUIO_GAMEOPTIONS1
 
 static const PlainGameDescriptor CGEGames[] = {
-	{ "soltys", "Soltys" },
+	{ "soltys", "Sołtys" },
 	{ 0, 0 }
 };
 
