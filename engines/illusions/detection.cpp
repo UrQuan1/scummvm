@@ -33,8 +33,8 @@
 
 static const PlainGameDescriptor illusionsGames[] = {
 	{ "illusions", "Illusions engine game" },
-	{ "bbdou", "Beavis and Butt-head Do U" },
-	{ "duckman", "Duckman" },
+	{ "bbdou", "Beavis and Butt-Head: Do U" },
+	{ "duckman", "Duckman: The Graphic Adventures of a Private Dick" },
 	{ 0, 0 }
 };
 
