@@ -71,7 +71,7 @@ bool NeverhoodEngine::applyResourceFixes() const {
 }
 
 static const PlainGameDescriptor neverhoodGames[] = {
-	{"neverhood", "The Neverhood Chronicles"},
+	{"neverhood", "The Neverhood"},
 	{0, 0}
 };
 
