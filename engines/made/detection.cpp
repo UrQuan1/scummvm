@@ -57,7 +57,7 @@ static const PlainGameDescriptor madeGames[] = {
 	{"made", "MADE engine game"},
 	{"manhole", "The Manhole"},
 	{"rtz", "Return to Zork"},
-	{"lgop2", "Leather Goddesses of Phobos 2"},
+	{"lgop2", "Leather Goddesses of Phobos 2: Gas Pump Girls Meet the Pulsating Inconvenience from Planet X!"},
 	{"rodney", "Rodney's Funscreen"},
 	{0, 0}
 };
