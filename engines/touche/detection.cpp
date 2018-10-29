@@ -30,7 +30,7 @@
 #include "touche/touche.h"
 
 static const PlainGameDescriptor toucheGames[] = {
-	{ "touche", "Touche: The Adventures of the Fifth Musketeer" },
+	{ "touche", "Touché: The Adventures of the Fifth Musketeer" },
 	{ 0, 0 }
 };
 
