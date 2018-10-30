@@ -87,7 +87,7 @@ static const PlainGameDescriptor s_sciGameTitles[] = {
 	{"sq4",             "Space Quest IV: Roger Wilco and the Time Rippers"},	// floppy is SCI1, CD SCI1.1
 	// === SCI1.1 games =======================================================
 	{"christmas1992",   "Christmas Card 1992"},
-	{"ecoquest2",       "Lost Secret of the Rainforest"},
+	{"ecoquest2",       "EcoQuest 2: Lost Secret of the Rainforest"},
 	{"freddypharkas",   "Freddy Pharkas: Frontier Pharmacist"},
 	{"hoyle4",          "Hoyle Classic Card Games"},
 	{"inndemo",         "ImagiNation Network (INN) Demo"},
