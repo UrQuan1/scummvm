@@ -61,7 +61,7 @@ void DrasculaEngine::loadArchives() {
 }
 
 static const PlainGameDescriptor drasculaGames[] = {
-	{"drascula", "Drascula: The Vampire Strikes Back"},
+	{"drascula", "Dráscula: The Vampire Strikes Back"},
 	{0, 0}
 };
 
