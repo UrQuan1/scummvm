@@ -126,7 +126,7 @@ static const PlainGameDescriptor s_sciGameTitles[] = {
 	// === SCI3 games =========================================================
 	{"lsl7",            "Leisure Suit Larry: Love for Sail!"},
 	{"lighthouse",      "Lighthouse: The Dark Being"},
-	{"phantasmagoria2", "Phantasmagoria: A Puzzle of Flesh"},
+	{"phantasmagoria2", "Phantasmagoria 2: A Puzzle of Flesh"},
 	//{"shivers2",        "Shivers II: Harvest of Souls"},	// Not SCI
 	{"rama",            "RAMA"},
 	{0, 0}
