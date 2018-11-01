@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ScummVM 2.1.0git\n"
 "Report-Msgid-Bugs-To: scummvm-devel@lists.scummvm.org\n"
 "POT-Creation-Date: 2018-10-25 00:11+0200\n"
-"PO-Revision-Date: 2018-10-28 11:48+0000\n"
+"PO-Revision-Date: 2018-10-31 20:20+0000\n"
 "Last-Translator: Matan Bareket <mataniko@gmail.com>\n"
 "Language-Team: Hebrew <https://translations.scummvm.org/projects/scummvm/"
 "scummvm/he/>\n"
@@ -19,41 +19,42 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Weblate 3.2.2\n"
+"X-Language-name: Hebrew\n"
 
 #: gui/about.cpp:94
 #, c-format
 msgid "(built on %s)"
-msgstr ""
+msgstr "(נבנה בתאריך %s)"
 
 #: gui/about.cpp:101
 msgid "Features compiled in:"
-msgstr ""
+msgstr "תכונות שנבנו:"
 
 #: gui/about.cpp:110
 msgid "Available engines:"
-msgstr ""
+msgstr "מנועים זמינים:"
 
 #: gui/browser.cpp:71 gui/browser_osx.mm:84
 msgid "Show hidden files"
-msgstr "׳”׳¦׳’ ׳§׳‘׳¦׳™׳ ׳ ׳¡׳×׳¨׳™׳"
+msgstr "הצג קבצים מוסתרים"
 
 #: gui/browser.cpp:71
 msgid "Show files marked with the hidden attribute"
-msgstr ""
+msgstr "הצג קבצים עם תכונת הסתרה"
 
 #: gui/browser.cpp:75 gui/remotebrowser.cpp:57
 msgid "Go up"
-msgstr "׳¢׳׳” ׳׳׳¢׳׳”"
+msgstr "עלה למעלה"
 
 #: gui/browser.cpp:75 gui/browser.cpp:77 gui/remotebrowser.cpp:57
 #: gui/remotebrowser.cpp:59
 msgid "Go to previous directory level"
-msgstr ""
+msgstr "חזור אל התיקיה הקודמת"
 
 #: gui/browser.cpp:77 gui/remotebrowser.cpp:59
 msgctxt "lowres"
 msgid "Go up"
-msgstr ""
+msgstr "עלה למעלה"
 
 #: gui/browser.cpp:78 gui/chooser.cpp:46 gui/editgamedialog.cpp:298
 #: gui/editrecorddialog.cpp:67 gui/filebrowser-dialog.cpp:65
@@ -75,48 +76,48 @@ msgstr ""
 #: engines/parallaction/saveload.cpp:271 engines/scumm/dialogs.cpp:187
 #: engines/sword1/control.cpp:887
 msgid "Cancel"
-msgstr "׳‘׳™׳˜׳•׳"
+msgstr "ביטול"
 
 #: gui/browser.cpp:79 gui/browser_osx.mm:151 gui/chooser.cpp:47
 #: gui/filebrowser-dialog.cpp:66 gui/remotebrowser.cpp:61
 #: gui/themebrowser.cpp:56
 msgid "Choose"
-msgstr "׳‘׳—׳™׳¨׳”"
+msgstr "בחירה"
 
 #: gui/downloaddialog.cpp:49
 msgid "Select directory where to download game data"
-msgstr "׳‘׳—׳¨ ׳×׳™׳§׳™׳™׳” ׳›׳“׳™ ׳׳”׳•׳¨׳™׳“ ׳§׳‘׳¦׳™ ׳׳©׳—׳§"
+msgstr "בחר תיקייה כדי להוריד קבצי משחק"
 
 #: gui/downloaddialog.cpp:50 gui/editgamedialog.cpp:481 gui/launcher.cpp:198
 msgid "Select directory with game data"
-msgstr "׳‘׳—׳¨ ׳×׳™׳§׳™׳™׳” ׳¢׳ ׳§׳‘׳¦׳™ ׳׳©׳—׳§"
+msgstr "בחר תיקייה עם קבצי משחק"
 
 #: gui/downloaddialog.cpp:52 gui/downloaddialog.cpp:264
 msgid "From: "
-msgstr "׳׳׳×: - "
+msgstr "מאת: - "
 
 #: gui/downloaddialog.cpp:53 gui/downloaddialog.cpp:265
 msgid "To: "
-msgstr "׳׳: - "
+msgstr "אל: - "
 
 #: gui/downloaddialog.cpp:64
 msgid "Cancel download"
-msgstr "׳‘׳™׳˜׳•׳ ׳”׳•׳¨׳“׳”"
+msgstr "ביטול הורדה"
 
 #: gui/downloaddialog.cpp:66
 msgctxt "lowres"
 msgid "Cancel download"
-msgstr "׳‘׳™׳˜׳•׳ ׳”׳•׳¨׳“׳”"
+msgstr "ביטול הורדה"
 
 #: gui/downloaddialog.cpp:68
 msgid "Hide"
-msgstr "׳”׳¡׳×׳¨"
+msgstr "הסתר"
 
 #: gui/downloaddialog.cpp:118
 msgid ""
 "It looks like your connection is limited. Do you really want to download "
 "files with it?"
-msgstr "׳ ׳¨׳׳” ׳›׳™ ׳”׳—׳™׳‘׳•׳¨ ׳©׳׳ ׳׳•׳’׳‘׳. ׳”׳׳ ׳‘׳׳׳× ׳׳”׳•׳¨׳™׳“ ׳§׳‘׳¦׳™׳?"
+msgstr "נראה כי החיבור שלך מוגבל. האם באמת להוריד קבצים?"
 
 #: gui/downloaddialog.cpp:119 gui/downloaddialog.cpp:153
 #: gui/filebrowser-dialog.cpp:133 gui/fluidsynth-dialog.cpp:218
@@ -129,7 +130,7 @@ msgstr "׳ ׳¨׳׳” ׳›׳™ ׳”׳—׳™׳‘׳•׳¨ ׳©׳׳ ׳׳•׳’׳‘׳. ׳”׳׳ ׳‘׳׳׳× ׳׳”׳•׳¨׳™
 #: engines/kyra/saveload_eob.cpp:557 engines/kyra/saveload_eob.cpp:590
 #: engines/sci/graphics/controls32.cpp:820
 msgid "Yes"
-msgstr "׳›׳"
+msgstr "כן"
 
 #: gui/downloaddialog.cpp:119 gui/downloaddialog.cpp:154
 #: gui/filebrowser-dialog.cpp:133 gui/fluidsynth-dialog.cpp:218
@@ -142,18 +143,18 @@ msgstr "׳›׳"
 #: engines/kyra/saveload_eob.cpp:557 engines/kyra/saveload_eob.cpp:590
 #: engines/sci/graphics/controls32.cpp:820
 msgid "No"
-msgstr "׳׳"
+msgstr "לא"
 
 #: gui/downloaddialog.cpp:137 gui/launcher.cpp:547
 msgid "ScummVM couldn't open the specified directory!"
-msgstr "ScummVM ׳׳ ׳”׳¦׳׳™׳— ׳׳₪׳×׳•׳— ׳׳× ׳”׳×׳™׳§׳™׳™׳” ׳©׳ ׳‘׳—׳¨׳”!"
+msgstr "ScummVM לא הצליח לפתוח את התיקייה שנבחרה!"
 
 #: gui/downloaddialog.cpp:147
 msgid ""
 "Cannot create a directory to download - the specified directory has a file "
 "with the same name."
 msgstr ""
-"׳׳ ׳ ׳™׳×׳ ׳׳™׳¦׳•׳¨ ׳×׳™׳§׳™׳™׳” ׳׳”׳•׳¨׳“׳•׳× - ׳™׳©׳ ׳• ׳§׳•׳‘׳¥ ׳¢׳ ׳׳•׳×׳• ׳©׳ ׳‘׳×׳•׳ ׳”׳×׳™׳§׳™׳™׳” ׳©׳ ׳‘׳—׳¨׳”."
+"לא ניתן ליצור תיקייה להורדות - ישנו קובץ עם אותו שם בתוך התיקייה שנבחרה."
 
 #: gui/downloaddialog.cpp:147 gui/editgamedialog.cpp:299
 #: gui/fluidsynth-dialog.cpp:154 gui/KeysDialog.cpp:42 gui/launcher.cpp:504
@@ -174,7 +175,7 @@ msgstr ""
 #: engines/sword2/animation.cpp:461 engines/sword2/animation.cpp:471
 #: engines/zvision/file/save_manager.cpp:230
 msgid "OK"
-msgstr "׳׳•׳§׳™׳™"
+msgstr "אוקיי"
 
 #: gui/downloaddialog.cpp:152
 #, c-format
@@ -182,26 +183,26 @@ msgid ""
 "The \"%s\" already exists in the specified directory.\n"
 "Do you really want to download files into that directory?"
 msgstr ""
-"׳”\"s%\" ׳›׳‘׳¨ ׳§׳™׳™׳ ׳‘׳×׳™׳™׳§׳™׳” ׳©׳ ׳‘׳—׳¨׳”.\n"
-"׳”׳׳ ׳‘׳׳׳× ׳׳”׳•׳¨׳™׳“ ׳§׳‘׳¦׳™׳ ׳׳ ׳×׳•׳ ׳”׳×׳™׳§׳™׳™׳”?"
+"ה\"%s\" כבר קיים בתייקיה שנבחרה.\n"
+"האם באמת להוריד קבצים אל תוך התיקייה?"
 
 #: gui/downloaddialog.cpp:252
 #, c-format
 msgid "Downloaded %s %s / %s %s"
-msgstr "׳”׳•׳¨׳“׳• %s %s / %s %s"
+msgstr "הורדו %s %s / %s %s"
 
 #: gui/downloaddialog.cpp:259
 #, c-format
 msgid "Download speed: %s %s"
-msgstr "׳׳”׳™׳¨׳•׳× ׳”׳•׳¨׳“׳”: %s %s"
+msgstr "מהירות הורדה: %s %s"
 
 #: gui/editgamedialog.cpp:136
 msgid "Game"
-msgstr "׳׳©׳—׳§"
+msgstr "משחק"
 
 #: gui/editgamedialog.cpp:140
 msgid "ID:"
-msgstr "׳׳–׳”׳”:"
+msgstr "מזהה:"
 
 #: gui/editgamedialog.cpp:140 gui/editgamedialog.cpp:142
 #: gui/editgamedialog.cpp:143
@@ -209,108 +210,108 @@ msgid ""
 "Short game identifier used for referring to saved games and running the game "
 "from the command line"
 msgstr ""
-"׳×׳™׳׳•׳¨ ׳׳©׳—׳§ ׳§׳¦׳¨ ׳׳©׳™׳׳•׳© ׳›׳׳©׳¨ ׳׳×׳™׳™׳—׳¡׳™׳ ׳׳©׳׳™׳¨׳•׳× ׳•׳›׳“׳™ ׳׳”׳¨׳™׳¥ ׳׳× ׳”׳׳©׳—׳§ ׳׳©׳•׳¨׳× ׳”׳₪׳§׳•׳“׳•׳×"
+"תיאור משחק קצר לשימוש כאשר מתייחסים לשמירות וכדי להריץ את המשחק משורת הפקודות"
 
 #: gui/editgamedialog.cpp:142
 msgctxt "lowres"
 msgid "ID:"
-msgstr "׳׳–׳”׳”:"
+msgstr "מזהה:"
 
 #: gui/editgamedialog.cpp:147 gui/editrecorddialog.cpp:59
 msgid "Name:"
-msgstr "׳©׳:"
+msgstr "שם:"
 
 #: gui/editgamedialog.cpp:147 gui/editgamedialog.cpp:149
 #: gui/editgamedialog.cpp:150
 msgid "Full title of the game"
-msgstr "׳©׳ ׳׳׳ ׳©׳ ׳”׳׳©׳—׳§"
+msgstr "שם מלא של המשחק"
 
 #: gui/editgamedialog.cpp:149
 msgctxt "lowres"
 msgid "Name:"
-msgstr "׳©׳:"
+msgstr "שם:"
 
 #: gui/editgamedialog.cpp:153
 msgid "Language:"
-msgstr "׳©׳₪׳”:"
+msgstr "שפה:"
 
 #: gui/editgamedialog.cpp:153 gui/editgamedialog.cpp:154
 msgid ""
 "Language of the game. This will not turn your Spanish game version into "
 "English"
-msgstr "׳©׳₪׳× ׳”׳׳©׳—׳§. ׳–׳” ׳׳ ׳™׳”׳₪׳•׳ ׳׳©׳—׳§ ׳‘׳˜׳•׳¨׳§׳™׳× ׳׳׳©׳—׳§ ׳‘׳¢׳‘׳¨׳™׳×"
+msgstr "שפת המשחק. זה לא יהפוך משחק בטורקית למשחק בעברית"
 
 #: gui/editgamedialog.cpp:155 gui/editgamedialog.cpp:169 gui/options.cpp:1055
 #: gui/options.cpp:1068 gui/options.cpp:1082 gui/options.cpp:1670
 #: audio/null.cpp:41
 msgid "<default>"
-msgstr "<׳‘׳—׳™׳¨׳× ׳׳—׳“׳>"
+msgstr "<בחירת מחדל>"
 
 #: gui/editgamedialog.cpp:165
 msgid "Platform:"
-msgstr "׳₪׳׳˜׳₪׳•׳¨׳׳”:"
+msgstr "פלטפורמה:"
 
 #: gui/editgamedialog.cpp:165 gui/editgamedialog.cpp:167
 #: gui/editgamedialog.cpp:168
 msgid "Platform the game was originally designed for"
-msgstr "׳₪׳׳˜׳₪׳•׳¨׳׳” ׳©׳”׳׳©׳—׳§ ׳ ׳‘׳ ׳” ׳׳” ׳‘׳׳§׳•׳¨"
+msgstr "פלטפורמה שהמשחק נבנה לה במקור"
 
 #: gui/editgamedialog.cpp:167
 msgctxt "lowres"
 msgid "Platform:"
-msgstr "׳₪׳׳˜׳₪׳•׳¨׳׳”:"
+msgstr "פלטפורמה:"
 
 #: gui/editgamedialog.cpp:180
 msgid "Engine"
-msgstr "׳׳ ׳•׳¢"
+msgstr "מנוע"
 
 #: gui/editgamedialog.cpp:188 gui/options.cpp:1415 gui/options.cpp:1523
 msgid "Graphics"
-msgstr "׳×׳¦׳•׳’׳”"
+msgstr "תצוגה"
 
 #: gui/editgamedialog.cpp:188 gui/options.cpp:1415 gui/options.cpp:1523
 msgid "GFX"
-msgstr "׳×׳¦׳•׳’׳”"
+msgstr "תצוגה"
 
 #: gui/editgamedialog.cpp:193
 msgid "Override global graphic settings"
-msgstr "׳‘׳˜׳ ׳”׳’׳“׳¨׳•׳× ׳×׳¦׳•׳’׳” ׳’׳׳•׳‘׳׳™׳•׳×"
+msgstr "בטל הגדרות תצוגה גלובליות"
 
 #: gui/editgamedialog.cpp:195
 msgctxt "lowres"
 msgid "Override global graphic settings"
-msgstr "׳‘׳˜׳ ׳”׳’׳“׳¨׳•׳× ׳×׳¦׳•׳’׳” ׳’׳׳•׳‘׳׳™׳•׳×"
+msgstr "בטל הגדרות תצוגה גלובליות"
 
 #: gui/editgamedialog.cpp:202 gui/options.cpp:1552
 msgid "Audio"
-msgstr "׳©׳׳¢"
+msgstr "שמע"
 
 #: gui/editgamedialog.cpp:205
 msgid "Override global audio settings"
-msgstr "׳‘׳˜׳ ׳”׳’׳“׳¨׳•׳× ׳©׳׳¢ ׳’׳׳•׳‘׳׳™׳•׳×"
+msgstr "בטל הגדרות שמע גלובליות"
 
 #: gui/editgamedialog.cpp:207
 msgctxt "lowres"
 msgid "Override global audio settings"
-msgstr "׳‘׳˜׳ ׳”׳’׳“׳¨׳•׳× ׳©׳׳¢ ׳’׳׳•׳‘׳׳™׳•׳×"
+msgstr "בטל הגדרות שמע גלובליות"
 
 #: gui/editgamedialog.cpp:216 gui/options.cpp:1557
 msgid "Volume"
-msgstr "׳¢׳•׳¦׳׳× ׳©׳׳¢"
+msgstr "עוצמת שמע"
 
 #: gui/editgamedialog.cpp:218 gui/options.cpp:1559
 msgctxt "lowres"
 msgid "Volume"
-msgstr "׳¢׳•׳¦׳׳× ׳©׳׳¢"
+msgstr "עוצמת שמע"
 
 #: gui/editgamedialog.cpp:221
 msgid "Override global volume settings"
-msgstr "׳‘׳˜׳ ׳”׳’׳“׳¨׳•׳× ׳¢׳•׳¦׳׳× ׳©׳׳¢ ׳’׳׳•׳‘׳׳™׳•׳×"
+msgstr "בטל הגדרות עוצמת שמע גלובליות"
 
 #: gui/editgamedialog.cpp:223
 msgctxt "lowres"
 msgid "Override global volume settings"
-msgstr "׳‘׳˜׳ ׳”׳’׳“׳¨׳•׳× ׳¢׳•׳¦׳׳× ׳©׳׳¢ ׳’׳׳•׳‘׳׳™׳•׳×"
+msgstr "בטל הגדרות עוצמת שמע גלובליות"
 
 #: gui/editgamedialog.cpp:232 gui/options.cpp:1567
 msgid "MIDI"
@@ -318,12 +319,12 @@ msgstr "MIDI"
 
 #: gui/editgamedialog.cpp:235
 msgid "Override global MIDI settings"
-msgstr "׳‘׳˜׳ ׳”׳’׳“׳¨׳•׳× MIDI ׳’׳׳•׳‘׳׳™׳•׳×"
+msgstr "בטל הגדרות MIDI גלובליות"
 
 #: gui/editgamedialog.cpp:237
 msgctxt "lowres"
 msgid "Override global MIDI settings"
-msgstr "׳‘׳˜׳ ׳”׳’׳“׳¨׳•׳× MIDI ׳’׳׳•׳‘׳׳™׳•׳×"
+msgstr "בטל הגדרות MIDI גלובליות"
 
 #: gui/editgamedialog.cpp:247 gui/options.cpp:1577
 msgid "MT-32"
@@ -331,59 +332,59 @@ msgstr "MT-32"
 
 #: gui/editgamedialog.cpp:250
 msgid "Override global MT-32 settings"
-msgstr "׳‘׳˜׳ ׳”׳’׳“׳¨׳•׳× MT-32 ׳’׳׳•׳‘׳׳™׳•׳×"
+msgstr "בטל הגדרות MT-32 גלובליות"
 
 #: gui/editgamedialog.cpp:252
 msgctxt "lowres"
 msgid "Override global MT-32 settings"
-msgstr "׳‘׳˜׳ ׳”׳’׳“׳¨׳•׳× MT-32 ׳’׳׳•׳‘׳׳™׳•׳×"
+msgstr "בטל הגדרות MT-32 גלובליות"
 
 #: gui/editgamedialog.cpp:261 gui/options.cpp:1584
 msgid "Paths"
-msgstr ""
+msgstr "נתיבים"
 
 #: gui/editgamedialog.cpp:263 gui/options.cpp:1586
 msgctxt "lowres"
 msgid "Paths"
-msgstr ""
+msgstr "נתיבים"
 
 #: gui/editgamedialog.cpp:270
 msgid "Game Path:"
-msgstr ""
+msgstr "נתיב משחק:"
 
 #: gui/editgamedialog.cpp:272
 msgctxt "lowres"
 msgid "Game Path:"
-msgstr ""
+msgstr "נתיב משחק:"
 
 #: gui/editgamedialog.cpp:277 gui/options.cpp:1610
 msgid "Extra Path:"
-msgstr ""
+msgstr "נתיב תוספות:"
 
 #: gui/editgamedialog.cpp:277 gui/editgamedialog.cpp:279
 #: gui/editgamedialog.cpp:280
 msgid "Specifies path to additional data used by the game"
-msgstr ""
+msgstr "נתיב שבו נמצאים קבצי מידע נוספים לשימוש על ידי המשחק"
 
 #: gui/editgamedialog.cpp:279 gui/options.cpp:1612
 msgctxt "lowres"
 msgid "Extra Path:"
-msgstr ""
+msgstr "נתיב תוספות:"
 
 #: gui/editgamedialog.cpp:286 gui/options.cpp:1594
 msgid "Save Path:"
-msgstr ""
+msgstr "נתיב שמירה:"
 
 #: gui/editgamedialog.cpp:286 gui/editgamedialog.cpp:288
 #: gui/editgamedialog.cpp:289 gui/options.cpp:1594 gui/options.cpp:1596
 #: gui/options.cpp:1597
 msgid "Specifies where your saved games are put"
-msgstr ""
+msgstr "נתיב שבו שמירות המשחק יהיו"
 
 #: gui/editgamedialog.cpp:288 gui/options.cpp:1596
 msgctxt "lowres"
 msgid "Save Path:"
-msgstr ""
+msgstr "נתיב שמירה:"
 
 #: gui/editgamedialog.cpp:312 gui/editgamedialog.cpp:409
 #: gui/editgamedialog.cpp:468 gui/editgamedialog.cpp:529 gui/options.cpp:1605
@@ -394,294 +395,302 @@ msgstr ""
 #: gui/options.cpp:2098 gui/options.cpp:2108
 msgctxt "path"
 msgid "None"
-msgstr ""
+msgstr "לא נבחר"
 
 #: gui/editgamedialog.cpp:317 gui/editgamedialog.cpp:415
 #: gui/editgamedialog.cpp:533 gui/options.cpp:1796 gui/options.cpp:1866
 #: gui/options.cpp:2094 backends/platform/wii/options.cpp:56
 msgid "Default"
-msgstr ""
+msgstr "ברירת מחדל"
 
 #: gui/editgamedialog.cpp:461 gui/options.cpp:2102
 msgid "Select SoundFont"
-msgstr ""
+msgstr "בחר SoundFont"
 
 #: gui/editgamedialog.cpp:500
 msgid "Select additional game directory"
-msgstr ""
+msgstr "בחר תיקיה על קבצי משחק נוספים"
 
 #: gui/editgamedialog.cpp:513 gui/options.cpp:2025
 msgid "Select directory for saved games"
-msgstr ""
+msgstr "בחר תיקיה לשמירת משחקים"
 
 #: gui/editgamedialog.cpp:519
 msgid ""
 "Saved games sync feature doesn't work with non-default directories. If you "
 "want your saved games to sync, use default directory."
 msgstr ""
+"סינכרון שמירות משחק לא עובד עם תיקיות אחרות מברירת המחדל. בשביל לסכרן משחקים "
+"יש להשתמש בתיקית ברירת המחדל."
 
 #: gui/editgamedialog.cpp:545
 msgid "This game ID is already taken. Please choose another one."
-msgstr ""
+msgstr "מזהה המשחק תפוס. אנא בחר מזהה אחר."
 
 #: gui/editrecorddialog.cpp:58
 msgid "Author:"
-msgstr ""
+msgstr "מחבר:"
 
 #: gui/editrecorddialog.cpp:60
 msgid "Notes:"
-msgstr ""
+msgstr "הערות:"
 
 #: gui/editrecorddialog.cpp:68 gui/predictivedialog.cpp:74
 msgid "Ok"
-msgstr "׳׳•׳§׳™׳™"
+msgstr "אוקיי"
 
 #: gui/filebrowser-dialog.cpp:50
 msgid "Choose file for loading"
-msgstr "׳‘׳—׳¨ ׳§׳•׳‘׳¥ ׳׳˜׳¢׳™׳ ׳”"
+msgstr "בחר קובץ לטעינה"
 
 #: gui/filebrowser-dialog.cpp:50
 msgid "Enter filename for saving"
-msgstr "׳”׳›׳ ׳¡ ׳©׳ ׳§׳•׳‘׳¥ ׳׳©׳׳™׳¨׳”"
+msgstr "הכנס שם קובץ לשמירה"
 
 #: gui/filebrowser-dialog.cpp:133
 msgid "Do you really want to overwrite the file?"
-msgstr ""
+msgstr "האם באמת להחליף את הקובץ?"
 
 #: gui/fluidsynth-dialog.cpp:69
 msgid "Reverb"
-msgstr ""
+msgstr "הידהוד"
 
 #: gui/fluidsynth-dialog.cpp:71 gui/fluidsynth-dialog.cpp:103
 msgid "Active"
-msgstr ""
+msgstr "פעיל"
 
 #: gui/fluidsynth-dialog.cpp:73
+#, fuzzy
 msgid "Room:"
-msgstr ""
+msgstr "חדר:"
 
 #: gui/fluidsynth-dialog.cpp:80
 msgid "Damp:"
-msgstr ""
+msgstr "שיכוך:"
 
 #: gui/fluidsynth-dialog.cpp:87
 msgid "Width:"
-msgstr "׳¨׳•׳—׳‘:"
+msgstr "רוחב:"
 
 #: gui/fluidsynth-dialog.cpp:94 gui/fluidsynth-dialog.cpp:112
+#, fuzzy
 msgid "Level:"
-msgstr ""
+msgstr "רמה:"
 
 #: gui/fluidsynth-dialog.cpp:101
+#, fuzzy
 msgid "Chorus"
-msgstr ""
+msgstr "מקהלה"
 
 #: gui/fluidsynth-dialog.cpp:105
 msgid "N:"
-msgstr ""
+msgstr "קולות:"
 
 #: gui/fluidsynth-dialog.cpp:119
 msgid "Speed:"
-msgstr "׳׳”׳™׳¨׳•׳×:"
+msgstr "מהירות:"
 
 #: gui/fluidsynth-dialog.cpp:126
 msgid "Depth:"
-msgstr "׳¢׳•׳׳§:"
+msgstr "עומק:"
 
 #: gui/fluidsynth-dialog.cpp:133
 msgid "Type:"
-msgstr "׳¡׳•׳’:"
+msgstr "סוג:"
 
 #: gui/fluidsynth-dialog.cpp:136
 msgid "Sine"
-msgstr ""
+msgstr "סינוס"
 
 #: gui/fluidsynth-dialog.cpp:137
+#, fuzzy
 msgid "Triangle"
-msgstr ""
+msgstr "משולש"
 
 #: gui/fluidsynth-dialog.cpp:139 gui/options.cpp:1630
 msgid "Misc"
-msgstr "׳׳—׳¨"
+msgstr "אחר"
 
 #: gui/fluidsynth-dialog.cpp:141
 msgid "Interpolation:"
-msgstr ""
+msgstr "אינטרפולציה:"
 
 #: gui/fluidsynth-dialog.cpp:144
 msgid "None (fastest)"
-msgstr ""
+msgstr "כלום (הכי מהיר)"
 
 #: gui/fluidsynth-dialog.cpp:145
 msgid "Linear"
-msgstr ""
+msgstr "לינארי"
 
 #: gui/fluidsynth-dialog.cpp:146
+#, fuzzy
 msgid "Fourth-order"
-msgstr ""
+msgstr "סדר-רביעי"
 
 #: gui/fluidsynth-dialog.cpp:147
+#, fuzzy
 msgid "Seventh-order"
-msgstr ""
+msgstr "סדר-שביעי"
 
 #: gui/fluidsynth-dialog.cpp:151
 msgid "Reset"
-msgstr "׳׳×׳—׳•׳ ׳׳—׳“׳©"
+msgstr "אתחול מחדש"
 
 #: gui/fluidsynth-dialog.cpp:151
 msgid "Reset all FluidSynth settings to their default values."
-msgstr "׳׳×׳—׳ ׳׳—׳“׳© ׳׳× ׳”׳’׳“׳¨׳•׳× FluidSynth ׳׳׳¦׳‘׳ ׳”׳׳§׳•׳¨׳™."
+msgstr "אתחל מחדש את הגדרות FluidSynth למצבם המקורי."
 
 #: gui/fluidsynth-dialog.cpp:218
 msgid ""
 "Do you really want to reset all FluidSynth settings to their default values?"
-msgstr "׳”׳׳ ׳‘׳׳׳× ׳׳׳×׳—׳ ׳׳—׳“׳© ׳׳× ׳”׳’׳“׳¨׳•׳× FluidSynth ׳׳׳¦׳‘׳ ׳”׳׳§׳•׳¨׳™?"
+msgstr "האם באמת לאתחל מחדש את הגדרות FluidSynth למצבם המקורי?"
 
 #: gui/gui-manager.cpp:119 gui/unknown-game-dialog.cpp:48
 #: backends/keymapper/remap-dialog.cpp:53 engines/scumm/help.cpp:126
 #: engines/scumm/help.cpp:141 engines/scumm/help.cpp:166
 #: engines/scumm/help.cpp:192 engines/scumm/help.cpp:210
 msgid "Close"
-msgstr "׳¡׳’׳™׳¨׳”"
+msgstr "סגירה"
 
 #: gui/gui-manager.cpp:122
 msgid "Mouse click"
-msgstr "׳׳—׳™׳¦׳× ׳¢׳›׳‘׳¨"
+msgstr "לחיצת עכבר"
 
 #: gui/gui-manager.cpp:126 base/main.cpp:343
 msgid "Display keyboard"
-msgstr "׳”׳¦׳’ ׳׳§׳׳“׳×"
+msgstr "הצג מקלדת"
 
 #: gui/gui-manager.cpp:130 base/main.cpp:347
 msgid "Remap keys"
-msgstr ""
+msgstr "מפה מחדש מקשים"
 
 #: gui/gui-manager.cpp:133 base/main.cpp:350 engines/scumm/help.cpp:87
 msgid "Toggle fullscreen"
-msgstr "׳”׳₪׳¢׳/׳‘׳˜׳ ׳׳¡׳ ׳׳׳"
+msgstr "הפעל/בטל מסך מלא"
 
 #: gui/KeysDialog.cpp:41
 msgid "Map"
-msgstr "׳׳™׳₪׳•׳™"
+msgstr "מיפוי"
 
 #: gui/KeysDialog.cpp:49
 msgid "Select an action and click 'Map'"
-msgstr "׳‘׳—׳¨ ׳₪׳¢׳•׳׳” ׳•׳׳—׳¥ ׳¢׳ '׳׳™׳₪׳•׳™'"
+msgstr "בחר פעולה ולחץ על 'מיפוי'"
 
 #: gui/KeysDialog.cpp:80 gui/KeysDialog.cpp:102 gui/KeysDialog.cpp:141
 #, c-format
 msgid "Associated key : %s"
-msgstr ""
+msgstr "מקש משויך: %s"
 
 #: gui/KeysDialog.cpp:82 gui/KeysDialog.cpp:104 gui/KeysDialog.cpp:143
 msgid "Associated key : none"
-msgstr ""
+msgstr "מקש משויך: אין"
 
 #: gui/KeysDialog.cpp:90
 msgid "Please select an action"
-msgstr "׳׳ ׳ ׳‘׳—׳¨ ׳₪׳¢׳•׳׳”"
+msgstr "אנא בחר פעולה"
 
 #: gui/KeysDialog.cpp:106
 msgid "Press the key to associate"
-msgstr ""
+msgstr "לחץ על המקש בשביל לשייך"
 
 #: gui/KeysDialog.cpp:145 gui/KeysDialog.h:36
 msgid "Choose an action to map"
-msgstr "׳‘׳—׳¨ ׳₪׳¢׳•׳׳” ׳׳׳™׳₪׳•׳™"
+msgstr "בחר פעולה למיפוי"
 
 #: gui/launcher.cpp:142 engines/dialogs.cpp:111 engines/mohawk/dialogs.cpp:142
 msgid "~Q~uit"
-msgstr "~׳™~׳¦׳™׳׳”"
+msgstr "~י~ציאה"
 
 #: gui/launcher.cpp:142 backends/platform/sdl/macosx/appmenu_osx.mm:193
 msgid "Quit ScummVM"
-msgstr "׳¡׳’׳•׳¨ ׳׳× ScummVM"
+msgstr "סגור את ScummVM"
 
 #: gui/launcher.cpp:143
 msgid "A~b~out..."
-msgstr ""
+msgstr "~א~ודות..."
 
 #: gui/launcher.cpp:143 backends/platform/sdl/macosx/appmenu_osx.mm:187
 msgid "About ScummVM"
-msgstr ""
+msgstr "אודות ScummVM"
 
 #: gui/launcher.cpp:144
 msgid "~O~ptions..."
-msgstr ""
+msgstr "א~פ~שרויות..."
 
 #: gui/launcher.cpp:144
 msgid "Change global ScummVM options"
-msgstr ""
+msgstr "שנה הגדרות ScummVM גלובליות"
 
 #: gui/launcher.cpp:146
 msgid "~S~tart"
-msgstr ""
+msgstr "~ה~תחל"
 
 #: gui/launcher.cpp:146
 msgid "Start selected game"
-msgstr "׳”׳×׳—׳ ׳׳©׳—׳§ ׳©׳ ׳‘׳—׳¨"
+msgstr "התחל משחק שנבחר"
 
 #: gui/launcher.cpp:149
 msgid "~L~oad..."
-msgstr ""
+msgstr "~ט~עינה..."
 
 #: gui/launcher.cpp:149
 msgid "Load saved game for selected game"
-msgstr ""
+msgstr "טען משחק שמור עבור המשחק שנבחר"
 
 #: gui/launcher.cpp:154
 msgid "~A~dd Game..."
-msgstr ""
+msgstr "ה~ו~ספת משחק..."
 
 #: gui/launcher.cpp:154 gui/launcher.cpp:161
 msgid "Hold Shift for Mass Add"
-msgstr ""
+msgstr "החזק את מקש Shift להוספת המונית"
 
 #: gui/launcher.cpp:156
 msgid "~E~dit Game..."
-msgstr ""
+msgstr "~ע~ריכת משחק..."
 
 #: gui/launcher.cpp:156 gui/launcher.cpp:163
 msgid "Change game options"
-msgstr "׳©׳™׳ ׳•׳™ ׳”׳’׳“׳¨׳•׳× ׳׳©׳—׳§"
+msgstr "שינוי הגדרות משחק"
 
 #: gui/launcher.cpp:158
 msgid "~R~emove Game"
-msgstr ""
+msgstr "ה~ס~רת משחק"
 
 #: gui/launcher.cpp:158 gui/launcher.cpp:165
 msgid "Remove game from the list. The game data files stay intact"
-msgstr ""
+msgstr "הסר משחק מרשימת המשחקים. קבצי המשחק לא ימחקו"
 
 #: gui/launcher.cpp:161
 msgctxt "lowres"
 msgid "~A~dd Game..."
-msgstr ""
+msgstr "ה~ו~ספת משחק..."
 
 #: gui/launcher.cpp:163
 msgctxt "lowres"
 msgid "~E~dit Game..."
-msgstr ""
+msgstr "~ע~ריכת משחק..."
 
 #: gui/launcher.cpp:165
 msgctxt "lowres"
 msgid "~R~emove Game"
-msgstr ""
+msgstr "ה~ס~רת משחק"
 
 #: gui/launcher.cpp:173
 msgid "Search in game list"
-msgstr "׳—׳™׳₪׳•׳© ׳‘׳¨׳©׳™׳׳× ׳”׳׳©׳—׳§׳™׳"
+msgstr "חיפוש ברשימת המשחקים"
 
 #: gui/launcher.cpp:177 gui/launcher.cpp:760
 msgid "Search:"
-msgstr "׳—׳™׳₪׳•׳©:"
+msgstr "חיפוש:"
 
 #: gui/launcher.cpp:201 engines/dialogs.cpp:115 engines/cruise/menu.cpp:214
 #: engines/mohawk/dialogs.cpp:162 engines/mohawk/myst.cpp:942
 #: engines/mohawk/riven.cpp:662 engines/pegasus/pegasus.cpp:355
 #: engines/tsage/scenes.cpp:601 engines/wage/saveload.cpp:748
 msgid "Load game:"
-msgstr "׳˜׳¢׳ ׳׳©׳—׳§:"
+msgstr "טען משחק:"
 
 #: gui/launcher.cpp:201 engines/dialogs.cpp:115
 #: backends/platform/wince/CEActionsPocket.cpp:267
@@ -692,189 +701,192 @@ msgstr "׳˜׳¢׳ ׳׳©׳—׳§:"
 #: engines/scumm/dialogs.cpp:185 engines/tsage/scenes.cpp:601
 #: engines/wage/saveload.cpp:748
 msgid "Load"
-msgstr "׳˜׳¢׳™׳ ׳”"
+msgstr "טעינה"
 
 #: gui/launcher.cpp:325
 msgid ""
 "Do you really want to run the mass game detector? This could potentially add "
 "a huge number of games."
-msgstr "׳”׳׳ ׳‘׳׳׳× ׳׳”׳₪׳¢׳™׳ ׳׳× ׳׳’׳׳” ׳”׳׳©׳—׳§׳™׳? ׳–׳” ׳™׳›׳•׳ ׳׳”׳•׳¡׳™׳£ ׳›׳׳•׳× ׳¢׳ ׳§׳™׳× ׳©׳ ׳׳©׳—׳§׳™׳."
+msgstr "האם באמת להפעיל את מגלה המשחקים? זה יכול להוסיף כמות ענקית של משחקים."
 
 #: gui/launcher.cpp:384
 msgid "This directory cannot be used yet, it is being downloaded into!"
-msgstr "׳×׳™׳§׳™׳™׳” ׳–׳• ׳׳™׳ ׳” ׳ ׳™׳×׳ ׳× ׳׳©׳™׳׳•׳© ׳›׳ ׳¢׳•׳“ ׳™׳© ׳”׳•׳¨׳“׳” ׳₪׳¢׳™׳׳”!"
+msgstr "תיקייה זו אינה ניתנת לשימוש כל עוד יש הורדה פעילה!"
 
 #: gui/launcher.cpp:395
 msgid "Do you really want to remove this game configuration?"
-msgstr "׳”׳׳ ׳‘׳׳׳× ׳׳׳—׳•׳§ ׳׳× ׳×׳¦׳•׳¨׳× ׳”׳׳©׳—׳§?"
+msgstr "האם באמת למחוק את תצורת המשחק?"
 
 #: gui/launcher.cpp:454
 msgid "Do you want to load saved game?"
-msgstr "׳”׳׳ ׳׳˜׳¢׳•׳ ׳׳× ׳©׳׳™׳¨׳× ׳”׳׳©׳—׳§?"
+msgstr "האם לטעון את שמירת המשחק?"
 
 #: gui/launcher.cpp:504
 msgid "This game does not support loading games from the launcher."
-msgstr ""
+msgstr "המשחק שנחבר אינו תומך בטעינת משחקים מתוך המשגר."
 
 #: gui/launcher.cpp:508
 msgid "ScummVM could not find any engine capable of running the selected game!"
-msgstr "ScummVM ׳׳ ׳”׳¦׳׳™׳— ׳׳׳¦׳•׳ ׳׳ ׳•׳¢ ׳©׳׳¡׳•׳’׳ ׳׳”׳¨׳™׳¥ ׳׳× ׳”׳׳©׳—׳§ ׳©׳ ׳‘׳—׳¨!"
+msgstr "ScummVM לא הצליח למצוא מנוע שמסוגל להריץ את המשחק שנבחר!"
 
 #: gui/launcher.cpp:569
 msgid "ScummVM could not find any game in the specified directory!"
-msgstr "ScummVM ׳׳ ׳׳¦׳ ׳©׳•׳ ׳׳©׳—׳§ ׳‘׳×׳™׳§׳™׳™׳” ׳©׳ ׳‘׳—׳¨׳”!"
+msgstr "ScummVM לא מצא שום משחק בתיקייה שנבחרה!"
 
 #: gui/launcher.cpp:582
 msgid "Pick the game:"
-msgstr "׳‘׳—׳¨ ׳׳©׳—׳§:"
+msgstr "בחר משחק:"
 
 #: gui/launcher.cpp:697
 msgid "Mass Add..."
-msgstr ""
+msgstr "הוספה המונית..."
 
 #: gui/launcher.cpp:699
 msgid "Record..."
-msgstr ""
+msgstr "הקלטה..."
 
 #: gui/massadd.cpp:76 gui/massadd.cpp:79
 msgid "... progress ..."
-msgstr ""
+msgstr "... התקדמות ..."
 
 #: gui/massadd.cpp:265
 msgid "Scan complete!"
-msgstr "׳”׳¡׳¨׳™׳§׳” ׳”׳•׳©׳׳׳”!"
+msgstr "הסריקה הושלמה!"
 
 #: gui/massadd.cpp:268
 #, c-format
 msgid "Discovered %d new games, ignored %d previously added games."
-msgstr "׳”׳×׳’׳׳• %d ׳׳©׳—׳§׳™׳ ׳—׳“׳©׳™׳, ׳“׳•׳׳’ ׳¢׳ %d ׳׳©׳—׳§׳™׳ ׳§׳™׳™׳׳™׳."
+msgstr "התגלו %d משחקים חדשים, דולג על %d משחקים קיימים."
 
 #: gui/massadd.cpp:272
 #, c-format
 msgid "Scanned %d directories ..."
-msgstr "׳ ׳¡׳¨׳§׳• %d ׳×׳™׳§׳™׳•׳× ..."
+msgstr "נסרקו %d תיקיות ..."
 
 #: gui/massadd.cpp:275
 #, c-format
 msgid "Discovered %d new games, ignored %d previously added games ..."
-msgstr "׳”׳×׳’׳׳• %d ׳׳©׳—׳§׳™׳ ׳—׳“׳©׳™׳, ׳“׳•׳׳’ ׳¢׳ %d ׳׳©׳—׳§׳™׳ ׳§׳™׳™׳׳™׳ ..."
+msgstr "התגלו %d משחקים חדשים, דולג על %d משחקים קיימים ..."
 
 #: gui/onscreendialog.cpp:101 gui/onscreendialog.cpp:103
 msgid "Stop"
-msgstr "׳¢׳¦׳™׳¨׳”"
+msgstr "עצירה"
 
 #: gui/onscreendialog.cpp:106
+#, fuzzy
 msgid "Edit record description"
-msgstr ""
+msgstr "ערוך תיאור רשומה"
 
 #: gui/onscreendialog.cpp:108
 msgid "Switch to Game"
-msgstr "׳¢׳‘׳•׳¨ ׳׳ ׳”׳׳©׳—׳§"
+msgstr "עבור אל המשחק"
 
 #: gui/onscreendialog.cpp:110
 msgid "Fast replay"
-msgstr "׳”׳™׳׳•׳ ׳—׳•׳–׳¨ ׳׳”׳™׳¨"
+msgstr "הילוך חוזר מהיר"
 
 #: gui/options.cpp:122 common/updates.cpp:56
 msgid "Never"
-msgstr "׳׳£ ׳₪׳¢׳"
+msgstr "אף פעם"
 
 #: gui/options.cpp:122
 msgid "Every 5 mins"
-msgstr "׳›׳ 5 ׳“׳§׳•׳×"
+msgstr "כל 5 דקות"
 
 #: gui/options.cpp:122
 msgid "Every 10 mins"
-msgstr "׳›׳ 10 ׳“׳§׳•׳×"
+msgstr "כל 10 דקות"
 
 #: gui/options.cpp:122
 msgid "Every 15 mins"
-msgstr "׳›׳ 15 ׳“׳§׳•׳×"
+msgstr "כל 15 דקות"
 
 #: gui/options.cpp:122
 msgid "Every 30 mins"
-msgstr "׳›׳ 30 ׳“׳§׳•׳×"
+msgstr "כל 30 דקות"
 
 #: gui/options.cpp:361 gui/options.cpp:691 gui/options.cpp:829
 #: gui/options.cpp:911 gui/options.cpp:1184
 msgctxt "soundfont"
 msgid "None"
-msgstr ""
+msgstr "לא נבחר"
 
 #: gui/options.cpp:552
 msgid "Failed to apply some of the graphic options changes:"
-msgstr ""
+msgstr "הפעלת חלק מהגדרות התצוגה נכשלה:"
 
 #: gui/options.cpp:564
+#, fuzzy
 msgid "the video mode could not be changed"
-msgstr ""
+msgstr "מצב ווידיאו לא השתנה"
 
 #: gui/options.cpp:577
 msgid "the stretch mode could not be changed"
-msgstr ""
+msgstr "מצב מתיחה לא השתנה"
 
 #: gui/options.cpp:583
 msgid "the aspect ratio setting could not be changed"
-msgstr ""
+msgstr "הגדרת יחס ממדים לא השתנתה"
 
 #: gui/options.cpp:589
 msgid "the fullscreen setting could not be changed"
-msgstr ""
+msgstr "הגדרת מסך מלא לא השתנתה"
 
 #: gui/options.cpp:595
 msgid "the filtering setting could not be changed"
-msgstr ""
+msgstr "הגדרת סינון לא השתנתה"
 
 #: gui/options.cpp:990
+#, fuzzy
 msgid "Show On-screen control"
-msgstr ""
+msgstr "הצג פקדי על המסך"
 
 #: gui/options.cpp:994
 msgid "Touchpad mouse mode"
-msgstr ""
+msgstr "מצב משטח מגע"
 
 #: gui/options.cpp:998
 msgid "Swap Menu and Back buttons"
-msgstr ""
+msgstr "הפוך את כפתורי התפריט ואחורה"
 
 #: gui/options.cpp:1003
 msgid "Pointer Speed:"
-msgstr ""
+msgstr "מהירות מצביע:"
 
 #: gui/options.cpp:1003 gui/options.cpp:1005 gui/options.cpp:1006
 msgid "Speed for keyboard/joystick mouse pointer control"
-msgstr ""
+msgstr "מהירות מצביע עם מקלדת/ג'ויסטיק"
 
 #: gui/options.cpp:1005
 msgctxt "lowres"
 msgid "Pointer Speed:"
-msgstr ""
+msgstr "מהירות מצביע:"
 
 #: gui/options.cpp:1016
 msgid "Joy Deadzone:"
-msgstr ""
+msgstr "שטח מת בג'ויסטיק:"
 
 #: gui/options.cpp:1016 gui/options.cpp:1018 gui/options.cpp:1019
 msgid "Analog joystick Deadzone"
-msgstr ""
+msgstr "שטח מת בג'ויסטיק אנאלוגי"
 
 #: gui/options.cpp:1018
 msgctxt "lowres"
 msgid "Joy Deadzone:"
-msgstr ""
+msgstr "שטח מת בג'ויסטיק:"
 
 #: gui/options.cpp:1032
 msgid "HW Shader:"
-msgstr ""
+msgstr "Shader חומרה:"
 
 #: gui/options.cpp:1032 gui/options.cpp:1034
 msgid "Different hardware shaders give different visual effects"
-msgstr ""
+msgstr "Shaders"
 
 #: gui/options.cpp:1034
 msgctxt "lowres"
 msgid "HW Shader:"
-msgstr ""
+msgstr "Shader חומרה:"
 
 #: gui/options.cpp:1035
 msgid "Different shaders give different visual effects"
@@ -1160,12 +1172,12 @@ msgstr ""
 
 #: gui/options.cpp:1650
 msgid "Autosave:"
-msgstr "׳©׳׳™׳¨׳” ׳׳•׳˜׳•׳׳˜׳™׳×:"
+msgstr "שמירה אוטומטית:"
 
 #: gui/options.cpp:1652
 msgctxt "lowres"
 msgid "Autosave:"
-msgstr "׳©׳׳™׳¨׳” ׳׳•׳˜׳•׳׳˜׳™׳×:"
+msgstr "שמירה אוטומטית:"
 
 #: gui/options.cpp:1660
 msgid "Keys"
@@ -1189,7 +1201,7 @@ msgstr ""
 
 #: gui/options.cpp:1707
 msgid "Check now"
-msgstr "׳‘׳“׳•׳§ ׳¢׳›׳©׳™׳•"
+msgstr "בדוק עכשיו"
 
 #: gui/options.cpp:1715
 msgid "Cloud"
@@ -2314,7 +2326,7 @@ msgstr ""
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:57
 msgid "ScummVM Main Menu"
-msgstr ""
+msgstr "תפריט ראשי של ScummVM"
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:63
 msgid "~L~eft handed mode"
@@ -2326,31 +2338,31 @@ msgstr ""
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:65
 msgid "Show mouse cursor"
-msgstr ""
+msgstr "הצג מצביע של העכבר"
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:66
 msgid "Snap to edges"
-msgstr ""
+msgstr "הצמד לקצוות"
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:68
 msgid "Touch X Offset"
-msgstr ""
+msgstr "הסט ציר X במגע"
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:75
 msgid "Touch Y Offset"
-msgstr ""
+msgstr "הסט ציר Y במגע"
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:87
 msgid "Use laptop trackpad-style cursor control"
-msgstr ""
+msgstr "השתמש בסגנון משטח מגע כדי לשלוט במצביע"
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:88
 msgid "Tap for left click, double tap right click"
-msgstr ""
+msgstr "נקישה בשביל לחיצה שמאלית, נקישה כפולה בשביל לחיצה ימנית"
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:90
 msgid "Sensitivity"
-msgstr ""
+msgstr "רגישות"
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:99
 msgid "Initial top screen scale:"
@@ -2374,43 +2386,43 @@ msgstr ""
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:111
 msgid "Brightness:"
-msgstr ""
+msgstr "בהירות:"
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:121
 msgid "High quality audio (slower) (reboot)"
-msgstr ""
+msgstr "שמע באיכות גבוהה (איטי) (אתחול מחדש)"
 
 #: backends/platform/ds/arm9/source/dsoptions.cpp:122
 msgid "Disable power off"
-msgstr ""
+msgstr "בטל כיבוי"
 
 #: backends/platform/ios7/ios7_osys_events.cpp:309
 #: backends/platform/ios7/ios7_osys_events.cpp:519
 #: backends/platform/iphone/osys_events.cpp:300
 msgid "Mouse-click-and-drag mode enabled."
-msgstr ""
+msgstr "מצב עכבר-לחיצה-וגרירה הופעל."
 
 #: backends/platform/ios7/ios7_osys_events.cpp:311
 #: backends/platform/ios7/ios7_osys_events.cpp:521
 #: backends/platform/iphone/osys_events.cpp:302
 msgid "Mouse-click-and-drag mode disabled."
-msgstr ""
+msgstr "מצב עכבר-לחיצה-וגרירה בוטל."
 
 #: backends/platform/ios7/ios7_osys_events.cpp:322
 #: backends/platform/ios7/ios7_osys_events.cpp:540
 #: backends/platform/iphone/osys_events.cpp:313
 msgid "Touchpad mode enabled."
-msgstr ""
+msgstr "מצב משטח מגע הופעל."
 
 #: backends/platform/ios7/ios7_osys_events.cpp:324
 #: backends/platform/ios7/ios7_osys_events.cpp:542
 #: backends/platform/iphone/osys_events.cpp:315
 msgid "Touchpad mode disabled."
-msgstr ""
+msgstr "מצב משטח מגע בוטל."
 
 #: backends/platform/maemo/maemo.cpp:206
 msgid "Click Mode"
-msgstr ""
+msgstr "מצב לחיצה"
 
 #: backends/platform/maemo/maemo.cpp:212
 #: backends/platform/symbian/src/SymbianActions.cpp:42
@@ -2418,99 +2430,99 @@ msgstr ""
 #: backends/platform/wince/CEActionsPocket.cpp:60
 #: backends/platform/wince/CEActionsSmartphone.cpp:43
 msgid "Left Click"
-msgstr ""
+msgstr "לחיצה שמאלית"
 
 #: backends/platform/maemo/maemo.cpp:215
 msgid "Middle Click"
-msgstr ""
+msgstr "לחיצה אמצעית"
 
 #: backends/platform/maemo/maemo.cpp:218
 #: backends/platform/symbian/src/SymbianActions.cpp:43
 #: backends/platform/tizen/form.cpp:266
 #: backends/platform/wince/CEActionsSmartphone.cpp:44
 msgid "Right Click"
-msgstr ""
+msgstr "לחיצה ימנית"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:189
 msgid "Hide ScummVM"
-msgstr ""
+msgstr "הסתר את ScummVM"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:190
 msgid "Hide Others"
-msgstr ""
+msgstr "הסתר אחרים"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:191
 msgid "Show All"
-msgstr ""
+msgstr "הצג הכל"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:195
 msgid "Window"
-msgstr ""
+msgstr "חלון"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:196
 msgid "Minimize"
-msgstr ""
+msgstr "הקטן"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:198
 msgid "Help"
-msgstr ""
+msgstr "עזרה"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:199
 msgid "User Manual"
-msgstr ""
+msgstr "הוראות משתמש"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:201
 msgid "General Information"
-msgstr ""
+msgstr "מידע כללי"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:202
 msgid "What's New in ScummVM"
-msgstr ""
+msgstr "מה חדש בScummVM"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:204
 msgid "Credits"
-msgstr ""
+msgstr "קרדיטים"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:205
 msgid "GPL License"
-msgstr ""
+msgstr "רישיון GPL"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:206
 msgid "LGPL License"
-msgstr ""
+msgstr "רישיון LGPL"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:207
 msgid "Freefont License"
-msgstr ""
+msgstr "רישיון Freefont"
 
 #: backends/platform/sdl/macosx/appmenu_osx.mm:208
 msgid "BSD License"
-msgstr ""
+msgstr "רישיון BSD"
 
 #: backends/platform/symbian/src/SymbianActions.cpp:38
 #: backends/platform/wince/CEActionsSmartphone.cpp:39
 msgid "Up"
-msgstr ""
+msgstr "למעלה"
 
 #: backends/platform/symbian/src/SymbianActions.cpp:39
 #: backends/platform/wince/CEActionsSmartphone.cpp:40
 msgid "Down"
-msgstr ""
+msgstr "למטה"
 
 #: backends/platform/symbian/src/SymbianActions.cpp:40
 #: backends/platform/wince/CEActionsSmartphone.cpp:41
 msgid "Left"
-msgstr ""
+msgstr "שמאלה"
 
 #: backends/platform/symbian/src/SymbianActions.cpp:41
 #: backends/platform/wince/CEActionsSmartphone.cpp:42
 msgid "Right"
-msgstr ""
+msgstr "ימינה"
 
 #: backends/platform/symbian/src/SymbianActions.cpp:46
 #: backends/platform/wince/CEActionsSmartphone.cpp:47
 msgid "Zone"
-msgstr ""
+msgstr "אזור"
 
 #: backends/platform/symbian/src/SymbianActions.cpp:47
 #: backends/platform/wince/CEActionsPocket.cpp:54
@@ -2524,31 +2536,31 @@ msgstr ""
 
 #: backends/platform/symbian/src/SymbianActions.cpp:49
 msgid "Skip text"
-msgstr ""
+msgstr "דלג על טקסט"
 
 #: backends/platform/symbian/src/SymbianActions.cpp:51
 msgid "Fast mode"
-msgstr ""
+msgstr "מצב מהיר"
 
 #: backends/platform/symbian/src/SymbianActions.cpp:53
 msgid "Debugger"
-msgstr ""
+msgstr "מאתר הבאגים"
 
 #: backends/platform/symbian/src/SymbianActions.cpp:54
 msgid "Global menu"
-msgstr ""
+msgstr "תפריט כללי"
 
 #: backends/platform/symbian/src/SymbianActions.cpp:55
 msgid "Virtual keyboard"
-msgstr ""
+msgstr "מקלדת וירטואלית"
 
 #: backends/platform/symbian/src/SymbianActions.cpp:56
 msgid "Key mapper"
-msgstr ""
+msgstr "ממפה מקשים"
 
 #: backends/platform/tizen/form.cpp:262
 msgid "Right Click Once"
-msgstr ""
+msgstr "לחיצה ימנית אחת"
 
 #: backends/platform/tizen/form.cpp:270
 msgid "Move Only"
@@ -2560,7 +2572,7 @@ msgstr ""
 
 #: backends/platform/tizen/form.cpp:298
 msgid "Game Menu"
-msgstr ""
+msgstr "תפריט משחק"
 
 #: backends/platform/tizen/form.cpp:303
 msgid "Show Keypad"
@@ -2592,11 +2604,11 @@ msgstr ""
 
 #: backends/platform/wii/options.cpp:51
 msgid "Video"
-msgstr ""
+msgstr "תצוגה"
 
 #: backends/platform/wii/options.cpp:54
 msgid "Current video mode:"
-msgstr ""
+msgstr "מצב תצוגה נוכחי:"
 
 #: backends/platform/wii/options.cpp:56
 msgid "Double-strike"
@@ -4140,27 +4152,27 @@ msgstr ""
 
 #: engines/scumm/help.cpp:230
 msgid "Black and White / Color"
-msgstr ""
+msgstr "שחור לבן / צבע"
 
 #: engines/scumm/help.cpp:233
 msgid "Eyes"
-msgstr ""
+msgstr "עיניים"
 
 #: engines/scumm/help.cpp:234
 msgid "Tongue"
-msgstr ""
+msgstr "לשון"
 
 #: engines/scumm/help.cpp:236
 msgid "Punch"
-msgstr ""
+msgstr "אגרוף"
 
 #: engines/scumm/help.cpp:237
 msgid "Kick"
-msgstr ""
+msgstr "בעיטה"
 
 #: engines/scumm/help.cpp:240 engines/scumm/help.cpp:248
 msgid "Examine"
-msgstr ""
+msgstr "בדיקה"
 
 #: engines/scumm/help.cpp:241
 msgid "Regular cursor"
@@ -4173,23 +4185,23 @@ msgstr ""
 
 #: engines/scumm/help.cpp:247
 msgid "Save / Load / Options"
-msgstr ""
+msgstr "שמירה / טעינה / הגדרות"
 
 #: engines/scumm/help.cpp:256
 msgid "Other game controls:"
-msgstr ""
+msgstr "אפשרויות שליטה אחרות במשחק:"
 
 #: engines/scumm/help.cpp:258 engines/scumm/help.cpp:268
 msgid "Inventory:"
-msgstr ""
+msgstr "מלאי:"
 
 #: engines/scumm/help.cpp:259 engines/scumm/help.cpp:275
 msgid "Scroll list up"
-msgstr ""
+msgstr "גלול רשימה למעלה"
 
 #: engines/scumm/help.cpp:260 engines/scumm/help.cpp:276
 msgid "Scroll list down"
-msgstr ""
+msgstr "גלול רשימה למטה"
 
 #: engines/scumm/help.cpp:261 engines/scumm/help.cpp:269
 msgid "Upper left item"
@@ -4221,31 +4233,31 @@ msgstr ""
 
 #: engines/scumm/help.cpp:282
 msgid "Second kid"
-msgstr ""
+msgstr "ילד שני"
 
 #: engines/scumm/help.cpp:283
 msgid "Third kid"
-msgstr ""
+msgstr "ילד שלישי"
 
 #: engines/scumm/help.cpp:292
 msgid "Toggle Inventory/IQ Points display"
-msgstr ""
+msgstr "החלף מצב תצוגת מלאי/נקודות IQ"
 
 #: engines/scumm/help.cpp:293
 msgid "Toggle Keyboard/Mouse Fighting (*)"
-msgstr ""
+msgstr "החלף מצב לחימה עם מקלדת/עכבר (*)"
 
 #: engines/scumm/help.cpp:295
 msgid "* Keyboard Fighting is always on,"
-msgstr ""
+msgstr "* לחימה במקלדת תמיד מופעלת,"
 
 #: engines/scumm/help.cpp:296
 msgid "  so despite the in-game message this"
-msgstr ""
+msgstr "  למרות ההודעה בתוך המשחק זה"
 
 #: engines/scumm/help.cpp:297
 msgid "  actually toggles Mouse Fighting Off/On"
-msgstr ""
+msgstr "  בעצם מחליף מצב לחימה בעכבר כיבוי/הפעלה"
 
 #: engines/scumm/help.cpp:304
 msgid "Fighting controls (numpad):"
@@ -4254,91 +4266,91 @@ msgstr ""
 #: engines/scumm/help.cpp:305 engines/scumm/help.cpp:306
 #: engines/scumm/help.cpp:307
 msgid "Step back"
-msgstr ""
+msgstr "צעד אחורה"
 
 #: engines/scumm/help.cpp:308
 msgid "Block high"
-msgstr ""
+msgstr "חסימה גבוהה"
 
 #: engines/scumm/help.cpp:309
 msgid "Block middle"
-msgstr ""
+msgstr "חסימה אמצעית"
 
 #: engines/scumm/help.cpp:310
 msgid "Block low"
-msgstr ""
+msgstr "חסימה נמוכה"
 
 #: engines/scumm/help.cpp:311
 msgid "Punch high"
-msgstr ""
+msgstr "אגרוף גבוה"
 
 #: engines/scumm/help.cpp:312
 msgid "Punch middle"
-msgstr ""
+msgstr "אגרוף אמצעי"
 
 #: engines/scumm/help.cpp:313
 msgid "Punch low"
-msgstr ""
+msgstr "אגרוף נמוך"
 
 #: engines/scumm/help.cpp:315
 msgid "Sucker punch"
-msgstr ""
+msgstr "אגרוף פראייר"
 
 #: engines/scumm/help.cpp:318
 msgid "These are for Indy on left."
-msgstr ""
+msgstr "אלו כאשר אינדי בצד שמאל."
 
 #: engines/scumm/help.cpp:319
 msgid "When Indy is on the right,"
-msgstr ""
+msgstr "כאשר אינדי בצד ימין,"
 
 #: engines/scumm/help.cpp:320
 msgid "7, 4, and 1 are switched with"
-msgstr ""
+msgstr "7, 4, ו1 מוחלפים עם"
 
 #: engines/scumm/help.cpp:321
 msgid "9, 6, and 3, respectively."
-msgstr ""
+msgstr "9, 6, ו3, בהתאמה."
 
 #: engines/scumm/help.cpp:328
 msgid "Biplane controls (numpad):"
-msgstr ""
+msgstr "שליטה במטוס (מקלדת נומרית):"
 
 #: engines/scumm/help.cpp:329
 msgid "Fly to upper left"
-msgstr ""
+msgstr "טוס לשמאל עליון"
 
 #: engines/scumm/help.cpp:330
 msgid "Fly to left"
-msgstr ""
+msgstr "טוס שמאלה"
 
 #: engines/scumm/help.cpp:331
 msgid "Fly to lower left"
-msgstr ""
+msgstr "טוס לשמאל תחתון"
 
 #: engines/scumm/help.cpp:332
 msgid "Fly upwards"
-msgstr ""
+msgstr "טוס מעלה"
 
 #: engines/scumm/help.cpp:333
 msgid "Fly straight"
-msgstr ""
+msgstr "טוס ישר"
 
 #: engines/scumm/help.cpp:334
 msgid "Fly down"
-msgstr ""
+msgstr "טוס למטה"
 
 #: engines/scumm/help.cpp:335
 msgid "Fly to upper right"
-msgstr ""
+msgstr "טוס לימין עליון"
 
 #: engines/scumm/help.cpp:336
 msgid "Fly to right"
-msgstr ""
+msgstr "טוס לימין"
 
 #: engines/scumm/help.cpp:337
 msgid "Fly to lower right"
-msgstr ""
+msgstr "טוס לימין תחתון"
 
 #: engines/scumm/input.cpp:578
 msgid "Snap scroll on"
@@ -4350,11 +4362,11 @@ msgstr ""
 
 #: engines/scumm/input.cpp:593
 msgid "Music volume: "
-msgstr ""
+msgstr "עוצמת שמע: "
 
 #: engines/scumm/input.cpp:610
 msgid "Subtitle speed: "
-msgstr ""
+msgstr "מהירות כתוביות: "
 
 #: engines/scumm/scumm.cpp:1881
 #, c-format
@@ -4593,19 +4605,19 @@ msgstr ""
 
 #: engines/zvision/detection_tables.h:71
 msgid "Enable Venus"
-msgstr ""
+msgstr "הפעל את ונוס"
 
 #: engines/zvision/detection_tables.h:72
 msgid "Enable the Venus help system"
-msgstr ""
+msgstr "הפעל את מערכת העזרה של ונוס"
 
 #: engines/zvision/detection_tables.h:81
 msgid "Disable animation while turning"
-msgstr ""
+msgstr "בטל אנימציה בזמן פניה"
 
 #: engines/zvision/detection_tables.h:82
 msgid "Disable animation while turning in panorama mode"
-msgstr ""
+msgstr "בטל אנימציה בזמן פניה במצב פנורמה"
 
 #: engines/zvision/detection_tables.h:91
 msgid "Use high resolution MPEG video"
