@@ -337,7 +337,7 @@ Sierra (SCI) Games:
      Mixed-Up Mother Goose Deluxe                [mothergoosehires]
      Pepper's Adventures in Time                 [pepper]
      Phantasmagoria                              [phantasmagoria]
-     Phantasmagoria: A Puzzle of Flesh           [phantasmagoria2]
+     Phantasmagoria 2                            [phantasmagoria2]
      Police Quest I                              [pq1sci]
      Police Quest II                             [pq2]
      Police Quest III                            [pq3]
@@ -669,7 +669,7 @@ as well.
 
 
 3.6.1) Broken Sword
------- -------------
+------ ------------
 For this game, you will need all of the files from the clusters
 directories on both CDs. For the Windows and Macintosh versions, you
 will also need the speech.clu files from the speech directories, but
@@ -686,7 +686,7 @@ tunes.tab.
 
 
 3.6.2) Broken Sword II
------- ----------------
+------ ---------------
 For this game, you will need all of the files from the clusters
 directories on both CDs. (Actually, a few of them may not be strictly
 necessary, but the ones that I'm uncertain about are all fairly small.)
@@ -913,8 +913,8 @@ game's screen to change location, similar to many adventure games, which
 is simpler and more straightforward than moving around using the menu.
 
 
-3.15 Might and Magic Xeen games notes:
---------------------------------------
+3.15) Might and Magic Xeen games notes:
+----- ---------------------------------
 To properly play the World of Xeen CD Talkie using original discs,
 use LAME or some other encoder to rip the cd audio tracks to files,
 either mp3 or ogg. Whichever you choose, the tracks of the first CD
@@ -957,7 +957,7 @@ slot 0.
 
 
 3.17) Nippon Safes, Inc. Amiga notes:
------ ------------------------------
+----- -------------------------------
 For this game, you will need disk0, , global.table, pointer and
 it (en, fr, ge for the international version).
 
@@ -1013,7 +1013,7 @@ DOS version in the DOS directory of the CD.
 
 
 3.21) Starship Titanic game notes:
-----------------------------------
+----- ----------------------------
 Basic Movements:
 Left Click: Move action
 Shift + Left Click: Edit room glyph chevrons and quick movement transitions
@@ -2048,7 +2048,7 @@ Where 'xxx' is exact the saved game slot (i.e., 001) under ScummVM
 
 
 6.3) Viewing/Loading saved games from the command line:
----- ------------------------------------------------
+---- --------------------------------------------------
 
 --list-saves:
 
@@ -2888,7 +2888,7 @@ depends on the OS:
 
 
 10.0) Compiling:
----- ----------
+----- ----------
 For an up-to-date overview on how to compile ScummVM for various
 platforms, please consult our Wiki, in particular this page:
 
