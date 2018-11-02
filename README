@@ -35,9 +35,9 @@ Table of Contents:
  * 3.14 Mickey's Space Adventure notes
  * 3.15 Might and Magic Xeen games notes
  * 3.16 Myst notes
- * 3.17 Nippon Safes Inc. Amiga notes
+ * 3.17 Nippon Safes, Inc. Amiga notes
  * 3.18 Quest for Glory notes
- * 3.19 Riven notes
+ * 3.19 Riven: The Sequel to Myst notes
  * 3.20 Simon the Sorcerer notes
  * 3.21 Starship Titanic notes
  * 3.22 The Curse of Monkey Island notes
@@ -989,7 +989,7 @@ file won't get listed on the import screen.
 Example: qfg2-thief.sav
 
 
-3.19) Riven game notes:
+3.19) Riven: The Sequel to Myst game notes:
 ----- -----------------
 Left Click: Move/action
 Arrow Keys: Movement
@@ -1993,7 +1993,7 @@ Bud Tucker in Double Trouble
 COMPOSER games
 Flight of the Amazon Queen
 Myst
-Riven
+Riven: The Sequel to Myst
 SCUMM games
 The Legend of Kyrandia I (slot 999)
 ZVISION games
@@ -2021,7 +2021,7 @@ versions.
     - Rename the saved game to 'myst-xxx.mys'
     - Saves from the masterpiece edition and the regular edition are interchangeable
 
-  Riven
+  Riven: The Sequel to Myst
     - Rename the saved game to 'riven-xxx.rvn'
     - Saves from the CD and DVD edition are not interchangeable
 
