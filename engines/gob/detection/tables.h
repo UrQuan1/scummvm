@@ -46,7 +46,7 @@ static const PlainGameDescriptor gobGames[] = {
 	{"gob1cd", "Gobliiins"},
 	{"gob2", "Gobliins 2: The Prince Buffoon"},
 	{"gob2cd", "Gobliins 2: The Prince Buffoon"},
-	{"ween", "The Prophecy"},
+	{"ween", "Ween: The Prophecy"},
 	{"bargon", "Bargon Attack"},
 	{"babayaga", "Once Upon A Time: Baba Yaga"},
 	{"abracadabra", "Once Upon A Time: Abracadabra"},
