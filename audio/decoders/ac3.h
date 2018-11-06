@@ -20,61 +20,32 @@
  *
  */
 
-#ifdef USE_MPEG2
+#ifndef AUDIO_DECODERS_AC3_H
+#define AUDIO_DECODERS_AC3_H
 
-#ifndef IMAGE_CODECS_MPEG_H
-#define IMAGE_CODECS_MPEG_H
+#include "common/scummsys.h"
 
-#include "common/inttypes.h"
-#include "image/codecs/codec.h"
-#include "graphics/pixelformat.h"
-
-extern "C" {
-	#include <mpeg2dec/mpeg2.h>
-}
+#ifdef USE_A52
 
 namespace Common {
 class SeekableReadStream;
-}
+} // End of namespace Common
 
-namespace Graphics {
-struct Surface;
-}
+namespace Audio {
 
-namespace Image {
+class PacketizedAudioStream;
 
 /**
- * MPEG 1/2 video decoder.
+ * Create a PacketizedAudioStream that decodes AC-3 sound
  *
- * Used by BMP/AVI.
+ * @param firstPacket  The stream containing the first packet of data
+ * @return             A new PacketizedAudioStream, or NULL on error
  */
-class MPEGDecoder : public Codec {
-public:
-	MPEGDecoder();
-	~MPEGDecoder();
+PacketizedAudioStream *makeAC3Stream(Common::SeekableReadStream &firstPacket);
 
-	// Codec interface
-	const Graphics::Surface *decodeFrame(Common::SeekableReadStream &stream);
-	Graphics::PixelFormat getPixelFormat() const { return _pixelFormat; }
+} // End of namespace Audio
 
-	// MPEGPSDecoder call
-	bool decodePacket(Common::SeekableReadStream &packet, uint32 &framePeriod, Graphics::Surface *dst = 0);
+#endif
 
-private:
-	Graphics::PixelFormat _pixelFormat;
-	Graphics::Surface *_surface;
+#endif
 
-	enum {
-		BUFFER_SIZE = 4096
-	};
-
-	byte _buffer[BUFFER_SIZE];
-	mpeg2dec_t *_mpegDecoder;
-	const mpeg2_info_t *_mpegInfo;
-};
-
-} // End of namespace Image
-
-#endif // IMAGE_CODECS_MPEG_H
-
-#endif // USE_MPEG2

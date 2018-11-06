@@ -30,12 +30,12 @@ Table of Contents:
  * 3.9 Dragon History notes
  * 3.10 Flight of the Amazon Queen notes
  * 3.11 Gobliiins notes
- * 3.12 Inherit the Earth: Quest for the Orb notes
+ * 3.12 Inherit the Earth notes
  * 3.13 Maniac Mansion Apple II/NES notes
  * 3.14 Mickey's Space Adventure notes
  * 3.15 Might and Magic Xeen games notes
  * 3.16 Myst notes
- * 3.17 Nippon Safes Inc. Amiga notes
+ * 3.17 Nippon Safes, Inc. Amiga notes
  * 3.18 Quest for Glory notes
  * 3.19 Riven notes
  * 3.20 Simon the Sorcerer notes
@@ -110,8 +110,8 @@ its name to ScummVM ('VM' meaning Virtual Machine).
 
 Over time support for a lot of non-SCUMM games has been added, and
 ScummVM now also supports many of Sierra's AGI and SCI games (such as King's
-Quest 1-6, Space Quest 1-5, ...), Discworld 1 and 2, Simon the Sorcerer 1 and
-2, Beneath A Steel Sky, Lure of the Temptress, Broken Sword I and II, Flight of
+Quest I-VII, Space Quest I-V, ...), Discworld I and II, Simon the Sorcerer I and
+II, Beneath A Steel Sky, Lure of the Temptress, Broken Sword I and II, Flight of
 the Amazon Queen, Gobliiins 1-3, The Legend of Kyrandia series, many of
 Humongous Entertainment's children's SCUMM games (including Freddi Fish and
 Putt Putt games) and many more. You can find a full list with details on which
@@ -247,11 +247,11 @@ Activision (MADE) Games:
      Rodney's Funscreen                          [rodney]
 
 Adventuresoft/Horrorsoft (AGOS) Games:
-     Elvira - Mistress of the Dark               [elvira1]
-     Elvira II - The Jaws of Cerberus            [elvira2]
+     Elvira                                      [elvira1]
+     Elvira II                                   [elvira2]
      Personal Nightmare                          [pn]
-     Simon the Sorcerer 1                        [simon1]
-     Simon the Sorcerer 2                        [simon2]
+     Simon the Sorcerer                          [simon1]
+     Simon the Sorcerer II                       [simon2]
      Simon the Sorcerer's Puzzle Pack
          - Demon In My Pocket                    [dimp]
      Simon the Sorcerer's Puzzle Pack
@@ -269,10 +269,10 @@ Coktel Vision (GOB) Games:
      Geisha                                      [geisha]
      Gobliiins                                   [gob1]
      Gobliins 2                                  [gob2]
-     Goblins 3                                   [gob3]
+     Goblins Quest 3                             [gob3]
      Lost in Time                                [lostintime]
      Once Upon A Time: Little Red Riding Hood    [littlered]
-     Playtoons: Bambou le sauveur de la jungle   [bambou]
+     Bambou: Le Sauveur de la Jungle             [bambou]
      The Bizarre Adventures of Woodruff
          and the Schnibble                       [woodruff]
      Urban Runner                                [urban]
@@ -280,8 +280,8 @@ Coktel Vision (GOB) Games:
 
 Revolution Software (Various) Games:
      Beneath a Steel Sky                         [sky]
-     Broken Sword: The Shadow of the Templars    [sword1]
-     Broken Sword II: The Smoking Mirror         [sword2]
+     Broken Sword                                [sword1]
+     Broken Sword II                             [sword2]
      Lure of the Temptress                       [lure]
 
 Sierra (AGI/preAGI) Games:
@@ -291,15 +291,13 @@ Sierra (AGI/preAGI) Games:
      King's Quest II                             [kq2]
      King's Quest III                            [kq3]
      King's Quest IV                             [kq4]
-     Leisure Suit Larry in the Land of the
-     Lounge Lizards                              [lsl1]
+     Leisure Suit Larry 1                        [lsl1]
      Mixed-Up Mother Goose                       [mixedup]
-     Manhunter 1: New York                       [mh1]
+     Manhunter: New York                         [mh1]
      Manhunter 2: San Francisco                  [mh2]
-     Police Quest I: In Pursuit of the Death
-     Angel                                       [pq1]
-     Space Quest I: The Sarien Encounter         [sq1]
-     Space Quest II: Vohaul's Revenge            [sq2]
+     Police Quest I                              [pq1]
+     Space Quest I                               [sq1]
+     Space Quest II                              [sq2]
      Fanmade Games                               [agi-fanmade]
      Mickey's Space Adventure                    [mickey]
      Troll's Tale                                [troll]
@@ -310,8 +308,8 @@ Sierra (SCI) Games:
      Codename: ICEMAN                            [iceman]
      Conquests of Camelot                        [camelot]
      Conquests of the Longbow                    [longbow]
-     EcoQuest: The Search for Cetus              [ecoquest]
-     EcoQuest 2: Lost Secret of the Rainforest   [ecoquest2]
+     EcoQuest                                    [ecoquest]
+     EcoQuest 2                                  [ecoquest2]
      Freddy Pharkas: Frontier Pharmacist         [freddypharkas]
      Gabriel Knight: Sins of the Fathers         [gk1]
      Hoyle's Book of Games 1                     [hoyle1]
@@ -325,30 +323,28 @@ Sierra (SCI) Games:
      King's Quest VI                             [kq6]
      King's Quest VII                            [kq7]
      King's Questions                            [kquestions]
-     Laura Bow: The Colonel's Bequest            [laurabow]
-     Laura Bow 2: The Dagger of Amon Ra          [laurabow2]
+     The Colonel's Bequest                       [laurabow]
+     The Dagger of Amon Ra                       [laurabow2]
      Leisure Suit Larry 1                        [lsl1sci]
      Leisure Suit Larry 2                        [lsl2]
      Leisure Suit Larry 3                        [lsl3]
      Leisure Suit Larry 5                        [lsl5]
      Leisure Suit Larry 6                        [lsl6]
-     Leisure Suit Larry 6 (hires)                [lsl6hires]
      Leisure Suit Larry 7                        [lsl7]
      Lighthouse: The Dark Being                  [lighthouse]
-     Mixed-up Fairy Tales                        [fairytales]
-     Mixed-up Mother Goose                       [mothergoose]
-     Mixed-up Mother Goose Deluxe                [mothergoosehires]
+     Mixed-Up Fairy Tales                        [fairytales]
+     Mixed-Up Mother Goose                       [mothergoose]
+     Mixed-Up Mother Goose Deluxe                [mothergoosehires]
      Pepper's Adventures in Time                 [pepper]
      Phantasmagoria                              [phantasmagoria]
-     Phantasmagoria 2: A Puzzle of Flesh         [phantasmagoria2]
-     Police Quest 1                              [pq1sci]
-     Police Quest 2                              [pq2]
-     Police Quest 3                              [pq3]
-     Police Quest 4                              [pq4]
-     Quest for Glory 1/Hero's Quest              [qfg1]
-     Quest for Glory 1                           [qfg1vga]
-     Quest for Glory 2                           [qfg2]
-     Quest for Glory 3                           [qfg3]
+     Phantasmagoria 2                            [phantasmagoria2]
+     Police Quest I                              [pq1sci]
+     Police Quest II                             [pq2]
+     Police Quest III                            [pq3]
+     Police Quest: Open Season                   [pq4]
+     Quest for Glory I                           [qfg1]
+     Quest for Glory II                          [qfg2]
+     Quest for Glory III                         [qfg3]
      RAMA                                        [rama]
      Slater & Charlie Go Camping                 [slater]
      Shivers                                     [shivers]
@@ -363,36 +359,36 @@ Sierra (SCI) Games:
 
 Other Games:
      3 Skulls of the Toltecs                     [toltecs]
-     Amazon: Guardians of Eden                   [access]
-     Beavis and Butt-head in Virtual Stupidity   [bbvs]
+     Amazon: Guardians of Eden                   [amazon]
+     Beavis and Butt-Head in Virtual Stupidity   [bbvs]
      Blue Force                                  [blueforce]
-     Broken Sword: The Return of the Templars    [sword25]
+     Broken Sword 2.5                            [sword25]
      Bud Tucker in Double Trouble                [tucker]
      Chivalry is Not Dead                        [chivalry]
      Cruise for a Corpse                         [cruise]
      DreamWeb                                    [dreamweb]
      Discworld                                   [dw]
-     Discworld 2: Missing Presumed ...!?         [dw2]
+     Discworld II                                [dw2]
      Dragon History                              [draci]
      Drascula: The Vampire Strikes Back          [drascula]
      Eye of the Beholder                         [eob]
-     Eye of the Beholder II: The Legend of
-         Darkmoon                                [eob2]
+     Eye of the Beholder II                      [eob2]
      Flight of the Amazon Queen                  [queen]
      Future Wars                                 [fw]
      Hopkins FBI                                 [hopkins]
      Hugo's House of Horrors                     [hugo1]
-     Hugo 2: Whodunit?                           [hugo2]
-     Hugo 3: Jungle of Doom                      [hugo3]
+     Hugo II                                     [hugo2]
+     Hugo III                                    [hugo3]
      I Have No Mouth, and I Must Scream          [ihnm]
-     Inherit the Earth: Quest for the Orb        [ite]
+     Inherit the Earth                           [ite]
      Lands of Lore: The Throne of Chaos          [lol]
      Mortville Manor                             [mortevielle]
-     Myst / Myst: Masterpiece Edition            [myst]
-     Nippon Safes Inc.                           [nippon]
+     Myst                                        [myst]
+     Myst: Masterpiece Edition                   [myst]
+     Nippon Safes, Inc.                          [nippon]
      Rex Nebular and the Cosmic Gender Bender    [nebular]
      Ringworld: Revenge Of The Patriarch         [ringworld]
-     Riven: The Sequel to Myst                   [riven]
+     Riven                                       [riven]
      Return to Ringworld                         [ringworld2]
      Sfinx                                       [sfinx]
      Soltys                                      [soltys]
@@ -408,12 +404,12 @@ Other Games:
         of the Rose Tattoo                       [rosetattoo]
      The Neverhood                               [neverhood]
      The 7th Guest                               [t7g]
-     TeenAgent                                   [teenagent]
+     Teen Agent                                  [teenagent]
      Toonstruck                                  [toon]
      Tony Tough and the Night of Roasted Moths   [tony]
-     Touche: The Adventures of the Fifth
+     Touche: The Adventures of the Fifth 
          Musketeer                               [touche]
-     U.F.O.s / Gnap: Der Schurke aus dem All     [gnap]
+     U.F.O.s                                     [gnap]
      Voyeur                                      [voyeur]
      Zork: Grand Inquisitor                      [zgi]
      Zork Nemesis: The Forbidden Lands           [znemesis]
@@ -434,28 +430,20 @@ Humongous Entertainment (SCUMM) Games:
      Blue's Reading Time Activities              [readtime]
      Fatty Bear's Birthday Surprise              [fbear]
      Fatty Bear's Fun Pack                       [fbpack]
-     Freddi Fish 1: The Case of the Missing
-         Kelp Seeds                              [freddi]
-     Freddi Fish 2: The Case of the Haunted
-         Schoolhouse                             [freddi2]
-     Freddi Fish 3: The Case of the Stolen
-         Conch Shell                             [freddi3]
-     Freddi Fish 4: The Case of the Hogfish
-         Rustlers of Briny Gulch                 [freddi4]
-     Freddi Fish 5: The Case of the Creature
-          of Coral Cove                          [freddicove]
+     Freddi Fish 1                               [freddi]
+     Freddi Fish 2                               [freddi2]
+     Freddi Fish 3                               [freddi3]
+     Freddi Fish 4                               [freddi4]
+     Freddi Fish 5                               [freddicove]
      Freddi Fish and Luther's Maze Madness       [maze]
      Freddi Fish and Luther's Water Worries      [water]
-     Let's Explore the Airport with Buzzy        [airport]
-     Let's Explore the Farm with Buzzy           [farm]
-     Let's Explore the Jungle with Buzzy         [jungle]
+     Let's Explore the Airport                   [airport]
+     Let's Explore the Farm                      [farm]
+     Let's Explore the Jungle                    [jungle]
      Pajama Sam: Games to Play on Any Day        [pjgames]
-     Pajama Sam 1: No Need to Hide When It's
-         Dark Outside                            [pajama]
-     Pajama Sam 2: Thunder and Lightning
-         Aren't so Frightening                   [pajama2]
-     Pajama Sam 3: You Are What You Eat
-         From Your Head to Your Feet             [pajama3]
+     Pajama Sam 1                                [pajama]
+     Pajama Sam 2                                [pajama2]
+     Pajama Sam 3                                [pajama3]
      Pajama Sam's Lost & Found                   [lost]
      Pajama Sam's Sock Works                     [socks]
      Putt-Putt Enters the Race                   [puttrace]
@@ -468,11 +456,11 @@ Humongous Entertainment (SCUMM) Games:
      Putt-Putt and Pep's Dog on a Stick          [dog]
      Putt-Putt & Fatty Bear's Activity Pack      [activity]
      Putt-Putt's Fun Pack                        [funpack]
-     SPY Fox 1: Dry Cereal                       [spyfox]
-     SPY Fox 2: Some Assembly Required           [spyfox2]
-     SPY Fox 3: Operation Ozone                  [spyozon]
-     SPY Fox in Cheese Chase                     [chase]
-     SPY Fox in Hold the Mustard                 [mustard]
+     Spy Fox 1                                   [spyfox]
+     Spy Fox 2                                   [spyfox2]
+     Spy Fox 3                                   [spyozon]
+     Spy Fox in Cheese Chase                     [chase]
+     Spy Fox in Hold the Mustard                 [mustard]
 
 The following games should load but are not yet fully playable. Play
 these at your own risk, and please do not file bug reports about them.
@@ -541,7 +529,7 @@ ScummVM will skip copy protection in the following games:
   * Dreamweb
       -- a list of available commands in the in-game terminals is now shown
          when the player uses the 'help' command
-  * Inherit the Earth: Quest for the Orb (Floppy version)
+  * Inherit the Earth (Floppy version)
       -- bypassed with kind permission from Wyrmkeep Entertainment,
          since it was bypassed in all CD releases of the game.
   * Loom (EGA DOS)
@@ -550,8 +538,8 @@ ScummVM will skip copy protection in the following games:
   * Might and Magic: World of Xeen
   * Monkey Island 2: LeChuck's Revenge
   * Rex Nebular and The Cosmic Gender Bender
-  * Simon the Sorcerer 1 (Floppy version)
-  * Simon the Sorcerer 2 (Floppy version)
+  * Simon the Sorcerer (Floppy version)
+  * Simon the Sorcerer II (Floppy version)
       -- bypassed with kind permission from Adventure Soft,
          since it was bypassed in all CD releases of the game.
   * The Secret of Monkey Island (VGA)
@@ -617,26 +605,26 @@ site, please see the section on reporting bugs.
     - Not a bug: CD version is missing speech for some dialogs, this is
       normal.
 
-  Elvira - Mistress of the Dark:
+  Elvira:
     - No music in the Atari ST version.
 
-  Elvira II - The Jaws of Cerberus
+  Elvira II:
     - No music in the Atari ST version.
     - No sound effects in the PC version.
     - Palette issues in the Atari ST version.
 
-  Inherit the Earth: Quest for the Orb:
+  Inherit the Earth:
     - Amiga versions aren't supported.
 
   Lure of the Temptress:
     - No Roland MT-32 support.
     - Sound support is incomplete and doesn't sound like original.
 
- Simon the Sorcerer 1:
+ Simon the Sorcerer:
     - Subtitles aren't available in the English and German CD versions
       as they are missing the majority of subtitles.
 
-  Simon the Sorcerer 2:
+  Simon the Sorcerer II:
     - Combined speech and subtitles will often cause speech to be
       cut off early, this is a limitation of the original game.
     - Only default language (English) of data files is supported
@@ -680,8 +668,8 @@ them. Hopefully they are general enough to be useful to other releases
 as well.
 
 
-3.6.1) Broken Sword:
------- -------------
+3.6.1) Broken Sword
+------ ------------
 For this game, you will need all of the files from the clusters
 directories on both CDs. For the Windows and Macintosh versions, you
 will also need the speech.clu files from the speech directories, but
@@ -697,8 +685,8 @@ makes little difference. The PlayStation version requires tunes.dat and
 tunes.tab.
 
 
-3.6.2) Broken Sword II:
------- ----------------
+3.6.2) Broken Sword II
+------ ---------------
 For this game, you will need all of the files from the clusters
 directories on both CDs. (Actually, a few of them may not be strictly
 necessary, but the ones that I'm uncertain about are all fairly small.)
@@ -856,7 +844,7 @@ track and its volume is therefore changed with the music volume control
 as well.
 
 
-3.12) Inherit the Earth: Quest for the Orb notes:
+3.12) Inherit the Earth notes:
 ----- -------------------------------------------
 In order to run the Mac OS X Wyrmkeep re-release of the game you will
 need to copy over data from the CD to your hard disk. If you're on a PC
@@ -925,8 +913,8 @@ game's screen to change location, similar to many adventure games, which
 is simpler and more straightforward than moving around using the menu.
 
 
-3.15 Might and Magic Xeen games notes:
---------------------------------------
+3.15) Might and Magic Xeen games notes:
+----- ---------------------------------
 To properly play the World of Xeen CD Talkie using original discs,
 use LAME or some other encoder to rip the cd audio tracks to files,
 either mp3 or ogg. Whichever you choose, the tracks of the first CD
@@ -968,8 +956,8 @@ Myst will autosave to slot 0 if no save or an autosave is present in
 slot 0.
 
 
-3.17) Nippon Safes Inc. Amiga notes:
------ ------------------------------
+3.17) Nippon Safes, Inc. Amiga notes:
+----- -------------------------------
 For this game, you will need disk0, , global.table, pointer and
 it (en, fr, ge for the international version).
 
@@ -1019,13 +1007,13 @@ slot 0.
 
 3.20) Simon the Sorcerer games notes:
 ----- -------------------------------
-If you have the dual version of Simon the Sorcerer 1 or 2 on CD, you
+If you have the dual version of Simon the Sorcerer I or II on CD, you
 will find the Windows version in the main directory of the CD and the
 DOS version in the DOS directory of the CD.
 
 
 3.21) Starship Titanic game notes:
-----------------------------------
+----- ----------------------------
 Basic Movements:
 Left Click: Move action
 Shift + Left Click: Edit room glyph chevrons and quick movement transitions
@@ -1205,78 +1193,78 @@ regarding speech and text toggling.
 
 The CD games where speech and subtitles can be shown simultaneously
 are:
-  EcoQuest 1 CD
-  Freddy Pharkas CD
-  Gabriel Knight CD
-  King's Quest 6 CD
-  King's Quest VII CD
-  Laura Bow 2 CD
-  Leisure Suit Larry 6 CD
-  Leisure Suit Larry 6 (hires) CD
-  Police Quest 4 CD
-  Shivers CD
-  Space Quest 4 CD
-  Space Quest 6 CD
-  Torin's Passage CD
+  EcoQuest
+  Freddy Pharkas: Frontier Pharmacist
+  Gabriel Knight: Sins of the Fathers
+  King's Quest VI
+  King's Quest VII
+  The Dagger of Amon Ra
+  Leisure Suit Larry 6
+  Leisure Suit Larry 6 (hires)
+  Police Quest: Open Season
+  Shivers
+  Space Quest IV
+  Space Quest 6
+  Torin's Passage
 
-EcoQuest 1 CD:
+EcoQuest:
     Speech and text can be toggled via the game's "Mode" option in the
     options dialog, or via ScummVM's audio options.
 
-Freddy Pharkas CD:
+Freddy Pharkas: Frontier Pharmacist:
     There is no in-game option to toggle speech and text. Only ScummVM's
     audio options can be used to toggle this feature. Note that some
     spoken dialog is missing from the game texts.
 
-Gabriel Knight CD:
+Gabriel Knight: Sins of the Fathers
     Speech and text can be toggled via the "Text" and "Voice" buttons
     in the game's settings dialog, or via ScummVM's audio options.
 
-King's Quest 6 CD:
+King's Quest VI:
     Speech and text can be toggled via the "Mode" button in the options
     dialog (with an extra "Dual" setting added in ScummVM), or via
     ScummVM's audio options.
 
-King's Quest VII CD:
+King's Quest VII:
     There is no in-game option to toggle speech and text. Only ScummVM's
     audio options can be used to toggle this feature. Note that the
     subtitles were disabled in the official release of this game, so
     some subtitles may be wrong or missing.
 
-Laura Bow 2 CD:
+The Dagger of Amon Ra:
     Speech and text can be toggled via the "Mode" button in the options
     dialog (with an extra "Dual" setting added in ScummVM), or via
     ScummVM's audio options.
 
-Leisure Suit Larry 6 CD:
+Leisure Suit Larry 6:
     Either speech only or speech and text can be selected. There is no
     in-game option to toggle text only. Only ScummVM's audio options can
     be used to enable the text only mode.
 
-Leisure Suit Larry 6 (hires) CD:
+Leisure Suit Larry 6 (hires):
     Text can be toggled by selecting the "Text On/Off" option from the
     in-game "Game" menu, or via ScummVM's audio options. Speech cannot
     be disabled.
 
-Police Quest 4 CD:
+Police Quest: Open Season:
     Either speech only or text only can be selected from the game's
     settings dialog. Only ScummVM's audio options can be used to enable
     text+speech mode.
 
-Shivers CD:
+Shivers:
     Text can be toggled by selecting the "Text" option from the game's
     settings dialog, or via ScummVM's audio options. Note that only
     videos have subtitles in this game.
 
-Space Quest 4 CD:
+Space Quest IV:
     Speech and text can be toggled via the "Display Mode" button in the
     options dialog, or via ScummVM's audio options.
 
-Space Quest 6 CD:
+Space Quest 6:
     Speech and text can be toggled via the "Speech" and "Text" buttons
     in the game's settings dialog, or via ScummVM's audio options.
 
-Torin's Passage CD:
+Torin's Passage:
     Text can be toggled by selecting "Closed Captioning" from the
     in-game "Game" menu. Speech can be disabled by selecting "Audio
     Mixer" from the in-game "Game" menu and setting the speech volume
@@ -1797,12 +1785,12 @@ other games.
     F10                    - "Use" menu
     Escape                 - Bring on command menu
 
-  Nippon Safes:
+  Nippon Safes, Inc.:
     Ctrl-d                 - Starts the debugger
     l                      - Load game
     s                      - Save game
 
-  Simon the Sorcerer 1 and 2:
+  Simon the Sorcerer I and II:
     Ctrl 0-9 and Alt 0-9   - Load and save game state
     Ctrl-d                 - Starts the debugger
     Ctrl-f                 - Toggle fast mode
@@ -1850,7 +1838,7 @@ other games.
     Ctrl 0-9 and Alt 0-9   - Load and save game state
     Ctrl-d                 - Starts the debugger
 
-  TeenAgent
+  Teen Agent
     F5                     - Displays the Global Menu
 
   Touche: The Adventures of the Fifth Musketeer:
@@ -2007,7 +1995,7 @@ Flight of the Amazon Queen
 Myst
 Riven
 SCUMM games
-The Legend of Kyrandia I (slot 999)
+The Legend of Kyrandia (slot 999)
 ZVISION games
 
 For the SCUMM engine, this saved game can then be
@@ -2020,11 +2008,11 @@ Using saved games from original versions isn't supported by all game
 engines. Only the following games can use saved games from their original
 versions.
 
-  Elvira 1
+  Elvira
     - Add 8 bytes (saved game name) to the start of the saved game file
     - Rename the saved game to 'elvira1.xxx'
 
-  Elvira 2
+  Elvira II
     - Add 8 bytes (saved game name) to the start of the saved game file
     - Rename the saved game to 'elvira2-pc.xxx' (DOS version) or
       'elvira2.xxx' (Other versions)
@@ -2037,10 +2025,10 @@ versions.
     - Rename the saved game to 'riven-xxx.rvn'
     - Saves from the CD and DVD edition are not interchangeable
 
-  Simon the Sorcerer 1
+  Simon the Sorcerer
     - Rename the saved game to 'simon1.xxx'
 
-  Simon the Sorcerer 2
+  Simon the Sorcerer II
     - Rename the saved game to 'simon2.xxx'
 
   Starship Titanic
@@ -2060,7 +2048,7 @@ Where 'xxx' is exact the saved game slot (i.e., 001) under ScummVM
 
 
 6.3) Viewing/Loading saved games from the command line:
----- ------------------------------------------------
+---- --------------------------------------------------
 
 --list-saves:
 
@@ -2802,7 +2790,7 @@ Space Quest IV CD adds the following non-standard keyword:
                                 cursors is used instead of the original golden
                                 ones
 
-Simon the Sorcerer 1 and 2 add the following non-standard keywords:
+Simon the Sorcerer I and II add the following non-standard keywords:
 
     music_mute         bool     If true, music is muted
     sfx_mute           bool     If true, sound effects are muted
@@ -2900,7 +2888,7 @@ depends on the OS:
 
 
 10.0) Compiling:
----- ----------
+----- ----------
 For an up-to-date overview on how to compile ScummVM for various
 platforms, please consult our Wiki, in particular this page:
 
