@@ -1467,6 +1467,7 @@ GlobalOptionsDialog::GlobalOptionsDialog(LauncherDialog *launcher)
 	_autosavePeriodPopUp = 0;
 	_guiLanguagePopUpDesc = 0;
 	_guiLanguagePopUp = 0;
+	_guiLanguageUseGameLanguageCheckbox = nullptr;
 #ifdef USE_UPDATES
 	_updatesPopUpDesc = 0;
 	_updatesPopUp = 0;
@@ -1523,6 +1524,7 @@ void GlobalOptionsDialog::build() {
 	_graphicsTabId = tab->addTab(g_system->getOverlayWidth() > 320 ? _("Graphics") : _("GFX"));
 	ScrollContainerWidget *graphicsContainer = new ScrollContainerWidget(tab, "GlobalOptions_Graphics.Container", kGraphicsTabContainerReflowCmd);
 	graphicsContainer->setTarget(this);
+	graphicsContainer->setBackgroundType(ThemeEngine::kDialogBackgroundNone);
 	addGraphicControls(graphicsContainer, "GlobalOptions_Graphics_Container.");
 
 	//
@@ -1689,6 +1691,17 @@ void GlobalOptionsDialog::build() {
 		_guiLanguagePopUp->setSelectedTag(Common::kTranslationBuiltinId);
 #endif // USE_DETECTLANG
 
+	_guiLanguageUseGameLanguageCheckbox = new CheckboxWidget(tab, "GlobalOptions_Misc.GuiLanguageUseGameLanguage",
+			_("Switch the GUI language to the game language"),
+			_("When starting a game, change the GUI language to the game language."
+			"That way, if a game uses the ScummVM save and load dialogs, they are"
+			"in the same language as the game.")
+	);
+
+	if (ConfMan.hasKey("gui_use_game_language")) {
+		_guiLanguageUseGameLanguageCheckbox->setState(ConfMan.getBool("gui_use_game_language", _domain));
+	}
+
 #endif // USE_TRANSLATION
 
 #ifdef USE_UPDATES
@@ -1718,6 +1731,7 @@ void GlobalOptionsDialog::build() {
 
 	ScrollContainerWidget *container = new ScrollContainerWidget(tab, "GlobalOptions_Cloud.Container", kCloudTabContainerReflowCmd);
 	container->setTarget(this);
+	container->setBackgroundType(ThemeEngine::kDialogBackgroundNone);
 
 	_storagePopUpDesc = new StaticTextWidget(container, "GlobalOptions_Cloud_Container.StoragePopupDesc", _("Storage:"), _("Active cloud storage"));
 	_storagePopUp = new PopUpWidget(container, "GlobalOptions_Cloud_Container.StoragePopup");
@@ -1958,6 +1972,9 @@ void GlobalOptionsDialog::apply() {
 		newCharset = TransMan.getCurrentCharset();
 		isRebuildNeeded = true;
 	}
+
+	bool guiUseGameLanguage = _guiLanguageUseGameLanguageCheckbox->getState();
+	ConfMan.setBool("gui_use_game_language", guiUseGameLanguage, _domain);
 #endif
 
 	GUI::ThemeEngine::GraphicsMode gfxMode = (GUI::ThemeEngine::GraphicsMode)_rendererPopUp->getSelectedTag();

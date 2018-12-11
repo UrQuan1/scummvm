@@ -45,10 +45,10 @@ class KIASectionClues : public KIASectionBase {
 		int flags;
 	};
 
-	UIContainer         *_uiContainer;
-	UIImagePicker       *_buttons;
-	UIScrollBox         *_cluesScrollBox;
-	UIScrollBox         *_filterScrollBox;
+	UIContainer        *_uiContainer;
+	UIImagePicker      *_buttons;
+	UIScrollBox        *_cluesScrollBox;
+	UIScrollBox        *_filterScrollBox;
 
 	bool                _isOpen;
 	bool                _debugIntangible;
@@ -66,6 +66,8 @@ class KIASectionClues : public KIASectionBase {
 public:
 	KIASectionClues(BladeRunnerEngine *vm, ActorClues *clues);
 	~KIASectionClues();
+
+	void reset();
 
 	void open();
 	void close();

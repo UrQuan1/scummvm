@@ -38,7 +38,7 @@ SAVED_CXXFLAGS=$CXXFLAGS
 SAVED_DWP=$DWP
 SAVED_LD=$LD
 SAVED_LDFLAGS=$LDFLAGS
-SAVED_PKG_CONFIG_LIBDIR=$PKG_CONFIG_LIBDIR
+SAVED_PKG_CONFIG_LIBDIR=${PKG_CONFIG_LIBDIR:-unset}
 SAVED_RANLIB=$RANLIB
 SAVED_SDL_CONFIG=$SDL_CONFIG
 SAVED_STRIP=$STRIP
@@ -2138,7 +2138,7 @@ fi
 # However, some platforms use GNU extensions in system header files, so
 # for these we must not use -pedantic.
 case $_host_os in
-android | androidsdl | gamecube | ps2 | psp | tizen | wii | webos)
+3ds | android | androidsdl | gamecube | ps2 | psp | tizen | wii | webos)
 	;;
 *)
 	# ICC does not support pedantic, while GCC and clang do.
@@ -2442,6 +2442,7 @@ case $_host_os in
 		else
 			append_var LDFLAGS "-Wl,--no-gc-sections"
 		fi
+		append_var LDFLAGS "-L$DEVKITPRO/libctru/lib"
 		append_var LDFLAGS "-L$DEVKITPRO/portlibs/3ds/lib"
 		append_var LIBS "-lcitro3d -lctru"
 		;;
@@ -2765,6 +2766,7 @@ case $_host_os in
 		append_var LIBS "-lmingw32 -lwinmm -lgdi32"
 		append_var OBJS "scummvmwinres.o"
 		add_line_to_config_mk 'WIN32 = 1'
+		_port_mk="backends/platform/sdl/win32/win32.mk"
 		;;
 	mint*)
 		append_var DEFINES "-DSYSTEM_NOT_SUPPORTING_D_TYPE"
@@ -3070,6 +3072,11 @@ if test -n "$_host"; then
 			append_var CXXFLAGS "-fdelete-null-pointer-checks"
 			_backend="dc"
 			_build_scalers=no
+			# These two are needed due to shortcomings of the
+			# detection systems.  Do not remove until auto-
+			# detection works correctly.
+			_mad=yes
+			_zlib=yes
 			_port_mk="backends/platform/dc/dreamcast.mk"
 			;;
 		ds)
@@ -3162,7 +3169,6 @@ if test -n "$_host"; then
 		ios7)
 			append_var DEFINES "-DIPHONE"
 			_backend="ios7"
-			_build_scalers=no
 			_seq_midi=no
 			_timidity=no
 			;;
@@ -4458,7 +4464,8 @@ extern "C" {
 }
 
 int main(void) {
-	a52_init(0);
+	a52_state_t *state = a52_init(0);
+	a52_free(state);
 	return 0;
 }
 EOF
@@ -5265,6 +5272,7 @@ fi
 case $_backend in
 	3ds)
 		if test "$_freetype2" = yes -a "$_png" = yes; then
+			append_var LIBS "-lbz2"
 			append_var LIBS "-lpng"
 		fi
 		if test "$_tremor" = yes -o "$_flac" = yes; then
