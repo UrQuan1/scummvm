@@ -47,7 +47,7 @@ const char *LilliputEngine::getGameId() const {
 
 static const PlainGameDescriptor lilliputGames[] = {
 	// Games
-	{"robin", "Adventures of Robin Hood"},
+	{"robin", "The Adventures of Robin Hood"},
 	{"rome", "Rome: Pathway to Power"},
 	{0, 0}
 };
