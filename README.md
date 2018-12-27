@@ -25,18 +25,18 @@ page at: <https://www.scummvm.org/>
             cutscenes](#363-broken-sword-games-cutscenes)
           - [3.6.4) Broken Sword games cutscenes, in
             retrospect](#364-broken-sword-games-cutscenes-in-retrospect)
-      - [3.7) Day of the Tentacle notes](#37-day-of-the-tentacle-notes)      
+      - [3.7) Day of the Tentacle notes](#37-day-of-the-tentacle-notes)
       - [3.8) Dragon History notes](#38-dragon-history-notes)
       - [3.9) Flight of the Amazon Queen
         notes](#39-flight-of-the-amazon-queen-notes)
       - [3.10) Gobliiins notes](#310-gobliiins-notes)
-      - [3.11) Inherit the Earth: Quest for the Orb
+      - [3.11) Inherit the Earth
         notes](#311-inherit-the-earth-quest-for-the-orb-notes)      
       - [3.12) Mickey's Space Adventure
         notes](#312-mickeys-space-adventure-notes)
       - [3.13) Might and Magic Xeen games
         notes](#313-might-and-magic-xeen-games-notes)
-      - [3.14) Myst game notes](#314-myst-game-notes)      
+      - [3.14) Myst game notes](#314-myst-game-notes)
       - [3.15) Quest for Glory notes](#315-quest-for-glory-notes)
       - [3.16) Riven game notes](#316-riven-game-notes)
       - [3.17) Simon the Sorcerer games
@@ -138,8 +138,8 @@ its name to ScummVM ('VM' meaning Virtual Machine).
 
 Over time support for a lot of non-SCUMM games has been added, and
 ScummVM now also supports many of Sierra's AGI and SCI games (such as
-King's Quest 1-6, Space Quest 1-5, ...), Discworld 1 and 2, Simon the
-Sorcerer 1 and 2, Beneath A Steel Sky, Lure of the Temptress, Broken
+King's Quest I-VII, Space Quest I-V, ...), Discworld I and II, Simon the
+Sorcerer I and II, Beneath A Steel Sky, Lure of the Temptress, Broken
 Sword I and II, Flight of the Amazon Queen, Gobliiins 1-3, The Legend of
 Kyrandia series, many of Humongous Entertainment's children's SCUMM
 games (including Freddi Fish and Putt Putt games) and many more. You can
@@ -252,282 +252,278 @@ supported games can be found here:
 
 <https://www.scummvm.org/compatibility/>
 
-| LucasArts (SCUMM) Games:                |              |
-| --------------------------------------- | ------------ |
-| Maniac Mansion                          | \[maniac\]   |
-| Zak McKracken and the Alien Mindbenders | \[zak\]      |
-| Indiana Jones and the Last Crusade      | \[indy3\]    |
-| Loom                                    | \[loom\]     |
-| Passport to Adventure                   | \[pass\]     |
-| The Secret of Monkey Island             | \[monkey\]   |
-| Monkey Island 2: LeChuck's Revenge      | \[monkey2\]  |
-| Indiana Jones and the Fate of Atlantis  | \[atlantis\] |
-| Day of the Tentacle                     | \[tentacle\] |
-| Sam & Max Hit the Road                  | \[samnmax\]  |
-| Full Throttle                           | \[ft\]       |
-| The Dig                                 | \[dig\]      |
-| The Curse of Monkey Island              | \[comi\]     |
+| LucasArts (SCUMM) Games:                                                       |                     |
+| ------------------------------------------------------------------------------ | ------------------- |
+| Maniac Mansion                                                                 | \[maniac\]          |
+| Zak McKracken and the Alien Mindbenders                                        | \[zak\]             |
+| Indiana Jones and the Last Crusade                                             | \[indy3\]           |
+| Loom                                                                           | \[loom\]            |
+| Passport to Adventure                                                          | \[pass\]            |
+| The Secret of Monkey Island                                                    | \[monkey\]          |
+| Monkey Island 2: LeChuck's Revenge                                             | \[monkey2\]         |
+| Indiana Jones and the Fate of Atlantis                                         | \[atlantis\]        |
+| Day of the Tentacle                                                            | \[tentacle\]        |
+| Sam & Max Hit the Road                                                         | \[samnmax\]         |
+| Full Throttle                                                                  | \[ft\]              |
+| The Dig                                                                        | \[dig\]             |
+| The Curse of Monkey Island                                                     | \[comi\]            |
 
-| Activision (MADE) Games:      |             |
-| ----------------------------- | ----------- |
-| Leather Goddesses of Phobos 2 | \[lgop2\]   |
-| The Manhole                   | \[manhole\] |
-| Return to Zork                | \[rtz\]     |
-| Rodney's Funscreen            | \[rodney\]  |
+| Activision (MADE) Games:                                                       |                     |
+| ------------------------------------------------------------------------------ | ------------------- |
+| Leather Goddesses of Phobos 2                                                  | \[lgop2\]           |
+| The Manhole                                                                    | \[manhole\]         |
+| Return to Zork                                                                 | \[rtz\]             |
+| Rodney's Funscreen                                                             | \[rodney\]          |
 
-| Adventuresoft/Horrorsoft (AGOS) Games:                |              |
-| ----------------------------------------------------- | ------------ |
-| Elvira - Mistress of the Dark                         | \[elvira1\]  |
-| Elvira II - The Jaws of Cerberus                      | \[elvira2\]  |
-| Personal Nightmare                                    | \[pn\]       |
-| Simon the Sorcerer 1                                  | \[simon1\]   |
-| Simon the Sorcerer 2                                  | \[simon2\]   |
-| Simon the Sorcerer's Puzzle Pack - Demon In My Pocket | \[dimp\]     |
-| Simon the Sorcerer's Puzzle Pack - Jumble             | \[jumble\]   |
-| Simon the Sorcerer's Puzzle Pack - NoPatience         | \[puzzle\]   |
-| Simon the Sorcerer's Puzzle Pack - Swampy Adventures  | \[swampy\]   |
-| The Feeble Files                                      | \[feeble\]   |
-| Waxworks                                              | \[waxworks\] |
+| Adventuresoft/Horrorsoft (AGOS) Games:                                         |                     |
+| ------------------------------------------------------------------------------ | ------------------- |
+| Elvira: Mistress of the Dark                                                   | \[elvira1\]         |
+| Elvira II: The Jaws of Cerberus                                                | \[elvira2\]         |
+| Personal Nightmare                                                             | \[pn\]              |
+| Simon the Sorcerer                                                             | \[simon1\]          |
+| Simon the Sorcerer II: The Lion, the Wizard and the Wardrobe                   | \[simon2\]          |
+| Simon the Sorcerer's Puzzle Pack - Demon In My Pocket                          | \[dimp\]            |
+| Simon the Sorcerer's Puzzle Pack - Jumble                                      | \[jumble\]          |
+| Simon the Sorcerer's Puzzle Pack - NoPatience                                  | \[puzzle\]          |
+| Simon the Sorcerer's Puzzle Pack - Swampy Adventures                           | \[swampy\]          |
+| The Feeble Files                                                               | \[feeble\]          |
+| Waxworks                                                                       | \[waxworks\]        |
 
-| Coktel Vision (GOB) Games:                           |                 |
-| ---------------------------------------------------- | --------------- |
-| Bargon Attack                                        | \[bargon\]      |
-| Fascination                                          | \[fascination\] |
-| Geisha                                               | \[geisha\]      |
-| Gobliiins                                            | \[gob1\]        |
-| Gobliins 2                                           | \[gob2\]        |
-| Goblins 3                                            | \[gob3\]        |
-| Lost in Time                                         | \[lostintime\]  |
-| Once Upon A Time: Little Red Riding Hood             | \[littlered\]   |
-| Playtoons: Bambou le sauveur de la jungle            | \[bambou\]      |
-| The Bizarre Adventures of Woodruff and the Schnibble | \[woodruff\]    |
-| Urban Runner                                         | \[urban\]       |
-| Ween: The Prophecy                                   | \[ween\]        |
+| Coktel Vision (GOB) Games:                                                     |                     |
+| ------------------------------------------------------------------------------ | ------------------- |
+| Bargon Attack                                                                  | \[bargon\]          |
+| Fascination                                                                    | \[fascination\]     |
+| Geisha                                                                         | \[geisha\]          |
+| Gobliiins                                                                      | \[gob1\]            |
+| Gobliins 2: The Prince Buffoon                                                 | \[gob2\]            |
+| Goblins Quest 3                                                                | \[gob3\]            |
+| Lost in Time                                                                   | \[lostintime\]      |
+| Once Upon A Time: Little Red Riding Hood                                       | \[littlered\]       |
+| Bambou: Le Sauveur de la Jungle                                                | \[bambou\]          |
+| The Bizarre Adventures of Woodruff and the Schnibble                           | \[woodruff\]        |
+| Urban Runner                                                                   | \[urban\]           |
+| Ween: The Prophecy                                                             | \[ween\]            |
 
-| Revolution Software (Various) Games:     |            |
-| ---------------------------------------- | ---------- |
-| Beneath a Steel Sky                      | \[sky\]    |
-| Broken Sword: The Shadow of the Templars | \[sword1\] |
-| Broken Sword II: The Smoking Mirror      | \[sword2\] |
-| Lure of the Temptress                    | \[lure\]   |
+| Revolution Software (Various) Games:                                           |                     |
+| ------------------------------------------------------------------------------ | ------------------- |
+| Beneath a Steel Sky                                                            | \[sky\]             |
+| Broken Sword: The Shadow of the Templars                                       | \[sword1\]          |
+| Broken Sword II: The Smoking Mirror                                            | \[sword2\]          |
+| Lure of the Temptress                                                          | \[lure\]            |
 
-| Sierra (AGI/preAGI) Games:                           |                 |
-| ---------------------------------------------------- | --------------- |
-| The Black Cauldron                                   | \[bc\]          |
-| Gold Rush\!                                          | \[goldrush\]    |
-| King's Quest I                                       | \[kq1\]         |
-| King's Quest II                                      | \[kq2\]         |
-| King's Quest III                                     | \[kq3\]         |
-| King's Quest IV                                      | \[kq4\]         |
-| Leisure Suit Larry in the Land of the Lounge Lizards | \[lsl1\]        |
-| Mixed-Up Mother Goose                                | \[mixedup\]     |
-| Manhunter 1: New York                                | \[mh1\]         |
-| Manhunter 2: San Francisco                           | \[mh2\]         |
-| Police Quest I: In Pursuit of the Death              |                 |
-| Angel                                                | \[pq1\]         |
-| Space Quest I: The Sarien Encounter                  | \[sq1\]         |
-| Space Quest II: Vohaul's Revenge                     | \[sq2\]         |
-| Fanmade Games                                        | \[agi-fanmade\] |
-| Mickey's Space Adventure                             | \[mickey\]      |
-| Troll's Tale                                         | \[troll\]       |
-| Winnie the Pooh in the Hundred Acre Wood             | \[winnie\]      |
+| Sierra (AGI/preAGI) Games:                                                     |                     |
+| ------------------------------------------------------------------------------ | ------------------- |
+| The Black Cauldron                                                             | \[bc\]              |
+| Gold Rush\!                                                                    | \[goldrush\]        |
+| King's Quest I: Quest for the Crown                                            | \[kq1\]             |
+| King's Quest II: Romancing the Throne                                          | \[kq2\]             |
+| King's Quest III: To Heir Is Human                                             | \[kq3\]             |
+| King's Quest IV: The Perils of Rosella                                         | \[kq4\]             |
+| Leisure Suit Larry in the Land of the Lounge Lizards                           | \[lsl1\]            |
+| Mixed-Up Mother Goose                                                          | \[mixedup\]         |
+| Manhunter: New York                                                            | \[mh1\]             |
+| Manhunter 2: San Francisco                                                     | \[mh2\]             |
+| Police Quest I: In Pursuit of the Death Angel                                  | \[pq1\]             |
+| Space Quest I: The Sarien Encounter                                            | \[sq1\]             |
+| Space Quest II: Vohaul's Revenge                                               | \[sq2\]             |
+| Fanmade Games                                                                  | \[agi-fanmade\]     |
+| Mickey's Space Adventure                                                       | \[mickey\]          |
+| Troll's Tale                                                                   | \[troll\]           |
+| Winnie the Pooh in the Hundred Acre Wood                                       | \[winnie\]          |
 
-| Sierra (SCI) Games:                        |                      |
-| ------------------------------------------ | -------------------- |
-| Castle of Dr. Brain                        | \[castlebrain\]      |
-| Codename: ICEMAN                           | \[iceman\]           |
-| Conquests of Camelot                       | \[camelot\]          |
-| Conquests of the Longbow                   | \[longbow\]          |
-| EcoQuest: The Search for Cetus             | \[ecoquest\]         |
-| EcoQuest 2: Lost Secret of the Rainforest  | \[ecoquest2\]        |
-| Freddy Pharkas: Frontier Pharmacist        | \[freddypharkas\]    |
-| Gabriel Knight: Sins of the Fathers        | \[gk1\]              |
-| Hoyle's Book of Games 1                    | \[hoyle1\]           |
-| Hoyle's Book of Games 2                    | \[hoyle2\]           |
-| Hoyle's Book of Games 3                    | \[hoyle3\]           |
-| Hoyle Classic Card Games                   | \[hoyle4\]           |
-| Jones in the Fast Lane                     | \[jones\]            |
-| King's Quest I                             | \[kq1sci\]           |
-| King's Quest IV                            | \[kq4sci\]           |
-| King's Quest V                             | \[kq5\]              |
-| King's Quest VI                            | \[kq6\]              |
-| King's Quest VII                           | \[kq7\]              |
-| King's Questions                           | \[kquestions\]       |
-| Laura Bow: The Colonel's Bequest           | \[laurabow\]         |
-| Laura Bow 2: The Dagger of Amon Ra         | \[laurabow2\]        |
-| Leisure Suit Larry 1                       | \[lsl1sci\]          |
-| Leisure Suit Larry 2                       | \[lsl2\]             |
-| Leisure Suit Larry 3                       | \[lsl3\]             |
-| Leisure Suit Larry 5                       | \[lsl5\]             |
-| Leisure Suit Larry 6                       | \[lsl6\]             |
-| Leisure Suit Larry 6 (hires)               | \[lsl6hires\]        |
-| Leisure Suit Larry 7                       | \[lsl7\]             |
-| Lighthouse: The Dark Being                 | \[lighthouse\]       |
-| Mixed-up Fairy Tales                       | \[fairytales\]       |
-| Mixed-up Mother Goose                      | \[mothergoose\]      |
-| Mixed-up Mother Goose Deluxe               | \[mothergoosehires\] |
-| Pepper's Adventures in Time                | \[pepper\]           |
-| Phantasmagoria                             | \[phantasmagoria\]   |
-| Phantasmagoria 2: A Puzzle of Flesh        | \[phantasmagoria2\]  |
-| Police Quest 1                             | \[pq1sci\]           |
-| Police Quest 2                             | \[pq2\]              |
-| Police Quest 3                             | \[pq3\]              |
-| Police Quest 4                             | \[pq4\]              |
-| Quest for Glory 1/Hero's Quest             | \[qfg1\]             |
-| Quest for Glory 1                          | \[qfg1vga\]          |
-| Quest for Glory 2                          | \[qfg2\]             |
-| Quest for Glory 3                          | \[qfg3\]             |
-| RAMA                                       | \[rama\]             |
-| Slater & Charlie Go Camping                | \[slater\]           |
-| Shivers                                    | \[shivers\]          |
-| Space Quest I                              | \[sq1sci\]           |
-| Space Quest III                            | \[sq3\]              |
-| Space Quest IV                             | \[sq4\]              |
-| Space Quest V                              | \[sq5\]              |
-| Space Quest 6                              | \[sq6\]              |
-| The Island of Dr. Brain                    | \[islandbrain\]      |
-| The Beast Within: A Gabriel Knight Mystery | \[gk2\]              |
-| Torin's Passage                            | \[torin\]            |
+| Sierra (SCI) Games:                                                            |                     |
+| ------------------------------------------------------------------------------ | ------------------- |
+| Castle of Dr. Brain                                                            | \[castlebrain\]     |
+| Codename: ICEMAN                                                               | \[iceman\]          |
+| Conquests of Camelot: The Search for the Grail                                 | \[camelot\]         |
+| Conquests of the Longbow: The Legend of Robin Hood                             | \[longbow\]         |
+| EcoQuest: The Search for Cetus                                                 | \[ecoquest\]        |
+| EcoQuest 2: Lost Secret of the Rainforest                                      | \[ecoquest2\]       |
+| Freddy Pharkas: Frontier Pharmacist                                            | \[freddypharkas\]   |
+| Gabriel Knight: Sins of the Fathers                                            | \[gk1\]             |
+| Hoyle Official Book of Games: Volume 1                                         | \[hoyle1\]          |
+| Hoyle Official Book of Games: Volume 2                                         | \[hoyle2\]          |
+| Hoyle Official Book of Games: Volume 3                                         | \[hoyle3\]          |
+| Hoyle Classic Card Games                                                       | \[hoyle4\]          |
+| Jones in the Fast Lane                                                         | \[jones\]           |
+| King's Quest I: Quest for the Crown                                            | \[kq1sci\]          |
+| King's Quest IV: The Perils of Rosella                                         | \[kq4sci\]          |
+| King's Quest V: Absence Makes the Heart Go Yonder!                             | \[kq5\]             |
+| King's Quest VI: Heir Today, Gone Tomorrow                                     | \[kq6\]             |
+| King's Quest VII: The Princeless Bride                                         | \[kq7\]             |
+| King's Questions                                                               | \[kquestions\]      |
+| The Colonel's Bequest                                                          | \[laurabow\]        |
+| The Dagger of Amon Ra                                                          | \[laurabow2\]       |
+| Leisure Suit Larry 1: In the Land of the Lounge Lizards                        | \[lsl1sci\]         |
+| Leisure Suit Larry Goes Looking for Love (in Several Wrong Places)             | \[lsl2\]            |
+| Leisure Suit Larry III: Passionate Patti in Pursuit of the Pulsating Pectorals | \[lsl3\]            |
+| Leisure Suit Larry 5: Passionate Patti Does a Little Undercover Work           | \[lsl5\]            |
+| Leisure Suit Larry 6: Shape Up or Slip Out!                                    | \[lsl6\]            |
+| Leisure Suit Larry: Love for Sail!                                             | \[lsl7\]            |
+| Lighthouse: The Dark Being                                                     | \[lighthouse\]      |
+| Mixed-Up Fairy Tales                                                           | \[fairytales\]      |
+| Mixed-Up Mother Goose                                                          | \[mothergoose\]     |
+| Pepper's Adventures in Time                                                    | \[pepper\]          |
+| Phantasmagoria                                                                 | \[phantasmagoria\]  |
+| Phantasmagoria 2: A Puzzle of Flesh                                            | \[phantasmagoria2\] |
+| Police Quest I: In Pursuit of the Death Angel                                  | \[pq1sci\]          |
+| Police Quest II: The Vengeance                                                 | \[pq2\]             |
+| Police Quest III: The Kindred                                                  | \[pq3\]             |
+| Police Quest: Open Season                                                      | \[pq4\]             |
+| Quest for Glory I: So You Want to Be a Hero                                    | \[qfg1\]            |
+| Quest for Glory II: Trial by Fire                                              | \[qfg2\]            |
+| Quest for Glory III: Wages of War                                              | \[qfg3\]            |
+| RAMA                                                                           | \[rama\]            |
+| Slater & Charlie Go Camping                                                    | \[slater\]          |
+| Shivers                                                                        | \[shivers\]         |
+| Space Quest I: Roger Wilco in the Sarien Encounter                             | \[sq1sci\]          |
+| Space Quest III                                                                | \[sq3\]             |
+| Space Quest IV: Roger Wilco and the Time Rippers                               | \[sq4\]             |
+| Space Quest V: The Next Mutation                                               | \[sq5\]             |
+| Space Quest 6: Roger Wilco in The Spinal Frontier                              | \[sq6\]             |
+| The Island of Dr. Brain                                                        | \[islandbrain\]     |
+| The Beast Within: A Gabriel Knight Mystery                                     | \[gk2\]             |
+| Torin's Passage                                                                | \[torin\]           |
 
-| Other Games:                                                        |                 |
-| ------------------------------------------------------------------- | --------------- |
-| 3 Skulls of the Toltecs                                             | \[toltecs\]     |
-| Amazon: Guardians of Eden                                           | \[access\]      |
-| Beavis and Butt-head in Virtual Stupidity                           | \[bbvs\]        |
-| Blue Force                                                          | \[blueforce\]   |
-| Broken Sword: The Return of the Templars                            | \[sword25\]     |
-| Bud Tucker in Double Trouble                                        | \[tucker\]      |
-| Chivalry is Not Dead                                                | \[chivalry\]    |
-| Cruise for a Corpse                                                 | \[cruise\]      |
-| DreamWeb                                                            | \[dreamweb\]    |
-| Discworld                                                           | \[dw\]          |
-| Discworld 2: Missing Presumed ...\!?                                | \[dw2\]         |
-| Dragon History                                                      | \[draci\]       |
-| Drascula: The Vampire Strikes Back                                  | \[drascula\]    |
-| Eye of the Beholder                                                 | \[eob\]         |
-| Eye of the Beholder II: The Legend of Darkmoon                      | \[eob2\]        |
-| Flight of the Amazon Queen                                          | \[queen\]       |
-| Future Wars                                                         | \[fw\]          |
-| Hopkins FBI                                                         | \[hopkins\]     |
-| Hugo's House of Horrors                                             | \[hugo1\]       |
-| Hugo 2: Whodunit?                                                   | \[hugo2\]       |
-| Hugo 3: Jungle of Doom                                              | \[hugo3\]       |
-| I Have No Mouth, and I Must Scream                                  | \[ihnm\]        |
-| Inherit the Earth: Quest for the Orb                                | \[ite\]         |
-| Lands of Lore: The Throne of Chaos                                  | \[lol\]         |
-| Mortville Manor                                                     | \[mortevielle\] |
-| Myst / Myst: Masterpiece Edition                                    | \[myst\]        |
-| Nippon Safes Inc.                                                   | \[nippon\]      |
-| Rex Nebular and the Cosmic Gender Bender                            | \[nebular\]     |
-| Ringworld: Revenge Of The Patriarch                                 | \[ringworld\]   |
-| Riven: The Sequel to Myst                                           | \[riven\]       |
-| Return to Ringworld                                                 | \[ringworld2\]  |
-| Sfinx                                                               | \[sfinx\]       |
-| Soltys                                                              | \[soltys\]      |
-| Starship Titanic                                                    | \[titanic\]     |
-| The Journeyman Project: Pegasus Prime                               | \[pegasus\]     |
-| The Labyrinth of Time                                               | \[lab\]         |
-| The Legend of Kyrandia                                              | \[kyra1\]       |
-| The Legend of Kyrandia: The Hand of Fate                            | \[kyra2\]       |
-| The Legend of Kyrandia: Malcolm's Revenge                           | \[kyra3\]       |
-| The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel | \[scalpel\]     |
-| The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo      | \[rosetattoo\]  |
-| The Neverhood                                                       | \[neverhood\]   |
-| The 7th Guest                                                       | \[t7g\]         |
-| TeenAgent                                                           | \[teenagent\]   |
-| Toonstruck                                                          | \[toon\]        |
-| Tony Tough and the Night of Roasted Moths                           | \[tony\]        |
-| Touche: The Adventures of the Fifth Musketeer                       | \[touche\]      |
-| U.F.O.s / Gnap: Der Schurke aus dem All                             | \[gnap\]        |
-| Voyeur                                                              | \[voyeur\]      |
-| Zork: Grand Inquisitor                                              | \[zgi\]         |
-| Zork Nemesis: The Forbidden Lands                                   | \[znemesis\]    |
+| Other Games:                                                                   |                       |
+| ------------------------------------------------------------------------------ | --------------------- |
+| 3 Skulls of the Toltecs                                                        | \[toltecs\]           |
+| Amazon: Guardians of Eden                                                      | \[amazon\]            |
+| Beavis and Butt-Head in Virtual Stupidity                                      | \[bbvs\]              |
+| Blue Force                                                                     | \[blueforce\]         |
+| Broken Sword 2.5: The Return of the Templars                                   | \[sword25\]           |
+| Bud Tucker in Double Trouble                                                   | \[tucker\]            |
+| Chivalry is Not Dead                                                           | \[chivalry\]          |
+| Cruise for a Corpse                                                            | \[cruise\]            |
+| DreamWeb                                                                       | \[dreamweb\]          |
+| Discworld                                                                      | \[dw\]                |
+| Discworld II: Missing Presumed...\!?                                           | \[dw2\]               |
+| Dragon History                                                                 | \[draci\]             |
+| Drascula: The Vampire Strikes Back                                             | \[drascula\]          |
+| Eye of the Beholder                                                            | \[eob\]               |
+| Eye of the Beholder II: The Legend of Darkmoon                                 | \[eob2\]              |
+| Flight of the Amazon Queen                                                     | \[queen\]             |
+| Future Wars                                                                    | \[fw\]                |
+| Hopkins FBI                                                                    | \[hopkins\]           |
+| Hugo's House of Horrors                                                        | \[hugo1\]             |
+| Hugo II: Whodunit?                                                             | \[hugo2\]             |
+| Hugo III: Jungle of Doom                                                       | \[hugo3\]             |
+| I Have No Mouth, and I Must Scream                                             | \[ihnm\]              |
+| Inherit the Earth: Quest for the Orb                                           | \[ite\]               |
+| Lands of Lore: The Throne of Chaos                                             | \[lol\]               |
+| Mortville Manor                                                                | \[mortevielle\]       |
+| Myst / Myst: Masterpiece Edition                                               | \[myst\]              |
+| Nippon Safes, Inc.                                                             | \[nippon\]            |
+| Rex Nebular and the Cosmic Gender Bender                                       | \[nebular\]           |
+| Ringworld: Revenge Of The Patriarch                                            | \[ringworld\]         |
+| Riven: The Sequel to Myst                                                      | \[riven\]             |
+| Return to Ringworld                                                            | \[ringworld2\]        |
+| Sfinx                                                                          | \[sfinx\]             |
+| Soltys                                                                         | \[soltys\]            |
+| Starship Titanic                                                               | \[titanic\]           |
+| The Journeyman Project: Pegasus Prime                                          | \[pegasus\]           |
+| The Labyrinth of Time                                                          | \[lab\]               |
+| The Legend of Kyrandia                                                         | \[kyra1\]             |
+| The Legend of Kyrandia: The Hand of Fate                                       | \[kyra2\]             |
+| The Legend of Kyrandia: Malcolm's Revenge                                      | \[kyra3\]             |
+| The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel            | \[scalpel\]           |
+| The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo                 | \[rosetattoo\]        |
+| The Neverhood                                                                  | \[neverhood\]         |
+| The 7th Guest                                                                  | \[t7g\]               |
+| Teen Agent                                                                     | \[teenagent\]         |
+| Toonstruck                                                                     | \[toon\]              |
+| Tony Tough and the Night of Roasted Moths                                      | \[tony\]              |
+| Touche: The Adventures of the Fifth Musketeer                                  | \[touche\]            |
+| U.F.O.s                                                                        | \[gnap\]              |
+| Voyeur                                                                         | \[voyeur\]            |
+| Zork: Grand Inquisitor                                                         | \[zgi\]               |
+| Zork Nemesis: The Forbidden Lands                                              | \[znemesis\]          |
 
-| Humongous Entertainment (SCUMM) Games:                         |                   |
-| -------------------------------------------------------------- | ----------------- |
-| Backyard Baseball                                              | \[baseball\]      |
-| Backyard Baseball 2001                                         | \[baseball2001\]  |
-| Backyard Baseball 2003                                         | \[baseball2003\]  |
-| Backyard Football                                              | \[football\]      |
-| Backyard Football 2002                                         | \[football2002\]  |
-| Bear Stormin'                                                  | \[brstorm\]       |
-| Big Thinkers First Grade                                       | \[thinker1\]      |
-| Big Thinkers Kindergarten                                      | \[thinkerk\]      |
-| Blue's 123 Time Activities                                     | \[Blues123Time\]  |
-| Blue's ABC Time Activities                                     | \[BluesABCTime\]  |
-| Blue's Art Time Activities                                     | \[arttime\]       |
-| Blue's Birthday Adventure                                      | \[BluesBirthday\] |
-| Blue's Reading Time Activities                                 | \[readtime\]      |
-| Fatty Bear's Birthday Surprise                                 | \[fbear\]         |
-| Fatty Bear's Fun Pack                                          | \[fbpack\]        |
-| Freddi Fish 1: The Case of the Missing Kelp Seeds              | \[freddi\]        |
-| Freddi Fish 2: The Case of the Haunted Schoolhouse             | \[freddi2\]       |
-| Freddi Fish 3: The Case of the Stolen Conch Shell              | \[freddi3\]       |
-| Freddi Fish 4: The Case of the Hogfish Rustlers of Briny Gulch | \[freddi4\]       |
-| Freddi Fish 5: The Case of the Creature of Coral Cove          | \[freddicove\]    |
-| Freddi Fish and Luther's Maze Madness                          | \[maze\]          |
-| Freddi Fish and Luther's Water Worries                         | \[water\]         |
-| Let's Explore the Airport with Buzzy                           | \[airport\]       |
-| Let's Explore the Farm with Buzzy                              | \[farm\]          |
-| Let's Explore the Jungle with Buzzy                            | \[jungle\]        |
-| Pajama Sam: Games to Play on Any Day                           | \[pjgames\]       |
-| Pajama Sam 1: No Need to Hide When It's Dark Outside           | \[pajama\]        |
-| Pajama Sam 2: Thunder and Lightning Aren't so Frightening      | \[pajama2\]       |
-| Pajama Sam 3: You Are What You Eat From Your Head to Your Feet | \[pajama3\]       |
-| Pajama Sam's Lost & Found                                      | \[lost\]          |
-| Pajama Sam's Sock Works                                        | \[socks\]         |
-| Putt-Putt Enters the Race                                      | \[puttrace\]      |
-| Putt-Putt Goes to the Moon                                     | \[puttmoon\]      |
-| Putt-Putt Joins the Circus                                     | \[puttcircus\]    |
-| Putt-Putt Joins the Parade                                     | \[puttputt\]      |
-| Putt-Putt Saves the Zoo                                        | \[puttzoo\]       |
-| Putt-Putt Travels Through Time                                 | \[putttime\]      |
-| Putt-Putt and Pep's Balloon-O-Rama                             | \[balloon\]       |
-| Putt-Putt and Pep's Dog on a Stick                             | \[dog\]           |
-| Putt-Putt & Fatty Bear's Activity Pack                         | \[activity\]      |
-| Putt-Putt's Fun Pack                                           | \[funpack\]       |
-| SPY Fox 1: Dry Cereal                                          | \[spyfox\]        |
-| SPY Fox 2: Some Assembly Required                              | \[spyfox2\]       |
-| SPY Fox 3: Operation Ozone                                     | \[spyozon\]       |
-| SPY Fox in Cheese Chase                                        | \[chase\]         |
-| SPY Fox in Hold the Mustard                                    | \[mustard\]       |
+| Humongous Entertainment (SCUMM) Games:                                         |                       |
+| ------------------------------------------------------------------------------ | --------------------- |
+| Backyard Baseball                                                              | \[baseball\]          |
+| Backyard Baseball 2001                                                         | \[baseball2001\]      |
+| Backyard Baseball 2003                                                         | \[baseball2003\]      |
+| Backyard Football                                                              | \[football\]          |
+| Backyard Football 2002                                                         | \[football2002\]      |
+| Bear Stormin'                                                                  | \[brstorm\]           |
+| Big Thinkers First Grade                                                       | \[thinker1\]          |
+| Big Thinkers Kindergarten                                                      | \[thinkerk\]          |
+| Blue's 123 Time Activities                                                     | \[Blues123Time\]      |
+| Blue's ABC Time Activities                                                     | \[BluesABCTime\]      |
+| Blue's Art Time Activities                                                     | \[arttime\]           |
+| Blue's Birthday Adventure                                                      | \[BluesBirthday\]     |
+| Blue's Reading Time Activities                                                 | \[readtime\]          |
+| Fatty Bear's Birthday Surprise                                                 | \[fbear\]             |
+| Fatty Bear's Fun Pack                                                          | \[fbpack\]            |
+| Freddi Fish 1: The Case of the Missing Kelp Seeds                              | \[freddi\]            |
+| Freddi Fish 2: The Case of the Haunted Schoolhouse                             | \[freddi2\]           |
+| Freddi Fish 3: The Case of the Stolen Conch Shell                              | \[freddi3\]           |
+| Freddi Fish 4: The Case of the Hogfish Rustlers of Briny Gulch                 | \[freddi4\]           |
+| Freddi Fish 5: The Case of the Creature of Coral Cove                          | \[freddicove\]        |
+| Freddi Fish and Luther's Maze Madness                                          | \[maze\]              |
+| Freddi Fish and Luther's Water Worries                                         | \[water\]             |
+| Let's Explore the Airport                                                      | \[airport\]           |
+| Let's Explore the Farm                                                         | \[farm\]              |
+| Let's Explore the Jungle                                                       | \[jungle\]            |
+| Pajama Sam: Games to Play on Any Day                                           | \[pjgames\]           |
+| Pajama Sam 1: No Need to Hide When It's Dark Outside                           | \[pajama\]            |
+| Pajama Sam 2: Thunder and Lightning Aren't so Frightening                      | \[pajama2\]           |
+| Pajama Sam 3: You Are What You Eat From Your Head to Your Feet                 | \[pajama3\]           |
+| Pajama Sam's Lost & Found                                                      | \[lost\]              |
+| Pajama Sam's Sock Works                                                        | \[socks\]             |
+| Putt-Putt Enters the Race                                                      | \[puttrace\]          |
+| Putt-Putt Goes to the Moon                                                     | \[puttmoon\]          |
+| Putt-Putt Joins the Circus                                                     | \[puttcircus\]        |
+| Putt-Putt Joins the Parade                                                     | \[puttputt\]          |
+| Putt-Putt Saves the Zoo                                                        | \[puttzoo\]           |
+| Putt-Putt Travels Through Time                                                 | \[putttime\]          |
+| Putt-Putt and Pep's Balloon-O-Rama                                             | \[balloon\]           |
+| Putt-Putt and Pep's Dog on a Stick                                             | \[dog\]               |
+| Putt-Putt & Fatty Bear's Activity Pack                                         | \[activity\]          |
+| Putt-Putt's Fun Pack                                                           | \[funpack\]           |
+| Spy Fox in \"Dry Cereal\"                                                      | \[spyfox\]            |
+| Spy Fox 2: \"Some Assembly Required\"                                          | \[spyfox2\]           |
+| Spy Fox 3: \"Operation Ozone\"                                                 | \[spyozon\]           |
+| Spy Fox in Cheese Chase                                                        | \[chase\]             |
+| Spy Fox in Hold the Mustard                                                    | \[mustard\]           |
 
 > The following games should load but are not yet fully playable. Play
 > these at your own risk, and please do not file bug reports about them.
 > If you want the latest updates on game compatibility, visit our web
 > site and view the compatibility chart.
 
-|                      |                       |
-| -------------------- | --------------------- |
-| Backyard Soccer      | \[soccer\]            |
-| Backyard Soccer MLS  | \[soccermls\]         |
-| Backyard Soccer 2004 | \[soccer2004\]        |
-| Blue's Treasure Hunt | \[BluesTreasureHunt\] |
+|                                                                                |                       |
+| ------------------------------------------------------------------------------ | --------------------- |
+| Backyard Soccer                                                                | \[soccer\]            |
+| Backyard Soccer MLS                                                            | \[soccermls\]         |
+| Backyard Soccer 2004                                                           | \[soccer2004\]        |
+| Blue's Treasure Hunt                                                           | \[BluesTreasureHunt\] |
 
-| Animation Magic (Composer) Games: |                 |
-| --------------------------------- | --------------- |
-| Darby the Dragon                  | \[darby\]       |
-| Gregory and the Hot Air Balloon   | \[gregory\]     |
-| Magic Tales: Liam Finds a Story   | \[liam\]        |
-| The Princess and the Crab         | \[princess\]    |
-| Sleeping Cub's Test of Courage    | \[sleepingcub\] |
+| Animation Magic (Composer) Games:                                              |                       |
+| ------------------------------------------------------------------------------ | --------------------- |
+| Darby the Dragon                                                               | \[darby\]             |
+| Gregory and the Hot Air Balloon                                                | \[gregory\]           |
+| Magic Tales: Liam Finds a Story                                                | \[liam\]              |
+| The Princess and the Crab                                                      | \[princess\]          |
+| Sleeping Cub's Test of Courage                                                 | \[sleepingcub\]       |
 
-| Living Books Games:                       |                |
-| ----------------------------------------- | -------------- |
-| Aesop's Fables: The Tortoise and the Hare | \[tortoise\]   |
-| Arthur's Birthday                         | \[arthurbday\] |
-| Arthur's Teacher Trouble                  | \[arthur\]     |
-| Dr. Seuss's ABC                           | \[seussabc\]   |
-| Green Eggs and Ham                        | \[greeneggs\]  |
-| Harry and the Haunted House               | \[harryhh\]    |
-| Just Grandma and Me                       | \[grandma\]    |
-| Little Monster at School                  | \[lilmonster\] |
-| Ruff's Bone                               | \[ruff\]       |
-| Sheila Rae, the Brave                     | \[sheila\]     |
-| Stellaluna                                | \[stellaluna\] |
-| The Berenstain Bears Get in a Fight       | \[bearfight\]  |
-| The Berenstain Bears in the Dark          | \[beardark\]   |
-| The New Kid on the Block                  | \[newkid\]     |
+| Living Books Games:                                                            |                       |
+| ------------------------------------------------------------------------------ | --------------------- |
+| Aesop's Fables: The Tortoise and the Hare                                      | \[tortoise\]          |
+| Arthur's Birthday                                                              | \[arthurbday\]        |
+| Arthur's Teacher Trouble                                                       | \[arthur\]            |
+| Dr. Seuss's ABC                                                                | \[seussabc\]          |
+| Green Eggs and Ham                                                             | \[greeneggs\]         |
+| Harry and the Haunted House                                                    | \[harryhh\]           |
+| Just Grandma and Me                                                            | \[grandma\]           |
+| Little Monster at School                                                       | \[lilmonster\]        |
+| Ruff's Bone                                                                    | \[ruff\]              |
+| Sheila Rae, the Brave                                                          | \[sheila\]            |
+| Stellaluna                                                                     | \[stellaluna\]        |
+| The Berenstain Bears Get in a Fight                                            | \[bearfight\]         |
+| The Berenstain Bears in the Dark                                               | \[beardark\]          |
+| The New Kid on the Block                                                       | \[newkid\]            |
 
 The following games are based on the SCUMM engine, but NOT supported by
 ScummVM (yet):
@@ -694,7 +690,8 @@ Humongous Entertainment games:
 
 ### 3.5) Extra Data Files
 
-Some games require additional files that are not part of the original data. Those files can generally be found in our [Downloads](https://www.scummvm.org/downloads/#extras) page.
+Some games require additional files that are not part of the original data. 
+Those files can generally be found in our [Downloads](https://www.scummvm.org/downloads/#extras) page.
 
 Games that require additional data:
   - Beneath a Steel Sky (sky.cpt)
@@ -848,9 +845,10 @@ All game files and the walkthrough can be downloaded from:
 ### 3.9) Flight of the Amazon Queen notes
 
 Only the original non-freeware version of Flight of the Amazon Queen
-(from original CD), requires the `queen.tbl` datafile (available from the `Downloads` page on our website) in either the
-directory containing the `queen.1` game data file, in your extrapath, or
-in the directory where your ScummVM executable resides.
+(from original CD), requires the `queen.tbl` datafile (available from 
+the `Downloads` page on our website) in either the directory containing 
+the `queen.1` game data file, in your extrapath, or in the directory 
+where your ScummVM executable resides.
 
 Alternatively, you can use the `compress_queen` tool from the tools
 package to 'rebuild' your FOTAQ data file to include the table for that
