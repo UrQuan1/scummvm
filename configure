@@ -163,6 +163,7 @@ _freetype2=auto
 _taskbar=auto
 _updates=no
 _libunity=auto
+_dialogs=auto
 # Default option behavior yes/no
 _debug_build=auto
 _release_build=auto
@@ -179,6 +180,7 @@ _no_undefined_var_template=no
 _no_pragma_pack=no
 _bink=yes
 _cloud=auto
+_pandoc=no
 # Default vkeybd/keymapper/eventrec options
 _vkeybd=no
 _keymapper=no
@@ -223,6 +225,10 @@ _nasmpath="$PATH"
 NASMFLAGS=""
 NASM=""
 _tainted_build=no
+PANDOC=""
+_pandocpath="$PATH"
+_pandocoutput="README"
+_pandocformat="plain"
 # The following variables are automatically detected, and should not
 # be modified otherwise. Consider them read-only.
 _posix=no
@@ -1003,6 +1009,7 @@ Optional Features:
   --disable-translation    don't build support for translated messages
   --disable-taskbar        don't build support for taskbar and launcher integration
   --disable-cloud          don't build cloud support
+  --disable-system-dialogs don't build support for system dialogs
   --enable-vkeybd          build virtual keyboard support
   --enable-keymapper       build key mapper support
   --enable-eventrecorder   enable event recording functionality
@@ -1086,6 +1093,9 @@ Optional Libraries:
 
   --with-nasm-prefix=DIR   prefix where nasm executable is installed (optional)
   --disable-nasm           disable assembly language optimizations [autodetect]
+
+	--with-pandoc-output=FILE  filename to convert README.md to (optional)
+	--with-pandoc-format=FORMAT   pandoc format to use during the conversion (optional)
 
   --with-readline-prefix=DIR   prefix where readline is installed (optional)
   --disable-readline       disable readline support in text console [autodetect]
@@ -1197,6 +1207,8 @@ for ac_option in $@; do
 	--disable-freetype2)      _freetype2=no   ;;
 	--enable-taskbar)         _taskbar=yes    ;;
 	--disable-taskbar)        _taskbar=no     ;;
+	--enable-system-dialogs)  _dialogs=yes    ;;
+	--disable-system-dialogs) _dialogs=no     ;;
 	--enable-sdlnet)          _sdlnet=yes     ;;
 	--disable-sdlnet)         _sdlnet=no      ;;
 	--enable-libcurl)         _libcurl=yes     ;;
@@ -1385,6 +1397,16 @@ for ac_option in $@; do
 	--with-nasm-prefix=*)
 		arg=`echo $ac_option | cut -d '=' -f 2`
 		_nasmpath="$arg:$arg/bin"
+		;;
+	--with-pandoc-output=*)
+		arg=`echo $ac_option | cut -d '=' -f 2`
+		_pandocoutput="$arg"
+		_pandoc=yes
+		;;
+	--with-pandoc-format=*)
+		arg=`echo $ac_option | cut -d '=' -f 2`
+		_pandocformat="$arg"
+		_pandoc=yes
 		;;
 	--with-staticlib-prefix=*)
 		_staticlibpath=`echo $ac_option | cut -d '=' -f 2`
@@ -5066,6 +5088,32 @@ fi
 define_in_config_if_yes $_nasm 'USE_NASM'
 
 #
+# Check for pandoc
+#
+if test "$_pandoc" = yes ; then
+  echocheck "pandoc"
+
+  IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS=$SEPARATOR
+
+  for path_dir in $_pandocpath; do
+    if test -x "$path_dir/pandoc$NATIVEEXEEXT" ; then
+      PANDOC="$path_dir/pandoc$NATIVEEXEEXT"
+      break
+    fi
+  done
+
+	IFS="$ac_save_ifs"
+
+  if ! test "$PANDOC" ; then
+    _pandoc = no
+  fi
+
+fi
+
+echo $_pandoc
+define_in_config_if_yes $_pandoc 'USE_PANDOC'
+
+#
 # Enable vkeybd / keymapper / event recorder
 #
 define_in_config_if_yes $_vkeybd 'ENABLE_VKEYBD'
@@ -5137,6 +5185,31 @@ else
 	esac
 fi
 define_in_config_if_yes $_taskbar 'USE_TASKBAR'
+
+#
+# Check whether to build system dialogs support
+#
+echo_n "Building system dialogs support... "
+if test "$_dialogs" = "no"; then
+	echo "no"
+else
+	case $_host_os in
+	mingw*)
+		append_var LIBS "-lole32 -luuid"
+		echo "win32"
+		_dialogs=yes
+		;;
+	darwin*)
+		echo "osx"
+		_dialogs=yes
+		;;
+	*)
+		echo "no"
+		_dialogs=no
+		;;
+	esac
+fi
+define_in_config_if_yes $_dialogs 'USE_SYSDIALOGS'
 
 #
 # Check whether to build Bink video support
@@ -5516,6 +5589,9 @@ EXEPRE := $HOSTEXEPRE
 EXEEXT := $HOSTEXEEXT
 NASM := $NASM
 NASMFLAGS := $NASMFLAGS
+PANDOC := $PANDOC
+PANDOCOUTPUT := $_pandocoutput
+PANDOCFORMAT := $_pandocformat
 ZLIB_LIBS := $ZLIB_LIBS
 ZLIB_CFLAGS := $ZLIB_CFLAGS
 

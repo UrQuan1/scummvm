@@ -43,6 +43,58 @@ void Processor::screen_mssg_off() {
 	}
 }
 
+static const uint32 zchar_runes[] = {
+	// This mapping is based on the Amiga font in the Z-Machine
+	// specification, with some liberties taken.
+
+	0x16AA, // RUNIC LETTER AC A
+	0x16D2, // RUNIC LETTER BERKANAN BEORC BJARKAN B
+	0x16C7, // RUNIC LETTER IWAZ EOH
+	0x16D1, // RUNIC LETTER DAGAZ DAEG D
+	0x16D6, // RUNIC LETTER EHWAZ EH E
+	0x16A0, // RUNIC LETTER FEHU FEOH FE F
+	0x16B7, // RUNIC LETTER GEBO GYFU G
+	0x16BB, // RUNIC LETTER HAEGL H
+	0x16C1, // RUNIC LETTER ISAZ IS ISS I
+	0x16C4, // RUNIC LETTER GER
+	0x16E6, // RUNIC LETTER LONG-BRANCH-YR
+	0x16DA, // RUNIC LETTER LAUKAZ LAGU LOGR L
+	0x16D7, // RUNIC LETTER MANNAZ MAN M
+	0x16BE, // RUNIC LETTER NAUDIZ NYD NAUD N
+	0x16A9, // RUNIC LETTER OS O
+	0x16C8, // RUNIC LETTER PERTHO PEORTH P
+	0x16B3, // RUNIC LETTER CEN
+	0x16B1, // RUNIC LETTER RAIDO RAD REID R
+	0x16CB, // RUNIC LETTER SIGEL LONG-BRANCH-SOL S
+	0x16CF, // RUNIC LETTER TIWAZ TIR TYR T
+	0x16A2, // RUNIC LETTER URUZ UR U
+	0x16E0, // RUNIC LETTER EAR
+	0x16B9, // RUNIC LETTER WUNJO WYNN W
+	0x16C9, // RUNIC LETTER ALGIZ EOLHX
+	0x16A5, // RUNIC LETTER W
+	0x16DF  // RUNIC LETTER OTHALAN ETHEL O
+};
+
+uint32 Processor::zchar_to_unicode_rune(zchar c) {
+	// There are only runic characters for a-z. Some versions of Beyond
+ 	// Zork will render the conversation between Prince Foo and the black
+	// rider in runic script, even though it contained upper case letters.
+	// This produced an ugly mix of runes and map-drawing characters, etc.
+	// which is probably why it was removed in later versions.
+	//
+	// Apart from the runes, I believe the up/down arrows are the only
+	// special characters to be printed in the lower window. Maybe they,
+	// too, should be mapped to Unicode characters, but since they are
+	// mapped to \ and ] respectively that probably menas we can convert
+	// upper case to lower case and use the appropriate rune for that.
+	if (c >= 'a' && c <= 'z')
+		return zchar_runes[c - 'a'];
+	else if (c >= 'A' && c <= 'Z')
+		return zchar_runes[c - 'A'];
+	else
+		return 0;
+}
+
 void Processor::screen_char(zchar c) {
 	if (gos_linepending && (gos_curwin == gos_linewin)) {
 		gos_cancel_pending_line();
@@ -102,7 +154,18 @@ void Processor::screen_char(zchar c) {
 	} else if (gos_curwin == gos_lower) {
 		if (c == ZC_RETURN)
 			glk_put_char('\n');
-		else glk_put_char_uni(c);
+		else {
+			if (curr_font == GRAPHICS_FONT) {
+				uint32 runic_char = zchar_to_unicode_rune(c);
+				if (runic_char != 0) {
+					glk_set_style(style_User2);
+					glk_put_char_uni(runic_char);
+					glk_set_style(style_User1);
+				} else
+					glk_put_char_uni(c);
+			} else
+				glk_put_char_uni(c);
+		}
 	}
 }
 
@@ -179,8 +242,8 @@ void Processor::z_erase_window() {
 }
 
 void Processor::z_get_cursor() {
-	storew((zword) (zargs[0] + 0), cury);
-	storew((zword) (zargs[0] + 2), curx);
+	storew((zword)(zargs[0] + 0), cury);
+	storew((zword)(zargs[0] + 2), curx);
 }
 
 void Processor::z_print_table() {

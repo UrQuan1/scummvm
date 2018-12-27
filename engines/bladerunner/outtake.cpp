@@ -23,6 +23,7 @@
 #include "bladerunner/outtake.h"
 
 #include "bladerunner/bladerunner.h"
+#include "bladerunner/subtitles.h"
 #include "bladerunner/vqa_player.h"
 
 #include "common/debug.h"
@@ -41,10 +42,10 @@ void OuttakePlayer::play(const Common::String &name, bool noLocalization, int co
 	if (!noLocalization) {
 		resName = resName + "_" + _vm->_languageCode;
 	}
-
+	Common::String resNameNoVQASuffix = resName;
 	resName = resName + ".VQA";
 
-	VQAPlayer vqa_player(_vm, &_vm->_surfaceFront, resName);
+	VQAPlayer vqa_player(_vm, &_vm->_surfaceBack, resName); // surfaceBack is needed here for subtitles rendering properly, original was _surfaceFront here
 
 	vqa_player.open();
 
@@ -56,10 +57,13 @@ void OuttakePlayer::play(const Common::String &name, bool noLocalization, int co
 				return;
 
 		int frame = vqa_player.update();
+		blit(_vm->_surfaceBack, _vm->_surfaceFront); // This helps to make subtitles disappear properly, if the video is rendered in surface back and then pushed to the front surface
 		if (frame == -3)
 			break;
 
 		if (frame >= 0) {
+			_vm->_subtitles->getOuttakeSubsText(resNameNoVQASuffix, frame);
+			_vm->_subtitles->tickOuttakes(_vm->_surfaceFront);
 			_vm->blitToScreen(_vm->_surfaceFront);
 		}
 

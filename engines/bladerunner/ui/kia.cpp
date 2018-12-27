@@ -38,6 +38,7 @@
 #include "bladerunner/settings.h"
 #include "bladerunner/slice_renderer.h"
 #include "bladerunner/text_resource.h"
+#include "bladerunner/time.h"
 #include "bladerunner/ui/kia_log.h"
 #include "bladerunner/ui/kia_section_base.h"
 #include "bladerunner/ui/kia_section_clues.h"
@@ -52,6 +53,7 @@
 #include "bladerunner/ui/kia_shapes.h"
 #include "bladerunner/ui/ui_image_picker.h"
 #include "bladerunner/vqa_player.h"
+#include "bladerunner/subtitles.h"
 
 #include "common/str.h"
 #include "common/keyboard.h"
@@ -370,6 +372,8 @@ void KIA::tick() {
 	}
 	_vm->_mouse->draw(_vm->_surfaceFront, mouse.x, mouse.y);
 
+	_vm->_subtitles->tick(_vm->_surfaceFront);
+
 	_vm->blitToScreen(_vm->_surfaceFront);
 	_vm->_system->delayMillis(10);
 
@@ -665,7 +669,7 @@ void KIA::init() {
 	}
 	_vm->_audioPlayer->playAud(_vm->_gameInfo->getSfxTrack(501), 70, 0, 0, 50, 0);
 
-	// TODO: time->lock();
+	_vm->_time->pause();
 }
 
 void KIA::unload() {
@@ -703,7 +707,7 @@ void KIA::unload() {
 
 	_currentSectionId = kKIASectionNone;
 
-	// TODO: Unfreeze game time
+	_vm->_time->resume();
 
 	if (!_vm->_settings->isLoadingGame() && _vm->_gameIsRunning) {
 		_vm->_scene->resume();

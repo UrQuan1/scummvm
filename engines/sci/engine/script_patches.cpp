@@ -118,6 +118,8 @@ static const char *const selectorNameTable[] = {
 	"cycler",       // Space Quest 4 / system selector
 	"setLoop",      // Laura Bow 1 Colonel's Bequest, QFG4
 	"ignoreActors", // Laura Bow 1 Colonel's Bequest
+	"at",           // Longbow
+	"owner",        // Longbow
 #ifdef ENABLE_SCI32
 	"newWith",      // SCI2 array script
 	"scrollSelections", // GK2
@@ -156,7 +158,10 @@ static const char *const selectorNameTable[] = {
 	"plane",        // RAMA
 	"state",        // RAMA
 	"getSubscriberObj", // RAMA
+	"loop",         // QFG4
+	"moveSpeed",    // QFG4
 	"setLooper",    // QFG4
+	"value",        // QFG4
 #endif
 	NULL
 };
@@ -197,7 +202,9 @@ enum ScriptPatcherSelectors {
 	SELECTOR_modeless,
 	SELECTOR_cycler,
 	SELECTOR_setLoop,
-	SELECTOR_ignoreActors
+	SELECTOR_ignoreActors,
+	SELECTOR_at,
+	SELECTOR_owner
 #ifdef ENABLE_SCI32
 	,
 	SELECTOR_newWith,
@@ -237,7 +244,10 @@ enum ScriptPatcherSelectors {
 	SELECTOR_plane,
 	SELECTOR_state,
 	SELECTOR_getSubscriberObj,
-	SELECTOR_setLooper
+	SELECTOR_loop,
+	SELECTOR_moveSpeed,
+	SELECTOR_setLooper,
+	SELECTOR_value
 #endif
 };
 
@@ -1810,80 +1820,27 @@ static const uint16 gk1Day5SnakeAttackPatch2[] = {
 //  something that does call normalize.
 //
 // We fix this by calling GKEgo:normalize after Gabriel finishes walking
-//  through the door in sGabeEnters:changeState(5). This requires overwriting
-//  the instructions in state 4 which set GKEgo:ignoreActors to 0 but that's
-//  okay because normalize does that.
-//
-// There are two versions of this patch due to two significantly different
-//  versions of this script. The first is in english pc floppy prior to
-//  Sierra's 1.0b patch and the second is in cd and localized floppies. The
-//  script was restructured and the compiler used different sized instructions.
+//  through the door in sGabeEnters:changeState(4). This replaces setting
+//  GKEgo:ignoreActors to 0 but that's okay because normalize does that.
 //
 // Applies to: All PC Floppy and CD versions. TODO: Test Mac, should apply
-// Responsible method: sGabeEnters:changeState
+// Responsible method: sGabeEnters:changeState(4)
 // Fixes bug #10780
-static const uint16 gk1PoliceEgoSpeedFixV1Signature[] = {
-	0x31, 0x1f,                         // bnt 1f [ state 5 ]
-	SIG_ADDTOOFFSET(+19),
-	0x38, SIG_SELECTOR16(ignoreActors), // pushi ignoreActors
+static const uint16 gk1PoliceEgoSpeedFixSignature[] = {
+	0x38, SIG_MAGICDWORD,               // pushi ignoreActors
+	      SIG_SELECTOR16(ignoreActors),
 	0x78,                               // push1
 	0x76,                               // push0
-	0x81, 0x00,                         // lag 0
-	0x4a, SIG_UINT16(0x000c),           // send c [ GKEgo:setPri: -1, ignoreActors: 0 ]
-	0x33, 0x45,                         // jmp 45 [ end of method ]
-	SIG_MAGICDWORD,
-	0x3c,                               // dup
-	0x35, 0x05,                         // ldi 5
-	0x1a,                               // eq?
-	0x31, 0x3f,                         // bnt 3f [ end of method ]
+	0x81, 0x00,                         // lag 00
+	0x4a, SIG_UINT16(0x000c),           // send c [ GKEgo: ..., ignoreActors: 0 ]
 	SIG_END
 };
 
-static const uint16 gk1PoliceEgoSpeedFixV1Patch[] = {
-	0x31, 0x1b,                         // bnt 1b [ state 5 ]
-	SIG_ADDTOOFFSET(+19),
-	0x81, 0x00,                         // lag 0
-	0x4a, PATCH_UINT16(0x0006),         // send 6 [ GKEgo:setPri: -1 ]
-	0x3a,                               // toss
-	0x48,                               // ret
-	0x33, 0x00,                         // jmp 0 [ waste 2 bytes ]
+static const uint16 gk1PoliceEgoSpeedFixPatch[] = {
 	0x38, PATCH_SELECTOR16(normalize),  // pushi normalize
-	0x76,                               // push0
-	0x81, 0x00,                         // lag 0
-	0x4a, PATCH_UINT16(0x0004),         // send 4 [ GKEgo:normalize ]
-	PATCH_END
-};
-
-// cd / localized floppy / floppy 1.0b version of the above signature/patch
-static const uint16 gk1PoliceEgoSpeedFixV2Signature[] = {
-	0x31, 0x27,                         // bnt 27 [ state 5 ]
-	SIG_ADDTOOFFSET(+26),
-	0x38, SIG_SELECTOR16(ignoreActors), // pushi ignoreActors
-	0x78,                               // push1
-	0x76,                               // push0
-	0x81, 0x00,                         // lag 0
-	0x4a, SIG_UINT16(0x000c),           // send c [ GKEgo:setPri: -1, ignoreActors: 0 ]
-	0x32, SIG_UINT16(0x004c),           // jmp 004c [ end of method ]
-	SIG_MAGICDWORD,
-	0x3c,                               // dup
-	0x35, 0x05,                         // ldi 5
-	0x1a,                               // eq?
-	0x31, 0x46,                         // bnt 46 [ end of method ]
-	SIG_END
-};
-
-static const uint16 gk1PoliceEgoSpeedFixV2Patch[] = {
-	0x31, 0x24,                         // bnt 24 [ state 5 ]
-	SIG_ADDTOOFFSET(+26),
-	0x81, 0x00,                         // lag 0
-	0x4a, PATCH_UINT16(0x0006),         // send 6 [ GKEgo:setPri: -1 ]
-	0x3a,                               // toss
-	0x48,                               // ret
-	0x32, PATCH_UINT16(0x0000),         // jmp 0 [ waste 3 bytes ]
-	0x38, PATCH_SELECTOR16(normalize),  // pushi 0300 [ normalize ]
-	0x76,                               // push0
-	0x81, 0x00,                         // lag 0
-	0x4a, PATCH_UINT16(0x0004),         // send 4 [ GKEgo:normalize ]
+	0x39, 0x00,                         // pushi 00
+	0x81, 0x00,                         // lag 00
+	0x4a, PATCH_UINT16(0x000a),         // send a [ GKEgo: ..., normalize ]
 	PATCH_END
 };
 
@@ -2176,8 +2133,7 @@ static const SciScriptPatcherEntry gk1Signatures[] = {
 	{  true,   230, "fix day 6 police beignet timer issue (1/2)",  1, gk1Day6PoliceBeignetSignature1,   gk1Day6PoliceBeignetPatch1 },
 	{  true,   230, "fix day 6 police beignet timer issue (2/2)",  1, gk1Day6PoliceBeignetSignature2,   gk1Day6PoliceBeignetPatch2 },
 	{  true,   230, "fix day 6 police sleep timer issue",          1, gk1Day6PoliceSleepSignature,      gk1Day6PoliceSleepPatch },
-	{  true,   230, "fix police station ego speed (version 1)",    1, gk1PoliceEgoSpeedFixV1Signature,  gk1PoliceEgoSpeedFixV1Patch },
-	{  true,   230, "fix police station ego speed (version 2)",    1, gk1PoliceEgoSpeedFixV2Signature,  gk1PoliceEgoSpeedFixV2Patch },
+	{  true,   230, "fix police station ego speed",                1, gk1PoliceEgoSpeedFixSignature,    gk1PoliceEgoSpeedFixPatch },
 	{  true,   240, "fix day 5 mosely veve missing points",        1, gk1Day5MoselyVevePointsSignature, gk1Day5MoselyVevePointsPatch },
 	{  true,   250, "fix ego speed when exiting drug store",       1, gk1DrugStoreEgoSpeedFixSignature, gk1DrugStoreEgoSpeedFixPatch },
 	{  true,   260, "fix day 5 snake attack (1/2)",                1, gk1Day5SnakeAttackSignature1,     gk1Day5SnakeAttackPatch1 },
@@ -3561,6 +3517,181 @@ static const uint16 longbowPatchBerryBushFix[] = {
 	PATCH_END
 };
 
+// The camp (room 150) has a bug that can prevent the outlaws from ever rescuing
+//  the boys at sunset on day 5 or 6. The rescue occurs when entering camp as an
+//  abbey monk after leaving town exactly 3 times but this assumes that the
+//  counter can't exceed this. Wearing a different disguise can increment the
+//  counter beyond 3 at which point sunset can never occur.
+//
+// We fix this by patching the counter tests to greater than or equals. This
+//  makes them consistent with the other scripts that test this global variable.
+//
+// Applies to: English PC Floppy, German PC Floppy, English Amiga Floppy
+// Responsible method: local procedure #3 in script 150
+// Fixes bug #10839
+static const uint16 longbowSignatureCampSunsetFix[] = {
+	SIG_MAGICDWORD,
+	0x89, 0x8e,                     // lsg 8e [ times left town ]
+	0x35, 0x03,                     // ldi 03
+	0x1a,                           // eq?
+	SIG_END
+};
+
+static const uint16 longbowPatchCampSunsetFix[] = {
+	PATCH_ADDTOOFFSET(+4),
+	0x20,                        	// ge?
+	PATCH_END
+};
+
+// The town map (room 260) has a bug that can send Robin to the wrong room.
+//  Loading the map from town on day 5 or 6 automatically sends Robin to camp
+//  (room 150) after leaving town more than twice. The intent is to start the
+//  sunset scene where the outlaws rescue the boys, but the map doesn't test the
+//  correct sunset conditions and can load an empty camp, even on the wrong day.
+//
+// We fix this by changing the map's logic to match the camp's by requiring the
+//  abbey monk disguise to be worn and the rescue flag to not be set.
+//
+// Applies to: English PC Floppy, German PC Floppy, English Amiga Floppy
+// Responsible method: rm260:init
+// Fixes bug #10839
+static const uint16 longbowSignatureTownMapSunsetFix[] = {
+	SIG_MAGICDWORD,
+	0x39, 0x05,                     // pushi 05
+	0x81, 0x82,                     // lag 82 [ day ]
+	0x24,                           // le?
+	0x30, SIG_UINT16(0x0089),       // bnt 0089 [ no sunset if day < 5 ]
+	0x60,                           // pprev
+	0x35, 0x06,                     // ldi 06
+	0x24,                           // le?
+	0x30, SIG_UINT16(0x0082),       // bnt 0082 [ no sunset if day > 6 ]
+	0x89, 0x8e,                     // lsg 8e
+	0x35, 0x01,                     // ldi 01
+	SIG_END
+};
+
+static const uint16 longbowPatchTownMapSunsetFix[] = {
+	0x89, 0x7e,                     // lsg 7e [ current disguise ]
+	0x35, 0x05,                     // ldi 05 [ abbey monk ]
+	0x1c,                           // ne?
+	0x2f, 0x06,                     // bt 06 [ no sunset if disguise != abbey monk ]
+	0x78,                           // push1
+	0x39, 0x38,                     // pushi 38
+	0x45, 0x05, 0x02,               // callb proc0_5 [ is rescue flag set? ]
+	0x2e, PATCH_UINT16(0x0081),     // bt 0081 [ no sunset if rescue flag is set ]
+	0x81, 0x8e,                     // lag 8e
+	0x78,                           // push1 [ save a byte ]
+	PATCH_END
+};
+
+// Ending day 5 or 6 by choosing to attack the castle fails to set the rescue
+//  flag which tells the next day what to do. This flag is set when rescuing
+//  the boys yourself and when the outlaws rescue them at sunset. Without this
+//  flag, the sunset rescue can repeat the next day and break the game.
+//
+// We fix this by setting the flag when returning the boys to their mother in
+//  room 250 after the attack.
+//
+// Applies to: English PC Floppy, German PC Floppy, English Amiga Floppy
+// Responsible method: boysSaved:changeState(0)
+// Fixes bug #10839
+static const uint16 longbowSignatureRescueFlagFix[] = {
+	0x3c,                           // dup
+	0x35, 0x00,                     // ldi 00
+	0x1a,                           // eq?
+	0x30, SIG_MAGICDWORD,           // bnt 0003 [ state 1 ]
+	      SIG_UINT16(0x0003),
+	0x32, SIG_UINT16(0x025b),       // jmp 025b [ end of method ]
+	SIG_END
+};
+
+static const uint16 longbowPatchRescueFlagFix[] = {
+	0x2f, 0x08,                     // bt 08 [ state 1 ]
+	0x78,                           // push1
+	0x39, 0x38,                     // pushi 38
+	0x45, 0x06, 0x02,               // callb proc0_6 [ set rescue flag ]
+	0x3a,                           // toss
+	0x48,                           // ret
+	PATCH_END
+};
+
+// On day 7, Tuck can appear at camp to say that the widow wants to see you when
+//  she really doesn't. This scene is only supposed to occur if you haven't
+//  received the net but the script only tests if the net is currently in
+//  inventory, which it isn't if you've already used it or are in disguise.
+//
+// We fix this by testing the net's owner instead of inventory. If net:owner is
+//  non-zero then it's in inventory or in your cave or has been used.
+//
+// Applies to: English PC Floppy, German PC Floppy, English Amiga Floppy
+// Responsible method: local procedure #3 in script 150
+// Fixes bug #10847
+static const uint16 longbowSignatureTuckNetFix[] = {
+	SIG_MAGICDWORD,
+	0x30, SIG_UINT16(0x03a2),       // bnt 03a2 [ end of method ]
+	0x38, SIG_SELECTOR16(has),      // pushi has
+	0x78,                           // push1
+	0x39, 0x04,                     // pushi 04
+	0x81, 0x00,                     // lag 00
+	0x4a, 0x06,                     // send 6 [ ego: has 4 ]
+	0x18,                           // not
+	0x30, SIG_UINT16(0x0394),       // bnt 0394 [ end of method if net not in inventory ]
+	0x78,                           // push1
+	0x39, 0x47,                     // pushi 47
+	0x45, 0x05, 0x02,               // callb proc0_5 [ is flag 47 set? ]
+	0x18,                           // not
+	0x30, SIG_UINT16(0x038a),       // bnt 038a [ end of method ]
+	SIG_ADDTOOFFSET(+60),
+	0x32, SIG_UINT16(0x034b),       // jmp 034b [ end of method ]
+	SIG_END
+};
+
+static const uint16 longbowPatchTuckNetFix[] = {
+	0x31, 0x55,                     // bnt 55 [ skip scene, save a byte ]
+	0x39, PATCH_SELECTOR8(at),      // pushi at
+	0x78,                           // push1
+	0x39, 0x04,                     // pushi 04
+	0x81, 0x09,                     // lag 09
+	0x4a, 0x06,                     // send 6 [ Inv: at 4 ]
+	0x38, PATCH_SELECTOR16(owner),  // pushi owner
+	0x76,                           // push0
+	0x4a, 0x04,                     // send 4 [ net: owner? ]
+	0x2f, 0x44,                     // bt 44 [ skip scene if net:owner != 0 ]
+	0x78,                           // push1
+	0x39, 0x47,                     // pushi 47
+	0x45, 0x05, 0x02,               // callb proc0_5 [ is flag 47 set? ]
+	0x2f, 0x3c,                     // bt 3c [ skip scene, save 2 bytes ]
+	PATCH_END
+};
+
+// On day 9, room 350 outside the cobbler's hut is initialized incorrectly if
+//  disguised as a monk. The entrance to the hut is broken and several minor
+//  messages are incorrect. This is due to the room's script assuming that the
+//  only disguises that day are yeoman and merchant. A monk disguise causes some
+//  tests to pass and others to fail, leaving the room in an inconsistent state.
+//
+// We fix this by changing the yeoman disguise tests in the script to include
+//  the monk disguises. The disguise global is set to 4 for yeoman and 5 or 6
+//  for monk disguises so we patch the tests to be greater than or equals to.
+//
+// Applies to: English PC Floppy, German PC Floppy, English Amiga Floppy
+// Responsible methods: rm350:init, lobbsHut:doVerb, lobbsDoor:doVerb,
+//                      lobbsCover:doVerb, tailorDoor:doVerb
+// Fixes bug #10834
+static const uint16 longbowSignatureCobblerHut[] = {
+	SIG_MAGICDWORD,
+	0x89, 0x7e,                     // lsg 7e [ current disguise ]
+	0x35, 0x04,                     // ldi 04 [ yeoman ]
+	0x1a,                           // eq?    [ is current disguise yeoman? ]
+	SIG_END
+};
+
+static const uint16 longbowPatchCobblerHut[] = {
+	PATCH_ADDTOOFFSET(+4),
+	0x20,                           // ge? [ is current disguise yeoman or monk? ]
+	PATCH_END
+};
+
 // The Amiga version of room 530 adds a broken fDrunk:onMe method which prevents
 //  messages when clicking on the drunk on the floor of the pub and causes a
 //  signature mismatch on every click in the room. fDrunk:onMe passes an Event
@@ -3597,11 +3728,16 @@ static const uint16 longbowPatchAmigaPubFix[] = {
 	PATCH_END
 };
 
-//          script, description,                                      signature                     patch
+//          script, description,                                      signature                          patch
 static const SciScriptPatcherEntry longbowSignatures[] = {
-	{  true,   210, "hand code crash",                             5, longbowSignatureShowHandCode, longbowPatchShowHandCode },
-	{  true,   225, "arithmetic berry bush fix",                   1, longbowSignatureBerryBushFix, longbowPatchBerryBushFix },
-	{  true,   530, "amiga pub fix",                               1, longbowSignatureAmigaPubFix,  longbowPatchAmigaPubFix },
+	{  true,   150, "day 5/6 camp sunset fix",                     2, longbowSignatureCampSunsetFix,     longbowPatchCampSunsetFix },
+	{  true,   150, "day 7 tuck net fix",                          1, longbowSignatureTuckNetFix,        longbowPatchTuckNetFix },
+	{  true,   210, "hand code crash",                             5, longbowSignatureShowHandCode,      longbowPatchShowHandCode },
+	{  true,   225, "arithmetic berry bush fix",                   1, longbowSignatureBerryBushFix,      longbowPatchBerryBushFix },
+	{  true,   250, "day 5/6 rescue flag fix",                     1, longbowSignatureRescueFlagFix,     longbowPatchRescueFlagFix },
+	{  true,   260, "day 5/6 town map sunset fix",                 1, longbowSignatureTownMapSunsetFix,  longbowPatchTownMapSunsetFix },
+	{  true,   350, "day 9 cobbler hut fix",                      10, longbowSignatureCobblerHut,        longbowPatchCobblerHut },
+	{  true,   530, "amiga pub fix",                               1, longbowSignatureAmigaPubFix,       longbowPatchAmigaPubFix },
 	SCI_SIGNATUREENTRY_TERMINATOR
 };
 
@@ -7943,7 +8079,7 @@ static const uint16 qg4InnPathfindingPatch[] = {
 };
 
 // When autosave is enabled, Glory::save() (script 0) deletes savegame files in
-// a loop: while disk space is insufficient for a new save, or while there are
+// a loop, while disk space is insufficient for a new save, or while there are
 // 20+ saves. Since ScummVM handles slots differently and allows far more
 // slots, this deletes all but the most recent 19 manual saves, merely by
 // walking from room to room!
@@ -8579,22 +8715,576 @@ static const uint16 qfg4DoubleDoorSoundPatch[] = {
 	PATCH_END
 };
 
+// In the castle's iron safe room (643), the righthand door may send hero west
+// instead of east - if it was oiled before it was opened (not picked).
+//
+// The room uses local[2] to remember which door it last decided was nearest.
+// The proximity check when opening the right door doesn't reliably set
+// local[2]. The assignment was buried inside an IF block testing the oiled
+// flag to decide whether the door should squeak. So if the door's been oiled,
+// local[2] is not set. If hero had entered the safe from from the west,
+// rm643::init() would set local[2] to the left door, and sOpenTheDoor would
+// remember LEFT as it decided where to send hero to next.
+//
+// We move the local[2] assignment out of the IF block, to always run.
+//
+// Applies to at least: English CD, English floppy, German floppy
+// Responsible method: sOpenTheDoor::changeState(0) in script 643
+// Fixes bug: #10829
+static const uint16 qfg4SafeDoorEastSignature[] = {
+	SIG_MAGICDWORD,                     // (else block, right door)
+	0x78,                               // push1
+	0x38, SIG_UINT16(0x00d7),           // pushi 215d
+	0x45, 0x04, SIG_UINT16(0x0002),     // callb 02 (proc0_4(215), test right door oiled flag)
+	0x18,                               // not
+	0x31, SIG_ADDTOOFFSET(+1),          // bnt [end the else block]
+                                        //
+	0x35, 0x00,                         // ldi 0
+	0xa3, 0x02,                         // sal local[2]
+	SIG_END
+};
+
+static const uint16 qfg4SafeDoorEastPatch[] = {
+	0x35, 0x00,                         // ldi 0
+	0xa3, 0x02,                         // sal local[2]
+                                        //
+	0x78,                               // push1
+	0x38, PATCH_UINT16(0x00d7),         // pushi 215d
+	0x45, 0x04, PATCH_UINT16(0x0002),   // callb 02 (proc0_4(215))
+	0x18,                               // not
+	0x31, PATCH_GETORIGINALBYTEADJUST(10, -4), // bnt [end the else block]
+	PATCH_END
+};
+
+// In the castle's iron safe room (643), plot flags are mixed up. When hero
+// oils either door, the other door's flag is set. Adjacent rooms oil their
+// respective doors properly from the outside. We switch the flags inside.
+//
+// Applies to at least: English CD, English floppy, German floppy
+// Responsible method: Script 643 - vBackDoor::doVerb(32), vLeftDoor::doVerb(32)
+// Fixes bug: #10829
+static const uint16 qfg4SafeDoorOilSignature[] = {
+	0x35, 0x20,                         // ldi 32d (vBackDoor::doVerb(oil), right door)
+	SIG_ADDTOOFFSET(+5),                // ...
+	SIG_MAGICDWORD,
+	0x38, SIG_UINT16(0x00d6),           // pushi 214d
+	0x45, 0x02, SIG_UINT16(0x0002),     // callb 02 (proc0_2(214), set left oiled flag!?)
+
+	SIG_ADDTOOFFSET(+152),              // ...
+
+	0x35, 0x20,                         // ldi 32d (vLeftDoor::doVerb(oil), left door)
+	SIG_ADDTOOFFSET(+5),                // ...
+	0x38, SIG_UINT16(0x00d7),           // pushi 215d
+	0x45, 0x02, SIG_UINT16(0x0002),     // callb 02 (proc0_2(215), set right oiled flag!?)
+	SIG_END
+};
+
+static const uint16 qfg4SafeDoorOilPatch[] = {
+	PATCH_ADDTOOFFSET(+7),
+	0x38, PATCH_UINT16(0x00d7),         // pushi 215d (right door, set right oiled flag)
+	PATCH_ADDTOOFFSET(+4+152+7),
+	0x38, PATCH_UINT16(0x00d6),         // pushi 214d (left door, set left oiled flag)
+	PATCH_END
+};
+
+// Waking after a dream by the staff in town prevents the room from creating a
+// doorMat at nightfall, if hero rests repeatedly. The town gate closes at
+// night. Without the doorMat, hero isn't prompted to climb over the gate.
+// Instead, hero casually walks south and gets stuck in the next room behind
+// the closed gate.
+//
+// Since hero wakes in the morning, sAfterTheDream disposes any existing
+// doorMat. It neglects to reset local[2], which toggles rm270::doit()'s
+// constant checks for nightfall to replace the doorMat.
+//
+// We cache an object lookup and use the spare bytes to reset local[2].
+//
+// Note: There was never any sunrise detection. If hero rests repeatedly until
+// morning, the doorMat will linger to needlessly prompt about climbing the
+// then-open gate. Harmless. The prompt sets global[423] (1=climb, 2=levitate).
+// The gate room only honors that global at night, so hero will simply walk
+// through. Heroes unable to climb/levitate would be denied until they re-enter
+// the room.
+//
+// Applies to at least: English CD, English floppy, German floppy
+// Responsible method: sAfterTheDream::changeState(2) in script 270
+// Fixes bug: #10830
+static const uint16 qfg4DreamGateSignature[] = {
+	SIG_MAGICDWORD,
+	0x39, 0x43,                         // pushi heading
+	0x76,                               // push0
+	0x72, SIG_ADDTOOFFSET(+2),          // lofsa fSouth
+	0x4a, SIG_UINT16(0x0004),           // send 04
+	0x31, 0x1a,                         // bnt 26d [skip disposing/nulling] (no heading)
+                                        //
+	0x38, SIG_SELECTOR16(dispose),      // pushi dispose
+	0x76,                               // push0
+	0x39, 0x43,                         // pushi heading
+	0x76,                               // push0
+	0x72, SIG_ADDTOOFFSET(+2),          // lofsa fSouth
+	0x4a, SIG_UINT16(0x0004),           // send 04 (accumulate heading)
+	0x4a, SIG_UINT16(0x0004),           // send 04 (dispose heading)
+                                        //
+	0x39, 0x43,                         // pushi heading
+	0x78,                               // push1
+	0x76,                               // push0
+	0x72, SIG_ADDTOOFFSET(+2),          // lofsa fSouth
+	0x4a, SIG_UINT16(0x0006),           // send 06 (set fSouth's heading to null)
+	SIG_END
+};
+
+static const uint16 qfg4DreamGatePatch[] = {
+	0x3f, 0x01,                         // link 1d (cache heading for reuse)
+	0x39, 0x43,                         // pushi heading
+	0x76,                               // push0
+	0x72, PATCH_GETORIGINALUINT16(4),   // lofsa fSouth
+	0x4a, PATCH_UINT16(0x0004),         // send 04
+	0xa5, 0x00,                         // sat temp[0]
+	0x31, 0x13,                         // bnt 19d [skip disposing/nulling] (no heading)
+                                        //
+	0x38, PATCH_SELECTOR16(dispose),    // pushi dispose
+	0x76,                               // push0
+	0x85, 0x00,                         // lat temp[0]
+	0x4a, PATCH_UINT16(0x0004),         // send 04 (dispose heading)
+                                        //
+	0x39, 0x43,                         // pushi heading
+	0x78,                               // push1
+	0x76,                               // push0
+	0x72, PATCH_GETORIGINALUINT16(4),   // lofsa fSouth
+	0x4a, PATCH_UINT16(0x0006),         // send 06 (set fSouth's heading to null)
+                                        //
+	0x76,                               // push0
+	0xab, 0x02,                         // ssl local[2] (let doit() watch for nightfall)
+	PATCH_END
+};
+
+// Some inventory item properties leak across restarts. Most conspicuously, the
+// torch icon appears pre-lit after a restart, if it had been lit before.
+//
+// script 16 - thePiepan (item #28): loop, cel, value
+// script 35 - theBroom (item #39): cel, value
+// script 35 - theTorch (item #44): cel
+//
+// Glory::restart() tries to revert a bunch of globals to their original state.
+// Each value was individually loaded into acc and assigned (ldi+sag, ldi+sag,
+// ldi+sag, etc).
+//
+// One range of globals could be distilled to multiples of 45. We optimize
+// those with a loop. Another range was arbitrary. We stack up those values all
+// at once, then loop over the stack to pop(), assign, and do the next global.
+// We use the freed bytes to reset the 3 items' properties with a subroutine.
+//
+// Applies to at least: English CD, English floppy, German floppy
+// Responsible method: Glory::restart() in script 0
+// Fixes bug: #10768
+static const uint16 qfg4RestartSignature[] = {
+	SIG_MAGICDWORD,
+	0x76,                               // push0 (this range is multiples of 45)
+	0x35, 0x01,                         // ldi 1d
+	0xb1, 0x90,                         // sagi (global[144 + 1] = 0)
+	SIG_ADDTOOFFSET(+40),               // ...
+	0x38, SIG_UINT16(0x013b),           // pushi 315
+	SIG_ADDTOOFFSET(+2),                // ldi ?? (array index here was typoed)
+	0xb1, 0x90,                         // sagi (global[144 + ?] = 315)
+
+	0x35, 0x14,                         // ldi 20d (this assignment doesn't fit a pattern)
+	0xa1, 0xc6,                         // sag global[198]
+
+	0x35, 0x02,                         // ldi 2d (this range has arbitrary values)
+	0xa0, SIG_UINT16(0x016f),           // sag global[367]
+	SIG_ADDTOOFFSET(+95),               // ...
+	0x35, 0x0a,                         // ldi 10d
+	0xa0, SIG_UINT16(0x0183),           // sag global[387]
+	SIG_END
+};
+
+static const uint16 qfg4RestartPatch[] = {
+                                        // (loop to assign multiples of 45)
+	0x76,                               // push0
+	0xad, 0x00,                         // sst temp[0]
+                                        //
+	0x8d, 0x00,                         // lst temp[0] (global[144 + n+1] = n*45)
+	0x35, 0x08,                         // ldi 8
+	0x22,                               // lt?
+	0x31, 0x0c,                         // bnt 12d [end the loop]
+	0x8d, 0x00,                         // lst temp[0]
+	0x35, 0x2d,                         // ldi 45d
+	0x06,                               // mul
+	0x36,                               // push (temp[0] * 45)
+	0xc5, 0x00,                         // +at temp[0]
+	0xb1, 0x90,                         // sagi global[144]
+	0x33, 0xed,                         // jmp [-19] (loop)
+                                        // (that loop freed +30 bytes)
+
+	0x35, 0x14,                         // ldi 20d (leave this assignment as-is)
+	0xa1, 0xc6,                         // sag global[198]
+
+                                        // (stack up arbitrary values; then loop to assign them)
+	0x7a,                               // push2     (global[367] = 2)
+	0x3c,                               // dup       (global[368] = 2)
+	0x39, 0x03,                         // pushi 3d  (global[369] = 3)
+	0x3c,                               // dup       (global[370] = 3)
+	0x3c,                               // dup       (global[371] = 3)
+	0x39, 0x04,                         // pushi 4d  (global[372] = 4)
+	0x39, 0x05,                         // pushi 5d  (global[373] = 5)
+	0x3c,                               // dup       (global[374] = 5)
+	0x39, 0x06,                         // pushi 6d  (global[375] = 6)
+	0x39, 0x07,                         // pushi 7d  (global[376] = 7)
+	0x39, 0x08,                         // pushi 8d  (global[377] = 8)
+	0x3c,                               // dup       (global[378] = 8)
+	0x39, 0x05,                         // pushi 5d  (global[379] = 5)
+	0x39, 0x0a,                         // pushi 10d (global[380] = 10)
+	0x39, 0x0f,                         // pushi 15d (global[381] = 15)
+	0x39, 0x14,                         // pushi 20d (global[382] = 20)
+	0x39, 0x06,                         // pushi 6d  (global[383] = 6)
+	0x39, 0x08,                         // pushi 8d  (global[384] = 8)
+	0x39, 0x07,                         // pushi 7d  (global[385] = 7)
+	0x39, 0x0a,                         // pushi 10d (global[386] = 10)
+	0x3c,                               // dup       (global[387] = 10)
+                                        //
+	0x39, 0x15,                         // pushi 21d (pop() and set, backward from 20 to 0)
+	0xad, 0x00,                         // sst temp[0]
+                                        //
+	0xed, 0x00,                         // -st temp[0]
+	0x35, 0x00,                         // ldi 0
+	0x20,                               // ge?
+	0x31, 0x07,                         // bnt 7d (end the loop)
+	0x85, 0x00,                         // lat temp[0]
+	0xb8, PATCH_UINT16(0x016f),         // ssgi 367d (global[367 + n] = pop())
+	0x33, 0xf2,                         // jmp [-14] (loop)
+                                        // (that loop freed +52 bytes)
+
+                                        // (reset properties for a few items)
+	0x33, 0x1f,                         // jmp 31d (skip subroutine declaration)
+	0x38, PATCH_SELECTOR16(loop),       // pushi loop
+	0x78,                               // push1
+	0x8f, 0x02,                         // lsp[2] (loop varies)
+	0x38, PATCH_SELECTOR16(cel),        // pushi cel
+	0x78,                               // push1
+	0x8f, 0x03,                         // lsp[3] (cel varies)
+	0x38, PATCH_SELECTOR16(value),      // pushi value (weight)
+	0x78,                               // push1
+	0x7a,                               // push2 (these items all weigh 2)
+                                        //
+	0x39, 0x4b,                         // pushi at
+	0x78,                               // push1
+	0x8f, 0x01,                         // lsp[1]
+	0x81, 0x09,                         // global[9] (gloryInv)
+	0x4a, PATCH_UINT16(0x0006),         // send 06
+                                        //
+	0x4a, PATCH_UINT16(0x0012),         // send 18d
+	0x48,                               // ret
+
+	0x39, 0x03,                         // pushi 3d (call has 3 args)
+	0x39, 0x1c,                         // pushi 28d (thePiePan)
+	0x7a,                               // push2 (loop)
+	0x39, 0x0a,                         // pushi 10d (cel)
+	0x40, PATCH_UINT16(0xffd5), PATCH_UINT16(0x0006), // call 6d [-43]
+
+	0x39, 0x03,                         // pushi 3d (call has 3 args)
+	0x39, 0x27,                         // pushi 39d (theBroom)
+	0x39, 0x0a,                         // pushi 10d (loop)
+	0x76,                               // push0 (cel)
+	0x40, PATCH_UINT16(0xffc9), PATCH_UINT16(0x0006), // call 6d [-55]
+
+	0x39, 0x03,                         // pushi 3d (call has 3 args)
+	0x39, 0x2c,                         // pushi 44d (theTorch)
+	0x39, 0x08,                         // pushi 8d (loop)
+	0x39, 0x09,                         // pushi 9d (cel)
+	0x40, PATCH_UINT16(0xffbc), PATCH_UINT16(0x0006), // call 6d [-68]
+
+	0x33, 0x0a,                         // jmp 10d (skip waste bytes)
+	PATCH_END
+};
+
+// At the squid monolith (room 800), using the grapnel on the eastern ledge
+// disposes hero's scaler to freeze hero's size. A scaler dynamically shrinks
+// hero into the horizon as y-pos increases. It makes sense that hero should
+// maintain their size while climbing a vertical rope.
+//
+// Problem: After climbing the rope, both standing on the ledge and back on the
+// ground, hero's scaler will remain null. An exception will occur if a script
+// calls Prop::setScaler(hero) while hero's scaler is null. Casting Trigger on
+// the monolith, from either location, does it. As will climbing down, then
+// casting Levitate. Both spells have auras intended to fit hero's size. They
+// expect hero to have a scaler, not null.
+//
+// Ideally the climb script would've swapped in a dummy scaler, then swapped
+// the original scaler back upon return to ground level. Implementing that with
+// patches would be messy. There's no room to patch setScaler() itself to
+// broadly tolerate nulls. That'd avoid exceptions but wouldn't restore normal
+// scaling after a climb.
+//
+// As a last resort, we simply leave the original scaler on hero, erasing the
+// setScale() call that would freeze hero's size. The hero shrinks/grows a
+// little while climbing as a side effect, but that's barely noticeable.
+//
+// Applies to at least: English CD, English floppy, German floppy
+// Responsible method: sUseTheGrapnel::changeState(5) in script 800
+// Fixes bug: #10837
+static const uint16 qfg4RopeScalerSignature[] = {
+	SIG_MAGICDWORD,
+	0x38, SIG_SELECTOR16(setScale),     // pushi setScale
+	0x76,                               // push0 (no args, disposes scaler & freezes size)
+	SIG_ADDTOOFFSET(+14),               // ...
+	0x81, 0x00,                         // lag global[0] (hero)
+	0x4a, SIG_UINT16(0x0026),           // send 38d
+	SIG_END
+};
+
+static const uint16 qfg4RopeScalerPatch[] = {
+	0x35, 0x01,                         // ldi 0 (erase 2 bytes)
+	0x35, 0x01,                         // ldi 0 (erase 2 bytes)
+	PATCH_ADDTOOFFSET(+14+2),           // ...
+	0x4a, PATCH_UINT16(0x0022),         // send 34d
+	PATCH_END
+};
+
+// The fortune teller's third reading has the wrong card at the center. The 3rd
+// and 4th reading are about different people, yet both have "Queen of Cups".
+//
+// The 1st reading establishes "Queen of Cups" as: a woman of wisdom and love,
+// kind, generous, and virtuous. This fits the 4th reading: she uses her power
+// joyfully, giving gracefully and lovingly to others.
+//
+// The 1st reading establishes "Queen of Swords" as: a deceiver or deceived,
+// having suffered through terrible hardship, she faces her sorrows bravely,
+// but with deep loneliness. This fits the 3rd reading better: some cruel event
+// shaped her life... ambition, self-deception, and she is falling in love.
+//
+// We change the 3rd reading's center card to "Queen of Swords".
+//
+// Applies to at least: English CD, English floppy, German floppy
+// Responsible method: sThirdReading:changeState(3) in script 475
+// Fixes bug: #10824
+static const uint16 qfg4Tarot3QueenSignature[] = {
+	SIG_MAGICDWORD,
+	0x34, SIG_UINT16(0x03f1),           // ldi 1009d (Queen of Cups)
+	0xa3, 0x00,                         // sal local[0]
+	SIG_ADDTOOFFSET(+46),               // ...
+	0x39, 0x1f,                         // pushi 31d (say: 1 6 31 0 self)
+	SIG_END
+};
+
+static const uint16 qfg4Tarot3QueenPatch[] = {
+	0x34, PATCH_UINT16(0x03ed),         // ldi 1005d (Queen of Swords)
+	PATCH_END
+};
+
+// The fortune teller's third reading displays a right-turned "The Devil" card,
+// but Magda says it is "Death".
+//
+// We change the card to a right-turned "Death".
+//
+// Applies to at least: English CD, English floppy, German floppy
+// Responsible method: sThirdReading:changeState(15) in script 475
+// Fixes bug: #10823
+static const uint16 qfg4Tarot3DeathSignature[] = {
+	SIG_MAGICDWORD,
+	0x34, SIG_UINT16(0x03fa),           // ldi 1018d (The Devil)
+	0xa3, 0x00,                         // sal local[0]
+	SIG_ADDTOOFFSET(+46),               // ...
+	0x39, 0x23,                         // pushi 35d (say: 1 6 35 0 self)
+	SIG_END
+};
+
+static const uint16 qfg4Tarot3DeathPatch[] = {
+	0x34, PATCH_UINT16(0x03fd),         // ldi 1021d (Death)
+	PATCH_END
+};
+
+// The fortune teller's third reading places the "Two of Cups" across another
+// card, off-center. That View (1023) is cropped (130x64). All other horizontal
+// cards (130x86, 130x87) are padded at the bottom with transparent pixels.
+//
+// A utility script (sShowCard) is scheduled to create each card with a given
+// View (passed as local[0]) and move it onto a given pile (passed as local[2]:
+// center, west, south, east, north). It has a switch block deciding x,y coords
+// depending on the pile.
+//
+// We optimize a couple cases by consolidating their common code in a
+// subroutine to make room. The rewritten case for the east pile checks if the
+// requested card was "Two of Cups". If so, a special Y value is used.
+//
+// Applies to at least: English CD, English floppy, German floppy
+// Responsible method: sShowCard::changeState() in script 475
+// Fixes bug: #10822
+static const uint16 qfg4Tarot3TwoOfCupsSignature[] = {
+	SIG_MAGICDWORD,
+	0x3c,                               // dup
+	0x35, 0x04,                         // ldi 4d (case 4)
+	0x1a,                               // eq?
+	SIG_ADDTOOFFSET(+7),                // ...
+	0x38, SIG_SELECTOR16(setStep),      // pushi setStep
+	SIG_ADDTOOFFSET(+11),               // ...
+	0x51, SIG_ADDTOOFFSET(+1),          // class Scaler
+	SIG_ADDTOOFFSET(+16),               // ...
+	0x51, SIG_ADDTOOFFSET(+1),          // class MoveTo
+	SIG_ADDTOOFFSET(+72),               // ...
+	0x3a,                               // toss (end of this local[2] switch)
+	0x32, SIG_ADDTOOFFSET(+2),          // jmp [end the state switch]
+	SIG_END
+};
+
+static const uint16 qfg4Tarot3TwoOfCupsPatch[] = {
+	0x33, 0x31,                         // jmp 49d (skip subroutine declaration)
+	0x38, PATCH_SELECTOR16(moveSpeed),  // pushi moveSpeed
+	0x78,                               // push1
+	0x76,                               // push0
+	0x38, PATCH_SELECTOR16(setStep),    // pushi setStep
+	0x7a,                               // push2
+	0x39, 0x1e,                         // pushi 30d
+	0x39, 0x0a,                         // pushi 10d
+	0x38, PATCH_SELECTOR16(setScaler),  // pushi setScaler
+	0x39, 0x05,                         // pushi 5d
+	0x51, PATCH_GETORIGINALBYTE(26),    // class Scaler
+	0x36,                               // push
+	0x39, 0x64,                         // pushi 100d
+	0x39, 0x23,                         // pushi 35d
+	0x38, PATCH_UINT16(0x0096),         // pushi 150d
+	0x8f, 0x01,                         // lsp param[1] (setScalar, arg 5 varies)
+	0x38, PATCH_SELECTOR16(setMotion),  // pushi setMotion
+	0x39, 0x04,                         // pushi 4d
+	0x51, PATCH_GETORIGINALBYTE(44),    // class MoveTo
+	0x36,                               // push
+	0x8f, 0x02,                         // lsp param[2] (setMotion, x arg varies)
+	0x8f, 0x03,                         // lsp param[3] (setMotion, y arg varies)
+	0x7c,                               // pushSelf
+	0x83, 0x01,                         // lal local[1]
+	0x4a, PATCH_UINT16(0x0028),         // send 40d
+	0x48,                               // ret
+
+	0x3c,                               // dup
+	0x35, 0x04,                         // ldi 4d (case 4)
+	0x1a,                               // eq?
+	0x31, 0x1b,                         // bnt 27d [next case]
+	0x39, 0x03,                         // pushi 3d (call has 3 args)
+	0x39, 0x6e,                         // pushi 110d (setScalar, arg 5)
+	0x38, PATCH_UINT16(0x00d2),         // pushi 210d (setMotion, x arg)
+                                        //
+	0x8b, 0x00,                         // lsl local[0] (test the card's View number)
+	0x34, PATCH_UINT16(0x03ff),         // ldi 1023 (Two of Cups is special)
+	0x1a,                               // eq?
+	0x31, 0x04,                         // bnt 4d [regular y arg]
+	0x39, 0x66,                         // pushi 102d  (setMotion, special y arg)
+	0x33, 0x02,                         // jmp 2d [to the call]
+	0x39, 0x6e,                         // pushi 110d (setMotion, regular y arg)
+                                        //
+	0x41, 0xb0, PATCH_UINT16(0x0006),   // call 6d [-80]
+	0x33, 0x13,                         // jmp 19d [end the local[2] switch]
+
+	0x3c,                               // dup
+	0x35, 0x05,                         // ldi 5d (case 5)
+	0x1a,                               // eq?
+	0x31, 0x0d,                         // bnt 13d [end the local[2] switch]
+	0x39, 0x03,                         // pushi 3d (call has 3 args)
+	0x39, 0x32,                         // pushi 50d (setScalar, arg 5)
+	0x38, PATCH_UINT16(0x0090),         // pushi 144d (setMotion, x arg)
+	0x39, 0x32,                         // pushi 50d (setMotion, y arg)
+	0x41, 0x9b, PATCH_UINT16(0x0006),   // call 6d [-101]
+
+	0x33, 0x0c,                         // jmp 12d (skip to the original toss that ends this switch)
+	PATCH_END
+};
+
+// The fortune teller's third reading places horizontal cards on top of
+// vertical ones. Some then fall *through* the vertical card to the bottom.
+//
+// A utility script (sShowCard) creates each card and moves it onto a pile
+// (center, west, south, east, north). Then the card is assigned a priority
+// with setPri(). Generally these piles are two cards deep. Center has one.
+//
+// Every pile ought to start with priority 0 and increment thereafter. Somebody
+// mixed up the setPri() sequence. We change 0;1,0;1,0 to 0;0,1;0,1.
+//
+// Applies to at least: English CD, English floppy, German floppy
+// Responsible method: sThirdReading:changeState() in script 475
+// Fixes bug: #10845
+static const uint16 qfg4Tarot3PrioritySignature[] = {
+	0x78,                               // push1 (setPri: 1, "Eight of Swords", West, V)
+	SIG_ADDTOOFFSET(+14),               // ...
+	0x39, 0x20,                         // pushi 32 (say cond:32)
+	SIG_ADDTOOFFSET(+68),               // ...
+	0x76,                               // push0 (setPri: 0, "Strength", West, H)
+	SIG_ADDTOOFFSET(+84),               // ...
+	0x78,                               // push1 (setPri: 1, "The Magician", South, V)
+	SIG_ADDTOOFFSET(+84),               // ...
+	0x76,                               // push0 (setPri: 0, "Death", South, H)
+	SIG_ADDTOOFFSET(+12),               // ...
+	SIG_MAGICDWORD,
+	0x39, 0x06,                         // pushi 6 (say verb:6)
+	0x39, 0x23,                         // pushi 36 (say cond:35)
+	SIG_END
+};
+
+static const uint16 qfg4Tarot3PriorityPatch[] = {
+	0x76,                               // push0 (setPri: 0, "Eight of Swords", West, V)
+	PATCH_ADDTOOFFSET(+84),             // ...
+	0x78,                               // push1 (setPri: 1, "Strength", West, H)
+	PATCH_ADDTOOFFSET(+84),             // ...
+	0x76,                               // push0 (setPri: 0, "The Magician", South, V)
+	PATCH_ADDTOOFFSET(+84),             // ...
+	0x78,                               // push1 (setPri: 1, "Death", South, H)
+	PATCH_END
+};
+
+// The fortune teller's fifth reading is unusual. It places all cards at the
+// center pile, periodically fading out to clear the table. When Magda
+// talks about the Sense Ritual, the "Six of Swords" (view 1048) sinks below
+// the previous card.
+//
+// A shared utility script that creates and places cards (sSetTheSignificator)
+// uses priority 12 as it deals, after which each card is given a lower value
+// with setPri(). "The Falling Tower" (view 1031) did *not* get a new priority.
+// Thus "Six of Swords", when given priority 1, sinks below 12.
+//
+// "Six of Swords" is the last card before a fade. We simply leave its priority
+// at 12 as well. Being the most recent card, it will be on top. No worry
+// about covering a subsequent card because the table will be cleared.
+//
+// Applies to at least: English CD, English floppy, German floppy
+// Responsible method: sFifthReading:changeState(32) in script 475
+// Fixes bug: #10846
+static const uint16 qfg4Tarot5PrioritySignature[] = {
+	0x39, SIG_ADDTOOFFSET(+1),          // pushi setPri
+	0x78,                               // push1
+	0x78,                               // push1 (setPri: 1, "Six of Swords")
+	SIG_MAGICDWORD,
+	0x83, 0x01,                         // lal local[1] (card obj)
+	0x4a, SIG_UINT16(0x0006),           // send 06
+	SIG_ADDTOOFFSET(+9),                // ...
+	0x39, 0x44,                         // pushi 68 (say cond:68)
+	SIG_END
+};
+
+static const uint16 qfg4Tarot5PriorityPatch[] = {
+	0x33, 0x07,                         // jmp 7d [skip the setPri() send]
+	PATCH_END
+};
+
 //          script, description,                                     signature                      patch
 static const SciScriptPatcherEntry qfg4Signatures[] = {
 	{  true,     0, "prevent autosave from deleting save games",   1, qg4AutosaveSignature,          qg4AutosavePatch },
+	{  true,     0, "fix inventory leaks across restarts",         1, qfg4RestartSignature,          qfg4RestartPatch },
 	{  true,     1, "disable volume reset on startup",             1, sci2VolumeResetSignature,      sci2VolumeResetPatch },
 	{  true,     1, "disable video benchmarking",                  1, qfg4BenchmarkSignature,        qfg4BenchmarkPatch },
-	{  true,     7, "fix consecutive moonrises",                   1, qfg4MoonriseSignature,         qfg4MoonrisePatch },
+	{  true,     7, "fix consecutive moon rises",                  1, qfg4MoonriseSignature,         qfg4MoonrisePatch },
 	{  true,    10, "fix setLooper calls (2/2)",                   2, qg4SetLooperSignature2,        qg4SetLooperPatch2 },
 	{  true,    31, "fix setScaler calls",                         1, qfg4SetScalerSignature,        qfg4SetScalerPatch },
 	{  true,    41, "fix conditional void calls",                  3, qfg4ConditionalVoidSignature,  qfg4ConditionalVoidPatch },
 	{  true,    83, "fix incorrect array type",                    1, qfg4TrapArrayTypeSignature,    qfg4TrapArrayTypePatch },
 	{  true,    83, "fix incorrect array type (floppy)",           1, qfg4TrapArrayTypeFloppySignature,    qfg4TrapArrayTypeFloppyPatch },
+	{  true,   270, "fix town gate after a staff dream",           1, qfg4DreamGateSignature,        qfg4DreamGatePatch },
 	{  true,   320, "fix pathfinding at the inn",                  1, qg4InnPathfindingSignature,    qg4InnPathfindingPatch },
 	{  true,   320, "fix talking to absent innkeeper",             1, qfg4AbsentInnkeeperSignature,  qfg4AbsentInnkeeperPatch },
 	{  true,   370, "Floppy: fix copy protection",                 1, qfg4CopyProtectionSignature,   qfg4CopyProtectionPatch },
 	{  true,   440, "fix setLooper calls (1/2)",                   1, qg4SetLooperSignature1,        qg4SetLooperPatch1 },
 	{  true,   470, "fix Magda room disposal",                     1, qfg4MagdaDisposalSignature,    qfg4MagdaDisposalPatch },
+	{  true,   475, "fix tarot 3 queen card",                      1, qfg4Tarot3QueenSignature,      qfg4Tarot3QueenPatch },
+	{  true,   475, "fix tarot 3 death card",                      1, qfg4Tarot3DeathSignature,      qfg4Tarot3DeathPatch },
+	{  true,   475, "fix tarot 3 two of cups placement",           1, qfg4Tarot3TwoOfCupsSignature,  qfg4Tarot3TwoOfCupsPatch },
+	{  true,   475, "fix tarot 3 card priority",                   1, qfg4Tarot3PrioritySignature,  qfg4Tarot3PriorityPatch },
+	{  true,   475, "fix tarot 5 card priority",                   1, qfg4Tarot5PrioritySignature,  qfg4Tarot5PriorityPatch },
 	{  false,  500, "CD: fix rope during Igor rescue (1/2)",       1, qfg4GraveyardRopeSignature1,   qfg4GraveyardRopePatch1 },
 	{  false,  500, "CD: fix rope during Igor rescue (2/2)",       1, qfg4GraveyardRopeSignature2,   qfg4GraveyardRopePatch2 },
 	{  true,   530, "fix setLooper calls (1/2)",                   4, qg4SetLooperSignature1,        qg4SetLooperPatch1 },
@@ -8605,11 +9295,14 @@ static const SciScriptPatcherEntry qfg4Signatures[] = {
 	{  true,   545, "fix setLooper calls (1/2)",                   5, qg4SetLooperSignature1,        qg4SetLooperPatch1 },
 	{  true,   630, "fix great hall entry from barrel room",       1, qfg4GreatHallEntrySignature,   qfg4GreatHallEntryPatch },
 	{  true,   633, "fix stairway pathfinding",                    1, qfg4StairwayPathfindingSignature, qfg4StairwayPathfindingPatch },
+	{  true,   643, "fix iron safe's east door sending hero west", 1, qfg4SafeDoorEastSignature,     qfg4SafeDoorEastPatch },
+	{  true,   643, "fix iron safe's door oil flags",              1, qfg4SafeDoorOilSignature,     qfg4SafeDoorOilPatch },
 	{  true,   645, "fix extraneous door sound in the castle",     1, qfg4DoubleDoorSoundSignature,  qfg4DoubleDoorSoundPatch },
 	{  false,  663, "CD: fix crest bookshelf",                     1, qfg4CrestBookshelfCDSignature, qfg4CrestBookshelfCDPatch },
 	{  false,  663, "Floppy: fix crest bookshelf",                 1, qfg4CrestBookshelfFloppySignature,   qfg4CrestBookshelfFloppyPatch },
 	{  true,   663, "CD/Floppy: fix crest bookshelf motion",       1, qfg4CrestBookshelfMotionSignature,   qfg4CrestBookshelfMotionPatch },
 	{  true,   800, "fix setScaler calls",                         1, qfg4SetScalerSignature,        qfg4SetScalerPatch },
+	{  true,   800, "fix grapnel removing hero's scaler",          1, qfg4RopeScalerSignature,       qfg4RopeScalerPatch },
 	{  true,   803, "fix sliding down slope",                      1, qfg4SlidingDownSlopeSignature, qfg4SlidingDownSlopePatch },
 	{  true,   810, "fix conditional void calls",                  1, qfg4ConditionalVoidSignature,  qfg4ConditionalVoidPatch },
 	{  true,   830, "fix conditional void calls",                  2, qfg4ConditionalVoidSignature,  qfg4ConditionalVoidPatch },
@@ -8627,11 +9320,12 @@ static const SciScriptPatcherEntry qfg4Signatures[] = {
 
 // ===========================================================================
 //  script 298 of sq4/floppy has an issue. object "nest" uses another property
-//   which isn't included in property count. We return 0 in that case, the game
-//   adds it to nest::x. The problem is that the script also checks if x exceeds
-//   we never reach that of course, so the pterodactyl-flight will go endlessly
-//   we could either calculate property count differently somehow fixing this
-//   but I think just patching it out is cleaner.
+//   which isn't included in property count. We return 0 in that case, so that
+//   the game does not increment nest::x. The problem is that the script also
+//   checks if x exceeds nest::x. We never reach that of course, so the
+//   incorrect property means that the pterodactyl flight will continue
+//	 endlessly. We could either calculate the property count differently,
+//   thereby fixing this bug, but I think that just patching it out is cleaner.
 // Fixes bug: #5093
 static const uint16 sq4FloppySignatureEndlessFlight[] = {
 	0x39, 0x04,                         // pushi 04 (selector x)

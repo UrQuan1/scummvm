@@ -29,8 +29,10 @@
 #include "bladerunner/mouse.h"
 #include "bladerunner/shape.h"
 #include "bladerunner/script/script.h"
+#include "bladerunner/time.h"
 #include "bladerunner/ui/ui_image_picker.h"
 #include "bladerunner/vqa_player.h"
+#include "bladerunner/subtitles.h"
 
 #include "common/rect.h"
 #include "common/str.h"
@@ -156,7 +158,7 @@ int Elevator::activate(int elevatorId) {
 
 	open();
 
-	// TODO: time->lock();
+	_vm->_time->pause();
 
 	_buttonClicked = -1;
 	do {
@@ -177,7 +179,7 @@ int Elevator::activate(int elevatorId) {
 
 	_isOpen = false;
 
-	// TODO: time->unlock();
+	_vm->_time->resume();
 
 	return _buttonClicked;
 }
@@ -224,6 +226,8 @@ void Elevator::tick() {
 
 	_imagePicker->draw(_vm->_surfaceFront);
 	_vm->_mouse->draw(_vm->_surfaceFront, p.x, p.y);
+
+	_vm->_subtitles->tick(_vm->_surfaceFront);
 
 	_vm->blitToScreen(_vm->_surfaceFront);
 	tickDescription();
@@ -281,7 +285,7 @@ void Elevator::setupDescription(int actorId, int sentenceId) {
 	_sentenceId = sentenceId;
 
 	// TODO: Use proper timer
-	_timeSpeakDescription = _vm->getTotalPlayTime() + 600;
+	_timeSpeakDescription = _vm->_time->current() + 600;
 }
 
 void Elevator::resetDescription() {
@@ -291,7 +295,7 @@ void Elevator::resetDescription() {
 }
 
 void Elevator::tickDescription() {
-	int now = _vm->getTotalPlayTime();
+	int now = _vm->_time->current();
 	if (_actorId <= 0 || now < _timeSpeakDescription) {
 		return;
 	}

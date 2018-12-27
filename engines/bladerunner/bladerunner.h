@@ -88,6 +88,7 @@ class Shape;
 class SliceAnimations;
 class SliceRenderer;
 class Spinner;
+class Subtitles;
 class SuspectsDatabase;
 class TextResource;
 class Time;
@@ -103,7 +104,7 @@ public:
 #if BLADERUNNER_DEBUG_GAME
 	static const int kArchiveCount = 100;
 #else
-	static const int kArchiveCount = 10;
+	static const int kArchiveCount = 11; // +1 to original value (10) to accommodate for SUBTITLES.MIX resource
 #endif
 	static const int kActorCount = 100;
 	static const int kActorVoiceOver = kActorCount - 1;
@@ -134,6 +135,7 @@ public:
 	KIA                *_kia;
 	Lights             *_lights;
 	Font               *_mainFont;
+	Subtitles          *_subtitles;
 	Mouse              *_mouse;
 	Music              *_music;
 	Obstacles          *_obstacles;
@@ -148,7 +150,7 @@ public:
 	SliceRenderer      *_sliceRenderer;
 	Spinner            *_spinner;
 	SuspectsDatabase   *_suspectsDatabase;
-	Time               *_gameTime;
+	Time               *_time;
 	View               *_view;
 	VK                 *_vk;
 	Waypoints          *_waypoints;
@@ -191,6 +193,7 @@ public:
 	bool _sceneIsLoading;
 	bool _vqaIsPlaying;
 	bool _vqaStopIsRequested;
+	bool _subtitlesEnabled; // tracks the state of whether subtitles are enabled or disabled from ScummVM GUI option or KIA checkbox (the states are synched)
 
 	int _walkSoundId;
 	int _walkSoundVolume;
@@ -267,6 +270,11 @@ public:
 	bool openArchive(const Common::String &name);
 	bool closeArchive(const Common::String &name);
 	bool isArchiveOpen(const Common::String &name) const;
+
+	void syncSoundSettings();
+	bool isSubtitlesEnabled();
+	void setSubtitlesEnabled(bool newVal);
+
 
 	Common::SeekableReadStream *getResourceStream(const Common::String &name);
 

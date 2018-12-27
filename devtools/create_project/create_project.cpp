@@ -710,7 +710,7 @@ void displayHelp(const char *exe) {
 	        "                           The default is \"12\", thus \"Visual Studio 2013\"\n"
 	        " --build-events           Run custom build events as part of the build\n"
 	        "                          (default: false)\n"
-	        " --installer              Create NSIS installer after the build (implies --build-events)\n"
+	        " --installer              Create installer after the build (implies --build-events)\n"
 	        "                          (default: false)\n"
 	        " --tools                  Create project files for the devtools\n"
 	        "                          (ignores --build-events and --installer, as well as engine settings)\n"
@@ -1063,6 +1063,7 @@ const Feature s_features[] = {
 	{       "keymapper",     "ENABLE_KEYMAPPER",         "", false, "Keymapper support"},
 	{   "eventrecorder", "ENABLE_EVENTRECORDER",         "", false, "Event recorder support"},
 	{         "updates",          "USE_UPDATES",         "", false, "Updates support"},
+	{         "dialogs",       "USE_SYSDIALOGS",         "", true,  "System dialogs support"},
 	{      "langdetect",       "USE_DETECTLANG",         "", true,  "System language detection support" } // This feature actually depends on "translation", there
 	                                                                                                      // is just no current way of properly detecting this...
 };

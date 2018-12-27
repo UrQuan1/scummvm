@@ -40,7 +40,7 @@ Screen::~Screen() {
 
 void Screen::initialize() {
 	if (!loadFonts())
-		error("Could not load data file");
+		error("Could not load fonts.dat");
 
 	// TODO: See if there's any better way for getting the leading and baseline
 	Common::Rect r1 = _fonts[7]->getBoundingBox('o');
@@ -116,7 +116,7 @@ bool Screen::loadFonts() {
 	f.read(buffer, 3);
 	buffer[3] = '\0';
 
-	if (Common::String(buffer) != "1.0") {
+	if (Common::String(buffer) != "1.1") {
 		delete archive;
 		return false;
 	}
@@ -146,8 +146,7 @@ void Screen::loadFonts(Common::Archive *archive) {
 	_fonts[7] = loadFont(PROPZ, archive, propSize, propAspect, FONTZ);
 }
 
-const Graphics::Font *Screen::loadFont(FACES face, Common::Archive *archive, double size, double aspect, int
- style) {
+const Graphics::Font *Screen::loadFont(FACES face, Common::Archive *archive, double size, double aspect, int style) {
 	Common::File f;
 	const char *const FILENAMES[8] = {
 		"GoMono-Regular.ttf", "GoMono-Bold.ttf", "GoMono-Italic.ttf", "GoMono-Bold-Italic.ttf",
@@ -155,7 +154,7 @@ const Graphics::Font *Screen::loadFont(FACES face, Common::Archive *archive, dou
 	};
 
 	if (!f.open(FILENAMES[face], *archive))
-		error("Could not load font");
+		error("Could not load %s from fonts file", FILENAMES[face]);
 
 	return Graphics::loadTTFFont(f, (int)size, Graphics::kTTFSizeModeCharacter);
 }

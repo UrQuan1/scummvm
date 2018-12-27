@@ -114,8 +114,7 @@ Common::Error GlkEngine::run() {
 
 	initialize();
 
-	if (filename.hasSuffixIgnoreCase(".blorb") || filename.hasSuffixIgnoreCase(".zblorb")
-			|| filename.hasSuffixIgnoreCase(".gblorb")) {
+	if (Blorb::isBlorb(filename)) {
 		// Blorb archive
 		_blorb = new Blorb(filename, getInterpreterType());
 		SearchMan.add("blorb", _blorb, 99, false);
@@ -144,18 +143,6 @@ Common::Error GlkEngine::run() {
 	runGame(&f);
 
 	return Common::kNoError;
-}
-
-void GlkEngine::GUIError(const char *msg, ...) {
-	char buffer[STRINGBUFLEN];
-	va_list va;
-
-	// Generate the full error message
-	va_start(va, msg);
-	vsnprintf(buffer, STRINGBUFLEN, msg, va);
-	va_end(va);
-
-	GUIErrorMessage(buffer);
 }
 
 Common::Error GlkEngine::loadGame() {

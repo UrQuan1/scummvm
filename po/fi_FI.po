@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ScummVM 1.6.0git\n"
 "Report-Msgid-Bugs-To: scummvm-devel@lists.scummvm.org\n"
-"POT-Creation-Date: 2018-12-11 06:36+0100\n"
-"PO-Revision-Date: 2018-09-02 19:37+0000\n"
-"Last-Translator: jepael <kermespersialainen@gmail.com>\n"
+"POT-Creation-Date: 2018-12-19 07:31+0100\n"
+"PO-Revision-Date: 2018-12-20 04:34+0000\n"
+"Last-Translator: Timo Mikkolainen <tmikkola@gmail.com>\n"
 "Language-Team: Finnish <https://translations.scummvm.org/projects/scummvm/"
 "scummvm/fi/>\n"
 "Language: fi_FI\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.9\n"
+"X-Generator: Weblate 3.3\n"
 "X-Language-name: Suomi\n"
 
 #: gui/about.cpp:94
@@ -33,37 +33,37 @@ msgstr "Tähän versioon käännetyt ominaisuudet:"
 msgid "Available engines:"
 msgstr "Tuetut pelimoottorit:"
 
-#: gui/browser.cpp:71 gui/browser_osx.mm:84
+#: gui/browser.cpp:75 backends/dialogs/macosx/macosx-dialogs.mm:87
 msgid "Show hidden files"
 msgstr "Näytä piilotetut tiedostot"
 
-#: gui/browser.cpp:71
+#: gui/browser.cpp:75
 msgid "Show files marked with the hidden attribute"
 msgstr "Näytä piilotetuksi merkatut tiedostot"
 
-#: gui/browser.cpp:75 gui/remotebrowser.cpp:57
+#: gui/browser.cpp:79 gui/remotebrowser.cpp:57
 msgid "Go up"
 msgstr "Siirry ylös"
 
-#: gui/browser.cpp:75 gui/browser.cpp:77 gui/remotebrowser.cpp:57
+#: gui/browser.cpp:79 gui/browser.cpp:81 gui/remotebrowser.cpp:57
 #: gui/remotebrowser.cpp:59
 msgid "Go to previous directory level"
 msgstr "Palaa edelliselle hakemistotasolle"
 
-#: gui/browser.cpp:77 gui/remotebrowser.cpp:59
+#: gui/browser.cpp:81 gui/remotebrowser.cpp:59
 msgctxt "lowres"
 msgid "Go up"
 msgstr "Siirry ylös"
 
-#: gui/browser.cpp:78 gui/chooser.cpp:46 gui/editgamedialog.cpp:299
+#: gui/browser.cpp:82 gui/chooser.cpp:46 gui/editgamedialog.cpp:299
 #: gui/editrecorddialog.cpp:67 gui/filebrowser-dialog.cpp:65
 #: gui/fluidsynth-dialog.cpp:153 gui/KeysDialog.cpp:43 gui/massadd.cpp:92
-#: gui/options.cpp:1789 gui/predictivedialog.cpp:73 gui/recorderdialog.cpp:69
+#: gui/options.cpp:1799 gui/predictivedialog.cpp:73 gui/recorderdialog.cpp:69
 #: gui/recorderdialog.cpp:155 gui/remotebrowser.cpp:60
 #: gui/saveload-dialog.cpp:389 gui/saveload-dialog.cpp:451
 #: gui/saveload-dialog.cpp:746 gui/saveload-dialog.cpp:1140
 #: gui/storagewizarddialog.cpp:68 gui/themebrowser.cpp:55
-#: engines/engine.cpp:537 backends/events/default/default-events.cpp:190
+#: engines/engine.cpp:546 backends/events/default/default-events.cpp:190
 #: backends/events/default/default-events.cpp:212
 #: backends/platform/wii/options.cpp:48 engines/drascula/saveload.cpp:49
 #: engines/mohawk/myst_stacks/menu.cpp:284
@@ -77,9 +77,10 @@ msgstr "Siirry ylös"
 msgid "Cancel"
 msgstr "Peruuta"
 
-#: gui/browser.cpp:79 gui/browser_osx.mm:151 gui/chooser.cpp:47
-#: gui/filebrowser-dialog.cpp:66 gui/remotebrowser.cpp:61
-#: gui/themebrowser.cpp:56
+#: gui/browser.cpp:83 gui/chooser.cpp:47 gui/filebrowser-dialog.cpp:66
+#: gui/remotebrowser.cpp:61 gui/themebrowser.cpp:56
+#: backends/dialogs/macosx/macosx-dialogs.mm:148
+#: backends/dialogs/win32/win32-dialogs.cpp:145
 msgid "Choose"
 msgstr "Valitse"
 
@@ -159,8 +160,8 @@ msgstr ""
 
 #: gui/downloaddialog.cpp:147 gui/editgamedialog.cpp:300
 #: gui/fluidsynth-dialog.cpp:154 gui/KeysDialog.cpp:42 gui/launcher.cpp:504
-#: gui/launcher.cpp:508 gui/massadd.cpp:89 gui/options.cpp:1791
-#: gui/saveload-dialog.cpp:1141 engines/engine.cpp:456 engines/engine.cpp:467
+#: gui/launcher.cpp:508 gui/massadd.cpp:89 gui/options.cpp:1801
+#: gui/saveload-dialog.cpp:1141 engines/engine.cpp:465 engines/engine.cpp:476
 #: backends/platform/wii/options.cpp:47
 #: backends/platform/wince/CELauncherDialog.cpp:54
 #: engines/agos/animation.cpp:559 engines/drascula/saveload.cpp:49
@@ -246,7 +247,7 @@ msgstr ""
 "englanninkieliseksi"
 
 #: gui/editgamedialog.cpp:155 gui/editgamedialog.cpp:169 gui/options.cpp:1055
-#: gui/options.cpp:1068 gui/options.cpp:1082 gui/options.cpp:1672
+#: gui/options.cpp:1068 gui/options.cpp:1082 gui/options.cpp:1673
 #: audio/null.cpp:41
 msgid "<default>"
 msgstr "<oletus>"
@@ -269,11 +270,11 @@ msgstr "Alusta:"
 msgid "Engine"
 msgstr "Pelimoottori"
 
-#: gui/editgamedialog.cpp:188 gui/options.cpp:1415 gui/options.cpp:1524
+#: gui/editgamedialog.cpp:188 gui/options.cpp:1415 gui/options.cpp:1525
 msgid "Graphics"
 msgstr "Grafiikka"
 
-#: gui/editgamedialog.cpp:188 gui/options.cpp:1415 gui/options.cpp:1524
+#: gui/editgamedialog.cpp:188 gui/options.cpp:1415 gui/options.cpp:1525
 msgid "GFX"
 msgstr "GFX"
 
@@ -286,7 +287,7 @@ msgctxt "lowres"
 msgid "Override global graphic settings"
 msgstr "Ohita globaalit grafiikka-asetukset"
 
-#: gui/editgamedialog.cpp:203 gui/options.cpp:1554
+#: gui/editgamedialog.cpp:203 gui/options.cpp:1555
 msgid "Audio"
 msgstr "Ääni"
 
@@ -299,11 +300,11 @@ msgctxt "lowres"
 msgid "Override global audio settings"
 msgstr "Ohita globaalit ääniasetukset"
 
-#: gui/editgamedialog.cpp:217 gui/options.cpp:1559
+#: gui/editgamedialog.cpp:217 gui/options.cpp:1560
 msgid "Volume"
 msgstr "Voimakkuus"
 
-#: gui/editgamedialog.cpp:219 gui/options.cpp:1561
+#: gui/editgamedialog.cpp:219 gui/options.cpp:1562
 msgctxt "lowres"
 msgid "Volume"
 msgstr "Voimakkuus"
@@ -317,7 +318,7 @@ msgctxt "lowres"
 msgid "Override global volume settings"
 msgstr "Ohita globaalit äänenvoimakkuusasetukset"
 
-#: gui/editgamedialog.cpp:233 gui/options.cpp:1569
+#: gui/editgamedialog.cpp:233 gui/options.cpp:1570
 msgid "MIDI"
 msgstr "MIDI"
 
@@ -330,7 +331,7 @@ msgctxt "lowres"
 msgid "Override global MIDI settings"
 msgstr "Ohita globaalit MIDI-asetukset"
 
-#: gui/editgamedialog.cpp:248 gui/options.cpp:1579
+#: gui/editgamedialog.cpp:248 gui/options.cpp:1580
 msgid "MT-32"
 msgstr "MT-32"
 
@@ -343,11 +344,11 @@ msgctxt "lowres"
 msgid "Override global MT-32 settings"
 msgstr "Ohita globaalit MT-32 asetukset"
 
-#: gui/editgamedialog.cpp:262 gui/options.cpp:1586
+#: gui/editgamedialog.cpp:262 gui/options.cpp:1587
 msgid "Paths"
 msgstr "Polut"
 
-#: gui/editgamedialog.cpp:264 gui/options.cpp:1588
+#: gui/editgamedialog.cpp:264 gui/options.cpp:1589
 msgctxt "lowres"
 msgid "Paths"
 msgstr "Polut"
@@ -361,7 +362,7 @@ msgctxt "lowres"
 msgid "Game Path:"
 msgstr "Pelin polku:"
 
-#: gui/editgamedialog.cpp:278 gui/options.cpp:1612
+#: gui/editgamedialog.cpp:278 gui/options.cpp:1613
 msgid "Extra Path:"
 msgstr "Lisäkansio:"
 
@@ -370,44 +371,44 @@ msgstr "Lisäkansio:"
 msgid "Specifies path to additional data used by the game"
 msgstr "Määrittää polun lisätiedostoihin joita peli mahdollisesti käyttää"
 
-#: gui/editgamedialog.cpp:280 gui/options.cpp:1614
+#: gui/editgamedialog.cpp:280 gui/options.cpp:1615
 msgctxt "lowres"
 msgid "Extra Path:"
 msgstr "Lisäkansio:"
 
-#: gui/editgamedialog.cpp:287 gui/options.cpp:1596
+#: gui/editgamedialog.cpp:287 gui/options.cpp:1597
 msgid "Save Path:"
 msgstr "Tallennuskansio:"
 
 #: gui/editgamedialog.cpp:287 gui/editgamedialog.cpp:289
-#: gui/editgamedialog.cpp:290 gui/options.cpp:1596 gui/options.cpp:1598
-#: gui/options.cpp:1599
+#: gui/editgamedialog.cpp:290 gui/options.cpp:1597 gui/options.cpp:1599
+#: gui/options.cpp:1600
 msgid "Specifies where your saved games are put"
 msgstr "Määrittää polun pelitallennuksille"
 
-#: gui/editgamedialog.cpp:289 gui/options.cpp:1598
+#: gui/editgamedialog.cpp:289 gui/options.cpp:1599
 msgctxt "lowres"
 msgid "Save Path:"
 msgstr "Tallennuskansio:"
 
 #: gui/editgamedialog.cpp:313 gui/editgamedialog.cpp:410
-#: gui/editgamedialog.cpp:469 gui/editgamedialog.cpp:530 gui/options.cpp:1607
-#: gui/options.cpp:1615 gui/options.cpp:1624 gui/options.cpp:1816
-#: gui/options.cpp:1822 gui/options.cpp:1830 gui/options.cpp:1853
-#: gui/options.cpp:1886 gui/options.cpp:1892 gui/options.cpp:1899
-#: gui/options.cpp:1907 gui/options.cpp:2105 gui/options.cpp:2108
-#: gui/options.cpp:2115 gui/options.cpp:2125
+#: gui/editgamedialog.cpp:469 gui/editgamedialog.cpp:530 gui/options.cpp:1608
+#: gui/options.cpp:1616 gui/options.cpp:1625 gui/options.cpp:1826
+#: gui/options.cpp:1832 gui/options.cpp:1840 gui/options.cpp:1863
+#: gui/options.cpp:1896 gui/options.cpp:1902 gui/options.cpp:1909
+#: gui/options.cpp:1917 gui/options.cpp:2119 gui/options.cpp:2122
+#: gui/options.cpp:2129 gui/options.cpp:2139
 msgctxt "path"
 msgid "None"
 msgstr "Ei määritelty"
 
 #: gui/editgamedialog.cpp:318 gui/editgamedialog.cpp:416
-#: gui/editgamedialog.cpp:534 gui/options.cpp:1810 gui/options.cpp:1880
-#: gui/options.cpp:2111 backends/platform/wii/options.cpp:56
+#: gui/editgamedialog.cpp:534 gui/options.cpp:1820 gui/options.cpp:1890
+#: gui/options.cpp:2125 backends/platform/wii/options.cpp:56
 msgid "Default"
 msgstr "Oletus"
 
-#: gui/editgamedialog.cpp:462 gui/options.cpp:2119
+#: gui/editgamedialog.cpp:462 gui/options.cpp:2133
 msgid "Select SoundFont"
 msgstr "Valitse SoundFont"
 
@@ -415,7 +416,7 @@ msgstr "Valitse SoundFont"
 msgid "Select additional game directory"
 msgstr "Valitse lisähakemisto pelille"
 
-#: gui/editgamedialog.cpp:514 gui/options.cpp:2042
+#: gui/editgamedialog.cpp:514 gui/options.cpp:2056
 msgid "Select directory for saved games"
 msgstr "Valitse hakemisto pelitallennuksille"
 
@@ -507,7 +508,7 @@ msgstr "Sini"
 msgid "Triangle"
 msgstr "Kolmio"
 
-#: gui/fluidsynth-dialog.cpp:139 gui/options.cpp:1632
+#: gui/fluidsynth-dialog.cpp:139 gui/options.cpp:1633
 msgid "Misc"
 msgstr "Muut"
 
@@ -1131,198 +1132,213 @@ msgctxt "lowres"
 msgid "Speech volume:"
 msgstr "Puhe:"
 
-#: gui/options.cpp:1535
+#: gui/options.cpp:1536
 msgid "Shader"
 msgstr "Sävytin"
 
-#: gui/options.cpp:1547
+#: gui/options.cpp:1548
 msgid "Control"
 msgstr "Kontrollit"
 
-#: gui/options.cpp:1573
+#: gui/options.cpp:1574
 msgid "FluidSynth Settings"
 msgstr "FluidSynth asetukset"
 
-#: gui/options.cpp:1604
+#: gui/options.cpp:1605
 msgid "Theme Path:"
 msgstr "Teemojen polku:"
 
-#: gui/options.cpp:1606
+#: gui/options.cpp:1607
 msgctxt "lowres"
 msgid "Theme Path:"
 msgstr "Teemojen polku:"
 
-#: gui/options.cpp:1612 gui/options.cpp:1614 gui/options.cpp:1615
+#: gui/options.cpp:1613 gui/options.cpp:1615 gui/options.cpp:1616
 msgid "Specifies path to additional data used by all games or ScummVM"
 msgstr ""
 "Määrittää polun, jossa on lisätiedostoja joita ScummVM tai kaikki pelit "
 "käyttävät"
 
-#: gui/options.cpp:1621
+#: gui/options.cpp:1622
 msgid "Plugins Path:"
 msgstr "Pluginien sijainti:"
 
-#: gui/options.cpp:1623
+#: gui/options.cpp:1624
 msgctxt "lowres"
 msgid "Plugins Path:"
 msgstr "Pluginien sijainti:"
 
-#: gui/options.cpp:1634
+#: gui/options.cpp:1635
 msgctxt "lowres"
 msgid "Misc"
 msgstr "Muut"
 
-#: gui/options.cpp:1636
+#: gui/options.cpp:1637
 msgid "Theme:"
 msgstr "Teema:"
 
-#: gui/options.cpp:1640
+#: gui/options.cpp:1641
 msgid "GUI renderer:"
 msgstr "GUI renderöijä:"
 
-#: gui/options.cpp:1652
+#: gui/options.cpp:1653
 msgid "Autosave:"
 msgstr "Autom. tallennus:"
 
-#: gui/options.cpp:1654
+#: gui/options.cpp:1655
 msgctxt "lowres"
 msgid "Autosave:"
 msgstr "Autom. tallennus:"
 
-#: gui/options.cpp:1662
+#: gui/options.cpp:1663
 msgid "Keys"
 msgstr "Näppäimet"
 
-#: gui/options.cpp:1669
+#: gui/options.cpp:1670
 msgid "GUI language:"
 msgstr "ScummVM:n kieli:"
 
-#: gui/options.cpp:1669
+#: gui/options.cpp:1670
 msgid "Language of ScummVM GUI"
 msgstr "ScummVM käyttöliittymän kieli"
 
-#: gui/options.cpp:1695
-msgid "Switch the GUI language to the game language"
-msgstr ""
-
 #: gui/options.cpp:1696
+msgid "Switch the GUI language to the game language"
+msgstr "Käytä pelin kieltä ScummVM:ssä"
+
+#: gui/options.cpp:1697
 msgid ""
 "When starting a game, change the GUI language to the game language.That way, "
-"if a game uses the ScummVM save and load dialogs, they arein the same "
+"if a game uses the ScummVM save and load dialogs, they are in the same "
 "language as the game."
 msgstr ""
+"Käytä pelissä valittua kieltä ScummVM:n käyttöliittymässä pelin ollessa "
+"käynnissä. Näin pelin mahdollisesti avaamat ScummVM:n dialogit ovat samalla "
+"kielellä kuin itse peli."
 
-#: gui/options.cpp:1708 gui/updates-dialog.cpp:86
+#: gui/options.cpp:1710
+msgid "Use native system file browser"
+msgstr "Käytä käyttöjärjestelmän tiedostoselainta"
+
+#: gui/options.cpp:1711
+msgid ""
+"Use the native system file browser instead of the ScummVM one to select a "
+"file or directory."
+msgstr ""
+"Käytä käyttöjärjestelmän tiedostoselainta ScummVM:n toteutuksen sijaan "
+"tiedostojen ja kansioiden valintaan."
+
+#: gui/options.cpp:1718 gui/updates-dialog.cpp:86
 msgid "Update check:"
 msgstr "Päivitystarkistus:"
 
-#: gui/options.cpp:1708
+#: gui/options.cpp:1718
 msgid "How often to check ScummVM updates"
 msgstr "Kuinka usein tarkistetaan onko ScummVM:ään päivityksiä"
 
-#: gui/options.cpp:1720
+#: gui/options.cpp:1730
 msgid "Check now"
 msgstr "Tarkista nyt"
 
-#: gui/options.cpp:1728
+#: gui/options.cpp:1738
 msgid "Cloud"
 msgstr "Pilvi"
 
-#: gui/options.cpp:1730
+#: gui/options.cpp:1740
 msgctxt "lowres"
 msgid "Cloud"
 msgstr "Pilvi"
 
-#: gui/options.cpp:1736
+#: gui/options.cpp:1746
 msgid "Storage:"
 msgstr "Tallennustila:"
 
-#: gui/options.cpp:1736
+#: gui/options.cpp:1746
 msgid "Active cloud storage"
 msgstr "Aktiivinen pilvitallennus"
 
-#: gui/options.cpp:1743 gui/options.cpp:2322
+#: gui/options.cpp:1753 gui/options.cpp:2336
 msgid "<none>"
 msgstr "<tyhjä>"
 
-#: gui/options.cpp:1747 backends/platform/wii/options.cpp:114
+#: gui/options.cpp:1757 backends/platform/wii/options.cpp:114
 msgid "Username:"
 msgstr "Käyttäjänimi:"
 
-#: gui/options.cpp:1747
+#: gui/options.cpp:1757
 msgid "Username used by this storage"
 msgstr "Tallennustilan käyttäjänimi"
 
-#: gui/options.cpp:1750
+#: gui/options.cpp:1760
 msgid "Used space:"
 msgstr "Käytetty tila:"
 
-#: gui/options.cpp:1750
+#: gui/options.cpp:1760
 msgid "Space used by ScummVM's saved games on this storage"
 msgstr "ScummVM:n pelitallennusten käyttämä tila tallennustilassa"
 
-#: gui/options.cpp:1753
+#: gui/options.cpp:1763
 msgid "Last sync time:"
 msgstr "Viimeisin synkronointi:"
 
-#: gui/options.cpp:1753
+#: gui/options.cpp:1763
 msgid "When the last saved games sync for this storage occured"
 msgstr "Milloin pelitallennukset viimeksi synkronoitiin tähän tallennustilaan"
 
-#: gui/options.cpp:1756 gui/storagewizarddialog.cpp:71
+#: gui/options.cpp:1766 gui/storagewizarddialog.cpp:71
 msgid "Connect"
 msgstr "Yhdistä"
 
-#: gui/options.cpp:1756
+#: gui/options.cpp:1766
 msgid "Open wizard dialog to connect your cloud storage account"
 msgstr "Avaa velhodialogi pilvitilan tiliin kirjautumiseen"
 
-#: gui/options.cpp:1757
+#: gui/options.cpp:1767
 msgid "Refresh"
 msgstr "Päivitä"
 
-#: gui/options.cpp:1757
+#: gui/options.cpp:1767
 msgid "Refresh current cloud storage information (username and usage)"
 msgstr "Päivitä tämänhetkiset pilvitilan tiedot (käyttäjänimi ja käyttöaste)"
 
-#: gui/options.cpp:1758
+#: gui/options.cpp:1768
 msgid "Download"
 msgstr "Lataa"
 
-#: gui/options.cpp:1758
+#: gui/options.cpp:1768
 msgid "Open downloads manager dialog"
 msgstr "Avaa lataustenhallintadialogi"
 
-#: gui/options.cpp:1760
+#: gui/options.cpp:1770
 msgid "Run server"
 msgstr "Käynnistä palvelin"
 
-#: gui/options.cpp:1760
+#: gui/options.cpp:1770
 msgid "Run local webserver"
 msgstr "Käynnistä paikallinen webpalvelin"
 
-#: gui/options.cpp:1761 gui/options.cpp:2432
+#: gui/options.cpp:1771 gui/options.cpp:2446
 msgid "Not running"
 msgstr "Ei käynnissä"
 
-#: gui/options.cpp:1765
+#: gui/options.cpp:1775
 msgid "/root/ Path:"
 msgstr "/root/-polku:"
 
-#: gui/options.cpp:1765 gui/options.cpp:1767 gui/options.cpp:1768
+#: gui/options.cpp:1775 gui/options.cpp:1777 gui/options.cpp:1778
 msgid "Specifies which directory the Files Manager can access"
 msgstr "Määrittää hakemiston johon tiedostonhallinnalla on pääsy"
 
-#: gui/options.cpp:1767
+#: gui/options.cpp:1777
 msgctxt "lowres"
 msgid "/root/ Path:"
 msgstr "/root/-polku:"
 
-#: gui/options.cpp:1777
+#: gui/options.cpp:1787
 msgid "Server's port:"
 msgstr "Palvelimen portti:"
 
-#: gui/options.cpp:1777
+#: gui/options.cpp:1787
 msgid ""
 "Which port is used by the server\n"
 "Auth with server is not available with non-default port"
@@ -1330,27 +1346,27 @@ msgstr ""
 "Palvelimen käyttämä portti\n"
 "Autentikaatio palvelimella on mahdollista vain vakioportilla"
 
-#: gui/options.cpp:1790
+#: gui/options.cpp:1800
 msgid "Apply"
 msgstr "Käytä"
 
-#: gui/options.cpp:1933
+#: gui/options.cpp:1943
 msgid "Failed to change cloud storage!"
 msgstr "Pilvitallennustilan vaihtaminen epäonnistui!"
 
-#: gui/options.cpp:1936
+#: gui/options.cpp:1946
 msgid "Another cloud storage is already active."
 msgstr "Toinen pilvitila on jo aktiivinen."
 
-#: gui/options.cpp:2007
+#: gui/options.cpp:2021
 msgid "Theme does not support selected language!"
 msgstr "Teema ei tue valittua kieltä!"
 
-#: gui/options.cpp:2010
+#: gui/options.cpp:2024
 msgid "Theme cannot be loaded!"
 msgstr "Teemaa ei pystytä lataamaan!"
 
-#: gui/options.cpp:2013
+#: gui/options.cpp:2027
 msgid ""
 "\n"
 "Misc settings will be restored."
@@ -1358,48 +1374,48 @@ msgstr ""
 "\n"
 "Muut asetukset palautetaan."
 
-#: gui/options.cpp:2049
+#: gui/options.cpp:2063
 msgid "The chosen directory cannot be written to. Please select another one."
 msgstr "Valittuun hakemistoon ei voi kirjoittaa. Valitse toinen hakemisto."
 
-#: gui/options.cpp:2058
+#: gui/options.cpp:2072
 msgid "Select directory for GUI themes"
 msgstr "Valitse hakemisto käyttöliittymän teemoille"
 
-#: gui/options.cpp:2068
+#: gui/options.cpp:2082
 msgid "Select directory for extra files"
 msgstr "Valitse hakemisto lisätiedostoille"
 
-#: gui/options.cpp:2079
+#: gui/options.cpp:2093
 msgid "Select directory for plugins"
 msgstr "Valitse hakemisto plugineille"
 
-#: gui/options.cpp:2091
+#: gui/options.cpp:2105
 msgid "Select directory for Files Manager /root/"
 msgstr "Valitse /root/ hakemisto tiedostonhallinnalle"
 
-#: gui/options.cpp:2329
+#: gui/options.cpp:2343
 #, c-format
 msgid "%llu bytes"
 msgstr "%llu tavua"
 
-#: gui/options.cpp:2337
+#: gui/options.cpp:2351
 msgid "<right now>"
 msgstr "<nyt>"
 
-#: gui/options.cpp:2339
+#: gui/options.cpp:2353
 msgid "<never>"
 msgstr "<ei koskaan>"
 
-#: gui/options.cpp:2423
+#: gui/options.cpp:2437
 msgid "Stop server"
 msgstr "Pysäytä palvelin"
 
-#: gui/options.cpp:2424
+#: gui/options.cpp:2438
 msgid "Stop local webserver"
 msgstr "Pysäytä paikallinen webpalvelin"
 
-#: gui/options.cpp:2515
+#: gui/options.cpp:2529
 msgid ""
 "Request failed.\n"
 "Check your Internet connection."
@@ -1950,31 +1966,31 @@ msgstr "~P~eruuta"
 msgid "~K~eys"
 msgstr "~N~äppäimet"
 
-#: engines/engine.cpp:319
+#: engines/engine.cpp:317
 msgid "Could not initialize color format."
 msgstr "Väriformaattia ei voitu alustaa."
 
-#: engines/engine.cpp:327
+#: engines/engine.cpp:325
 msgid "Could not switch to video mode: '"
 msgstr "Videotilan vaihto ei onnistunut:'"
 
-#: engines/engine.cpp:336
+#: engines/engine.cpp:334
 msgid "Could not switch to stretch mode: '"
 msgstr "Venytystilan vaihto ei onnistunut:'"
 
-#: engines/engine.cpp:345
+#: engines/engine.cpp:343
 msgid "Could not apply aspect ratio setting."
 msgstr "Kuvasuhdeasetusta ei voitu asettaa."
 
-#: engines/engine.cpp:350
+#: engines/engine.cpp:348
 msgid "Could not apply fullscreen setting."
 msgstr "Kokoruututila-asetusta ei voi asettaa."
 
-#: engines/engine.cpp:355
+#: engines/engine.cpp:353
 msgid "Could not apply filtering setting."
 msgstr "Suodatusasetusta ei voitu ottaa käyttöön."
 
-#: engines/engine.cpp:452
+#: engines/engine.cpp:461
 msgid ""
 "You appear to be playing this game directly\n"
 "from the CD. This is known to cause problems,\n"
@@ -1987,7 +2003,7 @@ msgstr ""
 "pelin tiedostot kovalevyllesi. Avaa LUEMINUT\n"
 "tiedosto ohjeita varten."
 
-#: engines/engine.cpp:463
+#: engines/engine.cpp:472
 msgid ""
 "This game has audio tracks in its disk. These\n"
 "tracks need to be ripped from the disk using\n"
@@ -2000,7 +2016,7 @@ msgstr ""
 "ohjelmistoa käyttäen, jotta musiikit\n"
 "kuuluvat. Lue ohjeet README-tiedostosta."
 
-#: engines/engine.cpp:521
+#: engines/engine.cpp:530
 #, c-format
 msgid ""
 "Failed to load saved game (%s)! Please consult the README for basic "
@@ -2009,7 +2025,7 @@ msgstr ""
 "Pelitallennuksen lataus epäonnistui (%s)! Konsultoi README-tiedostoa "
 "saadaksesi lisätietoa ja ohjeita avun hankkimiseen."
 
-#: engines/engine.cpp:534
+#: engines/engine.cpp:543
 msgid ""
 "WARNING: The game you are about to start is not yet fully supported by "
 "ScummVM. As such, it is likely to be unstable, and any saved game you make "
@@ -2019,7 +2035,7 @@ msgstr ""
 "epävakaa, eivätkä pelitallennukset välttämättä toimi tulevissa ScummVM:n "
 "versioissa."
 
-#: engines/engine.cpp:537
+#: engines/engine.cpp:546
 msgid "Start anyway"
 msgstr "Pelaa silti"
 
@@ -2383,7 +2399,7 @@ msgstr " (Globaali)"
 msgid " (Game)"
 msgstr " (Peli)"
 
-#: backends/midi/windows.cpp:165
+#: backends/midi/windows.cpp:163
 msgid "Windows MIDI"
 msgstr "Windows MIDI"
 
@@ -2932,7 +2948,7 @@ msgstr "\"%s\" pelimoottorin datatiedostoa ei löydetty."
 
 #: engines/access/resources.cpp:52 engines/drascula/drascula.cpp:980
 #: engines/hugo/hugo.cpp:448 engines/lure/lure.cpp:73
-#: engines/mortevielle/mortevielle.cpp:315 engines/supernova/supernova.cpp:185
+#: engines/mortevielle/mortevielle.cpp:314 engines/supernova/supernova.cpp:184
 #: engines/tony/tony.cpp:210 engines/toon/toon.cpp:4938
 #, c-format
 msgid "The '%s' engine data file is corrupt."
@@ -2940,7 +2956,7 @@ msgstr "\"%s\" pelimoottorin datatiedosto on korruptoitunut."
 
 #: engines/access/resources.cpp:61 engines/drascula/drascula.cpp:991
 #: engines/hugo/hugo.cpp:458 engines/lure/lure.cpp:76
-#: engines/mortevielle/mortevielle.cpp:326 engines/tony/tony.cpp:221
+#: engines/mortevielle/mortevielle.cpp:324 engines/tony/tony.cpp:221
 #: engines/toon/toon.cpp:4949
 #, c-format
 msgid ""
@@ -3128,239 +3144,238 @@ msgstr "Näytä grafiikat käyttäen pelin kirkasta palettia"
 
 #: engines/glk/scott/scott.cpp:98
 msgid "I don't understand your command. "
-msgstr ""
+msgstr "En ymmärrä komentoasi. "
 
 #: engines/glk/scott/scott.cpp:101
 msgid "I can't do that yet. "
-msgstr ""
+msgstr "En pysty tekemään tuota vielä. "
 
 #: engines/glk/scott/scott.cpp:117
 msgid "Light has run out! "
-msgstr ""
+msgstr "Valo on sammunut! "
 
 #: engines/glk/scott/scott.cpp:119
 msgid "Your light has run out. "
-msgstr ""
+msgstr "Valosi on sammunut. "
 
 #: engines/glk/scott/scott.cpp:128
 msgid "Light runs out in "
-msgstr ""
+msgstr "Valo sammuu "
 
 #: engines/glk/scott/scott.cpp:130
-#, fuzzy
 msgid " turns. "
-msgstr "Kytke päälle"
+msgstr " vuorossa. "
 
 #: engines/glk/scott/scott.cpp:133
 msgid "Your light is growing dim. "
-msgstr ""
+msgstr "Valosi hiipuu. "
 
 #: engines/glk/scott/scott.cpp:393
 msgid "North"
-msgstr ""
+msgstr "Pohjoinen"
 
 #: engines/glk/scott/scott.cpp:393
 msgid "South"
-msgstr ""
+msgstr "Etelä"
 
 #: engines/glk/scott/scott.cpp:393
 msgid "East"
-msgstr ""
+msgstr "Itä"
 
 #: engines/glk/scott/scott.cpp:393
 msgid "West"
-msgstr ""
+msgstr "Länsi"
 
 #: engines/glk/scott/scott.cpp:405
 msgid "You can't see. It is too dark!\n"
-msgstr ""
+msgstr "Et näe mitään. On liian pimeää!\n"
 
 #: engines/glk/scott/scott.cpp:407
 msgid "I can't see. It is too dark!\n"
-msgstr ""
+msgstr "En näe mitään. On liian pimeää!\n"
 
 #: engines/glk/scott/scott.cpp:417
 #, c-format
 msgid "You are in a %s\n"
-msgstr ""
+msgstr "Olet paikassa %s\n"
 
 #: engines/glk/scott/scott.cpp:419
 #, c-format
 msgid "I'm in a %s\n"
-msgstr ""
+msgstr "Olen paikassa %s\n"
 
 #: engines/glk/scott/scott.cpp:424
 msgid ""
 "\n"
 "Obvious exits: "
 msgstr ""
+"\n"
+"Ilmeiset uloskäynnit: "
 
 #: engines/glk/scott/scott.cpp:437
-#, fuzzy
 msgid "none"
-msgstr "<tyhjä>"
+msgstr "ei ainuttakaan"
 
 #: engines/glk/scott/scott.cpp:446
 msgid ""
 "\n"
 "You can also see: "
 msgstr ""
+"\n"
+"Näet myös: "
 
 #: engines/glk/scott/scott.cpp:449
 msgid ""
 "\n"
 "I can also see: "
 msgstr ""
+"\n"
+"Näen myös: "
 
 #: engines/glk/scott/scott.cpp:529
-#, fuzzy
 msgid "Saved.\n"
-msgstr "Tallenna"
+msgstr "Tallennettu.\n"
 
 #: engines/glk/scott/scott.cpp:620
 msgid "You use word(s) I don't know! "
-msgstr ""
+msgstr "Käytät sanoja joita en ymmärrä! "
 
 #: engines/glk/scott/scott.cpp:748 engines/glk/scott/scott.cpp:1071
 #: engines/glk/scott/scott.cpp:1093
 msgid "You are carrying too much. "
-msgstr ""
+msgstr "Sinulla on liikaa kannettavaa. "
 
 #: engines/glk/scott/scott.cpp:750
 msgid "I've too much to carry! "
-msgstr ""
+msgstr "Minulla on liikaa kannettavaa! "
 
 #: engines/glk/scott/scott.cpp:781
 msgid "You are dead.\n"
-msgstr ""
+msgstr "Olet kuollut.\n"
 
 #: engines/glk/scott/scott.cpp:783
 msgid "I am dead.\n"
-msgstr ""
+msgstr "Olen kuollut.\n"
 
 #: engines/glk/scott/scott.cpp:795
-#, fuzzy
 msgid "The game is now over.\n"
-msgstr "Peliä EI ladattu"
+msgstr "Peli on nyt loppu.\n"
 
 #: engines/glk/scott/scott.cpp:810
 msgid "You have stored "
-msgstr ""
+msgstr "Olet kerännyt "
 
 #: engines/glk/scott/scott.cpp:812
-#, fuzzy
 msgid "I've stored "
-msgstr "Lataa tallenne"
+msgstr "Olen kerännyt "
 
 #: engines/glk/scott/scott.cpp:814
 msgid " treasures.  On a scale of 0 to 100, that rates "
-msgstr ""
+msgstr " aarretta.  Mittapuulla 0-100, se on "
 
 #: engines/glk/scott/scott.cpp:818
 msgid "Well done.\n"
-msgstr ""
+msgstr "Hyvin tehty.\n"
 
 #: engines/glk/scott/scott.cpp:827
 msgid "You are carrying:\n"
-msgstr ""
+msgstr "Sinulla on kannossa:\n"
 
 #: engines/glk/scott/scott.cpp:829
 msgid "I'm carrying:\n"
-msgstr ""
+msgstr "Minulla on kannossa:\n"
 
 #: engines/glk/scott/scott.cpp:844
 msgid "Nothing"
-msgstr ""
+msgstr "Ei mitään"
 
 #: engines/glk/scott/scott.cpp:973
 msgid "Give me a direction too."
-msgstr ""
+msgstr "Kerro minulle myös suunta."
 
 #: engines/glk/scott/scott.cpp:982
 msgid "Dangerous to move in the dark! "
-msgstr ""
+msgstr "On vaarallista liikkua pimeällä! "
 
 #: engines/glk/scott/scott.cpp:990
 msgid "You fell down and broke your neck. "
-msgstr ""
+msgstr "Putosit ja taitoit niskasi. "
 
 #: engines/glk/scott/scott.cpp:992
 msgid "I fell down and broke my neck. "
-msgstr ""
+msgstr "Putosin ja taitoin niskani. "
 
 #: engines/glk/scott/scott.cpp:997
 msgid "You can't go in that direction. "
-msgstr ""
+msgstr "Et voi mennä siihen suuntaan. "
 
 #: engines/glk/scott/scott.cpp:999
 msgid "I can't go in that direction. "
-msgstr ""
+msgstr "En voi mennä siihen suuntaan. "
 
 #: engines/glk/scott/scott.cpp:1057
 msgid "It is dark.\n"
-msgstr ""
+msgstr "On pimeää.\n"
 
 #: engines/glk/scott/scott.cpp:1073 engines/glk/scott/scott.cpp:1095
 msgid "I've too much to carry. "
-msgstr ""
+msgstr "Minulla on liikaa kannettavaa. "
 
 #: engines/glk/scott/scott.cpp:1078 engines/glk/scott/scott.cpp:1126
 msgid ": O.K.\n"
-msgstr ""
+msgstr ": O.K.\n"
 
 #: engines/glk/scott/scott.cpp:1084
 msgid "Nothing taken."
-msgstr ""
+msgstr "Mitään ei otettu."
 
 #: engines/glk/scott/scott.cpp:1088 engines/glk/scott/scott.cpp:1136
-#, fuzzy
 msgid "What ? "
-msgstr "Mitä on"
+msgstr "Mitä ? "
 
 #: engines/glk/scott/scott.cpp:1101
 msgid "It is beyond your power to do that. "
-msgstr ""
+msgstr "Se on kykyjesi ulkopuolella. "
 
 #: engines/glk/scott/scott.cpp:1103
 msgid "It's beyond my power to do that. "
-msgstr ""
+msgstr "Se on kykyjeni ulkopuolella. "
 
 #: engines/glk/scott/scott.cpp:1107
 msgid "O.K. "
-msgstr ""
+msgstr "O.K. "
 
 #: engines/glk/scott/scott.cpp:1132
 msgid "Nothing dropped.\n"
-msgstr ""
+msgstr "Mitään ei pudotettu.\n"
 
 #: engines/glk/scott/scott.cpp:1142
 msgid "It's beyond your power to do that.\n"
-msgstr ""
+msgstr "Se on kykyjesi ulkopuolella.\n"
 
 #: engines/glk/scott/scott.cpp:1144
 msgid "It's beyond my power to do that.\n"
-msgstr ""
+msgstr "Se on kykyjeni ulkopuolella.\n"
 
-#: engines/glk/frotz/detection.cpp:130
-#, fuzzy
+#: engines/glk/frotz/detection.cpp:154
 msgid "Unnamed savegame"
 msgstr "Nimetön pelitallennus"
 
 #: engines/glk/glulxe/glulxe.cpp:55
 msgid "This is too short to be a valid Glulx file."
-msgstr ""
+msgstr "Tämä on liian lyhyt ollakseen validi Glulx-tiedosto."
 
 #: engines/glk/glulxe/glulxe.cpp:60
 msgid "This is not a valid Glulx file."
-msgstr ""
+msgstr "Tämä ei ole validi Glulx-tiedosto."
 
 #: engines/glk/glulxe/glulxe.cpp:67
 msgid "This Glulx file is too old a version to execute."
-msgstr ""
+msgstr "Tämä Glulx-tiedosto on versioltaan liian vanha ajettavaksi."
 
 #: engines/glk/glulxe/glulxe.cpp:71
 msgid "This Glulx file is too new a version to execute."
-msgstr ""
+msgstr "Tämä Glulx-tiedosto on versioltaan liian uusi ajettavaksi."
 
 #: engines/gob/inter_playtoons.cpp:255 engines/gob/inter_v2.cpp:1467
 #: engines/gob/inter_geisha.cpp:232 engines/tinsel/saveload.cpp:538
@@ -4885,7 +4900,7 @@ msgstr "Levykeversion intro"
 msgid "Use the floppy version's intro (CD version only)"
 msgstr "Käytä levykeversion introa (vain CD versiossa)"
 
-#: engines/supernova/supernova.cpp:193
+#: engines/supernova/supernova.cpp:191
 #, c-format
 msgid ""
 "Incorrect version of the '%s' engine data file found. Expected %d but got %d."
@@ -4893,7 +4908,7 @@ msgstr ""
 "Pelimoottorin \"%s\" datatiedostosta löytyi väärä versio. Odotettu versio "
 "%d, löytynyt versio %d."
 
-#: engines/supernova/supernova.cpp:220
+#: engines/supernova/supernova.cpp:217
 #, c-format
 msgid "Unable to locate the text for %s language in '%s' engine data file."
 msgstr "Kielen %s tekstejä ei löydetty tiedostosta '%s'."

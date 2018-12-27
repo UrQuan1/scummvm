@@ -43,6 +43,7 @@ class KIASectionSettings : public KIASectionBase {
 	UISlider      *_speechVolume;
 	UISlider      *_gammaCorrection;
 	UICheckBox    *_directorsCut;
+	UICheckBox    *_subtitlesEnable;
 	UIImagePicker *_playerAgendaSelector;
 
 	int            _mouseX;

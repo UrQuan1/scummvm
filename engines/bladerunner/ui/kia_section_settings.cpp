@@ -55,7 +55,8 @@ KIASectionSettings::KIASectionSettings(BladeRunnerEngine *vm)
 	_ambientSoundVolume   = new UISlider(_vm, sliderCallback, this, Common::Rect(180, 210, 460, 220), 101, 0);
 	_speechVolume         = new UISlider(_vm, sliderCallback, this, Common::Rect(180, 235, 460, 245), 101, 0);
 	_gammaCorrection      = new UISlider(_vm, sliderCallback, this, Common::Rect(180, 260, 460, 270), 101, 0);
-	_directorsCut         = new UICheckBox(_vm, checkBoxCallback, this, Common::Rect(180, 364, 460, 374), 0, false);
+	_directorsCut         = new UICheckBox(_vm, checkBoxCallback, this, Common::Rect(180, 364, 270, 374), 0, false);
+	_subtitlesEnable = new UICheckBox(_vm, checkBoxCallback, this, Common::Rect(291, 364, 360, 374), 0, false);
 	_playerAgendaSelector = new UIImagePicker(_vm, 5);
 
 	_uiContainer->add(_musicVolume);
@@ -64,6 +65,7 @@ KIASectionSettings::KIASectionSettings(BladeRunnerEngine *vm)
 	_uiContainer->add(_speechVolume);
 	_uiContainer->add(_gammaCorrection);
 	_uiContainer->add(_directorsCut);
+	_uiContainer->add(_subtitlesEnable);
 
 	_learyPos = 0;
 }
@@ -76,6 +78,7 @@ KIASectionSettings::~KIASectionSettings() {
 	delete _speechVolume;
 	delete _gammaCorrection;
 	delete _directorsCut;
+	delete _subtitlesEnable;
 	delete _playerAgendaSelector;
 }
 
@@ -91,6 +94,7 @@ void KIASectionSettings::open() {
 	_playerAgendaSelector->activate(mouseInCallback, nullptr, nullptr, mouseUpCallback, this);
 
 	_directorsCut->enable();
+	_subtitlesEnable->enable();
 }
 
 void KIASectionSettings::close() {
@@ -105,6 +109,8 @@ void KIASectionSettings::draw(Graphics::Surface &surface) {
 	_gammaCorrection->setValue(100.0f);
 	_directorsCut->setChecked(_vm->_gameFlags->query(kFlagDirectorsCut));
 
+	_subtitlesEnable->setChecked(_vm->isSubtitlesEnabled());
+
 	const char *textConversationChoices = _vm->_textOptions->getText(0);
 	const char *textMusic = _vm->_textOptions->getText(2);
 	const char *textSoundEffects = _vm->_textOptions->getText(3);
@@ -116,6 +122,8 @@ void KIASectionSettings::draw(Graphics::Surface &surface) {
 	const char *textDark = _vm->_textOptions->getText(14);
 	const char *textLight = _vm->_textOptions->getText(15);
 	const char *textDesignersCut = _vm->_textOptions->getText(18);
+	// Allow this to be loading as an extra text item in the resource for text options
+	const char *textSubtitles  = strcmp(_vm->_textOptions->getText(42), "") == 0? "Subtitles" : _vm->_textOptions->getText(42); // +1 to the max of original index of textOptions which is 41
 
 	int posConversationChoices = 320 - _vm->_mainFont->getTextWidth(textConversationChoices) / 2;
 	int posMusic = 320 - _vm->_mainFont->getTextWidth(textMusic) / 2;
@@ -152,6 +160,7 @@ void KIASectionSettings::draw(Graphics::Surface &surface) {
 	_vm->_mainFont->drawColor(textLight, surface, 462, 261, 0x6EEE);
 
 	_vm->_mainFont->drawColor(textDesignersCut, surface, 192, 365, 0x7751);
+	_vm->_mainFont->drawColor(textSubtitles, surface, 303, 365, 0x7751);
 
 	_playerAgendaSelector->drawTooltip(surface, _mouseX, _mouseY);
 }
@@ -226,6 +235,9 @@ void KIASectionSettings::checkBoxCallback(void *callbackData, void *source) {
 		} else {
 			self->_vm->_gameFlags->reset(kFlagDirectorsCut);
 		}
+	}
+	else if (source == self->_subtitlesEnable) {
+		self->_vm->setSubtitlesEnabled(self->_subtitlesEnable->_isChecked);
 	}
 }
 

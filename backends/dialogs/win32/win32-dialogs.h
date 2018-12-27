@@ -20,56 +20,26 @@
  *
  */
 
-#ifndef BLADERUNNER_RECT_H
-#define BLADERUNNER_RECT_H
+#ifndef BACKEND_WIN32_DIALOGS_H
+#define BACKEND_WIN32_DIALOGS_H
 
-#include "common/debug.h"
-#include "common/types.h"
-#include "common/util.h"
+#if defined(WIN32) && defined(USE_SYSDIALOGS)
 
-namespace BladeRunner {
+#include "common/fs.h"
+#include "common/dialogs.h"
 
-struct Rect {
-	float x0;
-	float y0;
-	float x1;
-	float y1;
+class SdlWindow_Win32;
 
-	Rect()
-		: x0(0.0f), y0(0.0f), x1(0.0f), y1(0.0f)
-	{}
-	Rect(float x0_, float y0_, float x1_, float y1_)
-		: x0(x0_), y0(y0_), x1(x1_), y1(y1_)
-	{}
+class Win32DialogManager : public Common::DialogManager {
+public:
+	Win32DialogManager(SdlWindow_Win32 *window);
+	virtual ~Win32DialogManager();
+	virtual DialogResult showFileBrowser(const char *title, Common::FSNode &choice, bool isDirBrowser);
 
-	void expand(float d) {
-		x0 -= d;
-		y0 -= d;
-		x1 += d;
-		y1 += d;
-	}
-
-	void trunc_2_decimals() {
-		x0 = truncf(x0 * 100.0f) / 100.0f;
-		y0 = truncf(y0 * 100.0f) / 100.0f;
-		x1 = truncf(x1 * 100.0f) / 100.0f;
-		y1 = truncf(y1 * 100.0f) / 100.0f;
-	}
+private:
+	SdlWindow_Win32 *_window;
 };
 
-inline bool overlaps(const Rect &a, const Rect &b) {
-	return !(a.y1 < b.y0 || a.y0 > b.y1 || a.x0 > b.x1 || a.x1 < b.x0);
-}
-
-inline Rect merge(const Rect &a, const Rect &b) {
-	Rect c;
-	c.x0 = MIN(a.x0, b.x0);
-	c.y0 = MIN(a.y0, b.y0);
-	c.x1 = MAX(a.x1, b.x1);
-	c.y1 = MAX(a.y1, b.y1);
-	return c;
-}
-
-} // End of namespace BladeRunner
-
 #endif
+
+#endif // BACKEND_WIN32_DIALOGS_H
