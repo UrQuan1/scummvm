@@ -17,7 +17,7 @@ page at: <https://www.scummvm.org/>
       - [3.2) Datafiles](#32-datafiles)
       - [3.3) Multi-CD games notes](#33-multi-cd-games-notes)
       - [3.4) Known Problems](#34-known-problems)
-      - [3.5) Extra Data Files](#35-extra-data-files)      
+      - [3.5) Extra Data Files](#35-extra-data-files)
       - [3.6) Broken Sword games notes](#36-broken-sword-games-notes)
           - [3.6.1) Broken Sword](#361-broken-sword)
           - [3.6.2) Broken Sword II](#362-broken-sword-ii)
