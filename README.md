@@ -209,7 +209,7 @@ We've compiled a list of F.A.Q. at:
 ## 2.0) Contact
 
 The easiest way to contact the ScummVM team is by submitting bug reports
-(see section 2.1) or by using our forums at <http://forums.scummvm.org>.
+(see section 2.1) or by using our forums at <https://forums.scummvm.org>.
 You can also join and e-mail the scummvm-devel mailing list, or chat
 with us on IRC (\#scummvm on irc.freenode.net) Please do not ask us to
 support an unsupported game -- read the FAQ on our web site first.
@@ -226,7 +226,7 @@ our website for that game, to ensure the issue is not already known:
 
 Please do not report bugs for games that are not listed as being
 completeable in the 'Supported Games' section, or compatibility list. We
--know- those games have bugs.
+_know_ those games have bugs.
 
 Please include the following information:
 
@@ -690,12 +690,12 @@ Humongous Entertainment games:
 
 ### 3.5) Extra Data Files
 
-Some games require additional files that are not part of the original data. 
+Some games require additional files that are not part of the original data.
 Those files can generally be found in our [Downloads](https://www.scummvm.org/downloads/#extras) page.
 
 Games that require additional data:
   - Beneath a Steel Sky (sky.cpt)
-  - Flight of the Amazon Queen 
+  - Flight of the Amazon Queen
   - Kyrandia Series (kyra.dat)
   - Lands of Lore Series (kyra.dat)
   - Lure of the Temptress (lure.dat)
@@ -757,7 +757,7 @@ may also use the re-encoded cutscenes mentioned below instead, but this
 will not work for all videos in Broken Sword II. For more information,
 see:
 
-<http://wiki.scummvm.org/index.php/HOWTO-PlayStation_Videos>
+<https://wiki.scummvm.org/index.php/HOWTO-PlayStation_Videos>
 
 Some re-releases of the games, as well as the PlayStation version, do
 not have Smacker videos. Revolution Software has kindly allowed us to
@@ -845,9 +845,9 @@ All game files and the walkthrough can be downloaded from:
 ### 3.9) Flight of the Amazon Queen notes
 
 Only the original non-freeware version of Flight of the Amazon Queen
-(from original CD), requires the `queen.tbl` datafile (available from 
-the `Downloads` page on our website) in either the directory containing 
-the `queen.1` game data file, in your extrapath, or in the directory 
+(from original CD), requires the `queen.tbl` datafile (available from
+the `Downloads` page on our website) in either the directory containing
+the `queen.1` game data file, in your extrapath, or in the directory
 where your ScummVM executable resides.
 
 Alternatively, you can use the `compress_queen` tool from the tools
@@ -871,7 +871,7 @@ In order to run the Mac OS X Wyrmkeep re-release of the game you will
 need to copy over data from the CD to your hard disk. If you're on a PC
 then consult:
 
-<http://wiki.scummvm.org/index.php/HOWTO-Mac_Games>
+<https://wiki.scummvm.org/index.php/HOWTO-Mac_Games>
 
 Although it primarily talks about SCUMM games, it mentions the
 "HFSExplorer" utility which you need to extract the files. Note that you
@@ -1262,7 +1262,7 @@ nor recommended.
 For further information on copying Macintosh game files to your hard
 disk see:
 
-<http://wiki.scummvm.org/index.php/HOWTO-Mac_Games>
+<https://wiki.scummvm.org/index.php/HOWTO-Mac_Games>
 
 ## 4.0) Supported Platforms
 
@@ -1281,18 +1281,25 @@ Supported platforms include (but are not limited to):
   - Mac OS X
   - AmigaOS
   - Android
+  - Atari/FreeMiNT
   - BeOS
   - Dreamcast
   - GP2x
+  - Haiku
   - iPhone (also includes iPod Touch and iPad)
   - Maemo (Nokia Internet tablet N810)
   - Nintendo 64
   - Nintendo DS
   - Nintendo GameCube
   - Nintendo Wii
+  - OpenPandora
   - OS/2
   - PlayStation 2
+  - PlayStation 3
   - PlayStation Portable
+  - PlayStation Vita
+  - Raspberry Pi
+  - RISC OS
   - Symbian
   - WebOS
 
@@ -1301,14 +1308,14 @@ Dig. The Nintendo DS port does not support Full Throttle, The Dig, or
 The Curse of Monkey Island. For more platform specific limitations,
 please refer to our Wiki:
 
-<http://wiki.scummvm.org/index.php/Platforms>
+<https://wiki.scummvm.org/index.php/Platforms>
 
 In the Macintosh port, the right mouse button is emulated via Cmd-Click
 (that is, you click the mouse button while holding the
 Command/Apple/Propeller key).
 
 There are unofficial ports to a variety of platforms, including the
-PlayStation 3, Xbox, and Xbox 360. Please note that these are not made
+Xbox, and Xbox 360. Please note that these are not made
 by us, so we neither endorse nor can we support them. Use at your own
 risk\!
 
@@ -1333,11 +1340,11 @@ arguments -- see the next section.
 ### 5.1) Command Line Options
 
     Usage: scummvm [OPTIONS]... [GAME]
-    
+
     [GAME]                   Short name of game to load. For example, 'monkey'
                               for Monkey Island. This can be either a built-in
                               gameid, or a user configured target.
-    
+
     -v, --version            Display ScummVM version information and exit
     -h, --help               Display a brief help text and exit
     -z, --list-games         Display list of supported games and exit
@@ -1359,7 +1366,7 @@ arguments -- see the next section.
     --recursive              In combination with --add or --detect recurse down all
                               subdirectories
     --console                Enable the console window (default: enabled) (Windows only)
-    
+
     -c, --config=CONFIG      Use alternate configuration file
     -p, --path=PATH          Path to where the game is installed
     -x, --save-slot[=NUM]    Saved game slot to load (default: autosave)
@@ -1369,8 +1376,8 @@ arguments -- see the next section.
     --stretch-mode=MODE      Select stretch mode (center, integral, fit, stretch)
     --filtering              Force filtered graphics mode
     --no-filtering           Force unfiltered graphics mode
-    
-    
+
+
     --gui-theme=THEME        Select GUI theme (default, modern, classic)
     --themepath=PATH         Path to where GUI themes are stored
     --list-themes            Display list of all usable GUI themes
@@ -1389,7 +1396,7 @@ arguments -- see the next section.
                               (separated by commas)
     -u, --dump-scripts       Enable script dumping if a directory called 'dumps'
                               exists in the current directory
-    
+
     --cdrom=NUM              CD drive to play CD audio from (default: 0 = first
                               drive)
     --joystick[=NUM]         Enable joystick input (default: 0 = first joystick)
@@ -1409,7 +1416,7 @@ arguments -- see the next section.
     --render-mode=MODE       Enable additional render modes (hercGreen, hercAmber,
                               cga, ega, vga, amiga, fmtowns, pc9821, pc9801, 2gs,
                               atari, macintosh)
-    
+
     --alt-intro              Use alternative intro for CD versions of Beneath a
                               Steel Sky and Flight of the Amazon Queen
     --copy-protection        Enable copy protection in games, when
@@ -1542,7 +1549,7 @@ Curse of Monkey Island or Broken Sword) will be scaled to 1280x960 and
 ScummVM supports various in-game hotkeys. They differ between SCUMM
 games and other games.
 
-``` 
+```
   Common:
     Ctrl-F5                - Displays the Global Menu
     Cmd-q                  - Quit (Mac OS X)
@@ -1679,14 +1686,14 @@ games and other games.
     Ctrl-c                 - Open up the developer's cheat room
     Ctrl-d                 - Open up the ScummVM Debugger
     Left click             - Move action
-    Shift-Left click       - Edit room glyph chevrons and 
+    Shift-Left click       - Edit room glyph chevrons and
                               quick movement transitions
-    Right click            - Edit room glyph chevrons 
+    Right click            - Edit room glyph chevrons
                               and quick transitions
-    Mouse wheel            - Scroll through items (inventory, etc) 
+    Mouse wheel            - Scroll through items (inventory, etc)
                               and conversation log
     Arrow keys             - Movement. Down arrow/back is only available if the
-                              given view explicitly has a backwards movement 
+                              given view explicitly has a backwards movement
                               available.        
     F1                     - Switch to Chat-O-Mat
     F2                     - Switch to Personal Baggage
@@ -1710,7 +1717,7 @@ games and other games.
     Period (.)             - starmap move backward
     l                      - starmap lock coordinate
     d                      - starmap unlock coordinate
-    
+
   The Feeble Files:
     Ctrl-d                 - Starts the debugger
     Ctrl-f                 - Toggle fast mode
@@ -1791,12 +1798,12 @@ game speech will remain the same.
         fr  - French
         it  - Italian
         es  - Spanish
-    
+
     The Dig
         jp  - Japanese
         zh  - Chinese
         kr  - Korean
-    
+
     The Curse of Monkey Island
         en  - English (default)
         de  - German
@@ -1807,7 +1814,7 @@ game speech will remain the same.
         jp  - Japanese
         zh  - Chinese
         kr  - Korean
-    
+
     Beneath a Steel Sky
         gb  - English (Great Britain) (default)
         en  - English (USA)
@@ -1817,7 +1824,7 @@ game speech will remain the same.
         pt  - Portuguese
         es  - Spanish
         se  - Swedish
-    
+
     Broken Sword
         en  - English (default)
         de  - German
@@ -1838,7 +1845,7 @@ The platforms that currently have a different default directory are:
 
 **Mac OS X:**
 
-$HOME/Documents/ScummVM Savegames/
+`$HOME/Documents/ScummVM Savegames/`
 
 **Other unices:**
 
@@ -1903,50 +1910,50 @@ engines. Only the following games can use saved games from their
 original versions.
 
   - Elvira 1
-    
+
       - Add 8 bytes (saved game name) to the start of the saved game
         file
       - Rename the saved game to `elvira1.xxx`
 
   - Elvira 2
-    
+
       - Add 8 bytes (saved game name) to the start of the saved game
         file
-      - Rename the saved game to 'elvira2-pc.xxx' (DOS version) or
+      - Rename the saved game to `elvira2-pc.xxx` (DOS version) or
         `elvira2.xxx` (Other versions)
 
   - Myst
-    
-      - Rename the saved game to 'myst-xxx.mys'
+
+      - Rename the saved game to `myst-xxx.mys`
       - Saves from the masterpiece edition and the regular edition are
         interchangeable
 
   - Riven
-    
-      - Rename the saved game to 'riven-xxx.rvn'
+
+      - Rename the saved game to `riven-xxx.rvn`
       - Saves from the CD and DVD edition are not interchangeable
 
   - Simon the Sorcerer 1
-    
+
       - Rename the saved game to `simon1.xxx`
 
   - Simon the Sorcerer 2
-    
+
       - Rename the saved game to `simon2.xxx`
 
   - Starship Titanic
-    
+
       - Rename the saved game to `titanic-win.xxx` for saves from the
         English version and `titanic-win-de.xxx` for saves from the
         German version
       - Saved games between different languages are not interchangeable
 
   - The Feeble Files
-    
+
       - Rename the saved game to `feeble.xxx`
 
   - Waxworks
-    
+
       - Add 8 bytes (saved game name) to the start of the saved game
         file
       - Rename the saved game to `waxworks-pc.xxx` (DOS version) or
@@ -2040,7 +2047,7 @@ you want to use MIDI, you have several different choices of output,
 depending on your operating system and configuration.
 
     null       - Null output. Don't play any music.
-    
+
     adlib      - Internal AdLib emulation
     fluidsynth - FluidSynth MIDI emulation
     mt32       - Internal MT-32 emulation
@@ -2048,7 +2055,7 @@ depending on your operating system and configuration.
     pcspk      - Internal PC Speaker emulation
     towns      - Internal FM-TOWNS YM2612 emulation
                  (only usable in SCUMM FM-TOWNS games)
-    
+
     alsa       - Output using ALSA sequencer device. See below.
     core       - CoreAudio sound, for Mac OS X users.
     coremidi   - CoreMIDI sound, for Mac OS X users. Use only if you have
@@ -2178,7 +2185,7 @@ soundcard. In all cases, to obtain a list of all the sequencer ports you
 have, try the command `aconnect -o -l`. This should give output similar
 to:
 
-``` 
+```
     client 14: 'Midi Through' [type=kernel]
         0 'Midi Through Port-0'
     client 16: 'SBLive! Value [CT4832]' [type=kernel]
@@ -2240,7 +2247,7 @@ use the first port.
 To get a list of configured midi interfaces on your system, run
 "startmidi" without parameters. Example output:
 
-``` 
+```
   2 MIDI interfaces configured:
           Serial Port 2
           Software Synth
@@ -2349,7 +2356,7 @@ perform this task. You can choose between multiple target formats, but
 note that you can only use each if ScummVM was compiled with the
 respective decoder support enabled.
 
-``` 
+```
   compress_agos effects     (For Acorn CD version of Simon 1)
   compress_agos simon       (For Acorn CD version of Simon 1)
   compress_agos effects.voc (For DOS CD version of Simon 1)
@@ -2403,7 +2410,7 @@ perform this task. You can choose between multiple target formats, but
 note that you can only use each if ScummVM was compiled with the
 respective decoder support enabled.
 
-``` 
+```
   compress_sword2 speech1.clu
   compress_sword2 music1.clu
 ```
@@ -2498,7 +2505,7 @@ home directory)
 
 An example config file looks as follows:
 
-``` 
+```
     [scummvm]
     gfx_mode=supereagle
     fullscreen=true
@@ -2537,8 +2544,7 @@ An example config file looks as follows:
 
 ### 8.1) Recognized configuration keywords
 
-The following keywords are
-    recognized:
+The following keywords are recognized:
 
     path               string   The path to where a game's data files are
     autosave_period    number   The seconds between autosaving (default: 300)
@@ -2554,27 +2560,27 @@ The following keywords are
                                 format on macOS X.
     versioninfo        string   The version of the ScummVM that created the
                                 configuration file.
-    
+
     gameid             string   The real id of a game. Useful if you have
                                 several versions of the same game, and want
                                 different aliases for them. See the example.
     description        string   The description of the game as it will appear
                                 in the launcher.
-    
+
     language           string   Specify language (en, us, de, fr, it, pt, es,
                                 jp, zh, kr, se, gb, hb, cz, ru)
     speech_mute        bool     If true, speech is muted
     subtitles          bool     Set to true to enable subtitles.
     talkspeed          number   Text delay in SCUMM games, or text speed in
                                 other games.
-    
+
     fullscreen         bool     Fullscreen mode
     aspect_ratio       bool     Enable aspect ratio correction
     gfx_mode           string   Graphics mode (normal, 2x, 3x, 2xsai,
                                 super2xsai, supereagle, advmame2x, advmame3x,
                                 hq2x, hq3x, tv2x, dotmatrix, opengl)
     filtering          bool     Enable graphics filtering
-    
+
     confirm_exit       bool     Ask for confirmation by the user before
                                 quitting (SDL backend only).
     console            bool     Enable the console window (default: enabled)
@@ -2613,7 +2619,7 @@ The following keywords are
     speech_volume      number   The speech volume setting (0-255)
     midi_gain          number   The MIDI gain (0-1000) (default: 100) (Only
                                 supported by some MIDI drivers.)
-    
+
     copy_protection    bool     Enable copy protection in certain games, in
                                 those cases where ScummVM disables it by
                                 default.
@@ -2621,11 +2627,10 @@ The following keywords are
     alt_intro          bool     Use alternative intro for CD versions of
                                 Beneath a Steel Sky and Flight of the Amazon
                                 Queen
-    
+
     boot_param         number   Pass this number to the boot script
 
-Sierra games using the AGI engine add the following non-standard
-keywords:
+Sierra games using the AGI engine add the following non-standard keywords:
 
     originalsaveload   bool     If true, the original save/load screens are
                                 used instead of the enhanced ScummVM ones
@@ -2634,8 +2639,7 @@ keywords:
     mousesupport       bool     Enables mouse support. Allows to use mouse
                                 for movement and in game menus
 
-Sierra games using the SCI engine add the following non-standard
-keywords:
+Sierra games using the SCI engine add the following non-standard keywords:
 
     disable_dithering  bool     Remove dithering artifacts from EGA games
     prefer_digitalsfx  bool     If true, digital sound effects are preferred
@@ -2665,16 +2669,17 @@ Flight of the Amazon Queen adds the following non-standard keywords:
     music_mute         bool     If true, music is muted
     sfx_mute           bool     If true, sound effects are muted
 
-Hopkins FBI adds the following non-standard keyword: enable\_gore bool
-If true, enable some optional gore content in the game
+Hopkins FBI adds the following non-standard keyword:
+
+    enable_gore        bool     If true, enable some optional gore content in
+                                the game
 
 Jones in the Fast Lane adds the following non-standard keyword:
 
     music_mute         bool     If true, CD audio is used, if available,
                                 instead of in-game audio
 
-King's Quest VI Windows adds the following non-standard
-    keyword:
+King's Quest VI Windows adds the following non-standard keyword:
 
     windows_cursors    bool     If true, the original unscaled black and white
                                 Windows cursors are used instead of the DOS
@@ -2682,8 +2687,7 @@ King's Quest VI Windows adds the following non-standard
                                 Windows version, upscaled to match the rest of
                                 the upscaled graphics
 
-Lands of Lore: The Throne of Chaos adds the following non-standard
-keywords:
+Lands of Lore: The Throne of Chaos adds the following non-standard keywords:
 
     smooth_scrolling   bool     If true, scrolling is smoother when changing
                                 from one screen to another
@@ -2694,19 +2698,19 @@ keywords:
 
 Space Quest IV CD adds the following non-standard keyword:
 
-``` 
- silver_cursors    bool     If true, an alternate set of silver mouse
-                            cursors is used instead of the original golden
-                            ones
-```
+    silver_cursors     bool     If true, an alternate set of silver mouse
+                                cursors is used instead of the original golden
+                                ones
 
 Simon the Sorcerer 1 and 2 add the following non-standard keywords:
 
     music_mute         bool     If true, music is muted
     sfx_mute           bool     If true, sound effects are muted
 
-Soltys adds the following non-standard keyword: enable\_color\_blind
-bool If true, original colors are replaced by a set of greys
+Soltys adds the following non-standard keyword:
+
+    enable_color_blind bool     If true, original colors are replaced by a set
+                                of greys
 
 The Legend of Kyrandia adds the following non-standard keyword:
 
@@ -2718,8 +2722,8 @@ keyword:
     walkspeed          number   The walk speed (3 or 5, resp. fast or
                                 slow)
 
-The Legend of Kyrandia: Malcolm's Revenge adds the following
-non-standard keywords:
+The Legend of Kyrandia: Malcolm's Revenge adds the following non-standard
+keywords:
 
     walkspeed          number   The walk speed (3 or 5, resp. fast or
                                 slow)
@@ -2729,8 +2733,7 @@ non-standard keywords:
     helium_mode        bool     If true, people sound like they've inhaled
                                 Helium
 
-The Neverhood adds the following non-standard
-    keywords:
+The Neverhood adds the following non-standard keywords:
 
     originalsaveload   bool     If true, the original save/load screens are
                                 used instead of the enhanced ScummVM ones
@@ -2740,8 +2743,7 @@ The Neverhood adds the following non-standard
     scalemakingofvideos  bool   If true, the making of videos are scaled, so that
                                 they use the whole screen
 
-The 7th Guest adds the following non-standard
-    keyword:
+The 7th Guest adds the following non-standard keyword:
 
     fast_movie_speed   bool     If true, movies are played at an increased
                                 speed, matching the speed of the iOS version.
@@ -2749,8 +2751,7 @@ The 7th Guest adds the following non-standard
                                 normal speed, to avoid music synchronization
                                 issues
 
-Zork Nemesis: The Forbidden Lands adds the following non-standard
-keywords:
+Zork Nemesis: The Forbidden Lands adds the following non-standard keywords:
 
     originalsaveload   bool     If true, the original save/load screens are
                                 used instead of the enhanced ScummVM ones
@@ -2760,8 +2761,7 @@ keywords:
     noanimwhileturning bool     If true, animations are disabled while turning
                                 in panoramic mode
 
-Zork: Grand Inquisitor adds the following non-standard
-    keywords:
+Zork: Grand Inquisitor adds the following non-standard keywords:
 
     originalsaveload   bool     If true, the original save/load screens are
                                 used instead of the enhanced ScummVM ones
@@ -2800,7 +2800,7 @@ file, depends on the OS:
   - Windows: In `Users\username\My Pictures\ScummVM Screenshots`.
   - macOS X: On the Desktop.
   - Other unices: In the XDG Pictures user directory,
-      e.g. ~/Pictures/ScummVM Screenshots
+      e.g. `~/Pictures/ScummVM Screenshots`
   - Any other OS: In the current directory.
 
 ## 10.0) Compiling
@@ -2808,7 +2808,7 @@ file, depends on the OS:
 For an up-to-date overview on how to compile ScummVM for various
 platforms, please consult our Wiki, in particular this page:
 
-<http://wiki.scummvm.org/index.php/Compiling_ScummVM>
+<https://wiki.scummvm.org/index.php/Compiling_ScummVM>
 
 If you are compiling for Windows, Linux or Mac OS X, you need SDL-1.2.2
 or newer (older versions may work, but are unsupported), and a supported
@@ -2829,94 +2829,115 @@ debug messages (see
 <https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index>).
 
   - Windows:
-    
-      - MinGW Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/MinGW>
-      - Visual Studio (MSVC) Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/Visual_Studio>
+
+      - MinGW:
+
+          - Please refer to:
+            <https://wiki.scummvm.org/index.php/Compiling_ScummVM/MinGW>
+
+      - Visual Studio (MSVC):
+
+          - Please refer to:
+            <https://wiki.scummvm.org/index.php/Compiling_ScummVM/Visual_Studio>
 
   - Linux:
-    
-      - GCC Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/GCC>
+
+      - GCC:
+
+          - Please refer to:
+            <https://wiki.scummvm.org/index.php/Compiling_ScummVM/GCC>
 
   - AmigaOS4:
-    
+
       - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/AmigaOS4>
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/AmigaOS4>
 
   - Apple iPhone:
-    
+
       - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/iPhone>
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/iPhone>
 
   - Atari/FreeMiNT:
-    
+
       - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/Atari/FreeMiNT>
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/Atari/FreeMiNT>
 
   - Bada/Tizen:
-    
+
       - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/Bada/Tizen>
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/Bada/Tizen>
 
   - BeOS/ZETA/Haiku:
-    
+
       - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/BeOS/ZETA/Haiku>
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/BeOS/ZETA/Haiku>
 
   - Google Android:
-    
+
       - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/Android>
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/Android>
 
   - HP webOS:
-    
+
       - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/WebOS>
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/WebOS>
 
   - Mac OS:
-    
-      - Mac OS X Please refer to:
-        <http://wiki.scummvm.org/index.php/Mac_OS_X>
-      - Mac OS X 10.2.8 Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/Mac_OS_X_10.2.8>
-      - Mac OS X Crosscompiling Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/Mac_OS_X_Crosscompiling>
+
+      - Mac OS X:
+
+          - Please refer to:
+            <https://wiki.scummvm.org/index.php/Compiling_ScummVM/macOS>
+
+      - Mac OS X 10.2.8:
+
+          - Please refer to:
+            <https://wiki.scummvm.org/index.php/Compiling_ScummVM/Mac_OS_X_10.2.8>
+
+      - Mac OS X Crosscompiling:
+
+          - Please refer to:
+            <httpe://wiki.scummvm.org/index.php/Compiling_ScummVM/Mac_OS_X_Crosscompiling>
 
   - Maemo:
-    
+
       - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/Maemo>
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/Maemo>
 
   - Nintendo Wii and Gamecube:
-    
-      - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/Wii>
 
-  - RaspberryPi:
-    
       - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/RPI>
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/Wii>
+
+  - Raspberry Pi:
+
+      - Please refer to:
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/RPI>
 
   - Sega Dreamcast:
-    
+
       - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/Dreamcast>
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/Dreamcast>
 
   - Sony Playstation:
-    
-      - Sony PlayStation 2 Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/PlayStation_2>
-      - Sony PlayStation 3 Please refer to:
-        <http://wiki.scummvm.org/index.php/PlayStation_3#Building_from_source>
-      - Sony PlayStation Portable Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/PlayStation_Portable>
+
+      - Sony PlayStation 2:
+
+          - Please refer to:
+            <https://wiki.scummvm.org/index.php/Compiling_ScummVM/PlayStation_2>
+
+      - Sony PlayStation 3:
+          - Please refer to:
+            <https://wiki.scummvm.org/index.php/PlayStation_3#Building_from_source>
+
+      - Sony PlayStation Portable:
+          - Please refer to:
+            <https://wiki.scummvm.org/index.php/Compiling_ScummVM/PlayStation_Portable>
 
   - Symbian:
-    
+
       - Please refer to:
-        <http://wiki.scummvm.org/index.php/Compiling_ScummVM/Symbian>
+        <https://wiki.scummvm.org/index.php/Compiling_ScummVM/Symbian>
 
 ## 11.0) Credits
 
