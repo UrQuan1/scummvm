@@ -76,7 +76,7 @@ bool TinselEngine::isV1CD() const {
 static const PlainGameDescriptor tinselGames[] = {
 	{"tinsel", "Tinsel engine game"},
 	{"dw", "Discworld"},
-	{"dw2", "Discworld 2: Missing Presumed ...!?"},
+	{"dw2", "Discworld II: Missing Presumed...!?"},
 	{0, 0}
 };
 

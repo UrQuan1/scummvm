@@ -83,9 +83,9 @@ const ADGameFileDescription *SagaEngine::getFilesDescriptions() const { return _
 static const PlainGameDescriptor sagaGames[] = {
 	{"saga", "SAGA Engine game"},
 	{"ite", "Inherit the Earth: Quest for the Orb"},
-	{"ihnm", "I Have No Mouth and I Must Scream"},
+	{"ihnm", "I Have No Mouth, and I Must Scream"},
 	{"dino", "Dinotopia"},
-	{"fta2", "Faery Tale Adventure II: Halls of the Dead"},
+	{"fta2", "Halls of the Dead: Faery Tale Adventure II"},
 	{0, 0}
 };
 
