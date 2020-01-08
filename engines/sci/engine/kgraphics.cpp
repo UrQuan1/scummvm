@@ -58,16 +58,25 @@
 namespace Sci {
 
 static int16 adjustGraphColor(int16 color) {
-	// WORKAROUND: EGA and Amiga games can set invalid colors (above 0 - 15).
-	// It seems only the lower nibble was used in these games.
-	// bug #3048908, #3486899.
-	// Confirmed in EGA games KQ4(late), QFG1(ega), LB1 that
-	// at least FillBox (only one of the functions using adjustGraphColor)
-	// behaves like this.
-	if (g_sci->getResMan()->getViewType() == kViewEga)
-		return color & 0x0F;	// 0 - 15
-	else
-		return color;
+	// WORKAROUND: EGA and Amiga games, for DrawLine and FillBoxAny, reference
+	// colors from the dithered palette. Color 31 should produce white (15).
+	// Color 15 should produce dark grey (8), but this is rarely used and only
+	// inerrantly as the intended color was white (15) - bugs #3048908 and
+	// #3486899. In KQ1, for DrawLine, color 53 is used which should produce
+	// pink (13).
+	if (g_sci->getResMan()->getViewType() == kViewEga) {
+		switch (color) {
+		case 31:
+			color = 15;
+			break;
+		case 53:
+			color = 13;
+			break;
+		default:
+			break;
+		}
+	}
+	return color;
 }
 
 int showScummVMDialog(const Common::U32String &message, const Common::U32String &altButton = Common::U32String(""), bool alignCenter = true) {
@@ -1153,8 +1162,8 @@ reg_t kNewWindow(EngineState *s, int argc, reg_t *argv) {
 	int argextra = argc >= 13 ? 4 : 0; // Triggers in PQ3 and SCI1.1 games, argc 13 for DOS argc 15 for mac
 	int	style = argv[5 + argextra].toSint16();
 	int	priority = (argc > 6 + argextra) ? argv[6 + argextra].toSint16() : -1;
-	int colorPen = adjustGraphColor((argc > 7 + argextra) ? argv[7 + argextra].toSint16() : 0);
-	int colorBack = adjustGraphColor((argc > 8 + argextra) ? argv[8 + argextra].toSint16() : 255);
+	int colorPen = (argc > 7 + argextra) ? argv[7 + argextra].toSint16() : 0;
+	int colorBack = (argc > 8 + argextra) ? argv[8 + argextra].toSint16() : 255;
 
 	if (argc >= 13)
 		rect2 = Common::Rect (argv[5].toSint16(), argv[4].toSint16(), argv[7].toSint16(), argv[6].toSint16());
