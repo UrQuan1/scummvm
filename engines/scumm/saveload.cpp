@@ -68,7 +68,7 @@ struct SaveInfoSection {
 
 #define SaveInfoSectionSize (4+4+4 + 4+4 + 4+2)
 
-#define CURRENT_VER 99
+#define CURRENT_VER 100
 #define INFOSECTION_VERSION 2
 
 #pragma mark -
@@ -1099,6 +1099,7 @@ void ScummEngine::saveLoadWithSerializer(Common::Serializer &s) {
 
 	s.skip(4, VER(8), VER(9)); // _randSeed1
 	s.skip(4, VER(8), VER(9)); // _randSeed2
+	s.syncAsUint32LE(_randSeed, VER(100));
 
 	// Converted _shakeEnabled to boolean and added a _shakeFrame field.
 	s.syncAsSint16LE(_shakeEnabled, VER(8), VER(9));
@@ -1162,6 +1163,14 @@ void ScummEngine::saveLoadWithSerializer(Common::Serializer &s) {
 		} else {
 			_haveActorSpeechMsg = true;
 		}
+	}
+
+	// When loading, reset the random number generator to whatever seed
+	// we left off at.
+	if (s.isLoading() && s.getVersion() >= VER(100)) {
+		_rnd.setSeed(_randSeed);
+	} else {
+		_randSeed = _rnd.getSeed();
 	}
 
 	//

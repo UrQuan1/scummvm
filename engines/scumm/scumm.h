@@ -400,6 +400,7 @@ public:
 
 	/** Random number generator */
 	Common::RandomSource _rnd;
+	uint32 _randSeed;
 
 	/** Graphics manager */
 	Gdi *_gdi;
