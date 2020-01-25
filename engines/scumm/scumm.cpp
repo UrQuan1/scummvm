@@ -1669,7 +1669,7 @@ void ScummEngine::resetScumm() {
 	_varwatch = -1;
 	_screenStartStrip = 0;
 
-	_defaultTalkDelay = 3;
+	_defaultTalkDelay = 6;
 	_talkDelay = 0;
 	_keepText = false;
 	_nextLeft = 0;
