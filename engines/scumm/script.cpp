@@ -641,11 +641,11 @@ void ScummEngine::writeVar(uint var, int value) {
 			// Note: To determine whether there was a user override, we only
 			// look at the target specific settings, assuming that any global
 			// value is likely to be bogus. See also bug #2251765.
-			if (ConfMan.hasKey("talkspeed", _targetName)) {
+			if (_currentRoom == 0 && ConfMan.hasKey("talkspeed", _targetName)) {
 				value = getTalkSpeed();
 			} else {
-				// Save the new talkspeed value to ConfMan
-				setTalkSpeed(value);
+				_defaultTalkDelay = value;
+				setTalkSpeed(_defaultTalkDelay);
 			}
 		}
 
