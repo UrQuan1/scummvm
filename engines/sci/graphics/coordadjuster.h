@@ -45,7 +45,6 @@ public:
 
 	Common::Rect onControl(Common::Rect rect);
 	void setCursorPos(Common::Point &pos);
-	void moveCursor(Common::Point &pos);
 
 	Common::Rect pictureGetDisplayArea();
 

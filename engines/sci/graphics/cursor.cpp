@@ -460,7 +460,6 @@ void GfxCursor::kernelSetPos(Common::Point pos) {
 }
 
 void GfxCursor::kernelMoveCursor(Common::Point pos) {
-	_coordAdjuster->moveCursor(pos);
 	if (pos.x > _screen->getScriptWidth() || pos.y > _screen->getScriptHeight()) {
 		warning("attempt to place cursor at invalid coordinates (%d, %d)", pos.y, pos.x);
 		return;

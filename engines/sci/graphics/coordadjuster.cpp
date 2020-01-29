@@ -62,16 +62,14 @@ Common::Rect GfxCoordAdjuster16::onControl(Common::Rect rect) {
 }
 
 void GfxCoordAdjuster16::setCursorPos(Common::Point &pos) {
-	pos.y += _ports->getPort()->top;
-	pos.x += _ports->getPort()->left;
-}
-
-void GfxCoordAdjuster16::moveCursor(Common::Point &pos) {
 	pos.y += _ports->_picWind->rect.top;
 	pos.x += _ports->_picWind->rect.left;
 
 	pos.y = CLIP<int16>(pos.y, _ports->_picWind->rect.top, _ports->_picWind->rect.bottom - 1);
 	pos.x = CLIP<int16>(pos.x, _ports->_picWind->rect.left, _ports->_picWind->rect.right - 1);
+
+	pos.y += _ports->getPort()->top;
+	pos.x += _ports->getPort()->left;
 }
 
 Common::Rect GfxCoordAdjuster16::pictureGetDisplayArea() {
