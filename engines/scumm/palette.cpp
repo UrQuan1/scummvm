@@ -913,11 +913,6 @@ void ScummEngine::setShadowPalette(int redScale, int greenScale, int blueScale, 
 	// from within Room 23 (the big machine), as it has no shadow effects
 	// and thus doesn't result in any visual differences.
 
-	if (_game.id == GID_SAMNMAX) {
-		for (i = 0; i < 256; i++)
-			_shadowPalette[i] = i;
-	}
-
 	for (i = start; i < end; i++) {
 		int r = (int)((pal[0] >> 2) * redScale) >> 8;
 		int g = (int)((pal[1] >> 2) * greenScale) >> 8;

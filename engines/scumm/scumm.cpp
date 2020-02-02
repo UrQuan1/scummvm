@@ -1556,15 +1556,13 @@ void ScummEngine::resetScumm() {
 
 	_palManipCounter = 0;
 
-	for (i = 0; i < 256; i++)
+	for (i = 0; i < 256; i++) {
 		_roomPalette[i] = i;
-
-	resetPalette();
-	if (_game.version == 1) {
-	} else if (_game.features & GF_16COLOR) {
-		for (i = 0; i < 16; i++)
+		if (_shadowPalette)
 			_shadowPalette[i] = i;
 	}
+
+	resetPalette();
 
 	if (_game.version >= 4 && _game.version <= 7)
 		loadCharset(1);

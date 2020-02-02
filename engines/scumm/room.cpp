@@ -102,14 +102,11 @@ void ScummEngine::startScene(int room, Actor *a, int objectNr) {
 		// bug #795940, and actually makes some sense (after all,
 		// shadows tend to be rather black, don't they? ;-)
 		memset(_shadowPalette, 0, NUM_SHADOW_PALETTE * 256);
-	} else {
+	} else if (_game.features & GF_SMALL_HEADER) {
 		for (i = 0; i < 256; i++) {
 			_roomPalette[i] = i;
-			if (_shadowPalette)
-				_shadowPalette[i] = i;
+			_shadowPalette[i] = i;
 		}
-		if (_game.features & GF_SMALL_HEADER)
-			setDirtyColors(0, 255);
 	}
 
 	VAR(VAR_ROOM) = room;
@@ -729,10 +726,6 @@ void ScummEngine_v3old::resetRoomSubBlocks() {
 	roomptr = getResourceAddress(rtRoom, _roomResource);
 	if (!roomptr)
 		error("Room %d: data not found (" __FILE__  ":%d)", _roomResource, __LINE__);
-
-	// Reset room color for V1 zak
-	if (_game.version <= 1)
-		_roomPalette[0] = 0;
 
 	//
 	// Load box data
