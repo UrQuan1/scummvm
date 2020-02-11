@@ -642,7 +642,7 @@ bool SdlEventSource::handleKeyUp(SDL_Event &ev, Common::Event &event) {
 
 	event.type = Common::EVENT_KEYUP;
 	event.kbd.keycode = SDLToOSystemKeycode(sdlKeycode);
-	event.kbd.ascii = mapKey(sdlKeycode, (SDL_Keymod)ev.key.keysym.mod, 0);
+	event.kbd.ascii = 0;
 
 	SDLModToOSystemKeyFlags(mod, event);
 
