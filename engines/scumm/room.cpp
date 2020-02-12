@@ -97,12 +97,7 @@ void ScummEngine::startScene(int room, Actor *a, int objectNr) {
 		_actors[i]->hideActor();
 	}
 
-	if (_game.version >= 7) {
-		// Set the shadow palette(s) to all black. This fixes
-		// bug #795940, and actually makes some sense (after all,
-		// shadows tend to be rather black, don't they? ;-)
-		memset(_shadowPalette, 0, NUM_SHADOW_PALETTE * 256);
-	} else if (_game.features & GF_SMALL_HEADER) {
+	if (_game.features & GF_SMALL_HEADER) {
 		for (i = 0; i < 256; i++) {
 			_roomPalette[i] = i;
 			_shadowPalette[i] = i;
