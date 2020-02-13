@@ -76,8 +76,8 @@ public:
 #define AGI_KEY_F8  0x4200
 #define AGI_KEY_F9  0x4300
 #define AGI_KEY_F10 0x4400
-#define AGI_KEY_F11 0xd900  // F11
-#define AGI_KEY_F12 0xda00  // F12
+#define AGI_KEY_STATUSLN   0xd900  // ?
+#define AGI_KEY_PRIORITY   0xda00  // ?
 
 #define AGI_KEY_PAGE_UP     0x4900  // Page Up (fixed by Ziv Barber)
 #define AGI_KEY_PAGE_DOWN   0x5100  // Page Down

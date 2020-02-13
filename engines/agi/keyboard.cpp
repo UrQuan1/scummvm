@@ -230,12 +230,6 @@ void AgiEngine::processScummVMEvents() {
 				case Common::KEYCODE_F10:
 					key = AGI_KEY_F10;
 					break;
-				case Common::KEYCODE_F11:
-					key = AGI_KEY_F11;
-					break;
-				case Common::KEYCODE_F12:
-					key = AGI_KEY_F12;
-					break;
 				case Common::KEYCODE_KP_ENTER:
 					key = AGI_KEY_ENTER;
 					break;
