@@ -102,17 +102,6 @@ bool DefaultEventManager::pollEvent(Common::Event &event) {
 	switch (event.type) {
 	case Common::EVENT_KEYDOWN:
 		_modifierState = event.kbd.flags;
-
-		if (event.kbd.keycode == Common::KEYCODE_BACKSPACE) {
-			// WORKAROUND: Some engines incorrectly attempt to use the
-			// ascii value instead of the keycode to detect the backspace
-			// key (a non-portable behavior). This fails at least on
-			// Mac OS X, possibly also on other systems.
-			// As a workaround, we force the ascii value for backspace
-			// key pressed. A better fix would be for engines to stop
-			// making invalid assumptions about ascii values.
-			event.kbd.ascii = Common::KEYCODE_BACKSPACE;
-		}
 		break;
 
 	case Common::EVENT_KEYUP:
