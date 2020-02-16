@@ -461,7 +461,7 @@ static const ADExtraGuiOptionsMap optionsList[] = {
 			_s("Use original save/load screens"),
 			_s("Use the original save/load screens instead of the ScummVM ones"),
 			"originalsaveload",
-			false
+			true
 		}
 	},
 	// Jones in the Fast Lane - CD audio tracks or resource.snd
