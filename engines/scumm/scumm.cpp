@@ -2121,10 +2121,6 @@ Common::Error ScummEngine::go() {
 	int diff = 0;	// Duration of one loop iteration
 
 	while (!shouldQuit()) {
-		// Randomize the PRNG by calling it at regular intervals. This ensures
-		// that it will be in a different state each time you run the program.
-		_rnd.getRandomNumber(2);
-
 		// Notify the script about how much time has passed, in ticks (60 ticks per second)
 		if (VAR_TIMER != 0xFF)
 			VAR(VAR_TIMER) = diff * 60 / 1000;

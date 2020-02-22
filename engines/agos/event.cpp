@@ -436,8 +436,6 @@ void AGOSEngine::delay(uint amount) {
 			vgaPeriod = 30;
 	}
 
-	_rnd.getRandomNumber(2);
-
 	do {
 		while (!_inCallBack && cur >= _lastVgaTick + vgaPeriod && !_pause) {
 			_lastVgaTick += vgaPeriod;
