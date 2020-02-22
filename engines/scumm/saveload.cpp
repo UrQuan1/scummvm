@@ -436,9 +436,6 @@ bool ScummEngine::loadState(int slot, bool compat, Common::String &filename) {
 
 	resetScummVars();
 
-	if (_game.features & GF_OLD_BUNDLE)
-		loadCharset(0); // FIXME - HACK ?
-
 	//
 	// Now do the actual loading
 	//
