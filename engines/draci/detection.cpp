@@ -29,7 +29,7 @@
 #include "engines/metaengine.h"
 
 static const PlainGameDescriptor draciGames[] = {
-	{ "draci", "Draci Historie" },
+	{ "draci", "Dragon History" },
 	{ 0, 0 }
 };
 

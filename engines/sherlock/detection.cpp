@@ -51,8 +51,8 @@ Common::Language SherlockEngine::getLanguage() const {
 } // End of namespace Sherlock
 
 static const PlainGameDescriptor sherlockGames[] = {
-	{ "scalpel", "The Case of the Serrated Scalpel" },
-	{ "rosetattoo", "The Case of the Rose Tattoo" },
+	{ "scalpel", "The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel" },
+	{ "rosetattoo", "The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo" },
 	{0, 0}
 };
 

@@ -49,17 +49,17 @@ static const PlainGameDescriptor s_sciGameTitles[] = {
 	{"sci",             "Sierra SCI Game"},
 	{"sci-fanmade",     "Fanmade SCI Game"},
 	// === SCI0 games =========================================================
-	{"astrochicken",    "Astro Chicken"},
+	{"astrochicken",    "Astro Chicken: The Mindless Video Game"},
 	{"christmas1988",   "Christmas Card 1988"},
-	{"iceman",          "Codename: Iceman"},
-	{"camelot",         "Conquests of Camelot: King Arthur, Quest for the Grail"},
-	{"funseeker",       "Fun Seeker's Guide"},
+	{"iceman",          "Codename: ICEMAN"},
+	{"camelot",         "Conquests of Camelot: The Search for the Grail"},
+	{"funseeker",       "Fun Seekers Guide to East Madera County"},
 	{"hoyle1",          "Hoyle Official Book of Games: Volume 1"},
 	{"hoyle2",          "Hoyle Official Book of Games: Volume 2"},
 	{"kq4sci",          "King's Quest IV: The Perils of Rosella"},	// Note: There was also an AGI version of this
-	{"laurabow",        "Laura Bow: The Colonel's Bequest"},
-	{"lsl2",            "Leisure Suit Larry 2: Goes Looking for Love (in Several Wrong Places)"},
-	{"lsl3",            "Leisure Suit Larry 3: Passionate Patti in Pursuit of the Pulsating Pectorals"},
+	{"laurabow",        "The Colonel's Bequest"},
+	{"lsl2",            "Leisure Suit Larry Goes Looking for Love (in Several Wrong Places)"},
+	{"lsl3",            "Leisure Suit Larry III: Passionate Patti in Pursuit of the Pulsating Pectorals"},
 	{"mothergoose",     "Mixed-Up Mother Goose"},
 	{"pq2",             "Police Quest II: The Vengeance"},
 	{"qfg1",            "Quest for Glory I: So You Want to Be a Hero"},	// Note: There was also a SCI11 VGA remake of this (further down)
@@ -76,27 +76,27 @@ static const PlainGameDescriptor s_sciGameTitles[] = {
 	{"cnick-longbow",   "Crazy Nick's Software Picks: Robin Hood's Game of Skill and Chance"},
 	{"cnick-sq",        "Crazy Nick's Software Picks: Roger Wilco's Spaced Out Game Pack"},
 	{"ecoquest",        "EcoQuest: The Search for Cetus"},	// floppy is SCI1, CD SCI1.1
-	{"fairytales",      "Mixed-up Fairy Tales"},
+	{"fairytales",      "Mixed-Up Fairy Tales"},
 	{"hoyle3",          "Hoyle Official Book of Games: Volume 3"},
 	{"jones",           "Jones in the Fast Lane"},
-	{"kq5",             "King's Quest V: Absence Makes the Heart Go Yonder"},
-	{"longbow",         "Conquests of the Longbow: The Adventures of Robin Hood"},
-	{"lsl1sci",         "Leisure Suit Larry in the Land of the Lounge Lizards"},	// Note: There was also an AGI version of this
+	{"kq5",             "King's Quest V: Absence Makes the Heart Go Yonder!"},
+	{"longbow",         "Conquests of the Longbow: The Legend of Robin Hood"},
+	{"lsl1sci",         "Leisure Suit Larry 1: In the Land of the Lounge Lizards"},	// Note: There was also an AGI version of this
 	{"lsl5",            "Leisure Suit Larry 5: Passionate Patti Does a Little Undercover Work"},
 	{"mothergoose256",  "Mixed-Up Mother Goose"},
-	{"msastrochicken",  "Ms. Astro Chicken"},
-	{"pq1sci",          "Police Quest: In Pursuit of the Death Angel"},	// Note: There was also an AGI version of this
+	{"msastrochicken",  "Ms. Astro Chicken: Flight of the Pullet"},
+	{"pq1sci",          "Police Quest I: In Pursuit of the Death Angel"},	// Note: There was also an AGI version of this
 	{"pq3",             "Police Quest III: The Kindred"},
-	{"sq1sci",          "Space Quest I: The Sarien Encounter"},	// Note: There was also an AGI version of this
+	{"sq1sci",          "Space Quest I: Roger Wilco in the Sarien Encounter"},	// Note: There was also an AGI version of this
 	{"sq4",             "Space Quest IV: Roger Wilco and the Time Rippers"},	// floppy is SCI1, CD SCI1.1
 	// === SCI1.1 games =======================================================
 	{"christmas1992",   "Christmas Card 1992"},
-	{"ecoquest2",       "EcoQuest II: Lost Secret of the Rainforest"},
+	{"ecoquest2",       "EcoQuest 2: Lost Secret of the Rainforest"},
 	{"freddypharkas",   "Freddy Pharkas: Frontier Pharmacist"},
 	{"hoyle4",          "Hoyle Classic Card Games"},
 	{"inndemo",         "ImagiNation Network (INN) Demo"},
 	{"kq6",             "King's Quest VI: Heir Today, Gone Tomorrow"},
-	{"laurabow2",       "Laura Bow 2: The Dagger of Amon Ra"},
+	{"laurabow2",       "The Dagger of Amon Ra"},
 	{"qfg1vga",         "Quest for Glory I: So You Want to Be a Hero"},	// Note: There was also a SCI0 version of this (further up)
 	{"qfg3",            "Quest for Glory III: Wages of War"},
 	{"sq5",             "Space Quest V: The Next Mutation"},
@@ -106,12 +106,12 @@ static const PlainGameDescriptor s_sciGameTitles[] = {
 	{"slater",          "Slater & Charlie Go Camping"},
 	{"gk1demo",         "Gabriel Knight: Sins of the Fathers"},
 	{"qfg4demo",        "Quest for Glory IV: Shadows of Darkness"},
-	{"pq4demo",         "Police Quest IV: Open Season"},
+	{"pq4demo",         "Police Quest: Open Season"},
 	// === SCI1.1+ games ======================================================
 	{"catdate",         "The Dating Pool"},
 	// === SCI2 games =========================================================
 	{"gk1",             "Gabriel Knight: Sins of the Fathers"},
-	{"pq4",             "Police Quest IV: Open Season"}, // floppy is SCI2, CD SCI2.1
+	{"pq4",             "Police Quest: Open Season"}, // floppy is SCI2, CD SCI2.1
 	{"qfg4",            "Quest for Glory IV: Shadows of Darkness"},	// floppy is SCI2, CD SCI2.1
 	// === SCI2.1 games ========================================================
 	{"hoyle5",          "Hoyle Classic Games"},
@@ -127,10 +127,10 @@ static const PlainGameDescriptor s_sciGameTitles[] = {
 	{"phantasmagoria",  "Phantasmagoria"},
 	{"pqswat",          "Police Quest: SWAT"},
 	{"shivers",         "Shivers"},
-	{"sq6",             "Space Quest 6: The Spinal Frontier"},
+	{"sq6",             "Space Quest 6: Roger Wilco in The Spinal Frontier"},
 	{"torin",           "Torin's Passage"},
 	// === SCI3 games =========================================================
-	{"lsl7",            "Leisure Suit Larry 7: Love for Sail!"},
+	{"lsl7",            "Leisure Suit Larry: Love for Sail!"},
 	{"lighthouse",      "Lighthouse: The Dark Being"},
 	{"phantasmagoria2", "Phantasmagoria 2: A Puzzle of Flesh"},
 	//{"shivers2",        "Shivers II: Harvest of Souls"},	// Not SCI

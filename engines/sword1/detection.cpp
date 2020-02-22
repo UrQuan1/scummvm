@@ -37,15 +37,15 @@
 static const PlainGameDescriptor sword1FullSettings =
 	{"sword1", "Broken Sword: The Shadow of the Templars"};
 static const PlainGameDescriptor sword1DemoSettings =
-	{"sword1demo", "Broken Sword: The Shadow of the Templars (Demo)"};
+	{"sword1demo", "Broken Sword: The Shadow of the Templars"};
 static const PlainGameDescriptor sword1MacFullSettings =
-	{"sword1mac", "Broken Sword: The Shadow of the Templars (Mac)"};
+	{"sword1mac", "Broken Sword: The Shadow of the Templars"};
 static const PlainGameDescriptor sword1MacDemoSettings =
-	{"sword1macdemo", "Broken Sword: The Shadow of the Templars (Mac demo)"};
+	{"sword1macdemo", "Broken Sword: The Shadow of the Templars"};
 static const PlainGameDescriptor sword1PSXSettings =
-	{"sword1psx", "Broken Sword: The Shadow of the Templars (PlayStation)"};
+	{"sword1psx", "Broken Sword: The Shadow of the Templars"};
 static const PlainGameDescriptor sword1PSXDemoSettings =
-	{"sword1psxdemo", "Broken Sword: The Shadow of the Templars (PlayStation demo)"};
+	{"sword1psxdemo", "Broken Sword: The Shadow of the Templars"};
 
 
 // check these subdirectories (if present)

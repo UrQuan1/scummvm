@@ -45,7 +45,7 @@ Common::Platform Parallaction::getPlatform() const { return _gameDescription->de
 }
 
 static const PlainGameDescriptor parallactionGames[] = {
-	{"nippon", "Nippon Safes Inc."},
+	{"nippon", "Nippon Safes, Inc."},
 	{"bra", "The Big Red Adventure"},
 	{0, 0}
 };

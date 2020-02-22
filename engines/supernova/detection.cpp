@@ -48,8 +48,8 @@ static const ADExtraGuiOptionsMap optionsList[] = {
 };
 
 static const PlainGameDescriptor supernovaGames[] = {
-	{"msn1", "Mission Supernova 1"},
-	{"msn2", "Mission Supernova 2"},
+	{"msn1", "Mission Supernova Episode 1"},
+	{"msn2", "Mission Supernova Episode 2"},
 	{nullptr, nullptr}
 };
 

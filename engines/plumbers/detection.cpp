@@ -32,7 +32,7 @@ Common::Platform PlumbersGame::getPlatform() const { return _gameDescription->pl
 }
 
 static const PlainGameDescriptor plumbersGames[] = {
-	{"plumbers", "Plumbers Don't Wear Ties!"},
+	{"plumbers", "Plumbers Don't Wear Ties"},
 	{0, 0}
 };
 
