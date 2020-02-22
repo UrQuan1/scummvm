@@ -566,10 +566,6 @@ void ScummEngine::loadCharset(int no) {
 
 	debugC(DEBUG_GENERAL, "loadCharset(%d)", no);
 
-	/* FIXME - hack around crash in Indy4 (occurs if you try to load after dieing) */
-	if (_game.id == GID_INDY4 && no == 0)
-		no = 1;
-
 	/* for Humongous catalogs */
 	if (_game.heversion >= 70 && _numCharsets == 1) {
 		debug(0, "Not loading charset as it doesn't seem to exist?");
