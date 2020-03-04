@@ -382,7 +382,11 @@ Common::Keymap *SdlGraphicsManager::getKeymap() {
 	keymap->addAction(act);
 
 	act = new Action("SCRS", _("Save screenshot"));
-	act->addDefaultInputMapping("A+s");
+#if defined(MACOSX)
+	act->addDefaultInputMapping("M+S+3");
+#else
+	act->addDefaultInputMapping("PRINT");
+#endif
 	act->setCustomBackendActionEvent(kActionSaveScreenshot);
 	keymap->addAction(act);
 
