@@ -1608,11 +1608,7 @@ games and other games.
     Tilde (~)              - Show/hide the debugging console
     [ and ]                - Music volume, down/up
     - and +                - Text speed, slower/faster
-    F5                     - Displays a save/load box
-    Alt-F5                 - Displays the original save/load box, if the
-                             game has one. You can save and load games using
-                             this, however it is not intended for this purpose,
-                             and may even crash ScummVM in some games.
+    F5 or F1               - Displays a save/load box
     i                      - Displays IQ points (Indiana Jones and the Last
                              Crusade, and Indiana Jones and the Fate of
                              Atlantis)

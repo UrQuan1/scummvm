@@ -1209,8 +1209,7 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     Tilda (~)              - Zobrazit/skrýt konzoli ladění
     [ a ]                  - Hlasitost hudby, zvýšit/snížit
     - a +                  - Rychlost textu, pomalejší/rychlejší
-    F5                     - Zobrazí rámeček pro uložení/načtení
-    Alt-F5                 - Zobrazí původní rámeček pro uložení/načtení, pokud hra nějaký má. Zde můžete hru načíst i uložit, nicméně pro tento účel není určen a v některých hrách může způsobit pád ScummVM.
+    F5 nebo F1             - Zobrazí rámeček pro uložení/načtení
     i                      - Zobrazí IQ body (Indiana Jones and the Last Crusade a Indiana Jones and the Fate of Atlantis)
     Mezerník               - Pozastavení
     Tečka (.)              - V některých hrách přeskočí současný řádek textu

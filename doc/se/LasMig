@@ -894,11 +894,7 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     Tilde (~)              - Visa/dölj debug-konsolen
     [ och ]                - Musikvolym höj/sänk
     - och +                - Texthastighet långsammare/snabbare
-    F5                     - Visar en ladda/spara-ruta
-    Alt-F5                 - Visar spelets originalruta för att ladda/spara,
-                             förutsatt att det finns en. Du kan ladda och
-                             spara på det här viset, men det
-                             rekommenderas ej då det kan orsaka krascher.
+    F5 eller F1            - Visar en ladda/spara-ruta
     i                      - Visar IQ-poäng (Indiana Jones and the Last
                              Crusade och Indiana Jones and the Fate of
                              Atlantis)

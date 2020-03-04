@@ -1779,12 +1779,7 @@ zwischen SCUMM-Spielen und anderen Spielen.
     Tilde (~)              - Zeigt/verbirgt Debugging-Konsole.
     [ und ]                - Musiklautstärke, leiser/lauter
     - und +                - Texttempo, langsamer/schneller
-    F5                     - Ruft Menü zum Speichern und Laden auf.
-    Alt+F5                 - Ruft das Original-Menü zum Speichern und Laden auf,
-                             sofern eines im Spiel enthalten ist. Sie können mit
-                             diesem Spiele speichern und laden, jedoch ist es
-                             für diesen Zweck nicht vorgesehen und kann in
-                             einigen Spielen ScummVM zum Absturz führen.
+    F5 oder F1             - Ruft Menü zum Speichern und Laden auf.
     i                      - Zeigt IQ-Punkte an (Indiana Jones and the Last
                              Crusade sowie Indiana Jones and the Fate of
                              Atlantis).
