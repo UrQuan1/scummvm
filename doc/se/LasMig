@@ -895,9 +895,8 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     [ och ]                - Musikvolym höj/sänk
     - och +                - Texthastighet långsammare/snabbare
     F5 eller F1            - Visar en ladda/spara-ruta
-    i                      - Visar IQ-poäng (Indiana Jones and the Last
-                             Crusade och Indiana Jones and the Fate of
-                             Atlantis)
+    i                      - Visar IQ-poäng (Indiana Jones and the Fate
+                             of Atlantis)
     Space                  - Paus
     Punkt (.)              - Hoppar över en textrad i vissa spel
     Enter                  - Simulerar vänster musklick
