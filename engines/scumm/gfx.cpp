@@ -527,9 +527,6 @@ void ScummEngine::drawDirtyScreenParts() {
 	if (_shakeEnabled) {
 		_shakeFrame = (_shakeFrame + 1) % NUM_SHAKE_POSITIONS;
 		_system->setShakePos(0, shake_positions[_shakeFrame]);
-	} else if (!_shakeEnabled &&_shakeFrame != 0) {
-		_shakeFrame = 0;
-		_system->setShakePos(0, 0);
 	}
 }
 
