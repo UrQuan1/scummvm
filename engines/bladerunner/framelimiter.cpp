@@ -56,11 +56,7 @@ void Framelimiter::wait() {
 	uint32 frameDuration = timeNow - _timeFrameStart;
 	if (frameDuration < _speedLimitMs) {
 		uint32 waittime = _speedLimitMs - frameDuration;
-		if (_vm->_noDelayMillisFramelimiter) {
-			while (_vm->_time->currentSystem() - timeNow < waittime) { }
-		} else {
-			_vm->_system->delayMillis(waittime);
-		}
+		_vm->_system->delayMillis(waittime);
 		timeNow += waittime;
 	}
 	// debug("frametime %i ms", timeNow - _timeFrameStart);

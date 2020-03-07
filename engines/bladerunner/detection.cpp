@@ -61,15 +61,6 @@ static const ADExtraGuiOptionsMap optionsList[] = {
 		}
 	},
 	{
-		GAMEOPTION_FRAMELIMITER_NODELAYMILLIS,
-		{
-			_s("Frame limiter high performance mode"),
-			_s("This mode may result in high CPU usage! It avoids use of delayMillis() function."),
-			"nodelaymillisfl",
-			false
-		}
-	},
-	{
 		GAMEOPTION_FRAMELIMITER_FPS,
 		{
 			_s("Max frames per second limit"),

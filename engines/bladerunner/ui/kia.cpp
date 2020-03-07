@@ -664,11 +664,7 @@ void KIA::mouseDownCallback(int buttonId, void *callbackData) {
 				uint32 timeNow = self->_vm->_time->currentSystem();
 				uint32 waittime = 16;
 				while (self->_vm->_audioPlayer->isActive(endTrackId)) {
-					if (self->_vm->_noDelayMillisFramelimiter) {
-						while (self->_vm->_time->currentSystem() - timeNow < waittime) { }
-					} else {
-						self->_vm->_system->delayMillis(waittime);
-					}
+					self->_vm->_system->delayMillis(waittime);
 				}
 			}
 		}
