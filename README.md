@@ -279,11 +279,11 @@ supported games can be found here:
 
 | Adventuresoft/Horrorsoft (AGOS) Games:                |              |
 | ----------------------------------------------------- | ------------ |
-| Elvira - Mistress of the Dark                         | \[elvira1\]  |
-| Elvira II - The Jaws of Cerberus                      | \[elvira2\]  |
+| Elvira: Mistress of the Dark                          | \[elvira1\]  |
+| Elvira II: The Jaws of Cerberus                       | \[elvira2\]  |
 | Personal Nightmare                                    | \[pn\]       |
-| Simon the Sorcerer 1                                  | \[simon1\]   |
-| Simon the Sorcerer 2                                  | \[simon2\]   |
+| Simon the Sorcerer                                    | \[simon1\]   |
+| Simon the Sorcerer II                                 | \[simon2\]   |
 | Simon the Sorcerer's Puzzle Pack - Demon In My Pocket | \[dimp\]     |
 | Simon the Sorcerer's Puzzle Pack - Jumble             | \[jumble\]   |
 | Simon the Sorcerer's Puzzle Pack - NoPatience         | \[puzzle\]   |
@@ -301,7 +301,7 @@ supported games can be found here:
 | Goblins 3                                            | \[gob3\]        |
 | Lost in Time                                         | \[lostintime\]  |
 | Once Upon A Time: Little Red Riding Hood             | \[littlered\]   |
-| Playtoons: Bambou le sauveur de la jungle            | \[bambou\]      |
+| Bambou: Le Sauveur de la Jungle                      | \[bambou\]      |
 | The Bizarre Adventures of Woodruff and the Schnibble | \[woodruff\]    |
 | Urban Runner                                         | \[urban\]       |
 | Ween: The Prophecy                                   | \[ween\]        |
@@ -323,7 +323,7 @@ supported games can be found here:
 | King's Quest IV                                      | \[kq4\]         |
 | Leisure Suit Larry in the Land of the Lounge Lizards | \[lsl1\]        |
 | Mixed-Up Mother Goose                                | \[mixedup\]     |
-| Manhunter 1: New York                                | \[mh1\]         |
+| Manhunter: New York                                  | \[mh1\]         |
 | Manhunter 2: San Francisco                           | \[mh2\]         |
 | Police Quest I: In Pursuit of the Death Angel        | \[pq1\]         |
 | Space Quest I: The Sarien Encounter                  | \[sq1\]         |
@@ -354,19 +354,18 @@ supported games can be found here:
 | King's Quest VI                            | \[kq6\]              |
 | King's Quest VII                           | \[kq7\]              |
 | King's Questions                           | \[kquestions\]       |
-| Laura Bow: The Colonel's Bequest           | \[laurabow\]         |
-| Laura Bow 2: The Dagger of Amon Ra         | \[laurabow2\]        |
+| The Colonel's Bequest                      | \[laurabow\]         |
+| The Dagger of Amon Ra                      | \[laurabow2\]        |
 | Leisure Suit Larry 1                       | \[lsl1sci\]          |
 | Leisure Suit Larry 2                       | \[lsl2\]             |
 | Leisure Suit Larry 3                       | \[lsl3\]             |
 | Leisure Suit Larry 5                       | \[lsl5\]             |
 | Leisure Suit Larry 6                       | \[lsl6\]             |
-| Leisure Suit Larry 6 (hires)               | \[lsl6hires\]        |
 | Leisure Suit Larry 7                       | \[lsl7\]             |
 | Lighthouse: The Dark Being                 | \[lighthouse\]       |
-| Mixed-up Fairy Tales                       | \[fairytales\]       |
-| Mixed-up Mother Goose                      | \[mothergoose\]      |
-| Mixed-up Mother Goose Deluxe               | \[mothergoosehires\] |
+| Mixed-Up Fairy Tales                       | \[fairytales\]       |
+| Mixed-Up Mother Goose                      | \[mothergoose\]      |
+| Mixed-Up Mother Goose Deluxe               | \[mothergoosehires\] |
 | Pepper's Adventures in Time                | \[pepper\]           |
 | Phantasmagoria                             | \[phantasmagoria\]   |
 | Phantasmagoria 2: A Puzzle of Flesh        | \[phantasmagoria2\]  |
@@ -374,11 +373,11 @@ supported games can be found here:
 | Police Quest 2                             | \[pq2\]              |
 | Police Quest 3                             | \[pq3\]              |
 | Police Quest 4                             | \[pq4\]              |
-| Quest for Glory 1/Hero's Quest             | \[qfg1\]             |
-| Quest for Glory 1                          | \[qfg1vga\]          |
-| Quest for Glory 2                          | \[qfg2\]             |
-| Quest for Glory 3                          | \[qfg3\]             |
-| Quest for Glory 4                          | \[qfg4\]             |
+| Quest for Glory I / Hero's Quest           | \[qfg1\]             |
+| Quest for Glory I                          | \[qfg1vga\]          |
+| Quest for Glory II                         | \[qfg2\]             |
+| Quest for Glory III                        | \[qfg3\]             |
+| Quest for Glory IV                         | \[qfg4\]             |
 | RAMA                                       | \[rama\]             |
 | Slater & Charlie Go Camping                | \[slater\]           |
 | Shivers                                    | \[shivers\]          |
@@ -395,7 +394,7 @@ supported games can be found here:
 | ------------------------------------------------------------------- | --------------- |
 | 3 Skulls of the Toltecs                                             | \[toltecs\]     |
 | Amazon: Guardians of Eden                                           | \[access\]      |
-| Beavis and Butt-head in Virtual Stupidity                           | \[bbvs\]        |
+| Beavis and Butt-Head in Virtual Stupidity                           | \[bbvs\]        |
 | Blade Runner                                                        | \[bladerunner\] |
 | Blue Force                                                          | \[blueforce\]   |
 | Broken Sword: The Return of the Templars                            | \[sword25\]     |
@@ -404,7 +403,7 @@ supported games can be found here:
 | Cruise for a Corpse                                                 | \[cruise\]      |
 | DreamWeb                                                            | \[dreamweb\]    |
 | Discworld                                                           | \[dw\]          |
-| Discworld 2: Missing Presumed ...\!?                                | \[dw2\]         |
+| Discworld II: Missing Presumed...\!?                                | \[dw2\]         |
 | Dragon History                                                      | \[draci\]       |
 | Drascula: The Vampire Strikes Back                                  | \[drascula\]    |
 | Eye of the Beholder                                                 | \[eob\]         |
@@ -413,8 +412,8 @@ supported games can be found here:
 | Future Wars                                                         | \[fw\]          |
 | Hopkins FBI                                                         | \[hopkins\]     |
 | Hugo's House of Horrors                                             | \[hugo1\]       |
-| Hugo 2: Whodunit?                                                   | \[hugo2\]       |
-| Hugo 3: Jungle of Doom                                              | \[hugo3\]       |
+| Hugo II: Whodunit?                                                  | \[hugo2\]       |
+| Hugo III: Jungle of Doom                                            | \[hugo3\]       |
 | I Have No Mouth, and I Must Scream                                  | \[ihnm\]        |
 | Inherit the Earth: Quest for the Orb                                | \[ite\]         |
 | Lands of Lore: The Throne of Chaos                                  | \[lol\]         |
@@ -575,8 +574,8 @@ ScummVM will skip copy protection in the following games:
   - Might and Magic: World of Xeen
   - Monkey Island 2: LeChuck's Revenge
   - Rex Nebular and The Cosmic Gender Bender
-  - Simon the Sorcerer 1 (Floppy version)
-  - Simon the Sorcerer 2 (Floppy version)
+  - Simon the Sorcerer (Floppy version)
+  - Simon the Sorcerer II (Floppy version)
       - bypassed with kind permission from Adventure Soft, since it was
         bypassed in all CD releases of the game.
   - The Secret of Monkey Island (VGA)
@@ -644,11 +643,11 @@ Beneath a Steel Sky:
   - Not a bug: CD version is missing speech for some dialogs, this is
     normal.
 
-Elvira - Mistress of the Dark:
+Elvira: Mistress of the Dark:
 
   - No music in the Atari ST version.
 
-Elvira II - The Jaws of Cerberus
+Elvira II: The Jaws of Cerberus:
 
   - No music in the Atari ST version.
   - No sound effects in the PC version.
@@ -663,12 +662,12 @@ Lure of the Temptress:
   - No Roland MT-32 support.
   - Sound support is incomplete and doesn't sound like original.
 
-Simon the Sorcerer 1:
+Simon the Sorcerer:
 
   - Subtitles aren't available in the English and German CD versions as
     they are missing the majority of subtitles.
 
-Simon the Sorcerer 2:
+Simon the Sorcerer II:
 
   - Combined speech and subtitles will often cause speech to be cut off
     early, this is a limitation of the original game.
@@ -1011,7 +1010,7 @@ slot 0.
 
 ### 3.18) Simon the Sorcerer games notes
 
-If you have the dual version of Simon the Sorcerer 1 or 2 on CD, you
+If you have the dual version of Simon the Sorcerer I or II on CD, you
 will find the Windows version in the main directory of the CD and the
 DOS version in the DOS directory of the CD.
 
@@ -1154,21 +1153,21 @@ regarding speech and text toggling.
 
 The CD games where speech and subtitles can be shown simultaneously are:
 
-  - EcoQuest 1 CD
+  - EcoQuest CD
   - Freddy Pharkas CD
   - Gabriel Knight CD
-  - King's Quest 6 CD
+  - King's Quest VI CD
   - King's Quest VII CD
-  - Laura Bow 2 CD
+  - The Dagger of Amon Ra CD
   - Leisure Suit Larry 6 CD
   - Leisure Suit Larry 6 (hires) CD
   - Police Quest 4 CD
   - Shivers CD
-  - Space Quest 4 CD
+  - Space Quest IV CD
   - Space Quest 6 CD
   - Torin's Passage CD
 
-**EcoQuest 1 CD:** Speech and text can be toggled via the game's "Mode"
+**EcoQuest CD:** Speech and text can be toggled via the game's "Mode"
 option in the options dialog, or via ScummVM's audio options.
 
 **Freddy Pharkas CD:** There is no in-game option to toggle speech and
@@ -1179,7 +1178,7 @@ Note that some spoken dialog is missing from the game texts.
 "Voice" buttons in the game's settings dialog, or via ScummVM's audio
 options.
 
-**King's Quest 6 CD:** Speech and text can be toggled via the "Mode"
+**King's Quest VI CD:** Speech and text can be toggled via the "Mode"
 button in the options dialog (with an extra "Dual" setting added in
 ScummVM), or via ScummVM's audio options.
 
@@ -1188,9 +1187,9 @@ text. Only ScummVM's audio options can be used to toggle this feature.
 Note that the subtitles were disabled in the official release of this
 game, so some subtitles may be wrong or missing.
 
-**Laura Bow 2 CD:** Speech and text can be toggled via the "Mode" button
-in the options dialog (with an extra "Dual" setting added in ScummVM),
-or via ScummVM's audio options.
+**The Dagger of Amon Ra CD:** Speech and text can be toggled via the
+"Mode" button in the options dialog (with an extra "Dual" setting added
+in ScummVM), or via ScummVM's audio options.
 
 **Leisure Suit Larry 6 CD:** Either speech only or speech and text can
 be selected. There is no in-game option to toggle text only. Only
@@ -1208,7 +1207,7 @@ used to enable text+speech mode.
 the game's settings dialog, or via ScummVM's audio options. Note that
 only videos have subtitles in this game.
 
-**Space Quest 4 CD:** Speech and text can be toggled via the "Display
+**Space Quest IV CD:** Speech and text can be toggled via the "Display
 Mode" button in the options dialog, or via ScummVM's audio options.
 
 **Space Quest 6 CD:** Speech and text can be toggled via the "Speech"
@@ -1684,12 +1683,12 @@ games and other games.
     F10                    - "Use" menu
     Escape                 - Bring on command menu
 
-  Nippon Safes:
+  Nippon Safes Inc.:
     Ctrl-d                 - Starts the debugger
     l                      - Load game
     s                      - Save game
 
-  Simon the Sorcerer 1 and 2:
+  Simon the Sorcerer I and II:
     Ctrl 0-9 and Alt 0-9   - Load and save game state
     Ctrl-d                 - Starts the debugger
     Ctrl-f                 - Toggle fast mode
@@ -1701,16 +1700,16 @@ games and other games.
     m                      - Music on/off
     s                      - Sound effects on/off
     b                      - Background sounds on/off
-                             [Simon the Sorcerer 2 only]
+                             [Simon the Sorcerer II only]
     Pause                  - Pauses
     t                      - Switch between speech only and
                              combined speech and subtitles
-                             [Simon the Sorcerer 1 CD (other than
+                             [Simon the Sorcerer CD (other than
                              English and German) and Simon the
-                             Sorcerer 2 CD (all languages)]
+                             Sorcerer II CD (all languages)]
     v                      - Switch between subtitles only and
                              combined speech and subtitles
-                             [Simon the Sorcerer 2 CD only]
+                             [Simon the Sorcerer II CD only]
 
   Simon the Sorcerer's Puzzle Pack:
     Ctrl-d                 - Starts the debugger
@@ -1955,13 +1954,13 @@ original versions.
         with restored content as they might behave unexpectedly
         or might cause game breaking bugs
 
-  - Elvira 1
+  - Elvira
 
       - Add 8 bytes (saved game name) to the start of the saved game
         file
       - Rename the saved game to `elvira1.xxx`
 
-  - Elvira 2
+  - Elvira II
 
       - Add 8 bytes (saved game name) to the start of the saved game
         file
@@ -1979,11 +1978,11 @@ original versions.
       - Rename the saved game to `riven-xxx.rvn`
       - Saves from the CD and DVD edition are not interchangeable
 
-  - Simon the Sorcerer 1
+  - Simon the Sorcerer
 
       - Rename the saved game to `simon1.xxx`
 
-  - Simon the Sorcerer 2
+  - Simon the Sorcerer II
 
       - Rename the saved game to `simon2.xxx`
 
@@ -2195,11 +2194,11 @@ of) chorus, pitch bend sensitivity, etc. If it is specified in
 conjunction with `--native-mt32`, ScummVM will select the
 MT-32-compatible map and drumset on your GS device. This setting works
 better than default GM or GS emulation with games that do not have
-custom instrument mappings (Loom and Monkey1). You should only specify
-both settings if you are using a GS device that has an MT-32 map, such
-as an SC-55, SC-88, SC-88 Pro, SC-8820, SC-8850, etc. Please note that
-`--enable-gs` is automatically disabled in both DOTT and Samnmax, since
-they use General MIDI natively.
+custom instrument mappings (Loom and The Secret of Monkey Island). You
+should only specify both settings if you are using a GS device that has
+an MT-32 map, such as an SC-55, SC-88, SC-88 Pro, SC-8820, SC-8850,
+etc. Please note that `--enable-gs` is automatically disabled in both
+Day of the Tentacle and Sam & Max, since they use General MIDI natively.
 
 If neither of the above settings is enabled, ScummVM will initialize
 your device in General MIDI mode and use GM emulation in games with
@@ -2708,9 +2707,10 @@ Sierra games using the SCI engine add the following non-standard keywords:
     use_cdaudio        bool     Use CD audio instead of in-game audio,
                                 when available
     windows_cursors    bool     Use the Windows cursors (smaller and monochrome)
-                                instead of the DOS ones (King's Quest 6)
+                                instead of the DOS ones (King's Quest VI)
     silver_cursors     bool     Use the alternate set of silver cursors,
-                                instead of the normal golden ones (Space Quest 4)
+                                instead of the normal golden ones
+                                (Space Quest IV)
 
 Blade Runner adds the following non-standard keywords:
     shorty             bool     If true, game will shrink the actors and make
@@ -2770,7 +2770,7 @@ Space Quest IV CD adds the following non-standard keyword:
                                 cursors is used instead of the original golden
                                 ones
 
-Simon the Sorcerer 1 and 2 add the following non-standard keywords:
+Simon the Sorcerer I and II add the following non-standard keywords:
 
     music_mute         bool     If true, music is muted
     sfx_mute           bool     If true, sound effects are muted

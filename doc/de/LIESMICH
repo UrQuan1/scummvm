@@ -36,7 +36,7 @@ Inhaltsverzeichnis:
  * 3.15 Hinweise zu Myst
  * 3.16 Hinweise zu Nippon Safes Inc. (Amiga)
  * 3.17 Hinweise zu Riven
- * 3.18 Hinweise zu Simon the Sorcerer 1 und 2
+ * 3.18 Hinweise zu Simon the Sorcerer I und II
  * 3.19 Hinweise zu Starship Titanic
  * 3.20 Hinweise zu The Curse of Monkey Island
  * 3.21 Hinweise zu Floyd – Es gibt noch Helden
@@ -276,12 +276,12 @@ Spiele von Activision (MADE):
      Rodney's Funscreen                          [rodney]
 
 Spiele von Adventuresoft/Horrorsoft (AGOS):
-     Elvira - Mistress of the Dark               [elvira1]
-     Elvira II - The Jaws of Cerberus            [elvira2]
+     Elvira: Mistress of the Dark                [elvira1]
+     Elvira II: The Jaws of Cerberus             [elvira2]
      Floyd - Es gibt noch Helden                 [feeble]
      Personal Nightmare                          [pn]
-     Simon the Sorcerer 1                        [simon1]
-     Simon the Sorcerer 2                        [simon2]
+     Simon the Sorcerer                          [simon1]
+     Simon the Sorcerer II                       [simon2]
      Simon the Sorcerer's Game Pack
          - Dämonen in meinem PC                  [dimp]
      Simon the Sorcerer's Game Pack
@@ -301,7 +301,7 @@ Spiele von Coktel Vision (GOB):
      Goblins 3                                   [gob3]
      Lost in Time                                [lostintime]
      Once Upon A Time: Little Red Riding Hood    [littlered]
-     Playtoons: Bambou le sauveur de la jungle   [bambou]
+     Bambou: Le Sauveur de la Jungle             [bambou]
      Urban Runner                                [urban]
      Ween: The Prophecy                          [ween]
      Woodruff and the Schnibble of Azimuth       [woodruff]
@@ -322,7 +322,7 @@ Spiele von Sierra (AGI und preAGI):
      Leisure Suit Larry in the Land of the
      Lounge Lizards                              [lsl1]
      Mixed-Up Mother Goose                       [mixedup]
-     Manhunter 1: New York                       [mh1]
+     Manhunter: New York                         [mh1]
      Manhunter 2: San Francisco                  [mh2]
      Police Quest I: In Pursuit of the Death
      Angel                                       [pq1]
@@ -353,19 +353,18 @@ Spiele von Sierra (SCI):
      King's Quest VI                             [kq6]
      King's Quest VII                            [kq7]
      King's Questions                            [kquestions]
-     Laura Bow: The Colonel's Bequest            [laurabow]
-     Laura Bow 2: Der Dolch des Amon Ra          [laurabow2]
+     The Colonel's Bequest                       [laurabow]
+     Der Dolch des Amon Ra                       [laurabow2]
      Leisure Suit Larry 1                        [lsl1sci]
      Leisure Suit Larry 2                        [lsl2]
      Leisure Suit Larry 3                        [lsl3]
      Leisure Suit Larry 5                        [lsl5]
      Leisure Suit Larry 6                        [lsl6]
-     Leisure Suit Larry 6 (hires)                [lsl6hires]
      Leisure Suit Larry 7                        [lsl7]
      Lighthouse: The Dark Being                  [lighthouse]
-     Mixed-up Fairy Tales                        [fairytales]
-     Mixed-up Mother Goose                       [mothergoose]
-     Mixed-up Mother Goose Deluxe                [mothergoosehires]
+     Mixed-Up Fairy Tales                        [fairytales]
+     Mixed-Up Mother Goose                       [mothergoose]
+     Mixed-Up Mother Goose Deluxe                [mothergoosehires]
      Pepper's Adventures in Time                 [pepper]
      Phantasmagoria                              [phantasmagoria]
      Phantasmagoria 2: A Puzzle of Flesh         [phantasmagoria2]
@@ -373,10 +372,11 @@ Spiele von Sierra (SCI):
      Police Quest 2                              [pq2]
      Police Quest 3                              [pq3]
      Police Quest 4                              [pq4]
-     Quest for Glory 1/Hero's Quest              [qfg1]
-     Quest for Glory 1                           [qfg1vga]
-     Quest for Glory 2                           [qfg2]
-     Quest for Glory 3                           [qfg3]
+     Quest for Glory I / Hero's Quest            [qfg1]
+     Quest for Glory I                           [qfg1vga]
+     Quest for Glory II                          [qfg2]
+     Quest for Glory III                         [qfg3]
+     Quest for Glory IV                          [qfg4]
      RAMA                                        [rama]
      Slater & Charlie Go Camping                 [slater]
      Shivers                                     [shivers]
@@ -394,7 +394,7 @@ Andere Spiele:
      Amazon: Guardians of Eden                   [access]
      Baphomets Fluch 2.5:
          Die Rückkehr der Tempelritter           [sword25]
-     Beavis and Butt-head in Virtual Stupidity   [bbvs]
+     Beavis and Butt-Head in Virtual Stupidity   [bbvs]
      Blade Runner                                [bladerunner]
      Blue Force                                  [blueforce]
      Bud Tucker in Double Trouble                [tucker]
@@ -405,7 +405,7 @@ Andere Spiele:
      Die ungelösten Fälle von Sherlock Holmes:
         Die tätowierte Rose                      [rosetattoo]
      Discworld                                   [dw]
-     Discworld 2: Vermutlich vermisst            [dw2]
+     Discworld II: Vermutlich vermisst           [dw2]
      Drači Historie                              [draci]
      Drascula: The Vampire Strikes Back          [drascula]
      DreamWeb                                    [dreamweb]
@@ -417,8 +417,8 @@ Andere Spiele:
      Future Wars                                 [fw]
      Hopkins FBI                                 [hopkins]
      Hugo's House of Horrors                     [hugo1]
-     Hugo 2: Whodunit?                           [hugo2]
-     Hugo 3: Jungle Doom                         [hugo3]
+     Hugo II: Whodunit?                          [hugo2]
+     Hugo III: Jungle Doom                       [hugo3]
      I Have No Mouth, and I Must Scream          [ihnm]
      Lands of Lore: The Throne of Chaos          [lol]
      Mortville Manor                             [morteville]
@@ -578,8 +578,8 @@ ScummVM wird den Kopierschutz in folgenden Spielen überspringen:
   * Loom (EGA)
   * Maniac Mansion
   * Monkey Island 2: LeChuck's Revenge
-  * Simon the Sorcerer 1 (Diskettenversion)
-  * Simon the Sorcerer 2 (Diskettenversion)
+  * Simon the Sorcerer (Diskettenversion)
+  * Simon the Sorcerer II (Diskettenversion)
       -- umgangen mit freundlicher Genehmigung von Adventure Soft,
          da er in allen CD-Versionen des Spiels umgangen wurde.
   * The Secret of Monkey Island (VGA)
@@ -648,10 +648,10 @@ Kompatibilitätsseite der Website aufgeführt ist, sehen Sie bitte im Abschnitt
     - Kein Fehler: In der CD-Version fehlt in einigen Dialogen Sprachausgabe;
       das ist normal.
 
-  Elvira - Mistress of the Dark
+  Elvira: Mistress of the Dark
     - Keine Musik in der Atari-ST-Version
 
-  Elvira II - The Jaws of Cerberus
+  Elvira II: The Jaws of Cerberus
     - Keine Musik in der Atari-ST-Version
     - Keine Geräusch-Effekte in der PC-Version
     - Palettenprobleme in der Atari-ST-Version
@@ -663,11 +663,11 @@ Kompatibilitätsseite der Website aufgeführt ist, sehen Sie bitte im Abschnitt
     - Keine Unterstützung für Roland MT32
     - Sound-Unterstützung ist unvollständig und klingt nicht wie ursprünglich.
 
-  Simon the Sorcerer 1:
+  Simon the Sorcerer:
     - Untertitel sind in den deutschen und englischen CD-Versionen nicht
       verfügbar, da bei diesen der überwiegende Teil der Untertiteltexte fehlt.
 
-  Simon the Sorcerer 2:
+  Simon the Sorcerer II:
     - Sprache und Untertitel zusammen führen manchmal dazu, dass die
       Sprachausgabe vorzeitig abgeschnitten wird. Dies ist eine Beschränkung des
       Originalspiels.
@@ -1003,9 +1003,9 @@ Strg-o: Spiel laden
 Strg-s: Spiel speichern
 
 
-3.18) Hinweise zu Simon the Sorcerer 1 und 2:
+3.18) Hinweise zu Simon the Sorcerer I und II:
 ----- ---------------------------------------
-Wenn Sie die Doppel-Version von Simon the Sorcerer 1 oder 2 auf CD haben, finden
+Wenn Sie die Doppel-Version von Simon the Sorcerer I oder II auf CD haben, finden
 Sie die Windows-Version im Hauptverzeichnis der CD und die DOS-Version im
 DOS-Verzeichnis der CD.
 
@@ -1195,21 +1195,21 @@ zwischen Sprachausgabe und Text innerhalb des Spiels zu ermöglichen.
 
 In diesen CD-Spielen ist es möglich, gleichzeitige Sprachausgabe und Untertitel
 anzeigen zu lassen:
-  EcoQuest 1 CD
+  EcoQuest CD
   Freddy Pharkas CD
   Gabriel Knight CD
-  King's Quest 6 CD
+  King's Quest VI CD
   King's Quest VII CD
-  Laura Bow 2 CD
+  The Dagger of Amon Ra CD
   Leisure Suit Larry 6 CD
   Leisure Suit Larry 6 (hires) CD
   Police Quest 4 CD
   Shivers CD
-  Space Quest 4 CD
+  Space Quest IV CD
   Space Quest 6 CD
   Torin's Passage CD
 
-EcoQuest 1 CD:
+EcoQuest CD:
     Der Modus Sprachausgabe und Untertitel kann über die Spieloptionen oder auch
     über ScummVMs Audio-Optionen deaktiviert und aktiviert werden.
 
@@ -1224,7 +1224,7 @@ Gabriel Knight CD:
     in den Spiel-Optionen oder über die Audio-Einstellungen von ScummVM
     ausgewählt werden.
 
-King's Quest 6 CD:
+King's Quest VI CD:
     Der Modus Sprachausgabe und Untertitel kann über die Modusschaltfläche in
     den Spieloptionen (über die für ScummVM zusätzlich hinzugefügte Einstellung
     „Dual“) oder auch über ScummVMs Audio-Optionen deaktiviert und aktiviert
@@ -1237,7 +1237,7 @@ King's Quest VII CD:
     Veröffentlichung des Spiels deaktiviert wurden, sodass einige Untertitel
     fehlerhaft sein können oder teilweise fehlen.
 
-Laura Bow 2 CD:
+The Dagger of Amon Ra CD:
     Der Modus Sprachausgabe und Untertitel kann über die Modusschaltfläche in
     den Spieloptionen (über die für ScummVM zusätzlich hinzugefügte Einstellung
     „Dual“) oder auch über ScummVMs Audio-Optionen deaktiviert und aktiviert
@@ -1253,7 +1253,7 @@ Leisure Suit Larry 6 (hires) CD:
     über die Audio-Einstellungen von ScummVM deaktiviert werden. Die Sprachausgabe
     kann nicht deaktiviert werden.
 
-Police Quest 4 CD:
+Police Quest IV CD:
     Innerhalb des Spiels kann nur zwischen Sprachausgabe und Textausgabe umgeschaltet
     werden. Nur mithilfe der ScummVM-Audioeinstellungen ist es möglich, Sprachausgabe
     und Untertitel gleichzeitig zu aktivieren.
@@ -1264,7 +1264,7 @@ Shivers CD:
     Bitte beachten Sie, dass in diesem Spiel nur die Videos mit Untertiteln
     versehen sind.
 
-Space Quest 4 CD:
+Space Quest IV CD:
     Der Modus Sprachausgabe und Untertitel kann über die Schaltfläche für den
     Anzeige-Modus in den Spieloptionen oder auch über ScummVMs Audio-Optionen
     deaktiviert und aktiviert werden.
@@ -1842,7 +1842,7 @@ zwischen SCUMM-Spielen und anderen Spielen.
     Escape                 - Überspringt Zwischensequenzen.
     Leertaste              - Überspringt aktuelle Textzeile.
 
-  Future Wars
+  Future Wars:
     F1                     - Untersuchen
     F2                     - Nehmen
     F3                     - Inventar
@@ -1853,12 +1853,12 @@ zwischen SCUMM-Spielen und anderen Spielen.
     F10                    - „Verwenden“-Menü
     Escape                 - Befehlsmenü aufrufen
 
-  Nippon Safes
+  Nippon Safes Inc.:
     Strg+d                 - Startet den Debugger.
     l                      - Spiel laden
     s                      - Spiel speichern
 
-  Simon the Sorcerer 1 und 2:
+  Simon the Sorcerer I und II:
     Strg 0-9 und Alt 0-9   - Lädt und speichert entsprechenden Speicherstand.
     Strg+d                 - Startet den Debugger.
     Strg+f                 - Schneller Modus EIN/AUS
@@ -1870,18 +1870,18 @@ zwischen SCUMM-Spielen und anderen Spielen.
     m                      - Musik EIN/AUS
     s                      - Geräusch-Effekte EIN/AUS
     b                      - Hintergrundgeräusche EIN/AUS
-                             [nur in Simon the Sorcerer 2 möglich]
+                             [nur in Simon the Sorcerer II möglich]
     Pause                  - Spielpause
     t                      - Wechselt zwischen Sprachausgabe allein und
                              Sprachausgabe und Untertiteln zusammen
-                             [Simon the Sorcerer 1 CD (außer Deutsch und
-                             Englisch) und Simon the Sorcerer 2 CD
+                             [Simon the Sorcerer CD (außer Deutsch und
+                             Englisch) und Simon the Sorcerer II CD
                              (alle Sprachen)].
     v                      - Wechselt zwischen Untertiteln allein und
                              Sprachausgabe und Untertiteln zusammen
-                             [nur Simon the Sorcerer 2 CD].
+                             [nur Simon the Sorcerer II CD].
 
-  Simon the Sorcerer's Game Pack
+  Simon the Sorcerer's Game Pack:
     Strg-d                 - Startet den Debugger.
     Strg-f                 - Schneller Modus EIN/AUS
     F12                    - Hohes Tempo in Swampy Adventures EIN/AUS
@@ -1890,7 +1890,7 @@ zwischen SCUMM-Spielen und anderen Spielen.
     s                      - Geräusch-Effekte EIN/AUS
     Pause                  - Spielpause
 
-  Floyd - Es gibt noch Helden
+  Floyd - Es gibt noch Helden:
     Strg+d                 - Startet den Debugger.
     Strg+f                 - Schneller Modus EIN/AUS
     F7                     - Wechselt Figuren.
@@ -1906,7 +1906,7 @@ zwischen SCUMM-Spielen und anderen Spielen.
     Strg 0-9 und Alt 0-9   - Lädt und speichert entsprechenden Speicherstand.
     Strg-d                 - Startet den Debugger.
 
-  TeenAgent
+  TeenAgent:
     F5                     - Zeigt globales Menü.
 
   Touché: Die Abenteuer des fünften Musketiers:
@@ -2078,12 +2078,12 @@ den Originalversionen verwendet werden.
       ("Restored content") zu konfertieren, da es dabei zu nicht vorhersehbaren
       Fehlern kommen kann.
 
-  Elvira 1
+  Elvira
     - Fügen Sie 8 Bytes (Name für Spielstand) am Anfang der Spielstanddatei
       hinzu.
     - Benennen Sie die Spielstanddatei in „elvira1.xxx“ um.
 
-  Elvira 2
+  Elvira II
     - Fügen Sie 8 Bytes (Name für Spielstand) am Anfang der Spielstanddatei
       hinzu.
     - Benennen Sie die Spielstanddatei in „elvira2-pc.xxx“ (DOS-Versionen) oder
@@ -2097,10 +2097,10 @@ den Originalversionen verwendet werden.
     - Bennen Sie die Spielstanddatei in "riven-xxx.rvn" um.
     - Spielstände der CD- und der DVD-Ausgabe sind nicht austauschbar.
 
-  Simon the Sorcerer 1
+  Simon the Sorcerer
     - Benennen Sie die Spielstanddatei in „simon1.xxx“ um.
 
-  Simon the Sorcerer 2
+  Simon the Sorcerer II
     - Benennen Sie die Spielstanddatei in „simon2.xxx“ um.
 
   Starship Titanic
@@ -2325,8 +2325,8 @@ in Spielen, die keine spezifische Instrumentenzuweisung haben (Loom und
 Monkey1). Sie sollten nur beide Einstellungen festlegen, wenn Sie ein GS-Gerät
 verwenden, das eine MT-32-Zuweisung hat, wie beispielsweise SC-55, SC-88,
 SC-88 Pro, SC-8820, SC-8850, usw. Bitte beachten Sie, dass --enable-gs sowohl
-für DOTT als auch Sam & Max nicht verfügbar ist, da diese Spiele nativ General
-MIDI verwenden.
+für Day of the Tentacle als auch Sam & Max nicht verfügbar ist, da diese
+Spiele nativ General MIDI verwenden.
 
 Wenn keine der oberen Einstellungen aktiviert ist, wird ScummVM Ihr Gerät im
 General-MIDI-Modus initialisieren und GM-Emulation in Spielen mit
@@ -2875,10 +2875,10 @@ folgende nicht standardmäßige Schlüsselwörter:
                                 sofern verfügbar.
     windows_cursors    Bool     Falls „true“, werden die originalen
                                 unskalierten, schwarz-weißen Windows-Zeiger
-                                anstatt der von DOS verwendet (King's Quest 6).
+                                anstatt der von DOS verwendet (King's Quest VI).
     silver_cursors     Bool     Falls „true“, wird ein alternativer Satz
                                 silberner Mauszeiger verwendet anstatt der
-                                originalen goldenen (Space Quest 4).
+                                originalen goldenen (Space Quest IV).
 
 Baphomets Fluch II verfügt zusätzlich über folgende nicht standardmäßige
 Schlüsselwörter:
@@ -2942,7 +2942,7 @@ standardmäßiges Schlüsselwort:
                                 silberner Mauszeiger verwendet anstatt der
                                 originalen goldenen.
 
-Simon the Sorcerer 1 und 2 verfügen zusätzlich über folgende nicht
+Simon the Sorcerer I und II verfügen zusätzlich über folgende nicht
 standardmäßige Schlüsselwörter:
 
     music_mute         Bool     Falls „true“, wird Musik unterdrückt.

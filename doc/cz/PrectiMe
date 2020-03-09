@@ -187,11 +187,11 @@ Hry od Activision (MADE):
      Rodney's Funscreen                          [rodney]
 
 Hry od Adventuresoft/Horrorsoft (AGOS):
-     Elvira - Mistress of the Dark               [elvira1]
-     Elvira II - The Jaws of Cerberus            [elvira2]
+     Elvira: Mistress of the Dark                [elvira1]
+     Elvira II: The Jaws of Cerberus             [elvira2]
      Personal Nightmare                          [pn]
-     Simon the Sorcerer 1                        [simon1]
-     Simon the Sorcerer 2                        [simon2]
+     Simon the Sorcerer                          [simon1]
+     Simon the Sorcerer II                       [simon2]
      Simon the Sorcerer's Puzzle Pack
          - Demon In My Pocket                    [dimp]
      Simon the Sorcerer's Puzzle Pack
@@ -212,7 +212,7 @@ Hry od Coktel Vision (GOB):
      Goblins 3                                   [gob3]
      Lost in Time                                [lostintime]
      Once Upon A Time: Little Red Riding Hood    [littlered]
-     Playtoons: Bambou le sauveur de la jungle   [bambou]
+     Bambou: Le Sauveur de la Jungle             [bambou]
      The Bizarre Adventures of Woodruff
          and the Schnibble                       [woodruff]
      Urban Runner                                [urban]
@@ -234,7 +234,7 @@ Hry od Sierra (AGI a před AGI):
      Leisure Suit Larry in the Land of the
      Lounge Lizards                              [lsl1]
      Mixed-Up Mother Goose                       [mixedup]
-     Manhunter 1: New York                       [mh1]
+     Manhunter: New York                         [mh1]
      Manhunter 2: San Francisco                  [mh2]
      Police Quest I: In Pursuit of the Death
      Angel                                       [pq1]
@@ -262,34 +262,39 @@ Hry od Sierra Entertainment (SCI):
      King's Quest IV                             [kq4sci]
      King's Quest V                              [kq5]
      King's Quest VI                             [kq6]
-     Laura Bow: The Colonel's Bequest            [laurabow]
-     Laura Bow 2: The Dagger of Amon Ra          [laurabow2]
+     King's Quest VII                            [kq7]
+     The Colonel's Bequest                       [laurabow]
+     The Dagger of Amon Ra                       [laurabow2]
      Leisure Suit Larry 1                        [lsl1sci]
      Leisure Suit Larry 2                        [lsl2]
      Leisure Suit Larry 3                        [lsl3]
      Leisure Suit Larry 5                        [lsl5]
      Leisure Suit Larry 6                        [lsl6]
-     Mixed-up Fairy Tales                        [fairytales]
-     Mixed-up Mother Goose                       [mothergoose]
+     Leisure Suit Larry 7                        [lsl7]
+     Mixed-Up Fairy Tales                        [fairytales]
+     Mixed-Up Mother Goose                       [mothergoose]
      Pepper's Adventures in Time                 [pepper]
      Police Quest 1                              [pq1sci]
      Police Quest 2                              [pq2]
      Police Quest 3                              [pq3]
-     Quest for Glory 1/Hero's Quest              [qfg1]
-     Quest for Glory 1                           [qfg1vga]
-     Quest for Glory 2                           [qfg2]
-     Quest for Glory 3                           [qfg3]
+     Police Quest 4                              [pq4]
+     Quest for Glory I / Hero's Quest            [qfg1]
+     Quest for Glory I                           [qfg1vga]
+     Quest for Glory II                          [qfg2]
+     Quest for Glory III                         [qfg3]
+     Quest for Glory IV                          [qfg4]
      Slater & Charlie Go Camping                 [slater]
      Space Quest I                               [sq1sci]
      Space Quest III                             [sq3]
      Space Quest IV                              [sq4]
      Space Quest V                               [sq5]
+     Space Quest 6                               [sq6]
      The Island of Dr. Brain                     [islandbrain]
 
 Další hry:
      3 Skulls of the Toltecs                     [toltecs]
      Amazon: Guardians of Eden                   [access]
-     Beavis and Butt-head in Virtual Stupidity   [bbvs]
+     Beavis and Butt-Head in Virtual Stupidity   [bbvs]
      Blue Force                                  [blueforce]
      Broken Sword: The Return of the Templars    [sword25]
      Bud Tucker in Double Trouble                [tucker]
@@ -297,7 +302,7 @@ Další hry:
      Cruise for a Corpse                         [cruise]
      DreamWeb                                    [dreamweb]
      Discworld                                   [dw]
-     Discworld 2: Missing Presumed ...!?         [dw2]
+     Discworld II: Missing Presumed...!?         [dw2]
      Dragon History                              [draci]
      Drascula: The Vampire Strikes Back          [drascula]
      Eye of the Beholder                         [eob]
@@ -307,8 +312,8 @@ Další hry:
      Future Wars                                 [fw]
      Hopkins FBI                                 [hopkins]
      Hugo's House of Horrors                     [hugo1]
-     Hugo 2: Whodunit?                           [hugo2]
-     Hugo 3: Jungle of Doom                      [hugo3]
+     Hugo II: Whodunit?                          [hugo2]
+     Hugo III: Jungle of Doom                    [hugo3]
      I Have No Mouth, and I Must Scream          [ihnm]
      Inherit the Earth: Quest for the Orb        [ite]
      Lands of Lore: The Throne of Chaos          [lol]
@@ -455,8 +460,8 @@ ScummVM přeskakuje ochranu v následujících hrách:
   * Loom (EGA DOS)
   * Maniac Mansion
   * Monkey Island 2: LeChuck's Revenge
-  * Simon the Sorcerer 1 (Floppy version)
-  * Simon the Sorcerer 2 (Floppy version)
+  * Simon the Sorcerer (Floppy version)
+  * Simon the Sorcerer II (Floppy version)
       -- potlačeno s laskavým svolením Adventure Soft,
          protože byla potlačena ve všech vydáních hry na CD.
   * The Secret of Monkey Island (VGA)
@@ -502,10 +507,10 @@ Toto vydání má následující známé problémy. Není třeba je ohlašovat, 
 	- Demoverze z diskety nejsou podporovány
 	- Není chyba: Ve verzi na CD chybí v jistých dialozích řeč, to je normální.
 
-  Elvira - Mistress of the Dark:
+  Elvira: Mistress of the Dark:
 	- Ve verzi pro Atari ST nefunguje hudba
 
-  Elvira II - The Jaws of Cerberus:
+  Elvira II: The Jaws of Cerberus:
 	- Ve verzi pro Atari ST nefunguje hudba
 	- Ve verzi pro PC nefungují zvukové efekty
 	- Ve verzi pro Atari ST jsou problémy s paletou
@@ -517,10 +522,10 @@ Toto vydání má následující známé problémy. Není třeba je ohlašovat, 
 	- Žádná podpora Roland MT-32
 	- Podpora zvuku není dokončena a nezní jako v původní hře
 
-  Simon the Sorcerer 1:
+  Simon the Sorcerer:
 	- V anglických a německých verzích na CD nejsou titulky dostupné, protože jim většina titulků chybí.
 
-  Simon the Sorcerer 2:
+  Simon the Sorcerer II:
 	- Kombinace řeči a titulků často způsobí, že řeč je přerušena brzo, toto je omezení původní hry.
 	- Ve verzích pro Amiga a Macintosh je podporován pouze výchozí jazyk datových souborů (angličtina).
 
@@ -696,9 +701,9 @@ Pro tuto hru potřebujete disk0, soubory  global.table a pointer a it (en, fr, g
 Dále je třeba přejmenovat obraz disku 2 na disk1, obraz disku 3 na disk2, obraz disku 4 na disk3 a obraz disku 5 na disk4.
 
 
-3.16) Poznámky k Simon the Sorcerer 1 a 2:
+3.16) Poznámky k Simon the Sorcerer I a II:
 ----- ------------------------------------
-Pokud máte dvojitou verzi Simon the Sorcerer 1 nebo 2 na CD, verzi pro Windows naleznete v hlavní složce na CD a verzi pro DOS ve složce DOS na CD.
+Pokud máte dvojitou verzi Simon the Sorcerer I nebo II na CD, verzi pro Windows naleznete v hlavní složce na CD a verzi pro DOS ve složce DOS na CD.
 
 
 3.17) Poznámky k The Curse of Monkey Island:
@@ -779,14 +784,14 @@ může být povolen v nastavení zvuku ScummVM, ale každá hra se chová jinak
 vzhledem k povolení textu a hlasu.
 
 Hry na CD, kde zvuk i titulky lze zobrazit současně:
-  EcoQuest 1 CD
+  EcoQuest CD
   Freddy Pharkas CD
-  King's Quest 6 CD
-  Laura Bow 2 CD
+  King's Quest VI CD
+  The Dagger of Amon Ra CD
   Leisure Suit Larry 6 CD
-  Space Quest 4 CD
+  Space Quest IV CD
 
-EcoQuest 1 CD:
+EcoQuest CD:
     Hlas i text lze zapnout pomocí volby "Mode" v okně nastavení,
     nebo přes nastavení zvuku ScummVM.
 
@@ -795,12 +800,12 @@ Freddy Pharkas CD:
     je třeba použít nastavení zvuku ve ScummVM. Některé mluvené dialogy
     chybí v textech hry.
 
-King's Quest 6 CD
+King's Quest VI CD
     Hlas i text lze zapnout pomocí volby "Mode" v okně nastavení (kde je ve
     ScummVM přidána dodatečná volba "Dual"), nebo pomocí nastavení
     zvuku ve ScummVM.
 
-Laura Bow 2 CD
+The Dagger of Amon Ra CD
     Hlas i text lze zapnout pomocí volby "Mode" v okně nastavení (kde je ve
     ScummVM přidána dodatečná volba "Dual"), nebo pomocí nastavení
     zvuku ve ScummVM.
@@ -810,7 +815,7 @@ Leisure Suit Larry 6 CD
     povolení textu. Pouze nastavení zvuku ve ScummVM lze použít pro
     zobrazení jen titulků.
 
-Space Quest 4 CD:
+Space Quest IV CD:
     Hlas a text lze povolit pomocí tlačítka "Display Mode" v
     nastavení hry, nebo pomocí nastavení zvuku ve ScummVM.
 
@@ -1263,12 +1268,12 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     F10                    - Menu "Použít"
     Escape                 - Zobrazit menu příkazů
 
-  Nippon Safes:
+  Nippon Safes Inc.:
     Ctrl-d                 - Spustit ladění
     l                      - Načíst hru
     s                      - Uložit hru
 
-  Simon the Sorcerer 1 a 2:
+  Simon the Sorcerer I a II:
     Ctrl 0-9 a Alt 0-9     - Načíst a uložit stav hry
     Ctrl-d                 - Spustit ladění
     Ctrl-f                 - Zapnout rychlý režim
@@ -1278,10 +1283,10 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     - a +                  - Hlasitost hudby, snížit/zvýšit
     m                      - Hudba vypnout/zapnout
     s                      - Zvukové efekty zapnout/vypnout
-    b                      - Zvuky pozadí zapnout/vypnout                                                              [Pouze Simon the Sorcerer 2]
+    b                      - Zvuky pozadí zapnout/vypnout                                                              [Pouze Simon the Sorcerer II]
     Pause                  - Pozastavení
-    t                      - Přepínat mezi řečí a kombinací řeči a titulků [Simon the Sorcerer 1 CD (jiné než angličtina a němčina) a Simon the Sorcerer 2 CD (všechny jazyky)]
-    v                      - Přepínat mezi titulky a kombinací řeči a titulků [Pouze Simon the Sorcerer 2 CD]
+    t                      - Přepínat mezi řečí a kombinací řeči a titulků [Simon the Sorcerer CD (jiné než angličtina a němčina) a Simon the Sorcerer II CD (všechny jazyky)]
+    v                      - Přepínat mezi titulky a kombinací řeči a titulků [Pouze Simon the Sorcerer II CD]
 
   Simon the Sorcerer's Puzzle Pack:
     Ctrl-d                 - Spustit ladění
@@ -1307,7 +1312,7 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
 
     Ctrl-d                 - Spustit ladění
 
-  TeenAgent
+  TeenAgent:
     F5                     - Zobrazí Globální Menu
 
   Touche: The Adventures of the Fifth Musketeer:
@@ -1387,11 +1392,11 @@ Queen", všechny hry AGI, a všechny hry SCUMM), bude ScummVM standardně automa
 ---- ---------------------
 Použití uložených her z původních verzí není podporováno všemi jádry. Pouze následující hry mohou použít původní verze.
 
-  Elvira 1
+  Elvira
     - Přidejte 8 bajtů (název uložené hry) na začátek souboru uložené hry
     - Přejmenujte ho na 'elvira1.xxx'
 
-  Elvira 2
+  Elvira II
     - Přidejte 8 bajtů (název uložené hry) na začátek souboru uložené hry
     - Přejmenujte ho na 'elvira2-pc.xxx' (verze DOS) nebo 'elvira2.xxx' (Jiné verze)
 
@@ -1399,10 +1404,10 @@ Použití uložených her z původních verzí není podporováno všemi jádry
     - Přidejte 8 bajtů (název uložené hry) na začátek souboru uložené hry
     - Přejmenujte ho na 'waxworks-pc.xxx' (verze DOS) nebo 'waxworks.xxx' (Jiné verze)
 
-  Simon the Sorcerer 1
+  Simon the Sorcerer
     - Přejmenuje soubor uložené hry na 'simon1.xxx'
 
-  Simon the Sorcerer 2
+  Simon the Sorcerer II
     - Přejmenuje soubor uložené hry na 'simon2.xxx'
 
   The Feeble Files
@@ -1556,7 +1561,7 @@ ScummVM podporuje různé režimy MIDI v závislosti na schopnostech Vašeho za
 
 Pokud je zadáno --native-mt32, ScummVM se k Vašemu zařízení bude chovat jako ke skutečné MT-32. Protože mapování instrumentů a výhradní systémové příkazy MT-32 se liší od zařízení General MIDI, tuto možnost byste měli povolit, pouze když používáte skutečné Roland MT-32, LAPC-I,CM-64, CM-32L, CM-500, nebo zařízení GS s mapou MT-32.
 
-Pokud je zadáno --enable-gs, ScummVM zavede Vaše zařízení kompatibilní s GS pomocí nastavení, která napodobují nastavení dozvuku MT-32, (nedostatek) chóru, citlivost ohýbaní tónu, atd. Pokud je toto společně použito s --native-mt32, ScummVM vybere mapu kompatibilní s MT-32 a bicí soupravu na Vašem zařízení GS. Toto nastavení funguje lépe než standardní emulace GM nebo GS ve hrách, které nemají vlastní mapování instrumentů (Loom a Monkey1). Obě nastavení byste měli použít pouze tehdy, pokud máte zařízení GS, které má mapu MT-32, jako SC-55, SC-88, SC-88 Pro, SC-8820, SC-8850, atd. Nezapomeňte, že --enable-gs je automaticky zakázáno v DOTT a Samnmax, protože samostatně používají General MIDI.
+Pokud je zadáno --enable-gs, ScummVM zavede Vaše zařízení kompatibilní s GS pomocí nastavení, která napodobují nastavení dozvuku MT-32, (nedostatek) chóru, citlivost ohýbaní tónu, atd. Pokud je toto společně použito s --native-mt32, ScummVM vybere mapu kompatibilní s MT-32 a bicí soupravu na Vašem zařízení GS. Toto nastavení funguje lépe než standardní emulace GM nebo GS ve hrách, které nemají vlastní mapování instrumentů (Loom a Monkey1). Obě nastavení byste měli použít pouze tehdy, pokud máte zařízení GS, které má mapu MT-32, jako SC-55, SC-88, SC-88 Pro, SC-8820, SC-8850, atd. Nezapomeňte, že --enable-gs je automaticky zakázáno v Day of the Tentacle a Sam & Max, protože samostatně používají General MIDI.
 
 Pokud není ani jedna z možností výše povolena, ScummVM Vaše zařízení zavede v režimu General MIDI a použije emulaci GM v hrách se zvukovým doprovodem MT-32.
 
@@ -1903,8 +1908,8 @@ Hry Sierra používající jádro SCI přidávají následující nestandardní 
     originalsaveload   boolean  Pokud true, jsou použity původní obrazovky nahrávání/uložení místo vylepšených ze ScummVM
     native_fb01        boolean  Pokud true, je ovladač hudby pro kartu IBM Music Feature nebo modul syntezátoru Yahama FB-01 FM použit jako výstup MIDI
 	use_cdaudio        boolean  Použít zvuky na CD místo ve hře, pokud je dostupné
-    windows_cursors    boolean  Použít kurzory Windows (menší a černobílé) místo kurzorů z DOS (King's Quest 6)
-    silver_cursors     boolean  Použít alternativní sadu stříbrných kurzorů místo standardních zlatých (Space Quest 4)
+    windows_cursors    boolean  Použít kurzory Windows (menší a černobílé) místo kurzorů z DOS (King's Quest VI)
+    silver_cursors     boolean  Použít alternativní sadu stříbrných kurzorů místo standardních zlatých (Space Quest IV)
 
 Broken Sword II přidává následující nestandardní klíčová slova:
 
@@ -1939,7 +1944,7 @@ Space Quest IV CD přidává následující nestandardní klíčové slovo:
 
     silver_cursors     boolean  Pokud true, je místo původních zlatých kurzorů použita alternativní sada stříbrných
 
-Simon the Sorcerer 1 a 2 přidává následující nestandardní klíčová slova:
+Simon the Sorcerer I a II přidává následující nestandardní klíčová slova:
 
     music_mute         boolean  Pokud true, hudba je ztlumena
     sfx_mute           boolean  Pokud true, zvukové efekty jsou ztlumeny

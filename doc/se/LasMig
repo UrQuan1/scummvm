@@ -159,7 +159,7 @@ AGI-spel från Sierra:
      Leisure Suit Larry in the Land of the
      Lounge Lizards                              [lsl1]
      Mixed-Up Mother Goose                       [mixedup]
-     Manhunter 1: New York                       [mh1]
+     Manhunter: New York                         [mh1]
      Manhunter 2: San Francisco                  [mh2]
      Police Quest I: In Pursuit of the Death
      Angel                                       [pq1]
@@ -168,12 +168,12 @@ AGI-spel från Sierra:
      Fanmade Games                               [agi-fanmade]
 
 AGOS-spel från Adventuresoft/Horrorsoft:
-     Elvira - Mistress of the Dark               [elvira1]
-     Elvira II - The Jaws of Cerberus            [elvira2]
+     Elvira: Mistress of the Dark                [elvira1]
+     Elvira II: The Jaws of Cerberus             [elvira2]
      Personal Nightmare                          [pn]
      Waxworks                                    [waxworks]
-     Simon the Sorcerer 1                        [simon1]
-     Simon the Sorcerer 2                        [simon2]
+     Simon the Sorcerer                          [simon1]
+     Simon the Sorcerer II                       [simon2]
      Simon the Sorcerer's Puzzle Pack
          - Demon In My Pocket                    [dimp]
      Simon the Sorcerer's Puzzle Pack
@@ -185,7 +185,7 @@ AGOS-spel från Adventuresoft/Horrorsoft:
      The Feeble Files                            [feeble]
 
 GOB-spel från Coktel Vision:
-     Bambou le sauveur de la jungle              [bambou]
+     Bambou: Le Sauveur de la Jungle             [bambou]
      Bargon Attack                               [bargon]
      Fascination                                 [fascination]
      Geisha                                      [geisha]
@@ -211,7 +211,7 @@ MADE-spel från Activision:
      Broken Sword II: The Smoking Mirror         [sword2]
      Cruise for a Corpse                         [cruise]
      Discworld                                   [dw]
-     Discworld 2: Missing Presumed ...!?         [dw2]
+     Discworld II: Missing Presumed...!?         [dw2]
      Dragon History                              [draci]
      Drascula: The Vampire Strikes Back          [drascula]
      Eye of the Beholder                         [eob]
@@ -333,8 +333,8 @@ ScummVM skippar kopieringsskyddet för följande spel:
   * Loom (EGA DOS)
   * Maniac Mansion
   * Monkey Island 2: LeChuck's Revenge
-  * Simon the Sorcerer 1 (Diskettversionen)
-  * Simon the Sorcerer 2 (Diskettversionen)
+  * Simon the Sorcerer (Diskettversionen)
+  * Simon the Sorcerer II (Diskettversionen)
       -- överskridit med tillstånd från Adventure Soft,
          då det överskridits på alla CD-utgåvor av spelet.
   * The Secret of Monkey Island (VGA)
@@ -474,7 +474,7 @@ Länken handlar i huvudsak om SCUMM-spel men nämner även verktyget “HFVExplo
 För den gamla Mac OS 9-utgåvan behöver du kopiera filerna i MacBinary format då de borde innehålla både spelets resource- och data fork. Kopiera alla ”ITE*”-filer.
 
 
-3.12) Notiser om Simon the Sorcerer 1 och 2:
+3.12) Notiser om Simon the Sorcerer I och II:
 ----- --------------------------------------
 Om du har dubbel-versionen av Simon the Sorcerer 1 eller 2 på CD kan du finna Windows-versionen i huvudkatalogen på CD:n och DOS-versionen i DOS-katalogen på CD:n.
 
@@ -572,10 +572,10 @@ Den här versionen har följande kända problem. Du behöver inte rapportera dem
     - Inte en bugg: CD-versionen saknar tal för viss dialog. Det här är
       normalt.
 
-  Elvira - Mistress of the Dark
+  Elvira: Mistress of the Dark
     - Ingen musik i Atari ST-versionen
 
-  Elvira II - The Jaws of Cerberus
+  Elvira II: The Jaws of Cerberus
     - Ingen musik i Atari ST-versionen
     - Inga ljudeffekter i PC-versionen
     - Problem med färgpaletten i Atari ST-versionen
@@ -583,11 +583,11 @@ Den här versionen har följande kända problem. Du behöver inte rapportera dem
   Inherit the Earth: Quest for the Orb
     - Amigaversionerna stöds ej
 
-  Simon the Sorcerer 1:
+  Simon the Sorcerer:
     - Undertexter är inte tillgängliga i de engelska och tyska
       CD-versionerna eftersom en majoritet av undertexterna fattas.
 
-  Simon the Sorcerer 2:
+  Simon the Sorcerer II:
     - Kombinerade tal och undertexter kan ofta orsaka att talljudet
       klipps av för tidigt. Det här är en begränsning från originalspelet.
     - Endast standardspråket (engelska) för datafilerna stöds i Amiga-
@@ -942,7 +942,7 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     Escape                 - Hoppa över filmscen
     Mellanslag             - Hoppa över textrad
 
-  Future Wars
+  Future Wars:
     F1                     - Undersök
     F2                     - Ta
     F3                     - Inventarie
@@ -953,12 +953,12 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     F10                    - "Använd"-meny
     Escape                 - Öppna kommandomeny
 
-  Nippon Safes
+  Nippon Safes:
     Ctrl-d                 - Öppnar debug-fönstret
     l                      - Ladda data
     s                      - Spara data
 
-  Simon the Sorcerer 1 och 2:
+  Simon the Sorcerer I och II:
     Ctrl 0-9 och Alt 0-9   - Ladda och spara data
     Ctrl-d                 - Öppnar debug-fönstret
     Ctrl-f                 - Aktivera snabbläge
@@ -970,18 +970,18 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     m                      - Musik av/på
     s                      - Ljudeffekter av/på
     b                      - Bakgrundsljud av/på
-                             [endast Simon the Sorcerer 2]
+                             [endast Simon the Sorcerer II]
     Pause                  - Paus
     t                      - Växla mellan endast tal och kombinerade
                              tal och undertexter
-                             [Simon the Sorcerer 1 CD (förutom
+                             [Simon the Sorcerer CD (förutom
                              engelska och tyska) och Simon the
-                             Sorcerer 2 CD (alla språk)]
+                             Sorcerer II CD (alla språk)]
     v                      - Växla mellan endast undertexter och kombinerade
                              tal och undertexter
-                             [endast Simon the Sorcerer 2 CD]
+                             [endast Simon the Sorcerer II CD]
 
-  Simon the Sorcerer's Puzzle Pack
+  Simon the Sorcerer's Puzzle Pack:
     Ctrl-d                 - Öppnar debug-fönstret
     Ctrl-f                 - Aktivera snabbläge
     F12                    - Snabbläge av/på i Swampy Adventures
@@ -990,7 +990,7 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     s                      - Ljudeffekter av/på
     Pause                  - Paus
 
-  The Feeble Files
+  The Feeble Files:
     Ctrl-d                 - Öppnar debug-fönstret
     Ctrl-f                 - Aktivera snabbläge
     F7                     - Byt karaktär
@@ -1006,7 +1006,7 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     Ctrl 0-9 och Alt 0-9   - Ladda och spara speldata
     Ctrl-d                 - Öppnar debug-fönstret
 
-  TeenAgent
+  TeenAgent:
     F5                     - Visar den globala menyn
 
   Touche: The Adventures of the Fifth Musketeer:
@@ -1056,11 +1056,11 @@ I vissa spel (nämligen “Beneath a Steel Sky”, “Flight of the Amazon Queen
 ---- ------------------------
 Att använda spardata från originalversioner av spel stöds inte av alla spelmotorer. Endast följande spel kan använda spardata från sina originalversioner.
 
-  Elvira 1
+  Elvira
     - Lägg till 8 byte (namn för spardata) i början av spardata-filen
     - Döp om spardatan till ”elvira1.xxx”
 
-  Elvira 2
+  Elvira II
     - Lägg till 8 byte (namn för spardata) i början av spardata-filen
     - Döp om spardatan till ”elvira2-pc.xxx” (DOS-versionen) eller
       ”elvira2.xxx” (övriga versioner)
@@ -1070,10 +1070,10 @@ Att använda spardata från originalversioner av spel stöds inte av alla spelmo
     - Döp om spardatan till ”waxworks-pc.xxx” (DOS-versionen) eller
       ”waxworks.xxx” (övriga versioner)
 
-  Simon the Sorcerer 1
+  Simon the Sorcerer
     - Döp om spardatan till ”simon1.xxx”
 
-  Simon the Sorcerer 2
+  Simon the Sorcerer II
     - Döp om spardatan till ”simon2.xxx”
 
   The Feeble Files
@@ -1228,7 +1228,7 @@ ScummVM stöder ett antal MIDI-lägen, beroende på din MIDI-enhets egenskaper.
 
 Om –-native-mt32 specificerats kommer ScummVM behandla din enhet som en verklig MT-32. Då instrumentkartan och systemkommandon hos MT-32:an är annorlunda från andra generiska MIDI-enheter borde du endast använda den här funktionen om du verkligen använder en riktig Roland MT-32, LAPC-I, CM-64, CM-32L, CM-500 eller GS-enhet med en MT-32 karta.
 
-Om –-enable-gs specificerats kommer ScummVM ställa in din GS-kompatibla enhet med inställningar som härmar MT-32:ans reverb, (brist på) chorus, pitch bend-känslighet, etc. Om det specificerats tillsammans med –-native-mt32 kommer ScummVM välja den MT-32-kompatibla kartan och trumsetet på din GS-enhet. Den här inställningen fungerar bättre än standard GM- eller GS-emulation i spel som saknar speciella instrumentkartor (Loom och Monkey1). Du borde endast specificera båda funktionerna om du använder en GS-enhet som har en MT-32 karta, till exempel en SC-55, SC-88, SC-88 Pro, SC-8820, SC-8850, etc. Märk att –-enable-gs är automatiskt deaktiverad i både DOTT och Samnmax, då de använder General MIDI.
+Om –-enable-gs specificerats kommer ScummVM ställa in din GS-kompatibla enhet med inställningar som härmar MT-32:ans reverb, (brist på) chorus, pitch bend-känslighet, etc. Om det specificerats tillsammans med –-native-mt32 kommer ScummVM välja den MT-32-kompatibla kartan och trumsetet på din GS-enhet. Den här inställningen fungerar bättre än standard GM- eller GS-emulation i spel som saknar speciella instrumentkartor (Loom och Monkey1). Du borde endast specificera båda funktionerna om du använder en GS-enhet som har en MT-32 karta, till exempel en SC-55, SC-88, SC-88 Pro, SC-8820, SC-8850, etc. Märk att –-enable-gs är automatiskt deaktiverad i både Day of the Tentacle och Sam & Max, då de använder General MIDI.
 
 Om ingendera av de ovanstående inställningarna aktiverats kommer ScummVM ställa in din enhet i General MIDI-läge och använda GM-emulation i spel med MT-32 musik.
 
@@ -1669,7 +1669,7 @@ Space Quest IV CD använder även följande nyckelord:
                                 silverpekare istället för gulpekarna
 
 
-Simon the Sorcerer 1 och 2 lägger till följande nyckelord:
+Simon the Sorcerer I och II lägger till följande nyckelord:
 
     music_mute         bool     Ställ in till “true” för att
                                 deaktivera musik
