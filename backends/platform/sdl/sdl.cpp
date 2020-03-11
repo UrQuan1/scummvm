@@ -529,7 +529,12 @@ void OSystem_SDL::delayMillis(uint msecs) {
 #ifdef ENABLE_EVENTRECORDER
 	if (!g_eventRec.processDelayMillis())
 #endif
-		SDL_Delay(msecs);
+		if (ConfMan.getBool("busy_wait")) {
+			const uint32 time = g_system->getMillis();
+			while (g_system->getMillis() < time + msecs) {}
+		} else {
+			SDL_Delay(msecs);
+		}
 }
 
 void OSystem_SDL::getTimeAndDate(TimeDate &td) const {
