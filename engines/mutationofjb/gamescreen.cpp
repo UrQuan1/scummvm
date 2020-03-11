@@ -145,24 +145,24 @@ bool GameScreen::init() {
 void GameScreen::handleEvent(const Common::Event &event) {
 	switch (event.type) {
 	case Common::EVENT_KEYUP: {
-		switch (event.kbd.ascii) {
-		case 'g':
+		switch (event.kbd.keycode) {
+		case Common::KEYCODE_g:
 			_currentAction = ActionInfo::Walk;
 			_currentPickedItem.clear();
 			break;
-		case 'r':
+		case Common::KEYCODE_r:
 			_currentAction = ActionInfo::Talk;
 			_currentPickedItem.clear();
 			break;
-		case 's':
+		case Common::KEYCODE_s:
 			_currentAction = ActionInfo::Look;
 			_currentPickedItem.clear();
 			break;
-		case 'b':
+		case Common::KEYCODE_b:
 			_currentAction = ActionInfo::Use;
 			_currentPickedItem.clear();
 			break;
-		case 'n':
+		case Common::KEYCODE_n:
 			_currentAction = ActionInfo::PickUp;
 			_currentPickedItem.clear();
 			break;
