@@ -43,9 +43,7 @@ namespace Common {
 const KeyTableEntry defaultKeys[] = {
 	{"BACKSPACE", KEYCODE_BACKSPACE, "Backspace"},
 	{"TAB", KEYCODE_TAB, "Tab"},
-	{"CLEAR", KEYCODE_CLEAR, "Clear"},
 	{"RETURN", KEYCODE_RETURN, "Return"},
-	{"PAUSE", KEYCODE_PAUSE, "Pause"},
 	{"ESCAPE", KEYCODE_ESCAPE, "Esc"},
 	{"SPACE", KEYCODE_SPACE, "Space"},
 	{"EXCLAIM", KEYCODE_EXCLAIM, "!"},
@@ -169,9 +167,11 @@ const KeyTableEntry defaultKeys[] = {
 	{"HELP", KEYCODE_HELP, "Help"},
 	{"PRINT", KEYCODE_PRINT, "Print"},
 	{"SYSREQ", KEYCODE_SYSREQ, "SysRq"},
+	{"PAUSE", KEYCODE_PAUSE, "Pause"},
 	{"MENU", KEYCODE_MENU, "Menu"},
 		// Power Macintosh power key
 	{"POWER", KEYCODE_POWER, "Power"},
+	{"CLEAR", KEYCODE_CLEAR, "Clear"},
 		// Atari keyboard has Undo
 	{"UNDO", KEYCODE_UNDO, "Undo"},
 	{"SLEEP", KEYCODE_SLEEP, "Sleep"},

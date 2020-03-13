@@ -211,9 +211,7 @@ Common::KeyCode SdlEventSource::SDLToOSystemKeycode(const SDL_Keycode key) {
 	switch (key) {
 	case SDLK_BACKSPACE: return Common::KEYCODE_BACKSPACE;
 	case SDLK_TAB: return Common::KEYCODE_TAB;
-	case SDLK_CLEAR: return Common::KEYCODE_CLEAR;
 	case SDLK_RETURN: return Common::KEYCODE_RETURN;
-	case SDLK_PAUSE: return Common::KEYCODE_PAUSE;
 	case SDLK_ESCAPE: return Common::KEYCODE_ESCAPE;
 	case SDLK_SPACE: return Common::KEYCODE_SPACE;
 	case SDLK_EXCLAIM: return Common::KEYCODE_EXCLAIM;
@@ -321,8 +319,10 @@ Common::KeyCode SdlEventSource::SDLToOSystemKeycode(const SDL_Keycode key) {
 	case SDLK_MODE: return Common::KEYCODE_MODE;
 	case SDLK_HELP: return Common::KEYCODE_HELP;
 	case SDLK_SYSREQ: return Common::KEYCODE_SYSREQ;
+	case SDLK_PAUSE: return Common::KEYCODE_PAUSE;
 	case SDLK_MENU: return Common::KEYCODE_MENU;
 	case SDLK_POWER: return Common::KEYCODE_POWER;
+	case SDLK_CLEAR: return Common::KEYCODE_CLEAR;
 	case SDLK_UNDO: return Common::KEYCODE_UNDO;
 #if SDL_VERSION_ATLEAST(2, 0, 0)
 	case SDLK_SCROLLLOCK: return Common::KEYCODE_SCROLLOCK;
