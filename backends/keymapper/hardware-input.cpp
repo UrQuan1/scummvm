@@ -169,12 +169,9 @@ const KeyTableEntry defaultKeys[] = {
 	{"HELP", KEYCODE_HELP, "Help"},
 	{"PRINT", KEYCODE_PRINT, "Print"},
 	{"SYSREQ", KEYCODE_SYSREQ, "SysRq"},
-	{"BREAK", KEYCODE_BREAK, "Break"},
 	{"MENU", KEYCODE_MENU, "Menu"},
 		// Power Macintosh power key
 	{"POWER", KEYCODE_POWER, "Power"},
-		// Some european keyboards
-	{"EURO", KEYCODE_EURO, "Euro"},
 		// Atari keyboard has Undo
 	{"UNDO", KEYCODE_UNDO, "Undo"},
 	{"SLEEP", KEYCODE_SLEEP, "Sleep"},

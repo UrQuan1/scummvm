@@ -393,10 +393,8 @@ Common::KeyCode SdlEventSource::SDLToOSystemKeycode(const SDL_Keycode key) {
 	case SDLK_KP8: return Common::KEYCODE_KP8;
 	case SDLK_KP9: return Common::KEYCODE_KP9;
 	case SDLK_WORLD_16: return Common::KEYCODE_TILDE;
-	case SDLK_BREAK: return Common::KEYCODE_BREAK;
 	case SDLK_LMETA: return Common::KEYCODE_LMETA;
 	case SDLK_RMETA: return Common::KEYCODE_RMETA;
-	case SDLK_EURO: return Common::KEYCODE_EURO;
 #endif
 	default: return Common::KEYCODE_INVALID;
 	}
