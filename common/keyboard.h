@@ -41,9 +41,7 @@ enum KeyCode {
 
 	KEYCODE_BACKSPACE   = 8,
 	KEYCODE_TAB         = 9,
-	KEYCODE_CLEAR       = 12,
 	KEYCODE_RETURN      = 13,
-	KEYCODE_PAUSE       = 19,
 	KEYCODE_ESCAPE      = 27,
 	KEYCODE_SPACE       = 32,
 	KEYCODE_EXCLAIM     = 33,      // !
@@ -185,8 +183,10 @@ enum KeyCode {
 	KEYCODE_HELP        = 315,
 	KEYCODE_PRINT       = 316,
 	KEYCODE_SYSREQ      = 317,
+	KEYCODE_PAUSE       = 318,
 	KEYCODE_MENU        = 319,
 	KEYCODE_POWER       = 320,      // Power Macintosh power key
+	KEYCODE_CLEAR       = 321,
 	KEYCODE_UNDO        = 322,      // Atari keyboard has Undo
 	KEYCODE_SLEEP       = 323,
 	KEYCODE_MUTE        = 324,
