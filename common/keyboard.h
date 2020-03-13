@@ -185,10 +185,8 @@ enum KeyCode {
 	KEYCODE_HELP        = 315,
 	KEYCODE_PRINT       = 316,
 	KEYCODE_SYSREQ      = 317,
-	KEYCODE_BREAK       = 318,
 	KEYCODE_MENU        = 319,
 	KEYCODE_POWER       = 320,      // Power Macintosh power key
-	KEYCODE_EURO        = 321,      // Some european keyboards
 	KEYCODE_UNDO        = 322,      // Atari keyboard has Undo
 	KEYCODE_SLEEP       = 323,
 	KEYCODE_MUTE        = 324,
