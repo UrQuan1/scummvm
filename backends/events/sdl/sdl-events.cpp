@@ -114,38 +114,9 @@ SdlEventSource::~SdlEventSource() {
 int SdlEventSource::mapKey(SDL_Keycode sdlKey, SDL_Keymod mod, Uint16 unicode) {
 	Common::KeyCode key = SDLToOSystemKeycode(sdlKey);
 
-	// Keep unicode in case it's regular ASCII text, Hebrew or in case we didn't get a valid keycode
-	//
-	// We need to use unicode in those cases, simply because SDL1.x passes us non-layout-adjusted keycodes.
-	// So unicode is the only way to get layout-adjusted keys.
 	if (unicode < 0x20) {
 		// don't use unicode, in case it's control characters
 		unicode = 0;
-	} else {
-		// Use unicode, in case keycode is invalid.
-		// Umlauts and others will set KEYCODE_INVALID on SDL2, so in such a case always keep unicode.
-		if (key != Common::KEYCODE_INVALID) {
-			// keycode is valid, check further also depending on modifiers
-			if (mod & (KMOD_CTRL | KMOD_ALT)) {
-				// Ctrl and/or Alt is active
-				//
-				// We need to restrict unicode to only up to 0x7E, because on macOS the option/alt key will switch to
-				// an alternate keyboard, which will cause us to receive Unicode characters for some keys, which are outside
-				// of the ASCII range (e.g. alt-x will get us U+2248). We need to return 'x' for alt-x, so using unicode
-				// in that case would break alt-shortcuts.
-				if (unicode > 0x7E)
-					unicode = 0; // do not allow any characters above 0x7E
-			} else {
-				// We allow Hebrew characters
-				if (unicode >= 0x05D0 && unicode <= 0x05EA)
-					return unicode;
-
-				// We must not restrict as much as when Ctrl/Alt-modifiers are active, otherwise
-				// we wouldn't let umlauts through for SDL1. For SDL1 umlauts may set for example KEYCODE_QUOTE, KEYCODE_MINUS, etc.
-				if (unicode > 0xFF)
-					unicode = 0; // do not allow any characters above 0xFF
-			}
-		}
 	}
 
 	// Attention:
