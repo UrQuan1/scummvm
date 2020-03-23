@@ -687,11 +687,10 @@ void TextMgr::promptKeyPress(uint16 newKey) {
 	// but as soon as invalid characters were used in graphics mode they weren't properly shown
 	switch (_vm->getLanguage()) {
 	case Common::RU_RUS:
-		if (newKey >= 0x20)
-			acceptableInput = true;
+		acceptableInput = true;
 		break;
 	default:
-		if ((newKey >= 0x20) && (newKey <= 0x7f))
+		if (newKey <= 0x7f)
 			acceptableInput = true;
 		break;
 	}
