@@ -293,13 +293,7 @@ struct KeyState {
 	 */
 	byte flags;
 
-	KeyState(KeyCode kc = KEYCODE_INVALID) {
-		keycode = kc;
-		ascii = (uint16)kc;
-		flags = 0;
-	}
-
-	KeyState(KeyCode kc, uint16 asc, byte f = 0) {
+	KeyState(KeyCode kc = KEYCODE_INVALID, uint16 asc = 0, byte f = 0) {
 		keycode = kc;
 		ascii = asc;
 		flags = f;
