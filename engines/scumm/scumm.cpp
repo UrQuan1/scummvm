@@ -166,6 +166,7 @@ ScummEngine::ScummEngine(OSystem *syst, const DetectorResult &dr)
 	_objs = NULL;
 	_sound = NULL;
 	memset(&vm, 0, sizeof(vm));
+	_messageDialog = NULL;
 	_pauseDialog = NULL;
 	_versionDialog = NULL;
 	_fastMode = 0;
