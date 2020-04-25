@@ -2822,7 +2822,7 @@ void ScummEngine::pauseDialog() {
 
 void ScummEngine::versionDialog() {
 	if (!_versionDialog)
-		_versionDialog = new PauseDialog(this, 1);
+		_versionDialog = new InfoDialog(this, 1);
 	runDialog(*_versionDialog);
 }
 
