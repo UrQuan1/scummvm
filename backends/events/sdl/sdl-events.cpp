@@ -119,6 +119,16 @@ int SdlEventSource::mapKey(SDL_Keycode sdlKey, SDL_Keymod mod, Uint16 unicode) {
 		unicode = 0;
 	}
 
+#if !SDL_VERSION_ATLEAST(2, 0, 0)
+	// WORKAROUND: When using SDL1.x, Alt + <key> produces Unicode values
+	// (regular alphanumeric characters). We need to ignore the Unicode value
+	// in that case, but like SDL2 we still allow characters produced by
+	// chooser keys like AltGr or the Option key on macOS.
+	if ((mod & KMOD_ALT) && (unicode == key)) {
+		unicode = 0;
+	}
+#endif
+
 	// Attention:
 	// When using SDL1.x, we will get scancodes via sdlKey, that are raw scancodes, so NOT adjusted to keyboard layout/
 	// mapping. So for example for certain locales, we will get KEYCODE_y, when 'z' is pressed and so on.
