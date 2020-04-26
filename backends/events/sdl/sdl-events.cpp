@@ -114,17 +114,17 @@ SdlEventSource::~SdlEventSource() {
 int SdlEventSource::mapKey(SDL_Keycode sdlKey, SDL_Keymod mod, Uint16 unicode) {
 	Common::KeyCode key = SDLToOSystemKeycode(sdlKey);
 
-	if (unicode < 0x20) {
-		// don't use unicode, in case it's control characters
-		unicode = 0;
-	}
-
 #if !SDL_VERSION_ATLEAST(2, 0, 0)
+	// WORKAROUND: When using SDL1.x, some systems may produce control
+	// characters. We need to ignore the Unicode value in that case, to stay
+	// consistent with SDL2.
+	if (Common::isCntrl(unicode)) {
+		unicode = 0;
 	// WORKAROUND: When using SDL1.x, Alt + <key> produces Unicode values
 	// (regular alphanumeric characters). We need to ignore the Unicode value
 	// in that case, but like SDL2 we still allow characters produced by
 	// chooser keys like AltGr or the Option key on macOS.
-	if ((mod & KMOD_ALT) && (unicode == key)) {
+	} else if ((mod & KMOD_ALT) && (unicode == key)) {
 		unicode = 0;
 	}
 #endif
