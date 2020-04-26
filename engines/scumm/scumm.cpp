@@ -2816,7 +2816,7 @@ void ScummEngine::messageDialog(const Common::U32String &message) {
 
 void ScummEngine::pauseDialog() {
 	if (!_pauseDialog)
-		_pauseDialog = new PauseDialog(this, 4);
+		_pauseDialog = (_game.version >= 3) ? new InfoDialog(this, 4) : new PauseDialog(this, 4);
 	runDialog(*_pauseDialog);
 }
 
