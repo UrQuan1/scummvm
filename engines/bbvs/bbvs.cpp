@@ -246,7 +246,7 @@ void BbvsEngine::updateEvents() {
 			_keyCode = event.kbd.keycode;
 			break;
 		case Common::EVENT_KEYUP:
-			checkEasterEgg(event.kbd.ascii);
+			checkEasterEgg(event.kbd.keycode <= 0x7F ? event.kbd.keycode : 0);
 			_keyCode = Common::KEYCODE_INVALID;
 			break;
 		case Common::EVENT_MOUSEMOVE:
