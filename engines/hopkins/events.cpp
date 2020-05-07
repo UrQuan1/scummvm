@@ -253,11 +253,11 @@ void EventsManager::pollEvents() {
 			return;
 
 		case Common::EVENT_KEYDOWN:
-			_keyState[(byte)toupper(event.kbd.ascii)] = true;
+			_keyState[(byte)toupper(event.kbd.keycode <= 0x7F ? event.kbd.keycode : 0)] = true;
 			handleKey(event);
 			return;
 		case Common::EVENT_KEYUP:
-			_keyState[(byte)toupper(event.kbd.ascii)] = false;
+			_keyState[(byte)toupper(event.kbd.keycode <= 0x7F ? event.kbd.keycode : 0)] = false;
 			return;
 		case Common::EVENT_LBUTTONDOWN:
 			_mouseButton = 1;
