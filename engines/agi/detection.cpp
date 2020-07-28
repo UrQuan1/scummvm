@@ -67,6 +67,16 @@ static const PlainGameDescriptor agiGames[] = {
 
 static const ADExtraGuiOptionsMap optionsList[] = {
 	{
+		GAMEOPTION_SPEEDTHROTTLER,
+		{
+			_s("Throttle game speed"),
+			_s("Limit the speed of the game loop and some screen transitions"),
+			"speedthrottler",
+			true
+		}
+	},
+
+	{
 		GAMEOPTION_ORIGINAL_SAVELOAD,
 		{
 			_s("Use original save/load screens"),

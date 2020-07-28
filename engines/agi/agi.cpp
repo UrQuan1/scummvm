@@ -58,6 +58,9 @@ void AgiEngine::allowSynthetic(bool allow) {
 }
 
 void AgiEngine::wait(uint32 msec, bool busy) {
+	if (!_game.speedThrottlerEnabled)
+		return;
+
 	uint32 endTime = _system->getMillis() + msec;
 
 	if (busy) {
@@ -364,6 +367,8 @@ AgiEngine::AgiEngine(OSystem *syst, const AGIGameDescription *gameDesc) : AgiBas
 
 	memset(&_debug, 0, sizeof(struct AgiDebug));
 
+	_game.speedThrottlerEnabled = ConfMan.getBool("speedthrottler");
+
 	_game.mouseEnabled = true;
 	_game.mouseHidden = false;
 	// don't check for Amiga, Amiga doesn't allow disabling mouse support. It's mandatory.
@@ -651,6 +656,10 @@ uint16 AgiEngine::artificialDelay_SearchTable(AgiArtificialDelayTriggerType trig
 }
 
 void AgiEngine::artificialDelayTrigger_NewRoom(int16 newRoomNr) {
+	if (!_game.speedThrottlerEnabled) {
+		return;
+	}
+
 	uint16 millisecondsDelay = 0;
 
 	//warning("artificial delay trigger: room %d -> new room %d", _artificialDelayCurrentRoom, newRoomNr);
@@ -677,6 +686,10 @@ void AgiEngine::artificialDelayTrigger_NewRoom(int16 newRoomNr) {
 }
 
 void AgiEngine::artificialDelayTrigger_DrawPicture(int16 newPictureNr) {
+	if (!_game.speedThrottlerEnabled) {
+		return;
+	}
+
 	uint16 millisecondsDelay = 0;
 
 	//warning("artificial delay trigger: picture %d -> new picture %d", _artificialDelayCurrentPicture, newPictureNr);

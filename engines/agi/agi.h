@@ -427,6 +427,8 @@ struct AgiGame {
 	bool automaticSave;             /**< set by CmdSetSimple() */
 	char automaticSaveDescription[SAVEDGAME_DESCRIPTION_LEN + 1];
 
+	bool speedThrottlerEnabled;
+
 	Common::Rect mouseFence;        /**< rectangle set by fence.mouse command */
 	bool mouseEnabled;              /**< if mouse is supposed to be active */
 	bool mouseHidden;               /**< if mouse is currently hidden */
@@ -529,6 +531,8 @@ struct AgiGame {
 		for (uint16 i = 0; i < ARRAYSIZE(automaticSaveDescription); i++) {
 			automaticSaveDescription[i] = 0;
 		}
+
+		speedThrottlerEnabled = false;
 
 		// mouseFence cleared by Common::Rect constructor
 		mouseEnabled = false;
