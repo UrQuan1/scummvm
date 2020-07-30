@@ -140,14 +140,6 @@ void EngineState::speedThrottler(uint32 neededSleep) {
 			if (currentRoomNumber() == 100)
 				neededSleep = 66; // 15 fps
 			break;
-		case GID_ICEMAN:
-			// In ICEMAN the submarine control room is not animating much, so it
-			// runs way too fast. We calm it down even more, otherwise fighting
-			// against other submarines is almost impossible.
-			if (currentRoomNumber() == 27) {
-				neededSleep = 66; // 15 fps
-			}
-			break;
 		case GID_SQ4:
 			// In SQ4 (CD) the sequel police appear way too quickly in the
 			// Skate-o-rama rooms, resulting in all sorts of timer issues, like
