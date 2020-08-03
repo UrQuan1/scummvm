@@ -125,6 +125,61 @@ void EngineState::speedThrottler(uint32 neededSleep) {
 	// that will affect the final benchmarked result - bugs #3058865 and
 	// #3127824
 	if (!_gameIsBenchmarking) {
+		// WORKAROUNDS for scripts that are polling too quickly.
+		switch (g_sci->getGameId()) {
+		case GID_CASTLEBRAIN:
+			// In Castle of Dr. Brain, memory color matching puzzle in the first
+			// room (room 100), the game scripts constantly poll the state of each
+			// stone when the user clicks on one. Since the scene is not animating
+			// much, this results in activating and deactivating each stone very
+			// quickly (together with its associated tone sound), depending on how
+			// low it is in the animate list. This worked somewhat in older PCs, but
+			// not in modern computers. We throttle the scene in order to allow the
+			// stones to display, otherwise the game scripts reset them too soon.
+			// Fixes bug #3127824.
+			if (currentRoomNumber() == 100)
+				neededSleep = 66; // 15 fps
+			break;
+		case GID_ICEMAN:
+			// In ICEMAN the submarine control room is not animating much, so it
+			// runs way too fast. We calm it down even more, otherwise fighting
+			// against other submarines is almost impossible.
+			if (currentRoomNumber() == 27) {
+				neededSleep = 66; // 15 fps
+			}
+			break;
+		case GID_KQ6:
+			// KQ6 has talking inventory items that animate in the inventory window.
+			// This is done with unthrottled inner loops which we replace with
+			// calls to kGameIsRestarting so that the screen updates and responds
+			// to input. Since this can happen in any room, we detect if the caller
+			// is inventory script 907. See kq6PatchTalkingInventory.
+			if (_executionStack.size() >= 2) {
+				Common::List<ExecStack>::const_iterator iter = _executionStack.reverse_begin();
+				--iter; // skip this kernel call
+				if (iter->type == EXEC_STACK_TYPE_CALL) {
+					int callerScriptNumber = _segMan->getScript(iter->addr.pc.getSegment())->getScriptNumber();
+					if (callerScriptNumber == 907) {
+						neededSleep = 100; // talk animation interval, 10 fps
+					}
+				}
+			}
+			break;
+		case GID_SQ4:
+			// In SQ4 (CD) the sequel police appear way too quickly in the
+			// Skate-o-rama rooms, resulting in all sorts of timer issues, like
+			// #3109139 (which occurs because a police officer instantly teleports
+			// just before Roger exits and shoots him). We throttle these scenes a bit
+			// more, in order to prevent timer bugs related to the sequel police.
+			if (currentRoomNumber() == 405 || currentRoomNumber() == 406 ||
+				currentRoomNumber() == 410 || currentRoomNumber() == 411) {
+				neededSleep = 66; // 15 fps
+			}
+			break;
+		default:
+			break;
+		}
+
 		uint32 time = g_system->getMillis();
 		uint32 duration = time - _throttleLastTime;
 
