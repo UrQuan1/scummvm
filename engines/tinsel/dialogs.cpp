@@ -1582,7 +1582,8 @@ static bool InvKeyIn(const Common::KeyState &kbd) {
 
 	if (kbd.keycode == 0 && kbd.ascii == 0) {
 		;
-	} else if (kbd.keycode == Common::KEYCODE_RETURN) {
+	} else if (kbd.keycode == Common::KEYCODE_RETURN ||
+		kbd.keycode == Common::KEYCODE_KP_ENTER) {
 		return true;	// Key needs processing
 	} else if (kbd.keycode == Common::KEYCODE_ESCAPE) {
 		return true;	// Key needs processing
