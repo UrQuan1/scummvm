@@ -739,7 +739,12 @@ void GfxAnimate::isGameBenchmarking() {
 				((onlyWidth == 1) && (onlyHeight == 1))) { // Laura Bow 2 Talkie
 				// check further that there is only one cel in that view
 				GfxView *onlyView = _cache->getView(onlyCast->viewId);
-				if ((onlyView->getLoopCount() == 1) && (onlyView->getCelCount(0))) {
+				if ((onlyView->getLoopCount() == 1) && (onlyView->getCelCount(0)) &&
+					// LSL3 calculates a machinespeed variable during game startup (right
+					// after the filthy questions). This one would go through w/o throttling
+					// resulting in having to do 100 of each exercise. Another way of handling
+					// this would be delaying incrementing of "machineSpeed" selector.
+					(g_sci->getGameId() != GID_LSL3)) {
 					_s->_gameIsBenchmarking = true;
 					return;
 				}
