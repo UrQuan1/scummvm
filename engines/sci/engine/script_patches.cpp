@@ -1770,56 +1770,6 @@ static const SciScriptPatcherEntry fanmadeSignatures[] = {
 
 // ===========================================================================
 
-// WORKAROUND
-// Freddy Pharkas intro screen
-// Sierra used inner loops for the scaling of the 2 title views.
-// Those inner loops don't call kGameIsRestarting, which is why
-// we do not update the screen and we also do not throttle.
-//
-// This patch fixes this and makes it work.
-// Applies to at least: English PC-CD
-// Responsible method: sTownScript::changeState(1), sTownScript::changeState(3) (script 110)
-static const uint16 freddypharkasSignatureIntroScaling[] = {
-	0x38, SIG_ADDTOOFFSET(+2),       // pushi (setLoop) (009b for PC CD)
-	0x78,                            // push1
-	SIG_ADDTOOFFSET(+1),             // push0 for first code, push1 for second code
-	0x38, SIG_ADDTOOFFSET(+2),       // pushi (setStep) (0143 for PC CD)
-	0x7a,                            // push2
-	0x39, 0x05,                      // pushi 05
-	0x3c,                            // dup
-	0x72, SIG_ADDTOOFFSET(+2),       // lofsa (view)
-	SIG_MAGICDWORD,
-	0x4a, 0x1e,                      // send 1e
-	0x35, 0x0a,                      // ldi 0a
-	0xa3, 0x02,                      // sal local[2]
-	// start of inner loop
-	0x8b, 0x02,                      // lsl local[2]
-	SIG_ADDTOOFFSET(+43),            // skip almost all of inner loop
-	0xa3, 0x02,                      // sal local[2]
-	0x33, 0xcf,                      // jmp [inner loop start]
-	SIG_END
-};
-
-static const uint16 freddypharkasPatchIntroScaling[] = {
-	// remove setLoop(), objects in heap are already prepared, saves 5 bytes
-	0x38,
-	PATCH_GETORIGINALUINT16(+6),     // pushi (setStep)
-	0x7a,                            // push2
-	0x39, 0x05,                      // pushi 05
-	0x3c,                            // dup
-	0x72,
-	PATCH_GETORIGINALUINT16(+13),    // lofsa (view)
-	0x4a, 0x18,                      // send 18 - adjusted
-	0x35, 0x0a,                      // ldi 0a
-	0xa3, 0x02,                      // sal local[2]
-	// start of new inner loop
-	0x39, 0x00,                      // pushi 00
-	0x43, 0x2c, 0x00,                // callk GameIsRestarting (add this to trigger our speed throttler)
-	PATCH_ADDTOOFFSET(+47),          // skip almost all of inner loop
-	0x33, 0xca,                      // jmp [inner loop start]
-	PATCH_END
-};
-
 // PointsSound::check waits for a signal. If no signal is received, it'll call
 //   kDoSound(0x0d) which is a dummy in sierra sci. ScummVM and will use acc
 //   (which is not set by the dummy) to trigger sound disposal. This somewhat
@@ -2111,7 +2061,6 @@ static const uint16 freddypharkasPatchDeskLetter[] = {
 static const SciScriptPatcherEntry freddypharkasSignatures[] = {
 	{  true,     0, "CD: score early disposal",                    1, freddypharkasSignatureScoreDisposal, freddypharkasPatchScoreDisposal },
 	{  true,    15, "Mac: broken inventory",                       1, freddypharkasSignatureMacInventory,  freddypharkasPatchMacInventory },
-	{  true,   110, "intro scaling workaround",                    2, freddypharkasSignatureIntroScaling,  freddypharkasPatchIntroScaling },
 	{  false,  200, "Mac: skip broken hop singh scene",            1, freddypharkasSignatureMacHopSingh,   freddypharkasPatchMacHopSingh },
 	{  true,   235, "CD: canister pickup hang",                    3, freddypharkasSignatureCanisterHang,  freddypharkasPatchCanisterHang },
 	{  true,   270, "Mac: easter egg hang",                        1, freddypharkasSignatureMacEasterEgg,  freddypharkasPatchMacEasterEgg },
@@ -12216,56 +12165,13 @@ static const uint16 qfg3PatchMissingPoints2[] = {
 };
 
 // Partly WORKAROUND:
-// During combat, the game is not properly throttled. That's because the game uses
-// an inner loop for combat and does not iterate through the main loop.
-// It also doesn't call kGameIsRestarting. This may get fixed properly at some point
-// by rewriting the speed throttler.
-//
-// Additionally Sierra set the cycle speed of the hero to 0. Which explains
-// why the actions of the hero are so incredibly fast. This issue also happened
-// in the original interpreter, when the computer was too powerful.
+// Sierra set the cycle speed of the hero to 0. Which explains why the
+// actions of the hero are so incredibly fast. This issue also happened in
+// the original interpreter, when the computer was too powerful.
 //
 // Applies to at least: English, French, German, Italian, Spanish PC floppy
 // Responsible method: combatControls::dispatchEvent (script 550) + WarriorObj in heap
 // Fixes bug: #6247
-static const uint16 qfg3SignatureCombatSpeedThrottling1[] = {
-	0x3f, 0x03,                         // link 3d (these temp vars are never used)
-	0x76,                               // push0
-	0x43, 0x42, 0x00,                   // callk GetTime, 0d
-	0xa1, 0x58,                         // sag global[88]
-	0x36,                               // push
-	0x83, 0x01,                         // lal local[1]
-	SIG_ADDTOOFFSET(+3),                // ...
-	SIG_MAGICDWORD,
-	0x89, 0xd2,                         // lsg global[210]
-	0x35, 0x00,                         // ldi 0
-	0x1e,                               // gt?
-	SIG_ADDTOOFFSET(+6),                // ...
-	0xa3, 0x01,                         // sal local[1]
-	SIG_END
-};
-
-static const uint16 qfg3PatchCombatSpeedThrottling1[] = {
-	0x76,                               // push0  (no link, freed +2 bytes)
-	0x43, 0x42, 0x00,                   // callk GetTime, 0d
-	0xa1, 0x58,                         // sag global[88] (no push, leave time in acc)
-	0x8b, 0x01,                         // lsl local[1] (stack up the local instead, freed +1 byte)
-	0x1c,                               // ne?
-	0x31, 0x0c,                         // bnt 12d [after sal]
-                                        //
-	0x81, 0xd2,                         // lag global[210] (load into acc instead of stack)
-	0x76,                               // push0 (push0 instead of ldi 0, freed +1 byte)
-	0x22,                               // lt? (flip the comparison)
-	0x31, 0x06,                         // bnt 6d [after sal]
-                                        //
-	0xe1, 0xd2,                         // -ag global[210]
-	0x81, 0x58,                         // lag global[88]
-	0xa3, 0x01,                         // sal local[1]
-
-	0x76,                               // push0 (0 call args)
-	0x43, 0x2c, 0x00,                   // callk GameIsRestarting, 0d (add this to trigger our speed throttler)
-	PATCH_END
-};
 
 static const uint16 qfg3SignatureCombatSpeedThrottling2[] = {
 	SIG_MAGICDWORD,
@@ -12500,7 +12406,6 @@ static const SciScriptPatcherEntry qfg3Signatures[] = {
 	{  true,   285, "missing points for telling about initiation heap",   1, qfg3SignatureMissingPoints1,         qfg3PatchMissingPoints1 },
 	{  true,   285, "missing points for telling about initiation script", 1, qfg3SignatureMissingPoints2a,	      qfg3PatchMissingPoints2 },
 	{  true,   285, "missing points for telling about initiation script", 1, qfg3SignatureMissingPoints2b,        qfg3PatchMissingPoints2 },
-	{  true,   550, "combat speed throttling script",                     1, qfg3SignatureCombatSpeedThrottling1, qfg3PatchCombatSpeedThrottling1 },
 	{  true,   550, "combat speed throttling heap",                       1, qfg3SignatureCombatSpeedThrottling2, qfg3PatchCombatSpeedThrottling2 },
 	{  true,   750, "hero goes out of bounds in room 750",                2, qfg3SignatureRoom750Bounds1,         qfg3PatchRoom750Bounds1 },
 	{  true,   750, "hero goes out of bounds in room 750",                2, qfg3SignatureRoom750Bounds2,         qfg3PatchRoom750Bounds2 },

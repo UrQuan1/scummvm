@@ -674,27 +674,6 @@ reg_t kPaletteAnimate(EngineState *s, int argc, reg_t *argv) {
 			g_sci->_gfxPalette16->kernelAnimateSet();
 	}
 
-	// WORKAROUND: The game scripts in SQ4 floppy count the number of elapsed
-	// cycles in the intro from the number of successive kAnimate calls during
-	// the palette cycling effect, while showing the SQ4 logo. This worked in
-	// older computers because each animate call took awhile to complete.
-	// Normally, such scripts are handled automatically by our speed throttler,
-	// however in this case there are no calls to kGameIsRestarting (where the
-	// speed throttler gets called) between the different palette animation calls.
-	// Thus, we add a small delay between each animate call to make the whole
-	// palette animation effect slower and visible, and not have the logo screen
-	// get skipped because the scripts don't wait between animation steps. This
-	// workaround is applied to non-VGA versions as well because even though they
-	// don't use palette animation they still call this function and use it for
-	// timing. Fixes bugs #6057, #6193.
-	// The original workaround was for the intro SQ4 logo (room#1).
-	// This problem also happens in the time pod (room#531).
-	// This problem also happens in the ending cutscene time rip (room#21).
-	// This workaround affects astro chicken's (room#290) and is also called once
-	// right after a gameover (room#376)
-	if (g_sci->getGameId() == GID_SQ4 && !g_sci->isCD())
-		g_sci->sleep(10);
-
 	return s->r_acc;
 }
 
