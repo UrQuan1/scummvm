@@ -67,9 +67,6 @@ reg_t kGameIsRestarting(EngineState *s, int argc, reg_t *argv) {
 			s->gameIsRestarting = GAMEISRESTARTING_NONE;
 	}
 
-	uint32 neededSleep = 30;
-
-	s->speedThrottler(neededSleep);
 	return s->r_acc;
 }
 
