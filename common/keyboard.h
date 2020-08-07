@@ -239,8 +239,7 @@ enum {
 	ASCII_BACKSPACE     = 8,
 	ASCII_TAB           = 9,
 	ASCII_RETURN        = 13,
-	ASCII_ESCAPE        = 27,
-	ASCII_SPACE         = 32
+	ASCII_ESCAPE        = 27
 };
 
 /**

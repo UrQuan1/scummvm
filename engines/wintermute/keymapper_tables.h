@@ -215,7 +215,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameId == "shinestar"
 	) {
 		act = new Action(kStandardActionSkip, _("Skip"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -230,7 +230,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameId == "rebeccacarlson1"
 	) {
 		act = new Action("HINT", _("Show hints"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -240,7 +240,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameId == "one"
 	) {
 		act = new Action("INV", _("Show inventory"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -253,7 +253,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "qajarycat") {
 		act = new Action("HINT", _("Show hints"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -302,7 +302,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "alimardan1") {
 		act = new Action("HINT", _("Show hints"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -329,7 +329,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "alimardan2") {
 		act = new Action("HINT", _("Show hints"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -433,7 +433,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "alphapolaris") {
 		act = new Action("HINT", _("Show hints"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -548,7 +548,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "apeiron") {
 		act = new Action("BLUE", _("Show blueprint"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -612,7 +612,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 
 		act = new Action("INV", _("Show inventory"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // original mouse
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("JOY_LEFT"); // extra joy
@@ -633,7 +633,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "foxtail") {
 		act = new Action("HINT", _("Show hints"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // original mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -947,7 +947,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "jamesperis") {
 		act = new Action("HINT", _("Show hints / Dance move"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -1038,7 +1038,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "looky") {
 		act = new Action("HINT", _("Show hints"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -1064,7 +1064,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "mentalrepairs") {
 		act = new Action("HINT", _("Show hints"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -1120,7 +1120,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "palladion") {
 		act = new Action("HINT", _("Show hints"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -1188,7 +1188,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 
 		act = new Action("PAUSE", _("Pause"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("p"); // original keyboard
 		gameKeyMap->addAction(act);
@@ -1287,7 +1287,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "ritter") {
 		act = new Action("HINT", _("Show hints"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -1388,7 +1388,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		gameKeyMap->addAction(act);
 	} else if (gameId == "twc") {
 		act = new Action("ACT", _("Droid action"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("MOUSE_MIDDLE"); // extra mouse
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
@@ -1619,7 +1619,7 @@ inline Common::KeymapArray getWintermuteKeymaps(const char *target, const Common
 		warning("Autogenerated keymap for unknown WME game, id '%s', target '%s'", gameId.c_str(), target);
 
 		act = new Action("SPACE", _("Space"));
-		act->setKeyEvent(KeyState(KEYCODE_SPACE, ASCII_SPACE));
+		act->setKeyEvent(KeyState(KEYCODE_SPACE, ' '));
 		act->addDefaultInputMapping("SPACE"); // original keyboard
 		act->addDefaultInputMapping("JOY_Y"); // extra joy
 		gameKeyMap->addAction(act);

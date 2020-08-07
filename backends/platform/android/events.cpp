@@ -100,9 +100,6 @@ void OSystem_Android::pushEvent(int type, int arg1, int arg2, int arg3,
 		case Common::KEYCODE_ESCAPE:
 			e.kbd.ascii = Common::ASCII_ESCAPE;
 			break;
-		case Common::KEYCODE_SPACE:
-			e.kbd.ascii = Common::ASCII_SPACE;
-			break;
 		default:
 			e.kbd.ascii = arg3;
 			break;
