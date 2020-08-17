@@ -97,8 +97,6 @@ public:
 #define AGI_MENU_TRIGGER_APPLE2GS 0x0301 // will trigger menu for AppleIIgs + Amiga
 #define AGI_MENU_TRIGGER_ATARIST  0x0101 // will trigger menu for Atari ST
 
-extern const uint8 scancodeTable[];
-
 } // End of namespace Agi
 
 #endif /* AGI_KEYBOARD_H */

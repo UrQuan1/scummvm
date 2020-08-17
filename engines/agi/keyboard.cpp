@@ -31,38 +31,6 @@
 
 namespace Agi {
 
-//
-// IBM-PC keyboard scancodes
-//
-const uint8 scancodeTable[26] = {
-	30,         // A
-	48,         // B
-	46,         // C
-	32,         // D
-	18,         // E
-	33,         // F
-	34,         // G
-	35,         // H
-	23,         // I
-	36,         // J
-	37,         // K
-	38,         // L
-	50,         // M
-	49,         // N
-	24,         // O
-	25,         // P
-	16,         // Q
-	19,         // R
-	31,         // S
-	20,         // T
-	22,         // U
-	47,         // V
-	17,         // W
-	45,         // X
-	21,         // Y
-	44          // Z
-};
-
 void AgiEngine::processScummVMEvents() {
 	Common::Event event;
 	int key = 0;
@@ -131,134 +99,40 @@ void AgiEngine::processScummVMEvents() {
 			}
 			break;
 		case Common::EVENT_KEYDOWN:
-			key = event.kbd.ascii;
-			if (event.kbd.keycode >= Common::KEYCODE_KP0 && event.kbd.keycode <= Common::KEYCODE_KP9) {
-				if (!(event.kbd.flags & Common::KBD_NUM)) {
-					// HACK: Num-Lock not enabled
-					// We shouldn't get a valid ascii code in these cases. We fix it here, so that cursor keys
-					// on the numpad work properly.
-					key = 0;
-				}
+			switch (getLanguage()) {
+			case Common::RU_RUS:
+				key = event.kbd.getINT16h00hKey(Common::kCodePage866);
+				break;
+			default:
+				key = event.kbd.getINT16h00hKey(Common::kCodePage437);
+				break;
 			}
+			if (key & 0xFF)
+				key &= 0xFF;
 
-			if ((key) && (key <= 0xFF)) {
-				// No special key, directly accept it
-				// Is ISO-8859-1, we need lower 128 characters only, which is plain ASCII, so no mapping required
-				if (Common::isAlpha(key)) {
-					// Key is A-Z.
-					// Map Ctrl-A to 1, Ctrl-B to 2, etc.
-					if (event.kbd.flags & Common::KBD_CTRL) {
-						key = toupper(key) - 'A' + 1;
-					} else if (event.kbd.flags & Common::KBD_ALT) {
-						// Map Alt-A, Alt-B etc. to special scancode values according to an internal scancode table.
-						key = scancodeTable[toupper(key) - 'A'] << 8;
-					}
-				}
-			} else {
-				key = 0;
-				switch (event.kbd.keycode) {
-				case Common::KEYCODE_LEFT:
-				case Common::KEYCODE_KP4:
-					if (_allowSynthetic || !event.kbdRepeat)
-						key = AGI_KEY_LEFT;
-					break;
-				case Common::KEYCODE_RIGHT:
-				case Common::KEYCODE_KP6:
-					if (_allowSynthetic || !event.kbdRepeat)
-						key = AGI_KEY_RIGHT;
-					break;
-				case Common::KEYCODE_UP:
-				case Common::KEYCODE_KP8:
-					if (_allowSynthetic || !event.kbdRepeat)
-						key = AGI_KEY_UP;
-					break;
-				case Common::KEYCODE_DOWN:
-				case Common::KEYCODE_KP2:
-					if (_allowSynthetic || !event.kbdRepeat)
-						key = AGI_KEY_DOWN;
-					break;
-				case Common::KEYCODE_PAGEUP:
-				case Common::KEYCODE_KP9:
-					if (_allowSynthetic || !event.kbdRepeat)
-						key = AGI_KEY_UP_RIGHT;
-					break;
-				case Common::KEYCODE_PAGEDOWN:
-				case Common::KEYCODE_KP3:
-					if (_allowSynthetic || !event.kbdRepeat)
-						key = AGI_KEY_DOWN_RIGHT;
-					break;
-				case Common::KEYCODE_HOME:
-				case Common::KEYCODE_KP7:
-					if (_allowSynthetic || !event.kbdRepeat)
-						key = AGI_KEY_UP_LEFT;
-					break;
-				case Common::KEYCODE_END:
-				case Common::KEYCODE_KP1:
-					if (_allowSynthetic || !event.kbdRepeat)
-						key = AGI_KEY_DOWN_LEFT;
-					break;
-				case Common::KEYCODE_KP5:
-					key = AGI_KEY_STATIONARY;
-					break;
-				case Common::KEYCODE_F1:
-					key = AGI_KEY_F1;
-					break;
-				case Common::KEYCODE_F2:
-					key = AGI_KEY_F2;
-					break;
-				case Common::KEYCODE_F3:
-					key = AGI_KEY_F3;
-					break;
-				case Common::KEYCODE_F4:
-					key = AGI_KEY_F4;
-					break;
-				case Common::KEYCODE_F5:
-					key = AGI_KEY_F5;
-					break;
-				case Common::KEYCODE_F6:
-					key = AGI_KEY_F6;
-					break;
-				case Common::KEYCODE_F7:
-					key = AGI_KEY_F7;
-					break;
-				case Common::KEYCODE_F8:
-					key = AGI_KEY_F8;
-					break;
-				case Common::KEYCODE_F9:
-					key = AGI_KEY_F9;
-					break;
-				case Common::KEYCODE_F10:
-					key = AGI_KEY_F10;
-					break;
-				case Common::KEYCODE_KP_ENTER:
-					key = AGI_KEY_ENTER;
-					break;
-				default:
-					break;
-				}
-
-				switch (event.kbd.keycode) {
-				case Common::KEYCODE_LEFT:
-				case Common::KEYCODE_RIGHT:
-				case Common::KEYCODE_UP:
-				case Common::KEYCODE_DOWN:
-				case Common::KEYCODE_HOME:
-				case Common::KEYCODE_END:
-				case Common::KEYCODE_PAGEUP:
-				case Common::KEYCODE_PAGEDOWN:
-				case Common::KEYCODE_KP4:
-				case Common::KEYCODE_KP6:
-				case Common::KEYCODE_KP8:
-				case Common::KEYCODE_KP2:
-				case Common::KEYCODE_KP9:
-				case Common::KEYCODE_KP3:
-				case Common::KEYCODE_KP7:
-				case Common::KEYCODE_KP1:
-					_keyHoldModeLastKey = event.kbd.keycode;
-					break;
-				default:
-					break;
-				}
+			switch (event.kbd.keycode) {
+			case Common::KEYCODE_LEFT:
+			case Common::KEYCODE_RIGHT:
+			case Common::KEYCODE_UP:
+			case Common::KEYCODE_DOWN:
+			case Common::KEYCODE_HOME:
+			case Common::KEYCODE_END:
+			case Common::KEYCODE_PAGEUP:
+			case Common::KEYCODE_PAGEDOWN:
+			case Common::KEYCODE_KP4:
+			case Common::KEYCODE_KP6:
+			case Common::KEYCODE_KP8:
+			case Common::KEYCODE_KP2:
+			case Common::KEYCODE_KP9:
+			case Common::KEYCODE_KP3:
+			case Common::KEYCODE_KP7:
+			case Common::KEYCODE_KP1:
+				if (!_allowSynthetic && event.kbdRepeat)
+					key = 0;
+				_keyHoldModeLastKey = event.kbd.keycode;
+				break;
+			default:
+				break;
 			}
 			if (key)
 				keyEnqueue(key);
