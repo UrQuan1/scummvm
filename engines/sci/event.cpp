@@ -37,97 +37,6 @@
 
 namespace Sci {
 
-struct ScancodeRow {
-	int offset;
-	const char *keys;
-};
-
-static const ScancodeRow scancodeAltifyRows[] = {
-	{ 0x10, "QWERTYUIOP[]"  },
-	{ 0x1e, "ASDFGHJKL;'\\" },
-	{ 0x2c, "ZXCVBNM,./"    }
-};
-
-static const byte codePageMap88591ToDOS[0x80] = {
-	 '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?', // 0x8x
-	 '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?', // 0x9x
-	 '?', 0xad, 0x9b, 0x9c,  '?', 0x9d,  '?', 0x9e,  '?',  '?', 0xa6, 0xae, 0xaa,  '?',  '?',  '?', // 0xAx
-	 '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?',  '?', 0xa7, 0xaf, 0xac, 0xab,  '?', 0xa8, // 0xBx
-	 '?',  '?',  '?',  '?', 0x8e, 0x8f, 0x92, 0x80,  '?', 0x90,  '?',  '?',  '?',  '?',  '?',  '?', // 0xCx
-	 '?', 0xa5,  '?',  '?',  '?',  '?', 0x99,  '?',  '?',  '?',  '?',  '?', 0x9a,  '?',  '?', 0xe1, // 0xDx
-	0x85, 0xa0, 0x83,  '?', 0x84, 0x86, 0x91, 0x87, 0x8a, 0x82, 0x88, 0x89, 0x8d, 0xa1, 0x8c, 0x8b, // 0xEx
-	 '?', 0xa4, 0x95, 0xa2, 0x93,  '?', 0x94,  '?',  '?', 0x97, 0xa3, 0x96, 0x81,  '?',  '?', 0x98  // 0xFx
-};
-
-struct SciKeyConversion {
-	Common::KeyCode scummVMKey;
-	int sciKeyNumlockOff;
-	int sciKeyNumlockOn;
-};
-
-// Translation table for UTF16->Win1250 (Polish encoding)
-// Covers characters 0x80-0xFF.
-// '0x0' means end of list, 0x1 means 'unused'
-static const uint16 UTF16toWin1250[] = {
-	0x20ac, 0x0001, 0x201a, 0x0001, 0x201e, 0x2026, 0x2020, 0x2021,	// 0x80
-	0x0001, 0x2030, 0x0160, 0x2039, 0x015a, 0x0164, 0x017d, 0x0179,
-	0x0001, 0x2018, 0x2019, 0x201c, 0x201d, 0x2022, 0x2013, 0x2014,	// 0x90
-	0x0001, 0x2122, 0x0161, 0x203a, 0x015b, 0x0165, 0x017e, 0x017a,
-	0x00a0, 0x02c7, 0x02d8, 0x0141, 0x00a4, 0x0104, 0x00a6, 0x00a7,	// 0xa0
-	0x00a8, 0x00a9, 0x015e, 0x00ab, 0x00ac, 0x00ad, 0x00ae, 0x017b,
-	0x00b0, 0x00b1, 0x02db, 0x0142, 0x00b4, 0x00b5, 0x00b6, 0x00b7,	// 0xb0
-	0x00b8, 0x0105, 0x015f, 0x00bb, 0x013d, 0x02dd, 0x013e, 0x017c,
-	0x0154, 0x00c1, 0x00c2, 0x0102, 0x00c4, 0x0139, 0x0106, 0x00c7,	// 0xc0
-	0x010c, 0x00c9, 0x0118, 0x00cb, 0x011a, 0x00cd, 0x00ce, 0x010e,
-	0x0110, 0x0143, 0x0147, 0x00d3, 0x00d4, 0x0150, 0x00d6, 0x00d7,	// 0xd0
-	0x0158, 0x016e, 0x00da, 0x0170, 0x00dc, 0x00dd, 0x0162, 0x00df,
-	0x0155, 0x00e1, 0x00e2, 0x0103, 0x00e4, 0x013a, 0x0107, 0x00e7,	// 0xe0
-	0x010d, 0x00e9, 0x0119, 0x00eb, 0x011b, 0x00ed, 0x00ee, 0x010f,
-	0x0111, 0x0144, 0x0148, 0x00f3, 0x00f4, 0x0151, 0x00f6, 0x00f7,	// 0xf0
-	0x0159, 0x016f, 0x00fa, 0x0171, 0x00fc, 0x00fd, 0x0163, 0x02d9,
-	0
-};
-
-// Table for transferring Alt+<Key> into Polish symbols
-// Note, that 'A' and 'S' are swapped with lowercase. This is due to the fact
-// that we use Alt+a for aspect ratio correction and Alt+s for screenshot saving
-// and we do that in the SDL backend. There are no words starting with 'A' and
-// very few starting with S, thus, this is a viable compromise
-static const byte PolishAltifytoWin1250[] = {
-	'e', 0xea, 'o', 0xf3, 'a', 0xa5, 's', 0x8c, 'l', 0xb3, 'z', 0xbf, 'x', 0x9f, 'c', 0xe6, 'n', 0xF1,
-	'E', 0xca, 'O', 0xd3, 'A', 0xb9, 'S', 0x9c, 'L', 0xa3, 'Z', 0xaf, 'X', 0x8f, 'C', 0xc6, 'N', 0xD1,
-	0
-};
-
-static const SciKeyConversion keyMappings[] = {
-	{ Common::KEYCODE_UP          , kSciKeyUp       , kSciKeyUp       },
-	{ Common::KEYCODE_DOWN        , kSciKeyDown     , kSciKeyDown     },
-	{ Common::KEYCODE_RIGHT       , kSciKeyRight    , kSciKeyRight    },
-	{ Common::KEYCODE_LEFT        , kSciKeyLeft     , kSciKeyLeft     },
-	{ Common::KEYCODE_INSERT      , kSciKeyInsert   , kSciKeyInsert   },
-	{ Common::KEYCODE_HOME        , kSciKeyHome     , kSciKeyHome     },
-	{ Common::KEYCODE_END         , kSciKeyEnd      , kSciKeyEnd      },
-	{ Common::KEYCODE_PAGEUP      , kSciKeyPageUp   , kSciKeyPageUp   },
-	{ Common::KEYCODE_PAGEDOWN    , kSciKeyPageDown , kSciKeyPageDown },
-	{ Common::KEYCODE_DELETE      , kSciKeyDelete   , kSciKeyDelete   },
-	{ Common::KEYCODE_KP0         , kSciKeyInsert   , '0'             },
-	{ Common::KEYCODE_KP1         , kSciKeyEnd      , '1'             },
-	{ Common::KEYCODE_KP2         , kSciKeyDown     , '2'             },
-	{ Common::KEYCODE_KP3         , kSciKeyPageDown , '3'             },
-	{ Common::KEYCODE_KP4         , kSciKeyLeft     , '4'             },
-	{ Common::KEYCODE_KP5         , kSciKeyCenter   , '5'             },
-	{ Common::KEYCODE_KP6         , kSciKeyRight    , '6'             },
-	{ Common::KEYCODE_KP7         , kSciKeyHome     , '7'             },
-	{ Common::KEYCODE_KP8         , kSciKeyUp       , '8'             },
-	{ Common::KEYCODE_KP9         , kSciKeyPageUp   , '9'             },
-	{ Common::KEYCODE_KP_PERIOD   , kSciKeyDelete   , '.'             },
-	{ Common::KEYCODE_KP_ENTER    , kSciKeyEnter    , kSciKeyEnter    },
-	{ Common::KEYCODE_KP_PLUS     , '+'             , '+'             },
-	{ Common::KEYCODE_KP_MINUS    , '-'             , '-'             },
-	{ Common::KEYCODE_KP_MULTIPLY , '*'             , '*'             },
-	{ Common::KEYCODE_KP_DIVIDE   , '/'             , '/'             }
-};
-
 struct MouseEventConversion {
 	Common::EventType commonType;
 	SciEventType sciType;
@@ -150,39 +59,6 @@ EventManager::EventManager(bool fontIsExtended) :
 	{}
 
 EventManager::~EventManager() {
-}
-
-/**
- * Calculates the IBM keyboard alt-key scancode of a printable character.
- */
-static int altify(char ch) {
-	if (g_sci->getLanguage() == Common::PL_POL) {
-		const byte *p = PolishAltifytoWin1250;
-
-		while (*p) {
-			if ((byte)ch == *p)
-				return *(p + 1);
-
-			p += 2;
-		}
-	}
-
-	const char c = toupper(ch);
-
-	for (int row = 0; row < ARRAYSIZE(scancodeAltifyRows); ++row) {
-		const char *keys = scancodeAltifyRows[row].keys;
-		int offset = scancodeAltifyRows[row].offset;
-
-		while (*keys) {
-			if (*keys == c)
-				return offset << 8;
-
-			++offset;
-			++keys;
-		}
-	}
-
-	return ch;
 }
 
 SciEvent EventManager::getScummVMEvent() {
@@ -309,93 +185,32 @@ SciEvent EventManager::getScummVMEvent() {
 		return noEvent;
 	}
 
-	const Common::KeyCode scummVMKeycode = ev.kbd.keycode;
-
-	input.character = ev.kbd.ascii;
-
-	if (scummVMKeycode >= Common::KEYCODE_KP0 && scummVMKeycode <= Common::KEYCODE_KP9 && !(scummVMKeyFlags & Common::KBD_NUM)) {
-		// TODO: Leaky abstractions from SDL should not be handled in game
-		// engines!
-		// SDL may provide a character value for numpad keys even if numlock is
-		// turned off, but arrow/navigation keys won't get mapped below if a
-		// character value is provided
-		input.character = 0;
+	switch (g_sci->getLanguage()) {
+	case Common::RU_RUS:
+		input.character = ev.kbd.getINT16h00hKey(Common::kCodePage866);
+		break;
+	case Common::PL_POL:
+		input.character = ev.kbd.getINT16h00hKey(Common::kWindows1250);
+		break;
+	case Common::HE_ISR:
+		input.character = ev.kbd.getINT16h00hKey(Common::kWindows1255);
+		break;
+	default:
+		input.character = ev.kbd.getINT16h00hKey(Common::kCodePage437);
+		break;
 	}
+	if (input.character & 0xFF)
+		input.character &= 0xFF;
 
-	if (input.character && input.character <= 0xFF) {
-		// Extended characters need to be converted to the old to DOS CP850/437
-		// character sets for multilingual games
-		if (input.character >= 0x80 && input.character <= 0xFF) {
-			// SSCI accepted all input scan codes, regardless of locale, and
-			// just didn't display any characters that were missing from fonts
-			// used by text input controls. We intentionally filter them out
-			// entirely for non-multilingual games here instead, so we can have
-			// better error detection for bugs in the text controls
-			if (!_fontIsExtended) {
-				return noEvent;
-			}
-
-			input.character = codePageMap88591ToDOS[input.character & 0x7f];
+	if (input.character >= 0x80 && input.character <= 0xFF) {
+		// SSCI accepted all input scan codes, regardless of locale, and
+		// just didn't display any characters that were missing from fonts
+		// used by text input controls. We intentionally filter them out
+		// entirely for non-multilingual games here instead, so we can have
+		// better error detection for bugs in the text controls
+		if (!_fontIsExtended) {
+			return noEvent;
 		}
-
-		if (scummVMKeycode == Common::KEYCODE_TAB) {
-			input.character = kSciKeyTab;
-			if (scummVMKeyFlags & Common::KBD_SHIFT)
-				input.character = kSciKeyShiftTab;
-		}
-
-		if (scummVMKeycode == Common::KEYCODE_DELETE)
-			input.character = kSciKeyDelete;
-	} else if (scummVMKeycode >= Common::KEYCODE_F1 && scummVMKeycode <= Common::KEYCODE_F10) {
-		if (scummVMKeyFlags & Common::KBD_SHIFT)
-			input.character = kSciKeyShiftF1 + ((scummVMKeycode - Common::KEYCODE_F1) << 8);
-		else
-			input.character = kSciKeyF1 + ((scummVMKeycode - Common::KEYCODE_F1) << 8);
-	} else {
-		// Arrow keys, numpad keys, etc.
-		for (int i = 0; i < ARRAYSIZE(keyMappings); i++) {
-			if (keyMappings[i].scummVMKey == scummVMKeycode) {
-				const bool numlockOn = (ev.kbd.flags & Common::KBD_NUM);
-				input.character = numlockOn ? keyMappings[i].sciKeyNumlockOn : keyMappings[i].sciKeyNumlockOff;
-				break;
-			}
-		}
-
-		if (g_sci->getLanguage() == Common::RU_RUS) {
-			// Convert UTF16 to CP866
-			if (input.character >= 0x400 && input.character <= 0x4ff) {
-				if (input.character >= 0x440)
-					input.character = input.character - 0x410 + 0xb0;
-				else
-					input.character = input.character - 0x410 + 0x80;
-			}
-		} else if (g_sci->getLanguage() == Common::PL_POL) {
-			for (int i = 0; UTF16toWin1250[i]; i++)
-				if (UTF16toWin1250[i] == input.character) {
-					input.character = 0x80 + i;
-					break;
-				}
-		} else if (g_sci->getLanguage() == Common::HE_ISR) {
-			if (input.character >= 0x05d0 && input.character <= 0x05ea)
-				// convert to WIN-1255
-				input.character = input.character - 0x05d0 + 0xe0;
-		}
-	}
-
-	// TODO: Leaky abstractions from SDL should not be handled in game engines!
-	// When Ctrl and Alt are pressed together with a printable key, SDL1 on
-	// Linux will give us a control character instead of the printable
-	// character we need to convert to an alt scancode
-	if ((scummVMKeyFlags & Common::KBD_ALT) && input.character > 0 && input.character < 27)
-		input.character += 96; // 0x01 -> 'a'
-
-	if (scummVMKeyFlags & Common::KBD_ALT) {
-		input.character = altify(input.character & 0xFF);
-	} else if ((scummVMKeyFlags & Common::KBD_NON_STICKY) == Common::KBD_CTRL && input.character >= 'a' && input.character <= 'z') {
-		// In SSCI, Ctrl+<key> generates ASCII control characters, but the
-		// backends usually give us a printable character + Ctrl flag, so
-		// convert this combo back into what is expected by game scripts
-		input.character -= 96;
 	}
 
 	// In SCI1.1, if only a modifier key is pressed, the IBM keyboard driver
