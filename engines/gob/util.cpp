@@ -119,13 +119,14 @@ void Util::processInput(bool scroll) {
 		case Common::EVENT_KEYDOWN:
 			keyDown(event);
 
-			if (event.kbd.hasFlags(Common::KBD_CTRL)) {
-				if (event.kbd.keycode == Common::KEYCODE_f)
-					_fastMode ^= 1;
-				else if (event.kbd.keycode == Common::KEYCODE_g)
-					_fastMode ^= 2;
-				else if (event.kbd.keycode == Common::KEYCODE_p)
-					_vm->pauseGame();
+			if (event.kbd.hasFlags(Common::KBD_CTRL) && event.kbd.keycode == Common::KEYCODE_f) {
+				_fastMode ^= 1;
+				break;
+			} else if (event.kbd.hasFlags(Common::KBD_CTRL) && event.kbd.keycode == Common::KEYCODE_g) {
+				_fastMode ^= 2;
+				break;
+			} else if (event.kbd.hasFlags(Common::KBD_CTRL) && event.kbd.keycode == Common::KEYCODE_p) {
+				_vm->pauseGame();
 				break;
 			}
 			addKeyToBuffer(event.kbd);
