@@ -1538,6 +1538,7 @@ static void InvLoadGame() {
  */
 #ifndef JAPAN
 static bool UpdateString(const Common::KeyState &kbd) {
+	const char c = kbd.getINT16h00hCharacter(Common::kWindows1252);
 	int	cpos;
 
 	if (!cd.editableRgroup)
@@ -1545,7 +1546,7 @@ static bool UpdateString(const Common::KeyState &kbd) {
 
 	cpos = strlen(g_sedit)-1;
 
-	if (kbd.ascii == 0)
+	if (c == 0)
 		return false;
 
 	if (kbd.keycode == Common::KEYCODE_BACKSPACE) {
@@ -1556,10 +1557,10 @@ static bool UpdateString(const Common::KeyState &kbd) {
 		g_sedit[cpos] = CURSOR_CHAR;
 		return true;
 //	} else if (isalnum(c) || c == ',' || c == '.' || c == '\'' || (c == ' ' && cpos != 0)) {
-	} else if (IsCharImage(_vm->_font->GetTagFontHandle(), kbd.ascii) || (kbd.ascii == ' ' && cpos != 0)) {
+	} else if (IsCharImage(_vm->_font->GetTagFontHandle(), c) || (c == ' ' && cpos != 0)) {
 		if (cpos == SG_DESC_LEN)
 			return false;
-		g_sedit[cpos] = kbd.ascii;
+		g_sedit[cpos] = c;
 		cpos++;
 		g_sedit[cpos] = CURSOR_CHAR;
 		g_sedit[cpos+1] = 0;
