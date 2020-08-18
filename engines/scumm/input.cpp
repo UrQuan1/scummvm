@@ -54,6 +54,16 @@ uint16 ScummEngine::convertKey(const Common::KeyState &lastKeyHit) const {
 	if (!key)
 		return 0;
 
+	// WORKAROUND: We cannot keep track of the Num Lock state on all platforms,
+	// and so we need to hardcode the important cases here - bugs #10558, #11227.
+	if (lastKeyHit.keycode >= Common::KEYCODE_KP0 && lastKeyHit.keycode <= Common::KEYCODE_KP9) {
+		if (_game.id == GID_INDY3) {
+			return '0' + lastKeyHit.keycode - Common::KEYCODE_KP0;
+		} else if (_game.id == GID_INDY4 || _game.id == GID_PASS) {
+			return (key >> 8) + 256;
+		}
+	}
+
 	return key & 0xFF ? key &= 0xFF : (key >> 8) + 256;
 }
 
