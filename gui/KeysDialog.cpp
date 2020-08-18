@@ -72,11 +72,7 @@ void KeysDialog::handleCommand(CommandSender *sender, uint32 cmd, uint32 data) {
 			Common::U32String selection;
 
 			uint16 key = Actions::Instance()->getMapping(_actionsList->getSelected());
-#ifdef __SYMBIAN32__
-			// ScummVM mappings for F1-F9 are different from SDL so remap back to sdl
-			if (key >= Common::ASCII_F1 && key <= Common::ASCII_F9)
-				key = key - Common::ASCII_F1 + SDLK_F1;
-#endif
+
 			if (key != 0)
 				selection = Common::U32String::format(_("Associated key : %s"), SDL_GetKeyName((SDLKey)key));
 			else
@@ -94,11 +90,7 @@ void KeysDialog::handleCommand(CommandSender *sender, uint32 cmd, uint32 data) {
 
 			_actionSelected = _actionsList->getSelected();
 			uint16 key = Actions::Instance()->getMapping(_actionSelected);
-#ifdef __SYMBIAN32__
-			// ScummVM mappings for F1-F9 are different from SDL so remap back to sdl
-			if (key >= Common::ASCII_F1 && key <= Common::ASCII_F9)
-				key = key - Common::ASCII_F1 + SDLK_F1;
-#endif
+
 			if (key != 0)
 				selection = Common::U32String::format(_("Associated key : %s"), SDL_GetKeyName((SDLKey)key));
 			else

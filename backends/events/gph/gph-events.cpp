@@ -383,11 +383,11 @@ bool GPHEventSource::handleJoyButtonDown(SDL_Event &ev, Common::Event &event) {
 			event.type = Common::EVENT_VIRTUAL_KEYBOARD;
 #else
 			event.kbd.keycode = Common::KEYCODE_0;
-			event.kbd.ascii = mapKey(SDLK_0, ev.key.keysym.mod, 0);
+			event.kbd.ascii = '0';
 #endif
 		} else {
 			event.kbd.keycode = Common::KEYCODE_RETURN;
-			event.kbd.ascii = mapKey(SDLK_RETURN, ev.key.keysym.mod, 0);
+			event.kbd.ascii = Common::ASCII_RETURN;
 		}
 		break;
 	case BUTTON_SELECT:
@@ -397,7 +397,7 @@ bool GPHEventSource::handleJoyButtonDown(SDL_Event &ev, Common::Event &event) {
 			event.type = Common::EVENT_QUIT;
 		} else {
 			event.kbd.keycode = Common::KEYCODE_ESCAPE;
-			event.kbd.ascii = mapKey(SDLK_ESCAPE, ev.key.keysym.mod, 0);
+			event.kbd.ascii = Common::ASCII_ESCAPE;
 		}
 		break;
 	case BUTTON_A:
@@ -406,7 +406,7 @@ bool GPHEventSource::handleJoyButtonDown(SDL_Event &ev, Common::Event &event) {
 			event.type = Common::EVENT_PREDICTIVE_DIALOG;
 		} else {
 			event.kbd.keycode = Common::KEYCODE_PERIOD;
-			event.kbd.ascii = mapKey(SDLK_PERIOD, ev.key.keysym.mod, 0);
+			event.kbd.ascii = '.';
 		}
 		break;
 	case BUTTON_Y:
@@ -422,7 +422,7 @@ bool GPHEventSource::handleJoyButtonDown(SDL_Event &ev, Common::Event &event) {
 			}
 		} else {
 			event.kbd.keycode = Common::KEYCODE_SPACE;
-			event.kbd.ascii = mapKey(SDLK_SPACE, ev.key.keysym.mod, 0);
+			event.kbd.ascii = ' ';
 		}
 		break;
 	case BUTTON_MENU:
@@ -432,7 +432,7 @@ bool GPHEventSource::handleJoyButtonDown(SDL_Event &ev, Common::Event &event) {
 			event.type = Common::EVENT_MAINMENU;
 		} else {
 			event.kbd.keycode = Common::KEYCODE_F5;
-			event.kbd.ascii = mapKey(SDLK_F5, ev.key.keysym.mod, 0);
+			event.kbd.ascii = 0;
 		}
 		break;
 	case BUTTON_VOLUP:
@@ -504,17 +504,17 @@ bool GPHEventSource::handleJoyButtonUp(SDL_Event &ev, Common::Event &event) {
 	case BUTTON_HOME:
 		event.type = Common::EVENT_KEYUP;
 		event.kbd.keycode = Common::KEYCODE_ESCAPE;
-		event.kbd.ascii = mapKey(SDLK_ESCAPE, ev.key.keysym.mod, 0);
+		event.kbd.ascii = Common::ASCII_ESCAPE;
 		break;
 	case BUTTON_A:
 		event.type = Common::EVENT_KEYUP;
 		event.kbd.keycode = Common::KEYCODE_PERIOD;
-		event.kbd.ascii = mapKey(SDLK_PERIOD, ev.key.keysym.mod, 0);
+		event.kbd.ascii = '.';
 		break;
 	case BUTTON_Y:
 		event.type = Common::EVENT_KEYUP;
 		event.kbd.keycode = Common::KEYCODE_SPACE;
-		event.kbd.ascii = mapKey(SDLK_SPACE, ev.key.keysym.mod, 0);
+		event.kbd.ascii = ' ';
 		break;
 	case BUTTON_MENU:
 	case BUTTON_HELP:
@@ -523,7 +523,7 @@ bool GPHEventSource::handleJoyButtonUp(SDL_Event &ev, Common::Event &event) {
 			event.type = Common::EVENT_MAINMENU;
 		} else {
 			event.kbd.keycode = Common::KEYCODE_F5;
-			event.kbd.ascii = mapKey(SDLK_F5, ev.key.keysym.mod, 0);
+			event.kbd.ascii = 0;
 		}
 		break;
 	case BUTTON_R:
@@ -531,14 +531,14 @@ bool GPHEventSource::handleJoyButtonUp(SDL_Event &ev, Common::Event &event) {
 		if (_buttonStateL == true) {
 #ifdef ENABLE_VKEYBD
 			event.kbd.keycode = Common::KEYCODE_F7;
-			event.kbd.ascii = mapKey(SDLK_F7, ev.key.keysym.mod, 0);
+			event.kbd.ascii = 0;
 #else
 			event.kbd.keycode = Common::KEYCODE_0;
-			event.kbd.ascii = mapKey(SDLK_0, ev.key.keysym.mod, 0);
+			event.kbd.ascii = '0';
 #endif
 		} else {
 			event.kbd.keycode = Common::KEYCODE_RETURN;
-			event.kbd.ascii = mapKey(SDLK_RETURN, ev.key.keysym.mod, 0);
+			event.kbd.ascii = Common::ASCII_RETURN;
 		}
 		break;
 	case BUTTON_VOLUP:

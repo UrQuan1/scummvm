@@ -149,7 +149,7 @@ bool DINGUXSdlEventSource::remapKey(SDL_Event &ev, Common::Event &event) {
 	} else if (ev.key.keysym.sym == TRIG_L) { // global menu
 		ev.key.keysym.sym = SDLK_F5;
 		event.kbd.keycode = Common::KEYCODE_F5;
-		event.kbd.ascii = Common::ASCII_F5;
+		event.kbd.ascii = 0;
 		event.kbd.flags = Common::KBD_CTRL;
 
 		if (ev.type == SDL_KEYDOWN) {

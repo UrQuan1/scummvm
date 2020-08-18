@@ -83,7 +83,7 @@ Common::KeymapArray MetaEngine::initKeymaps(const char *target) const {
 	engineKeyMap->addAction(act);
 
 	act = new Action(kStandardActionOpenMainMenu, _("Game menu"));
-	act->setKeyEvent(KeyState(KEYCODE_F5, ASCII_F5));
+	act->setKeyEvent(KEYCODE_F5);
 	act->addDefaultInputMapping("F5");
 	act->addDefaultInputMapping("JOY_LEFT_SHOULDER");
 	engineKeyMap->addAction(act);

@@ -99,33 +99,33 @@ static int keymap[][3] = {
 	{ KS_End, Common::KEYCODE_END, 0 },
 	{ KS_Prior, Common::KEYCODE_PAGEUP, 0 },
 	{ KS_Next, Common::KEYCODE_PAGEDOWN, 0 },
-	{ KS_f1, Common::KEYCODE_F1, Common::ASCII_F1 },
-	{ KS_f2, Common::KEYCODE_F2, Common::ASCII_F2 },
-	{ KS_f3, Common::KEYCODE_F3, Common::ASCII_F3 },
-	{ KS_f4, Common::KEYCODE_F4, Common::ASCII_F4 },
-	{ KS_f5, Common::KEYCODE_F5, Common::ASCII_F5 },
-	{ KS_f6, Common::KEYCODE_F6, Common::ASCII_F6 },
-	{ KS_f7, Common::KEYCODE_F7, Common::ASCII_F7 },
-	{ KS_f8, Common::KEYCODE_F8, Common::ASCII_F8 },
-	{ KS_f9, Common::KEYCODE_F9, Common::ASCII_F9 },
-	{ KS_f10, Common::KEYCODE_F10, Common::ASCII_F10 },
-	{ KS_f11, Common::KEYCODE_F11, Common::ASCII_F11 },
-	{ KS_f12, Common::KEYCODE_F12, Common::ASCII_F12 },
+	{ KS_f1, Common::KEYCODE_F1, 0 },
+	{ KS_f2, Common::KEYCODE_F2, 0 },
+	{ KS_f3, Common::KEYCODE_F3, 0 },
+	{ KS_f4, Common::KEYCODE_F4, 0 },
+	{ KS_f5, Common::KEYCODE_F5, 0 },
+	{ KS_f6, Common::KEYCODE_F6, 0 },
+	{ KS_f7, Common::KEYCODE_F7, 0 },
+	{ KS_f8, Common::KEYCODE_F8, 0 },
+	{ KS_f9, Common::KEYCODE_F9, 0 },
+	{ KS_f10, Common::KEYCODE_F10, 0 },
+	{ KS_f11, Common::KEYCODE_F11, 0 },
+	{ KS_f12, Common::KEYCODE_F12, 0 },
 	{ KS_f13, Common::KEYCODE_F13, 0 },
 	{ KS_f14, Common::KEYCODE_F14, 0 },
 	{ KS_f15, Common::KEYCODE_F15, 0 },
-	{ KS_F1, Common::KEYCODE_F1, Common::ASCII_F1 },
-	{ KS_F2, Common::KEYCODE_F2, Common::ASCII_F2 },
-	{ KS_F3, Common::KEYCODE_F3, Common::ASCII_F3 },
-	{ KS_F4, Common::KEYCODE_F4, Common::ASCII_F4 },
-	{ KS_F5, Common::KEYCODE_F5, Common::ASCII_F5 },
-	{ KS_F6, Common::KEYCODE_F6, Common::ASCII_F6 },
-	{ KS_F7, Common::KEYCODE_F7, Common::ASCII_F7 },
-	{ KS_F8, Common::KEYCODE_F8, Common::ASCII_F8 },
-	{ KS_F9, Common::KEYCODE_F9, Common::ASCII_F9 },
-	{ KS_F10, Common::KEYCODE_F10, Common::ASCII_F10 },
-	{ KS_F11, Common::KEYCODE_F11, Common::ASCII_F11 },
-	{ KS_F12, Common::KEYCODE_F12, Common::ASCII_F12 },
+	{ KS_F1, Common::KEYCODE_F1, 0 },
+	{ KS_F2, Common::KEYCODE_F2, 0 },
+	{ KS_F3, Common::KEYCODE_F3, 0 },
+	{ KS_F4, Common::KEYCODE_F4, 0 },
+	{ KS_F5, Common::KEYCODE_F5, 0 },
+	{ KS_F6, Common::KEYCODE_F6, 0 },
+	{ KS_F7, Common::KEYCODE_F7, 0 },
+	{ KS_F8, Common::KEYCODE_F8, 0 },
+	{ KS_F9, Common::KEYCODE_F9, 0 },
+	{ KS_F10, Common::KEYCODE_F10, 0 },
+	{ KS_F11, Common::KEYCODE_F11, 0 },
+	{ KS_F12, Common::KEYCODE_F12, 0 },
 	{ KS_F13, Common::KEYCODE_F13, 0 },
 	{ KS_F14, Common::KEYCODE_F14, 0 },
 	{ KS_F15, Common::KEYCODE_F15, 0 },
@@ -333,8 +333,7 @@ bool OSystem_Wii::pollEvent(Common::Event &event) {
 		byte flags = 0;
 
 		if (bh & PADS_UP) {
-			PAD_EVENT(PADS_START, Common::KEYCODE_F5, Common::ASCII_F5,
-						Common::KBD_CTRL);
+			PAD_EVENT(PADS_START, Common::KEYCODE_F5, 0, Common::KBD_CTRL);
 
 			if (bd & PADS_R) {
 				_consoleVisible = !_consoleVisible;
@@ -357,10 +356,10 @@ bool OSystem_Wii::pollEvent(Common::Event &event) {
 		PAD_EVENT(PADS_Z, Common::KEYCODE_RETURN, Common::ASCII_RETURN, flags);
 		PAD_EVENT(PADS_X, Common::KEYCODE_ESCAPE, Common::ASCII_ESCAPE, flags);
 		PAD_EVENT(PADS_Y, Common::KEYCODE_PERIOD, '.', flags);
-		PAD_EVENT(PADS_START, Common::KEYCODE_F5, Common::ASCII_F5, flags);
+		PAD_EVENT(PADS_START, Common::KEYCODE_F5, 0, flags);
 		PAD_EVENT(PADS_UP, Common::KEYCODE_LSHIFT, 0, flags);
-		PAD_EVENT(PADS_DOWN, Common::KEYCODE_F7, Common::ASCII_F7, Common::KBD_CTRL);
-		//PAD_EVENT(PADS_LEFT, Common::KEYCODE_F8, Common::ASCII_F8, Common::KBD_CTRL);
+		PAD_EVENT(PADS_DOWN, Common::KEYCODE_F7, 0, Common::KBD_CTRL);
+		//PAD_EVENT(PADS_LEFT, Common::KEYCODE_F8, 0, Common::KBD_CTRL);
 
 		if ((bd | bu) & (PADS_A | PADS_B)) {
 			if (bd & PADS_A)

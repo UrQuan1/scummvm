@@ -153,9 +153,7 @@ int SdlEventSource::mapKey(SDL_Keycode sdlKey, SDL_Keymod mod, Uint16 unicode) {
 	// mapping. So for example for certain locales, we will get KEYCODE_y, when 'z' is pressed and so on.
 	// When using SDL2.x however, we will get scancodes based on the keyboard layout.
 
-	if (key >= Common::KEYCODE_F1 && key <= Common::KEYCODE_F9) {
-		return key - Common::KEYCODE_F1 + Common::ASCII_F1;
-	} else if (key >= Common::KEYCODE_KP0 && key <= Common::KEYCODE_KP9) {
+	if (key >= Common::KEYCODE_KP0 && key <= Common::KEYCODE_KP9) {
 		// WORKAROUND:  Disable this change for AmigaOS4 as it is breaking numpad usage ("fighting") on that platform.
 		// This fixes bug #10558.
 		// The actual issue here is that the SCUMM engine uses ASCII codes instead of keycodes for input.
@@ -165,17 +163,13 @@ int SdlEventSource::mapKey(SDL_Keycode sdlKey, SDL_Keymod mod, Uint16 unicode) {
 				return 0; // In case Num-Lock is NOT enabled, return 0 for ascii, so that directional keys on numpad work
 		#endif
 		return key - Common::KEYCODE_KP0 + '0';
-	} else if (key >= Common::KEYCODE_UP && key <= Common::KEYCODE_PAGEDOWN) {
-		return key;
 	} else if (unicode) {
 		// Return unicode in case it's still set and wasn't filtered.
 		return unicode;
 	} else if (key >= 'a' && key <= 'z' && (mod & KMOD_SHIFT)) {
 		return key & ~0x20;
-	} else if (key >= Common::KEYCODE_NUMLOCK && key < Common::KEYCODE_LAST) {
-		return 0;
 	} else {
-		return key;
+		return key <= 0x7F ? key : 0;
 	}
 }
 

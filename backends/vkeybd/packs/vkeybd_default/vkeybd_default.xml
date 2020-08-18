@@ -160,18 +160,18 @@
       </map>
     </layout>
     <event name="esc" type="key" code="27" ascii="27" modifiers="" />
-    <event name="f1" type="key" code="282" ascii="315" modifiers="" />
-    <event name="f2" type="key" code="283" ascii="316" modifiers="" />
-    <event name="f3" type="key" code="284" ascii="317" modifiers="" />
-    <event name="f4" type="key" code="285" ascii="318" modifiers="" />
-    <event name="f5" type="key" code="286" ascii="319" modifiers="" />
-    <event name="f6" type="key" code="287" ascii="320" modifiers="" />
-    <event name="f7" type="key" code="288" ascii="321" modifiers="" />
-    <event name="f8" type="key" code="289" ascii="322" modifiers="" />
-    <event name="f9" type="key" code="290" ascii="323" modifiers="" />
-    <event name="f10" type="key" code="291" ascii="324" modifiers="" />
-    <event name="f11" type="key" code="292" ascii="325" modifiers="" />
-    <event name="f12" type="key" code="293" ascii="326" modifiers="" />
+    <event name="f1" type="key" code="282" ascii="0" modifiers="" />
+    <event name="f2" type="key" code="283" ascii="0" modifiers="" />
+    <event name="f3" type="key" code="284" ascii="0" modifiers="" />
+    <event name="f4" type="key" code="285" ascii="0" modifiers="" />
+    <event name="f5" type="key" code="286" ascii="0" modifiers="" />
+    <event name="f6" type="key" code="287" ascii="0" modifiers="" />
+    <event name="f7" type="key" code="288" ascii="0" modifiers="" />
+    <event name="f8" type="key" code="289" ascii="0" modifiers="" />
+    <event name="f9" type="key" code="290" ascii="0" modifiers="" />
+    <event name="f10" type="key" code="291" ascii="0" modifiers="" />
+    <event name="f11" type="key" code="292" ascii="0" modifiers="" />
+    <event name="f12" type="key" code="293" ascii="0" modifiers="" />
     <event name="del" type="key" code="127" ascii="0" modifiers="" />
     <event name="ctrl" type="modifier" modifiers="ctrl" />
     <event name="alt" type="modifier" modifiers="alt" />
@@ -394,18 +394,18 @@
       </map>
     </layout>
     <event name="esc" type="key" code="27" ascii="27" modifiers="" />
-    <event name="f1" type="key" code="282" ascii="315" modifiers="" />
-    <event name="f2" type="key" code="283" ascii="316" modifiers="" />
-    <event name="f3" type="key" code="284" ascii="317" modifiers="" />
-    <event name="f4" type="key" code="285" ascii="318" modifiers="" />
-    <event name="f5" type="key" code="286" ascii="319" modifiers="" />
-    <event name="f6" type="key" code="287" ascii="320" modifiers="" />
-    <event name="f7" type="key" code="288" ascii="321" modifiers="" />
-    <event name="f8" type="key" code="289" ascii="322" modifiers="" />
-    <event name="f9" type="key" code="290" ascii="323" modifiers="" />
-    <event name="f10" type="key" code="291" ascii="324" modifiers="" />
-    <event name="f11" type="key" code="292" ascii="325" modifiers="" />
-    <event name="f12" type="key" code="293" ascii="326" modifiers="" />
+    <event name="f1" type="key" code="282" ascii="0" modifiers="" />
+    <event name="f2" type="key" code="283" ascii="0" modifiers="" />
+    <event name="f3" type="key" code="284" ascii="0" modifiers="" />
+    <event name="f4" type="key" code="285" ascii="0" modifiers="" />
+    <event name="f5" type="key" code="286" ascii="0" modifiers="" />
+    <event name="f6" type="key" code="287" ascii="0" modifiers="" />
+    <event name="f7" type="key" code="288" ascii="0" modifiers="" />
+    <event name="f8" type="key" code="289" ascii="0" modifiers="" />
+    <event name="f9" type="key" code="290" ascii="0" modifiers="" />
+    <event name="f10" type="key" code="291" ascii="0" modifiers="" />
+    <event name="f11" type="key" code="292" ascii="0" modifiers="" />
+    <event name="f12" type="key" code="293" ascii="0" modifiers="" />
     <event name="del" type="key" code="127" ascii="0" modifiers="" />
     <event name="ctrl" type="modifier" modifiers="ctrl" />
     <event name="alt" type="modifier" modifiers="alt" />
@@ -628,18 +628,18 @@
       </map>
     </layout>
     <event name="esc" type="key" code="27" ascii="27" modifiers="" />
-    <event name="f1" type="key" code="282" ascii="315" modifiers="" />
-    <event name="f2" type="key" code="283" ascii="316" modifiers="" />
-    <event name="f3" type="key" code="284" ascii="317" modifiers="" />
-    <event name="f4" type="key" code="285" ascii="318" modifiers="" />
-    <event name="f5" type="key" code="286" ascii="319" modifiers="" />
-    <event name="f6" type="key" code="287" ascii="320" modifiers="" />
-    <event name="f7" type="key" code="288" ascii="321" modifiers="" />
-    <event name="f8" type="key" code="289" ascii="322" modifiers="" />
-    <event name="f9" type="key" code="290" ascii="323" modifiers="" />
-    <event name="f10" type="key" code="291" ascii="324" modifiers="" />
-    <event name="f11" type="key" code="292" ascii="325" modifiers="" />
-    <event name="f12" type="key" code="293" ascii="326" modifiers="" />
+    <event name="f1" type="key" code="282" ascii="0" modifiers="" />
+    <event name="f2" type="key" code="283" ascii="0" modifiers="" />
+    <event name="f3" type="key" code="284" ascii="0" modifiers="" />
+    <event name="f4" type="key" code="285" ascii="0" modifiers="" />
+    <event name="f5" type="key" code="286" ascii="0" modifiers="" />
+    <event name="f6" type="key" code="287" ascii="0" modifiers="" />
+    <event name="f7" type="key" code="288" ascii="0" modifiers="" />
+    <event name="f8" type="key" code="289" ascii="0" modifiers="" />
+    <event name="f9" type="key" code="290" ascii="0" modifiers="" />
+    <event name="f10" type="key" code="291" ascii="0" modifiers="" />
+    <event name="f11" type="key" code="292" ascii="0" modifiers="" />
+    <event name="f12" type="key" code="293" ascii="0" modifiers="" />
     <event name="del" type="key" code="127" ascii="0" modifiers="" />
     <event name="ctrl" type="modifier" modifiers="ctrl" />
     <event name="alt" type="modifier" modifiers="alt" />
@@ -862,18 +862,18 @@
       </map>
     </layout>
     <event name="esc" type="key" code="27" ascii="27" modifiers="" />
-    <event name="f1" type="key" code="282" ascii="315" modifiers="" />
-    <event name="f2" type="key" code="283" ascii="316" modifiers="" />
-    <event name="f3" type="key" code="284" ascii="317" modifiers="" />
-    <event name="f4" type="key" code="285" ascii="318" modifiers="" />
-    <event name="f5" type="key" code="286" ascii="319" modifiers="" />
-    <event name="f6" type="key" code="287" ascii="320" modifiers="" />
-    <event name="f7" type="key" code="288" ascii="321" modifiers="" />
-    <event name="f8" type="key" code="289" ascii="322" modifiers="" />
-    <event name="f9" type="key" code="290" ascii="323" modifiers="" />
-    <event name="f10" type="key" code="291" ascii="324" modifiers="" />
-    <event name="f11" type="key" code="292" ascii="325" modifiers="" />
-    <event name="f12" type="key" code="293" ascii="326" modifiers="" />
+    <event name="f1" type="key" code="282" ascii="0" modifiers="" />
+    <event name="f2" type="key" code="283" ascii="0" modifiers="" />
+    <event name="f3" type="key" code="284" ascii="0" modifiers="" />
+    <event name="f4" type="key" code="285" ascii="0" modifiers="" />
+    <event name="f5" type="key" code="286" ascii="0" modifiers="" />
+    <event name="f6" type="key" code="287" ascii="0" modifiers="" />
+    <event name="f7" type="key" code="288" ascii="0" modifiers="" />
+    <event name="f8" type="key" code="289" ascii="0" modifiers="" />
+    <event name="f9" type="key" code="290" ascii="0" modifiers="" />
+    <event name="f10" type="key" code="291" ascii="0" modifiers="" />
+    <event name="f11" type="key" code="292" ascii="0" modifiers="" />
+    <event name="f12" type="key" code="293" ascii="0" modifiers="" />
     <event name="del" type="key" code="127" ascii="0" modifiers="" />
     <event name="ctrl" type="modifier" modifiers="ctrl" />
     <event name="alt" type="modifier" modifiers="alt" />

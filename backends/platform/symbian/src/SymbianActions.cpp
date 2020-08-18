@@ -137,11 +137,11 @@ void SymbianActions::initInstanceMain(OSystem *mainSystem) {
 
 	// Enable keymappings
 	_action_enabled[ACTION_KEYMAPPER] = true;
-	_key_action[ACTION_KEYMAPPER].setKey(Common::ASCII_F8, Common::KEYCODE_F8);
+	_key_action[ACTION_KEYMAPPER].setKey(0, Common::KEYCODE_F8);
 
 	// Enable VKB
 	_action_enabled[ACTION_VKB] = true;
-	_key_action[ACTION_VKB].setKey(Common::ASCII_F7, Common::KEYCODE_F7);
+	_key_action[ACTION_VKB].setKey(0, Common::KEYCODE_F7);
 }
 
 void SymbianActions::initInstanceGame() {
@@ -189,19 +189,19 @@ void SymbianActions::initInstanceGame() {
 		_action_enabled[ACTION_SAVE] = true;
 
 		if (is_queen) {
-			_key_action[ACTION_SAVE].setKey(Common::ASCII_F1, Common::KEYCODE_F1); // F1 key for FOTAQ
+			_key_action[ACTION_SAVE].setKey(0, Common::KEYCODE_F1); // F1 key for FOTAQ
 		} else if (is_sky) {
-			_key_action[ACTION_SAVE].setKey(Common::ASCII_F5, Common::KEYCODE_F5);
+			_key_action[ACTION_SAVE].setKey(0, Common::KEYCODE_F5);
 		} else if (is_cine || is_drascula || is_cruise) {
-			_key_action[ACTION_SAVE].setKey(Common::ASCII_F10, Common::KEYCODE_F10); // F10
+			_key_action[ACTION_SAVE].setKey(0, Common::KEYCODE_F10); // F10
 		} else if (is_agi) {
 			_key_action[ACTION_SAVE].setKey(Common::ASCII_ESCAPE, Common::KEYCODE_ESCAPE);
 		} else if (is_parallaction) {
 			_key_action[ACTION_SAVE].setKey('s', Common::KEYCODE_s);
 		} else if (is_tinsel) {
-			_key_action[ACTION_SAVE].setKey(Common::ASCII_F1, SDLK_F1);
+			_key_action[ACTION_SAVE].setKey(0, SDLK_F1);
 		} else {
-			_key_action[ACTION_SAVE].setKey(Common::ASCII_F5, Common::KEYCODE_F5); // F5 key
+			_key_action[ACTION_SAVE].setKey(0, Common::KEYCODE_F5); // F5 key
 		}
 	}
 	// Quit
@@ -233,7 +233,7 @@ void SymbianActions::initInstanceGame() {
 	if (is_agi)
 		_key_action[ACTION_MULTI].setKey(SDLK_PAUSE); // agi: show predictive dialog
 	else if (is_gob)
-		_key_action[ACTION_MULTI].setKey(Common::ASCII_F1, Common::KEYCODE_F1); // bargon : F1 to start
+		_key_action[ACTION_MULTI].setKey(0, Common::KEYCODE_F1); // bargon : F1 to start
 	else if (gameid == "atlantis")
 		_key_action[ACTION_MULTI].setKey('0', Common::KEYCODE_KP0); // fate of atlantis : Ins to sucker-punch
 	else
@@ -245,7 +245,7 @@ void SymbianActions::initInstanceGame() {
 
 	// Enable global menu
 	_action_enabled[ACTION_MAINMENU] = true;
-	_key_action[ACTION_MAINMENU].setKey(Common::ASCII_F5, Common::KEYCODE_F5, KMOD_CTRL);
+	_key_action[ACTION_MAINMENU].setKey(0, Common::KEYCODE_F5, KMOD_CTRL);
 
 }
 

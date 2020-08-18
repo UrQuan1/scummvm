@@ -359,7 +359,7 @@ void  OSystem_IPHONE::handleEvent_orientationChanged(int orientation) {
 }
 
 void  OSystem_IPHONE::handleEvent_keyPressed(Common::Event &event, int keyPressed) {
-	int ascii = keyPressed;
+	int ascii = keyPressed <= 0x7F ? keyPressed : 0;
 	//printf("key: %i\n", keyPressed);
 
 	// We remap some of the iPhone keyboard keys.
@@ -367,43 +367,43 @@ void  OSystem_IPHONE::handleEvent_keyPressed(Common::Event &event, int keyPresse
 	switch (keyPressed) {
 	case 45:
 		keyPressed = Common::KEYCODE_F1;
-		ascii = Common::ASCII_F1;
+		ascii = 0;
 		break;
 	case 47:
 		keyPressed = Common::KEYCODE_F2;
-		ascii = Common::ASCII_F2;
+		ascii = 0;
 		break;
 	case 58:
 		keyPressed = Common::KEYCODE_F3;
-		ascii = Common::ASCII_F3;
+		ascii = 0;
 		break;
 	case 59:
 		keyPressed = Common::KEYCODE_F4;
-		ascii = Common::ASCII_F4;
+		ascii = 0;
 		break;
 	case 40:
 		keyPressed = Common::KEYCODE_F5;
-		ascii = Common::ASCII_F5;
+		ascii = 0;
 		break;
 	case 41:
 		keyPressed = Common::KEYCODE_F6;
-		ascii = Common::ASCII_F6;
+		ascii = 0;
 		break;
 	case 36:
 		keyPressed = Common::KEYCODE_F7;
-		ascii = Common::ASCII_F7;
+		ascii = 0;
 		break;
 	case 38:
 		keyPressed = Common::KEYCODE_F8;
-		ascii = Common::ASCII_F8;
+		ascii = 0;
 		break;
 	case 64:
 		keyPressed = Common::KEYCODE_F9;
-		ascii = Common::ASCII_F9;
+		ascii = 0;
 		break;
 	case 34:
 		keyPressed = Common::KEYCODE_F10;
-		ascii = Common::ASCII_F10;
+		ascii = 0;
 		break;
 	case 10:
 		keyPressed = Common::KEYCODE_RETURN;

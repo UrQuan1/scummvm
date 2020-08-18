@@ -212,11 +212,11 @@ bool OSystem_N64::pollEvent(Common::Event &event) {
 			event.type = Common::EVENT_KEYUP;
 		} else if (PRESSED_START(newButtons, oldButtons)) { // Pressed START
 			event.kbd.keycode = Common::KEYCODE_F5;
-			event.kbd.ascii = Common::ASCII_F5;
+			event.kbd.ascii = 0;
 			event.type = Common::EVENT_KEYDOWN;
 		} else if (RELEASED_START(newButtons, oldButtons)) { // Released START
 			event.kbd.keycode = Common::KEYCODE_F5;
-			event.kbd.ascii = Common::ASCII_F5;
+			event.kbd.ascii = 0;
 			event.type = Common::EVENT_KEYUP;
 		} else if (PRESSED_TL(newButtons, oldButtons)) { // Pressed Trigger Left - ESC
 			event.kbd.keycode = Common::KEYCODE_ESCAPE;
@@ -228,11 +228,11 @@ bool OSystem_N64::pollEvent(Common::Event &event) {
 			event.type = Common::EVENT_KEYUP;
 		} else if (PRESSED_TR(newButtons, oldButtons)) { // Pressed Trigger Right - F7
 			event.kbd.keycode = Common::KEYCODE_F7;
-			event.kbd.ascii = Common::ASCII_F7;
+			event.kbd.ascii = 0;
 			event.type = Common::EVENT_KEYDOWN;
 		} else if (RELEASED_TR(newButtons, oldButtons)) { // Released Trigger Right
 			event.kbd.keycode = Common::KEYCODE_F7;
-			event.kbd.ascii = Common::ASCII_F7;
+			event.kbd.ascii = 0;
 			event.type = Common::EVENT_KEYUP;
 		} else if (PRESSED_Z(newButtons, oldButtons)) { // Pressed Z - Left Mouse Button
 			event.type = Common::EVENT_LBUTTONDOWN;

@@ -428,13 +428,8 @@ void createKeyEvent(int keyNum, Common::Event& event) {
 
 		event.kbd.keycode = (Common::KeyCode) event.kbd.ascii;
 	} else {
-		if ((keys[keyNum].character >= Common::KEYCODE_F1) && (keys[keyNum].character >= Common::KEYCODE_F12))	{
-			event.kbd.keycode = (Common::KeyCode) keys[keyNum].character;
-			event.kbd.ascii = keys[keyNum].character - Common::KEYCODE_F1 + Common::ASCII_F1;
-		} else {
-			event.kbd.ascii = keys[keyNum].character;
-			event.kbd.keycode = (Common::KeyCode) keys[keyNum].character;
-		}
+		event.kbd.ascii = keys[keyNum].character;
+		event.kbd.keycode = (Common::KeyCode) keys[keyNum].character;
 	}
 }
 

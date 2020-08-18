@@ -1703,7 +1703,7 @@ void addEventsToQueue() {
 					if ((getKeysDown() & KEY_DOWN)) {
 						event.type = Common::EVENT_KEYDOWN;
 						event.kbd.keycode = Common::KEYCODE_F10;		// F10 or # - show hotspots
-						event.kbd.ascii = Common::ASCII_F10;
+						event.kbd.ascii = 0;
 						event.kbd.flags = 0;
 						system->addEvent(event);
 //						consolePrintf("F10\n");
@@ -1773,17 +1773,17 @@ void addEventsToQueue() {
 			event.type = getKeyEvent(KEY_START);
 			if (s_currentGame->control == CONT_FUTURE_WARS) {
 				event.kbd.keycode = Common::KEYCODE_F10;
-				event.kbd.ascii = Common::ASCII_F10;
+				event.kbd.ascii = 0;
 			} else if (s_currentGame->control == CONT_GOBLINS) {
 				event.kbd.keycode = Common::KEYCODE_F1;
-				event.kbd.ascii = Common::ASCII_F1;
+				event.kbd.ascii = 0;
 //				consolePrintf("!!!!!F1!!!!!");
 			} else if (s_currentGame->control == CONT_AGI) {
 				event.kbd.keycode = Common::KEYCODE_ESCAPE;
 				event.kbd.ascii = 27;
 			} else {
 				event.kbd.keycode = Common::KEYCODE_F5;		// F5
-				event.kbd.ascii = Common::ASCII_F5;
+				event.kbd.ascii = 0;
 //				consolePrintf("!!!!!F5!!!!!");
 			}
 			system->addEvent(event);

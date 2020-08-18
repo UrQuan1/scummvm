@@ -149,8 +149,8 @@ void ButtonPad::initButtonsNormalMode() {
 	_button[BTN_RTRIGGER][UNSHIFTED].setPspEvent(PSP_EVENT_SHIFT, true, PSP_EVENT_SHIFT, false);
 	_button[BTN_RTRIGGER][SHIFTED].setKey(Common::KEYCODE_INVALID, 0, Common::KBD_SHIFT);
 	_button[BTN_RTRIGGER][UNSHIFTED].setKey(Common::KEYCODE_INVALID, 0, Common::KBD_SHIFT);
-	_button[BTN_START][SHIFTED].setKey(Common::KEYCODE_F5, Common::ASCII_F5);
-	_button[BTN_START][UNSHIFTED].setKey(Common::KEYCODE_F5, Common::ASCII_F5, Common::KBD_CTRL);
+	_button[BTN_START][SHIFTED].setKey(Common::KEYCODE_F5, 0);
+	_button[BTN_START][UNSHIFTED].setKey(Common::KEYCODE_F5, 0, Common::KBD_CTRL);
 	_button[BTN_SELECT][UNSHIFTED].setPspEvent(PSP_EVENT_SHOW_VIRTUAL_KB, true, PSP_EVENT_NONE, 0);
 	_button[BTN_SELECT][SHIFTED].setPspEvent(PSP_EVENT_IMAGE_VIEWER, true, PSP_EVENT_NONE, 0);
 }
@@ -170,15 +170,15 @@ void ButtonPad::initButtonsLolMode() {
 	_button[BTN_LEFT][UNSHIFTED].clear();
 	_button[BTN_LEFT][UNSHIFTED].setKey(Common::KEYCODE_KP7, '7');
 	_button[BTN_LEFT][SHIFTED].clear();
-	_button[BTN_LEFT][SHIFTED].setKey(Common::KEYCODE_F1, Common::ASCII_F1);
+	_button[BTN_LEFT][SHIFTED].setKey(Common::KEYCODE_F1, 0);
 	_button[BTN_UP][SHIFTED].clear();
-	_button[BTN_UP][SHIFTED].setKey(Common::KEYCODE_F2, Common::ASCII_F2);
+	_button[BTN_UP][SHIFTED].setKey(Common::KEYCODE_F2, 0);
 	_button[BTN_RIGHT][UNSHIFTED].clear();
 	_button[BTN_RIGHT][UNSHIFTED].setKey(Common::KEYCODE_KP9, '9');
 	_button[BTN_RIGHT][SHIFTED].clear();
-	_button[BTN_RIGHT][SHIFTED].setKey(Common::KEYCODE_F3, Common::ASCII_F3);
+	_button[BTN_RIGHT][SHIFTED].setKey(Common::KEYCODE_F3, 0);
 	_button[BTN_DOWN][SHIFTED].clear();
-	_button[BTN_DOWN][SHIFTED].setKey(Common::KEYCODE_F4, Common::ASCII_F4);
+	_button[BTN_DOWN][SHIFTED].setKey(Common::KEYCODE_F4, 0);
 
 	// Buttons
 	_button[BTN_LTRIGGER][UNSHIFTED].clear();
