@@ -194,6 +194,17 @@ void SdlEventSource::SDLModToOSystemKeyFlags(SDL_Keymod mod, Common::Event &even
 		event.kbd.flags |= Common::KBD_NUM;
 	if (mod & KMOD_CAPS)
 		event.kbd.flags |= Common::KBD_CAPS;
+
+#if defined(WIN32)
+	// WORKAROUND: On Windows, Ctrl + Alt emulates pressing the 'AltGr' key
+	// (3rd level input chooser key), and vice versa. Trying to use AltGr
+	// (whether as an Alt modifier key or as a chooser key) or Ctrl + Alt
+	// emulating it, will cause a collision with the scaler hotkeys. We need to
+	// remove the Left Ctrl modifier that is produced by the preceding fake
+	// event, so that key combinations with AltGr work.
+	if ((mod & KMOD_RALT) && (mod & KMOD_LCTRL) && !(mod & KMOD_RCTRL))
+		event.kbd.flags &= ~Common::KBD_CTRL;
+#endif
 }
 
 Common::KeyCode SdlEventSource::SDLToOSystemKeycode(const SDL_Keycode key) {
