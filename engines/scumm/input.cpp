@@ -358,7 +358,7 @@ void ScummEngine::processInput() {
 	_leftBtnPressed &= ~msClicked;
 	_rightBtnPressed &= ~msClicked;
 
-	if (lastKeyHit.keycode == Common::KEYCODE_INVALID && lastKeyHit.ascii == 0)
+	if (_mouseAndKeyboardStat || (lastKeyHit.keycode == Common::KEYCODE_INVALID && lastKeyHit.ascii == 0))
 		return;
 
 	_mouseAndKeyboardStat = convertKey(lastKeyHit);
