@@ -376,11 +376,6 @@ HardwareInput KeyboardHardwareInputSet::findHardwareInput(const Event &event) co
 KeyState KeyboardHardwareInputSet::normalizeKeyState(const KeyState &keystate) {
 	KeyState normalizedKeystate = keystate;
 
-	// We ignore the sticky modifiers as they traditionally
-	// have no impact on the outcome of key presses.
-	// TODO: Maybe Num Lock should act as a modifier for the keypad.
-	normalizedKeystate.flags &= ~KBD_STICKY;
-
 	// Modifier keypresses ignore the corresponding modifier flag.
 	// That way, for example, `Left Shift` is not identified
 	// as `Shift+Left Shift` by the keymapper.
