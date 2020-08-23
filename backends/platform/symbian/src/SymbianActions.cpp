@@ -236,8 +236,6 @@ void SymbianActions::initInstanceGame() {
 		_key_action[ACTION_MULTI].setKey(0, Common::KEYCODE_F1); // bargon : F1 to start
 	else if (gameid == "atlantis")
 		_key_action[ACTION_MULTI].setKey('0', Common::KEYCODE_KP0); // fate of atlantis : Ins to sucker-punch
-	else
-		_key_action[ACTION_MULTI].setKey('V', SDLK_v, KMOD_SHIFT); // FT cheat : shift-V
 
 	// Enable debugger
 	_action_enabled[ACTION_DEBUGGER] = true;
