@@ -51,7 +51,6 @@ public:
 
 	void clearScreen(byte color = 255);
 	void invertRect(const Common::Rect &rect);
-	void invertRectViaXOR(const Common::Rect &rect);
 	void eraseRect(const Common::Rect &rect);
 	void paintRect(const Common::Rect &rect);
 	void fillRect(const Common::Rect &rect, int16 drawFlags, byte color, byte priority = 0, byte control = 0);

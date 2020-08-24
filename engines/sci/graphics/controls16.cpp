@@ -326,11 +326,7 @@ void GfxControls16::kernelDrawButton(Common::Rect rect, reg_t obj, const char *t
 			_ports->backColor(sci0EarlyBack);
 		}
 	} else {
-		// SCI0early used xor to invert button rectangles resulting in pink/white buttons
-		if (getSciVersion() == SCI_VERSION_0_EARLY)
-			_paint16->invertRectViaXOR(rect);
-		else
-			_paint16->invertRect(rect);
+		_paint16->invertRect(rect);
 		_paint16->bitsShow(rect);
 	}
 }
