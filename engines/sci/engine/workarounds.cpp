@@ -332,13 +332,13 @@ static const uint16 sig_uninitread_sq1_1[] = {
 // Workarounds for uninitialized reads for parameters
 //    gameID,           room,script,lvl,          object-name, method-name,       local-call-signature, index-range,  workaround
 const SciWorkaroundEntry uninitializedReadForParamWorkarounds[] = {
-	{ GID_GK1,            -1,    12, -1,          "GKIconbar", "showInvItem",                     NULL,     1,     1,{ WORKAROUND_FAKE,   1 } }, // When showing the icon bar containing an inventory item
-	{ GID_HOYLE5,         -1,    15, -1,               "Hand", "add",                             NULL,     1,     1,{ WORKAROUND_FAKE,   0 } }, // When the game adds cards to your hand in any mini-game
-	{ GID_HOYLE5,        700,   730,  0,                 NULL, "runningSuit",                     NULL,     2,     2,{ WORKAROUND_FAKE,   0 } }, // when an opponent is playing in Bridge
-	{ GID_HOYLE5,       1100,    22, -1,           "HandPile", "show",                            NULL,     1,     1,{ WORKAROUND_FAKE,   0 } }, // when showing money piles in Poker
-	{ GID_PHANTASMAGORIA2,-1, 63019,  0,     "WynDocTextView", "cue",                             NULL,     2,     2,{ WORKAROUND_FAKE,   0 } }, // When dragging the slider next to an e-mail message
-	{ GID_SHIVERS,        -1, 64918,  0,                "Str", "strip",                           NULL,     1,     1,{ WORKAROUND_FAKE,   0 } }, // When starting a new game and entering a name
-	{ GID_SQ4,            35,   928,  0,           "Narrator", "say",                             NULL,     1,     1,{ WORKAROUND_FAKE,  11 } }, // Clicking smell on sidewalk, fixes message due to missing say parameter in sidewalk1:doVerb(6) - bug #10917
+	{ GID_GK1,            -1,    12, -1,          "GKIconbar", "showInvItem",                     NULL,     1,     1, { WORKAROUND_FAKE,   1 } }, // When showing the icon bar containing an inventory item
+	{ GID_HOYLE5,         -1,    15, -1,               "Hand", "add",                             NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // When the game adds cards to your hand in any mini-game
+	{ GID_HOYLE5,        700,   730,  0,                 NULL, "runningSuit",                     NULL,     2,     2, { WORKAROUND_FAKE,   0 } }, // when an opponent is playing in Bridge
+	{ GID_HOYLE5,       1100,    22, -1,           "HandPile", "show",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when showing money piles in Poker
+	{ GID_PHANTASMAGORIA2,-1, 63019,  0,     "WynDocTextView", "cue",                             NULL,     2,     2, { WORKAROUND_FAKE,   0 } }, // When dragging the slider next to an e-mail message
+	{ GID_SHIVERS,        -1, 64918,  0,                "Str", "strip",                           NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // When starting a new game and entering a name
+	{ GID_SQ4,            35,   928,  0,           "Narrator", "say",                             NULL,     1,     1, { WORKAROUND_FAKE,  11 } }, // Clicking smell on sidewalk, fixes message due to missing say parameter in sidewalk1:doVerb(6) - bug #10917
 	SCI_WORKAROUNDENTRY_TERMINATOR
 };
 
