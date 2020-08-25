@@ -332,20 +332,59 @@ static const uint16 sig_uninitread_sq1_1[] = {
 // Workarounds for uninitialized reads for parameters
 //    gameID,           room,script,lvl,          object-name, method-name,       local-call-signature, index-range,  workaround
 const SciWorkaroundEntry uninitializedReadForParamWorkarounds[] = {
+	{ GID_ASTROCHICKEN,   -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_CAMELOT,        -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_CASTLEBRAIN,    -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_ECOQUEST,       -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_ECOQUEST2,      -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_FREDDYPHARKAS,  -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
 	{ GID_GK1,            -1,    12, -1,          "GKIconbar", "showInvItem",                     NULL,     1,     1, { WORKAROUND_FAKE,   1 } }, // When showing the icon bar containing an inventory item
+	{ GID_GK1,            -1, 64990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_GK1DEMO,        -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_GK2,            -1, 64990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
 	{ GID_HOYLE5,         -1,    15, -1,               "Hand", "add",                             NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // When the game adds cards to your hand in any mini-game
 	{ GID_HOYLE5,        700,   730,  0,                 NULL, "runningSuit",                     NULL,     2,     2, { WORKAROUND_FAKE,   0 } }, // when an opponent is playing in Bridge
 	{ GID_HOYLE5,       1100,    22, -1,           "HandPile", "show",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when showing money piles in Poker
+	{ GID_ICEMAN,         -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_ISLANDBRAIN,    -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_KQ1,            -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_KQ5,            -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_KQ6,            -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_LAURABOW,       -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_LAURABOW2,      -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_LONGBOW,        -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_LSL1,           -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_LSL2,           -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_LSL5,           -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_LSL6,           -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_LSL6HIRES,      -1, 64990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_MOTHERGOOSEHIRES,-1,64918,  0,                "Str", "strip",                           NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when clicking 'Old Game' in the menu
 	{ GID_PHANTASMAGORIA2,-1, 63019,  0,     "WynDocTextView", "cue",                             NULL,     2,     2, { WORKAROUND_FAKE,   0 } }, // When dragging the slider next to an e-mail message
-	{ GID_SHIVERS,        -1, 64918,  0,                "Str", "strip",                           NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // When starting a new game and entering a name
+	{ GID_PQ1,            -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_PQ2,            -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_PQ3,            -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_PQ4,            -1, 64990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_QFG1,           -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_QFG1VGA,        -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_QFG2,           -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_QFG3,           -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_QFG4,           -1, 64990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_SHIVERS,        -1, 64918,  0,                "Str", "strip",                           NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // When starting a new game and entering a name or when clicking 'Old Game' in the menu
+	{ GID_SQ1,            -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_SQ3,            -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_SQ4,            -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
 	{ GID_SQ4,            35,   928,  0,           "Narrator", "say",                             NULL,     1,     1, { WORKAROUND_FAKE,  11 } }, // Clicking smell on sidewalk, fixes message due to missing say parameter in sidewalk1:doVerb(6) - bug #10917
+	{ GID_SQ5,            -1,   990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
+	{ GID_SQ6,            -1, 64990,  0,            "Restore", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when opening the restore dialog
 	SCI_WORKAROUNDENTRY_TERMINATOR
 };
 
 // Workarounds for uninitialized reads for temporary variables
 //    gameID,           room,script,lvl,          object-name, method-name,       local-call-signature, index-range,  workaround
 const SciWorkaroundEntry uninitializedReadWorkarounds[] = {
+	{ GID_ASTROCHICKEN,   -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
 	{ GID_CAMELOT,        40,    40,  0,               "Rm40", "handleEvent",                     NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // when looking at the ground at the pool of Siloam - bug #6401
+	{ GID_CAMELOT,        -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
 	{ GID_CASTLEBRAIN,   280,   280,  0,         "programmer", "dispatchEvent",                   NULL,     0,     0, { WORKAROUND_FAKE, 0xf } }, // pressing 'q' on the computer screen in the robot room, and closing the help dialog that pops up (bug #5143). Moves the cursor to the view with the ID returned (in this case, the robot hand)
 	{ GID_CASTLEBRAIN,   320,   325,  0,               "word", "dispatchEvent",                   NULL,    14,    15, { WORKAROUND_FAKE,   0 } }, // holding down enter key during the word search puzzle, temp 14 and 15 - bug #9783
 	{ GID_CNICK_KQ,       -1,     0,  1,          "Character", "say",                             NULL,   504,   505, { WORKAROUND_FAKE,   0 } }, // checkers/backgammon, like in hoyle 3 - temps 504 and 505 - bug #6255
@@ -421,6 +460,7 @@ const SciWorkaroundEntry uninitializedReadWorkarounds[] = {
 	{ GID_HOYLE5,       6011,  6011,  0,         "roomScript", "changeState",  sig_uninitread_hoyle5_4,     0,     0, { WORKAROUND_FAKE,   0 } }, // Solitaire: when starting La Belle Lucie
 	{ GID_HOYLE5,       6002,  6002,  0,         "roomScript", "changeState",  sig_uninitread_hoyle5_2,     0,     0, { WORKAROUND_FAKE,   0 } }, // Solitaire: when starting Strategy
 	{ GID_HOYLE5,       6002,  6002,  0,           "strategy", "init",         sig_uninitread_hoyle5_2,     0,     0, { WORKAROUND_FAKE,   0 } }, // Solitaire: when starting Strategy
+	{ GID_ICEMAN,         -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
 	{ GID_ISLANDBRAIN,   100,   937,  0,            "IconBar", "dispatchEvent",                   NULL,    58,    58, { WORKAROUND_FAKE,   0 } }, // when using ENTER at the startup menu - bug #5241
 	{ GID_ISLANDBRAIN,   140,   140,  0,              "piece", "init",                            NULL,     3,     3, { WORKAROUND_FAKE,   1 } }, // first puzzle right at the start, some initialization variable. bnt is done on it, and it should be non-0
 	{ GID_ISLANDBRAIN,   180,   190,  0,               "word", "dispatchEvent",                   NULL,    14,    15, { WORKAROUND_FAKE,   0 } }, // holding down enter key during the word search puzzle, temps 14 and 15
@@ -428,11 +468,14 @@ const SciWorkaroundEntry uninitializedReadWorkarounds[] = {
 	{ GID_JONES,           1,   232,  0,        "weekendText", "draw",          sig_uninitread_jones_1,     0,     0, { WORKAROUND_FAKE,   0 } }, // jones/cd only - gets called during the game
 	{ GID_JONES,           1,   255,  0,                   "", "export 0",                        NULL,    13,    14, { WORKAROUND_FAKE,   0 } }, // jones/cd only - called when a game ends, temps 13 and 14
 	{ GID_JONES,         764,   255,  0,                   "", "export 0",                        NULL,    13,    14, { WORKAROUND_FAKE,   0 } }, // jones/ega&vga only - called when the game starts, temps 13 and 14
+	{ GID_KQ1,            -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
+	{ GID_KQ4,            -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
 	//{ GID_KQ5,            -1,     0,  0,                   "", "export 29",                       NULL,     3,     3, { WORKAROUND_FAKE,   0xf } }, // called when playing harp for the harpies or when aborting dialog in toy shop, is used for kDoAudio - bug #4961
 	// ^^ shouldn't be needed anymore, we got a script patch instead (kq5PatchCdHarpyVolume)
 	{ GID_KQ5,            25,    25,  0,              "rm025", "doit",                            NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // inside witch forest, when going to the room where the walking rock is
 	{ GID_KQ5,            55,    55,  0,         "helpScript", "doit",                            NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // when giving the tambourine to the monster in the labyrinth (only happens at one of the locations) - bug #5198
 	{ GID_KQ5,            -1,   755,  0,              "gcWin", "open",                            NULL,    -1,    -1, { WORKAROUND_FAKE,   0 } }, // when entering control menu in the FM-Towns version
+	{ GID_KQ5,            -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present in EGA version
 	{ GID_KQ6,            -1,    30,  0,               "rats", "changeState",                     NULL,     0,     5, { WORKAROUND_FAKE,   0 } }, // rats in the catacombs (temps 0-5, all temps!) - bugs #4958, #4998, #5017
 	{ GID_KQ6,           210,   210,  0,              "rm210", "scriptCheck",                     NULL,     0,     0, { WORKAROUND_FAKE,   1 } }, // using inventory in that room - bug #4953
 	{ GID_KQ6,           500,   500,  0,              "rm500", "init",                            NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // going to island of the beast
@@ -450,6 +493,7 @@ const SciWorkaroundEntry uninitializedReadWorkarounds[] = {
 	{ GID_KQ7,            -1, 64994, -1,               "Game", "restore",                         NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // when restoring from ScummVM launcher in Mac version
 	{ GID_LAURABOW,       37,     0,  0,                "CB1", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when going up the stairs - bug #5084
 	{ GID_LAURABOW,       -1,   967,  0,             "myIcon", "cycle",                           NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // having any portrait conversation coming up - initial bug #4971
+	{ GID_LAURABOW,       -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
 	{ GID_LAURABOW2,      -1,    24,  0,              "gcWin", "open",                            NULL,     5,     5, { WORKAROUND_FAKE, 0xf } }, // is used as priority for game menu
 	{ GID_LAURABOW2,      -1,    21,  0,      "dropCluesCode", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE, 0x7fff } }, // when asking some questions (e.g. the reporter about the burglary, or the policeman about Ziggy). Must be big, as the game scripts perform lt on it and start deleting journal entries - bugs #4979, #5026
 	{ GID_LAURABOW2,      -1,    90,  1,        "MuseumActor", "init",                            NULL,     6,     6, { WORKAROUND_FAKE,   0 } }, // Random actors in museum - bug #5197
@@ -462,7 +506,9 @@ const SciWorkaroundEntry uninitializedReadWorkarounds[] = {
 	{ GID_LSL1,          250,   250,  0,           "increase", "handleEvent",                     NULL,     2,     2, { WORKAROUND_FAKE,   0 } }, // casino, playing game, increasing bet
 	{ GID_LSL1,          720,   720,  0,              "rm720", "init",                            NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // age check room
 	{ GID_LSL2,           38,    38,  0,        "cloudScript", "changeState",                     NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // entering the room in the middle deck of the ship - bug #5034
+	{ GID_LSL2,           -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
 	{ GID_LSL3,          340,   340,  0,        "ComicScript", "changeState",                     NULL,    -1,    -1, { WORKAROUND_FAKE,   0 } }, // right after entering the 3 ethnic groups inside comedy club (temps 200, 201, 202, 203)
+	{ GID_LSL3,           -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
 	{ GID_LSL3,           -1,   997,  0,         "TheMenuBar", "handleEvent",                     NULL,     1,     1, { WORKAROUND_FAKE, 0xf } }, // when setting volume the first time, this temp is used to set volume on entry (normally it would have been initialized to 's')
 	{ GID_LSL6,          820,    82,  0,                   "", "export 0",                        NULL,     0,   326, { WORKAROUND_FAKE,   0 } }, // when touching the electric fence (temp 193 for English release, temp 293 for French/German, temp 313 for Spanish - used for setting the loop of the death animation), it's not setting it for this death - bug #5103
 	{ GID_LSL6,           -1,    85,  0,          "washcloth", "doVerb",                          NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // washcloth in inventory
@@ -487,6 +533,7 @@ const SciWorkaroundEntry uninitializedReadWorkarounds[] = {
 	{ GID_PEPPER,         -1,   894,  0,            "Package", "doVerb",                          NULL,     3,     3, { WORKAROUND_FAKE,   0 } }, // using the hand on the book in the inventory - bug #5154
 	{ GID_PEPPER,        150,   928,  0,           "Narrator", "startText",                       NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // happens during the non-interactive demo of Pepper
 	{ GID_PHANTASMAGORIA, -1, 64921, -1,              "Print", "addEdit",                         NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // When trying to use the game debugger's flag setting command
+	{ GID_PQ2,            -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
 	{ GID_PQ4,            -1,    25,  0,         "iconToggle", "select",                          NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when toggling the icon bar to auto-hide or not
 	{ GID_PQ4,           170,   170, -1,        "hideAndSeek", "handleEvent",                     NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when clicking to move right while still moving left during the Emo shootout - bug #9847
 	{ GID_PQ4,           275, 64964, -1,              "DPath", "init",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // when Sherry walks out of the morgue on day 3
@@ -500,6 +547,7 @@ const SciWorkaroundEntry uninitializedReadWorkarounds[] = {
 	{ GID_PQSWAT,         -1,    73,  0,   "theLashInterface", "transmit",                        NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // Clicking the transmit button in LASH
 	{ GID_PQSWAT,       2990,  2990,  0,    "talkToSchienbly", "changeState",                     NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // When the video of Schienbly talking for the first time ends
 	{ GID_QFG1,           -1,   210,  0,          "Encounter", "init",           sig_uninitread_qfg1_1,     0,     0, { WORKAROUND_FAKE,   0 } }, // qfg1/hq1: going to the brigands hideout
+	{ GID_QFG1,           -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
 	{ GID_QFG1VGA,        16,    16,  0,        "lassoFailed", "changeState",                     NULL,    -1,    -1, { WORKAROUND_FAKE,   0 } }, // qfg1vga: casting the "fetch" spell in the screen with the flowers, temps 0 and 1 - bug #5309
 	{ GID_QFG1VGA,        -1,   210,  0,          "Encounter", "init",        sig_uninitread_qfg1vga_1,     0,     0, { WORKAROUND_FAKE,   0 } }, // qfg1vga: going to the brigands hideout - bug #5515
 	{ GID_QFG1VGA,        58,    58,  0,                 NULL, "doVerb",                          NULL,     0,     0, { WORKAROUND_FAKE,  18 } }, // qfg1vga: casting "detect magic" at giant's cave, temp 0 used instead of spell number. object is "rm58" but Mac version has blank names
@@ -508,7 +556,7 @@ const SciWorkaroundEntry uninitializedReadWorkarounds[] = {
 	{ GID_QFG2,           -1,    71,  0,        "theInvSheet", "doit",                            NULL,     1,     1, { WORKAROUND_FAKE,   0 } }, // accessing the inventory
 	{ GID_QFG2,           -1,    79,  0,        "TryToMoveTo", "onTarget",                        NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // when throwing pot at air elemental, happens when client coordinates are the same as airElemental coordinates. happened to me right after room change - bug #6859
 	{ GID_QFG2,           -1,   701, -1,              "Alley", "at",                              NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // when walking inside the alleys in the town - bug #5019 & #5106
-	{ GID_QFG2,           -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when pressing enter in restore dialog w/o any saved games present
+	{ GID_QFG2,           -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
 	{ GID_QFG2,          260,   260,  0,             "abdulS", "changeState",    sig_uninitread_qfg2_1,    -1,    -1, { WORKAROUND_FAKE,   0 } }, // During the thief's first mission (in the house), just before Abdul is about to enter the house (where you have to hide in the wardrobe), bug #5153, temps 1 and 2
 	{ GID_QFG2,          260,   260,  0,            "jabbarS", "changeState",    sig_uninitread_qfg2_1,    -1,    -1, { WORKAROUND_FAKE,   0 } }, // During the thief's first mission (in the house), just before Jabbar is about to enter the house (where you have to hide in the wardrobe), bug #5164, temps 1 and 2
 	{ GID_QFG2,          500,   500,  0,   "lightNextCandleS", "changeState",                     NULL,    -1,    -1, { WORKAROUND_FAKE,   0 } }, // Inside the last room, while Ad Avis performs the ritual to summon the genie - bug #5566
@@ -545,6 +593,7 @@ const SciWorkaroundEntry uninitializedReadWorkarounds[] = {
 	{ GID_SQ1,            -1,   703,  0,                   "", "export 1",                        NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // sub that's called from several objects while on sarien battle cruiser
 	{ GID_SQ1,            -1,   703,  0,         "firePulsar", "changeState",     sig_uninitread_sq1_1,     0,     0, { WORKAROUND_FAKE,   0 } }, // export 1, but called locally (when shooting at aliens)
 	{ GID_SQ1,            -1,   703,  0,      "DeltaurRegion", "init",            sig_uninitread_sq1_1,     0,     0, { WORKAROUND_FAKE,   0 } }, // export 1, but called locally (when teleporting to a deltaur room)
+	{ GID_SQ3,            -1,   990,  0,            "Restore", "doit",                            NULL,   364,   364, { WORKAROUND_FAKE,   0 } }, // when trying to restore a game w/o any saved games present
 	{ GID_SQ4,            -1,   398,  0,            "showBox", "changeState",                     NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // CD: called when rummaging in Software Excess bargain bin
 	{ GID_SQ4,            -1,   928, -1,           "Narrator", "startText",                       NULL,  1000,  1000, { WORKAROUND_FAKE,   1 } }, // CD: happens in the options dialog and in-game when speech and subtitles are used simultaneously
 	{ GID_SQ4,           395,   395, -1,    "fromStoreScript", "changeState",                     NULL,     0,     0, { WORKAROUND_FAKE,   0 } }, // CD: happens when shoplifting in Galaxy Galleria - bug #10229
