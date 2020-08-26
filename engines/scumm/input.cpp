@@ -506,19 +506,6 @@ void ScummEngine_v3::processKeyboard() {
 	if (isOriginalMenuKey()) {
 		prepareSavegame();
 	}
-
-	// 'i' brings up an IQ dialog in Indy3 (disabled in save/load dialog for input)
-	if (_mouseAndKeyboardStat == 'i' && _game.id == GID_INDY3 && _currentRoom != 14) {
-		// SCUMM var 244 is the episode score
-		// and var 245 is the series score
-		char text[50];
-
-		updateIQPoints();
-
-		sprintf(text, "IQ Points: Episode = %d, Series = %d", _scummVars[244], _scummVars[245]);
-		Indy3IQPointsDialog indy3IQPointsDialog(this, text);
-		runDialog(indy3IQPointsDialog);
-	}
 }
 
 void ScummEngine::processKeyboard() {

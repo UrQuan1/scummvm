@@ -616,17 +616,6 @@ void SubtitleSettingsDialog::cycleValue() {
 	_timer = g_system->getMillis() + 1500;
 }
 
-Indy3IQPointsDialog::Indy3IQPointsDialog(ScummEngine *scumm, char* text)
-	: InfoDialog(scumm, Common::U32String(text)) {
-}
-
-void Indy3IQPointsDialog::handleKeyDown(Common::KeyState state) {
-	if (state.ascii == 'i')
-		close();
-	else
-		ScummDialog::handleKeyDown(state);
-}
-
 DebugInputDialog::DebugInputDialog(ScummEngine *scumm, char* text)
 	: InfoDialog(scumm, U32String(text)) {
 	mainText = text;

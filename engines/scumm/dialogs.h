@@ -172,13 +172,6 @@ protected:
 	void cycleValue();
 };
 
-//The Indy IQ dialog
-class Indy3IQPointsDialog : public InfoDialog {
-public:
-	Indy3IQPointsDialog(ScummEngine *scumm, char* text);
-	void handleKeyDown(Common::KeyState state) override;
-};
-
 class DebugInputDialog : public InfoDialog {
 public:
 	DebugInputDialog(ScummEngine *scumm, char* text);
