@@ -101,7 +101,7 @@ protected:
 	void setupOpcodes() override;
 
 	void scummLoop_handleActors() override;
-	void processKeyboard(Common::KeyState lastKeyHit) override;
+	void processKeyboard() override;
 
 	void setupScummVars() override;
 	virtual void decodeParseString(int a, int b);

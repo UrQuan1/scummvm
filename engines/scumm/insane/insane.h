@@ -420,6 +420,7 @@ class Insane {
 	int32 actionEnemy();
 	int32 processKeyboard();
 	int32 processMouse();
+	bool isCheatEnabled();
 	void setEnemyAnimation(int32 actornum, int anim);
 	void chooseEnemyWeaponAnim(int32 buttons);
 	void switchEnemyWeapon();

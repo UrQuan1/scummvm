@@ -427,13 +427,6 @@ int ScummEngine_v2::readVar(uint var) {
 void ScummEngine_v2::writeVar(uint var, int value) {
 	assertRange(0, var, _numVariables - 1, "variable (writing)");
 	debugC(DEBUG_VARS, "writeVar(%d) = %d", var, value);
-
-	if (VAR_CUTSCENEEXIT_KEY != 0xFF && var == VAR_CUTSCENEEXIT_KEY) {
-		// Remap the cutscene exit key in earlier games
-		if (value == 4 || value == 13 || value == 64)
-			value = 27;
-	}
-
 	_scummVars[var] = value;
 }
 

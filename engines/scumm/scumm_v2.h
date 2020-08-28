@@ -62,7 +62,7 @@ protected:
 
 	void saveLoadWithSerializer(Common::Serializer &s) override;
 
-	void processKeyboard(Common::KeyState lastKeyHit) override;
+	void processKeyboard() override;
 
 	void readIndexFile() override;
 	void readClassicIndexFile();	// V1

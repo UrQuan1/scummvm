@@ -1703,7 +1703,7 @@ void ScummEngine::resetScumm() {
 	}
 
 	// all keys are released
-	for (i = 0; i < 512; i++)
+	for (i = 0; i < Common::KEYCODE_LAST; i++)
 		_keyDownMap[i] = false;
 
 	_lastSaveTime = _system->getMillis();

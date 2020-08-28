@@ -2785,35 +2785,33 @@ void ScummEngine_v6::o6_kernelGetFunctions() {
 
 int ScummEngine::getKeyState(int key) {
 	switch (key) {
+	case 0x00D: // Enter
+		return (_keyDownMap[Common::KEYCODE_RETURN] ||
+				_keyDownMap[Common::KEYCODE_KP_ENTER]) ? 1 : 0;
 	case 0x147: // Home
-		// FIXME: There seems to be a mistake in the code here ("insert" vs. "home")
 		return (_keyDownMap[Common::KEYCODE_KP7] ||
-		        _keyDownMap[Common::KEYCODE_INSERT]) ? 1 : 0;
+				_keyDownMap[Common::KEYCODE_HOME]) ? 1 : 0;
 	case 0x148: // Up
 		return (_keyDownMap[Common::KEYCODE_KP8] ||
-		        _keyDownMap[Common::KEYCODE_UP] ||
-				_keyDownMap[Common::KEYCODE_8]) ? 1 : 0;
+				_keyDownMap[Common::KEYCODE_UP]) ? 1 : 0;
 	case 0x149: // PgUp
 		return (_keyDownMap[Common::KEYCODE_KP9] ||
-		        _keyDownMap[Common::KEYCODE_PAGEUP]) ? 1 : 0;
+				_keyDownMap[Common::KEYCODE_PAGEUP]) ? 1 : 0;
 	case 0x14B: // Left
 		return (_keyDownMap[Common::KEYCODE_KP4] ||
-		        _keyDownMap[Common::KEYCODE_LEFT] ||
-				_keyDownMap[Common::KEYCODE_4]) ? 1 : 0;
+				_keyDownMap[Common::KEYCODE_LEFT]) ? 1 : 0;
 	case 0x14D: // Right
 		return (_keyDownMap[Common::KEYCODE_KP6] ||
-		        _keyDownMap[Common::KEYCODE_RIGHT] ||
-				_keyDownMap[Common::KEYCODE_6]) ? 1 : 0;
+				_keyDownMap[Common::KEYCODE_RIGHT]) ? 1 : 0;
 	case 0x14F: // End
 		return (_keyDownMap[Common::KEYCODE_KP1] ||
-		        _keyDownMap[Common::KEYCODE_END]) ? 1 : 0;
+				_keyDownMap[Common::KEYCODE_END]) ? 1 : 0;
 	case 0x150: // Down
 		return (_keyDownMap[Common::KEYCODE_KP2] ||
-		        _keyDownMap[Common::KEYCODE_DOWN] ||
-				_keyDownMap[Common::KEYCODE_2]) ? 1 : 0;
+				_keyDownMap[Common::KEYCODE_DOWN]) ? 1 : 0;
 	case 0x151: // PgDn
 		return (_keyDownMap[Common::KEYCODE_KP3] ||
-		        _keyDownMap[Common::KEYCODE_PAGEDOWN]) ? 1 : 0;
+				_keyDownMap[Common::KEYCODE_PAGEDOWN]) ? 1 : 0;
 	default:
 		return (_keyDownMap[key]) ? 1 : 0;
 	}

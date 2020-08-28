@@ -589,13 +589,19 @@ int32 Insane::processKeyboard() {
 		_enemyState[EN_BEN][1] += tmpy;
 	}
 
-	if (_vm->getKeyState(Common::KEYCODE_RETURN))
+	if (_vm->getKeyState(0x00D))
 		retval |= 1;
 
-	if (_vm->getKeyState(Common::KEYCODE_TAB))
+	if (_vm->getKeyState(0x009))
 		retval |= 2;
 
 	return retval;
+}
+
+bool Insane::isCheatEnabled() {
+	// Left Shift + V cheat to win the battle
+	return (_vm->getKeyState(Common::KEYCODE_LSHIFT) && _vm->getKeyState(0x076) &&
+	        !_beenCheated && !_actor[0].lost && !_actor[1].lost);
 }
 
 void Insane::readFileToMem(const char *name, byte **buf) {

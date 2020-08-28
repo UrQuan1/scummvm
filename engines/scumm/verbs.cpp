@@ -568,21 +568,6 @@ void ScummEngine::checkExecVerbs() {
 			}
 		}
 
-		if ((_game.id == GID_INDY4 || _game.id == GID_PASS) && _mouseAndKeyboardStat >= '0' && _mouseAndKeyboardStat <= '9') {
-			// To support keyboard fighting in FOA, we need to remap the number keys.
-			// FOA apparently expects PC scancode values (see script 46 if you want
-			// to know where I got these numbers from). Oddly enough, the The Indy 3
-			// part of the "Passport to Adventure" demo expects the same keyboard
-			// mapping, even though the full game doesn't.
-			static const int numpad[10] = {
-				'0',
-				335, 336, 337,
-				331, 332, 333,
-				327, 328, 329
-			};
-			_mouseAndKeyboardStat = numpad[_mouseAndKeyboardStat - '0'];
-		}
-
 		if (_game.platform == Common::kPlatformFMTowns && _game.version == 3) {
 			// HACK: In the FM-TOWNS games Indy3, Loom and Zak the most significant bit is set for special keys
 			// like F5 (=0x8005) or joystick buttons (mask 0xFE00, e.g. SELECT=0xFE40 for the save/load menu).

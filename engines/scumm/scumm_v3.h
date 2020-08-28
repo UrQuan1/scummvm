@@ -43,7 +43,7 @@ protected:
 	void readRoomsOffsets() override;
 	void loadCharset(int no) override;
 
-	void processKeyboard(Common::KeyState lastKeyHit) override;
+	void processKeyboard() override;
 
 	/* Version 3 script opcodes */
 	void o3_setBoxFlags();

@@ -102,7 +102,7 @@ protected:
 	void scummLoop_handleSound() override;
 	void scummLoop_handleDrawing() override;
 	void processInput() override;
-	void processKeyboard(Common::KeyState lastKeyHit) override;
+	void processKeyboard() override;
 
 	void setupScumm() override;
 
