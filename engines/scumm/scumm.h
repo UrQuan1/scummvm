@@ -529,6 +529,7 @@ protected:
 	virtual void processKeyboard();
 	virtual void clearClickedStatus();
 
+	bool isOriginalMenuKey() const;
 	bool isMainMenuKey() const;
 	bool isRestartKey() const;
 	bool isCutsceneExitKey() const;
