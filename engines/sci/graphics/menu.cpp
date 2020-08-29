@@ -152,7 +152,7 @@ void GfxMenu::kernelAddEntry(Common::String title, Common::String content, reg_t
 			tempPos = controlPos + 1;
 			if (tempPos >= contentSize)
 				error("control marker at end of item");
-			itemEntry->keyPress = tolower(content[tempPos]);
+			itemEntry->keyPress = tolower(content[tempPos]) - 96;
 			content.setChar(toupper(content[tempPos]), tempPos);
 		}
 		if (altPos) {
@@ -418,7 +418,7 @@ void GfxMenu::calculateMenuAndItemWidth() {
 
 reg_t GfxMenu::kernelSelect(reg_t eventObject, bool pauseSound) {
 	int16 eventType = readSelectorValue(_segMan, eventObject, SELECTOR(type));
-	int16 keyPress, keyModifier;
+	int16 keyPress;
 	GuiMenuItemList::iterator itemIterator = _itemList.begin();
 	GuiMenuItemList::iterator itemEnd = _itemList.end();
 	GuiMenuItemEntry *itemEntry = NULL;
@@ -427,15 +427,6 @@ reg_t GfxMenu::kernelSelect(reg_t eventObject, bool pauseSound) {
 	switch (eventType) {
 	case kSciEventKeyDown:
 		keyPress = readSelectorValue(_segMan, eventObject, SELECTOR(message));
-		keyModifier = readSelectorValue(_segMan, eventObject, SELECTOR(modifiers));
-
-		// ASCII control characters are put in the `message` field when
-		// Ctrl+<key> is pressed, but this kMenuSelect implementation matches
-		// on modifier + printable character, so we must convert the control
-		// characters to their lower-case latin printed equivalents
-		if ((keyModifier & kSciKeyModNonSticky) == kSciKeyModCtrl && keyPress > 0 && keyPress < 27) {
-			keyPress += 96;
-		}
 
 		switch (keyPress) {
 		case 0:
@@ -450,24 +441,7 @@ reg_t GfxMenu::kernelSelect(reg_t eventObject, bool pauseSound) {
 			while (itemIterator != itemEnd) {
 				itemEntry = *itemIterator;
 
-				// Tab and Ctrl+I share the same ASCII character, but this
-				// method also checks the modifier (whereas SSCI looked only at
-				// the character), so a Tab keypress must be converted here
-				// to Ctrl+I or the modifier check will fail and the Tab key
-				// won't do anything. (This is also why Ctrl+I and Ctrl+Shift+I
-				// would both bring up the inventory in SSCI QFG1EGA)
-				if (keyPress == kSciKeyTab) {
-					keyModifier = kSciKeyModCtrl;
-					keyPress = 'i';
-				}
-
-				// We need to isolate the lower byte when checking modifiers
-				// because of a keyboard driver bug (see engine/kevent.cpp /
-				// kGetEvent)
-				keyModifier &= 0xFF;
-
 				if (itemEntry->keyPress == keyPress &&
-					itemEntry->keyModifier == keyModifier &&
 					itemEntry->enabled)
 					break;
 				itemIterator++;
