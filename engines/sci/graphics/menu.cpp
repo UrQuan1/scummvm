@@ -992,6 +992,13 @@ GuiMenuItemEntry *GfxMenu::interactiveWithMouse() {
 			curItemEntry = interactiveGetItem(curMenuId, newItemId, false);
 		}
 
+		if (newItemId != curItemId) {
+			// Item changed
+			invertMenuSelection(curItemId);
+			invertMenuSelection(newItemId);
+			curItemId = newItemId;
+		}
+
 		if (newMenuId != curMenuId) {
 			// Menu changed, remove cur menu and paint new menu
 			drawMenu(curMenuId, newMenuId);
@@ -1000,13 +1007,6 @@ GuiMenuItemEntry *GfxMenu::interactiveWithMouse() {
 				firstMenuChange = false;
 			}
 			curMenuId = newMenuId;
-		} else {
-			if (newItemId != curItemId) {
-				// Item changed
-				invertMenuSelection(curItemId);
-				invertMenuSelection(newItemId);
-				curItemId = newItemId;
-			}
 		}
 
 	}
