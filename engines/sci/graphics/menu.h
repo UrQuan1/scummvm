@@ -119,9 +119,6 @@ private:
 	GuiMenuList _list;
 	GuiMenuItemList _itemList;
 
-	uint16 _curMenuId;
-	uint16 _curItemId;
-
 	Port *_oldPort;
 	reg_t _barSaveHandle;
 	reg_t _menuSaveHandle;

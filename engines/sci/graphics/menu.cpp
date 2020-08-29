@@ -66,12 +66,6 @@ GfxMenu::~GfxMenu() {
 void GfxMenu::reset() {
 	_list.clear();
 	_itemList.clear();
-
-	// We actually set active item in here and remember last selection of the
-	// user. Sierra SCI always defaulted to first item every time menu was
-	// called via ESC, we don't follow that logic.
-	_curMenuId = 1;
-	_curItemId = 1;
 }
 
 void GfxMenu::kernelAddEntry(Common::String title, Common::String content, reg_t contentVmPtr) {
@@ -807,14 +801,10 @@ uint16 GfxMenu::mouseFindMenuItemSelection(Common::Point mousePosition, uint16 m
 
 GuiMenuItemEntry *GfxMenu::interactiveWithKeyboard() {
 	SciEvent curEvent;
-	uint16 newMenuId = _curMenuId;
-	uint16 newItemId = _curItemId;
-	GuiMenuItemEntry *curItemEntry = findItem(_curMenuId, _curItemId);
+	uint16 newMenuId = 1, newItemId = 1;
+	uint16 curMenuId = 1, curItemId = 1;
+	GuiMenuItemEntry *curItemEntry = findItem(curMenuId, curItemId);
 	GuiMenuItemEntry *newItemEntry = curItemEntry;
-
-	// We don't 100% follow Sierra here: we select last item instead of
-	// selecting first item of first menu every time. Also sierra sci didn't
-	// allow mouse interaction, when menu was activated via keyboard.
 
 	_oldPort = _ports->setPort(_ports->_menuPort);
 	calculateMenuAndItemWidth();
@@ -842,11 +832,11 @@ GuiMenuItemEntry *GfxMenu::interactiveWithKeyboard() {
 			do {
 				switch (curEvent.character) {
 				case kSciKeyEsc:
-					_curMenuId = curItemEntry->menuId; _curItemId = curItemEntry->id;
+					curMenuId = curItemEntry->menuId; curItemId = curItemEntry->id;
 					return NULL;
 				case kSciKeyEnter:
 					if (curItemEntry->enabled)  {
-						_curMenuId = curItemEntry->menuId; _curItemId = curItemEntry->id;
+						curMenuId = curItemEntry->menuId; curItemId = curItemEntry->id;
 						return curItemEntry;
 					}
 					break;
@@ -921,7 +911,7 @@ GuiMenuItemEntry *GfxMenu::interactiveWithKeyboard() {
 				if (newItemId) {
 					newItemEntry = interactiveGetItem(newMenuId, newItemId, false);
 					if ((newItemEntry->enabled) && (!newItemEntry->separatorLine)) {
-						_curMenuId = newItemEntry->menuId; _curItemId = newItemEntry->id;
+						curMenuId = newItemEntry->menuId; curItemId = newItemEntry->id;
 						return newItemEntry;
 					}
 					newItemEntry = curItemEntry;
