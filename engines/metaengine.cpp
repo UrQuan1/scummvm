@@ -97,13 +97,6 @@ Common::KeymapArray MetaEngine::initKeymaps(const char *target) const {
 	act->allowKbdRepeats();
 	engineKeyMap->addAction(act);
 
-	act = new Action("SKLI", _("Skip line"));
-	act->setKeyEvent(KeyState(KEYCODE_PERIOD, '.'));
-	act->addDefaultInputMapping("PERIOD");
-	act->addDefaultInputMapping("JOY_X");
-	act->allowKbdRepeats();
-	engineKeyMap->addAction(act);
-
 	act = new Action("PIND", _("Predictive input dialog"));
 	act->setEvent(EVENT_PREDICTIVE_DIALOG);
 	act->allowKbdRepeats();
