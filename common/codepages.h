@@ -20,21 +20,34 @@
  *
  */
 
-#ifndef COMMON_STRING_ENCODING_H
-#define COMMON_STRING_ENCODING_H
-
-#include "common/codepages.h"
+#ifndef COMMON_CODEPAGES_H
+#define COMMON_CODEPAGES_H
 
 namespace Common {
 
-class String;
-class U32String;
+typedef unsigned int uint32;
 
-U32String convertUtf8ToUtf32(const String &str);
-String convertUtf32ToUtf8(const U32String &str);
+enum CodePage {
+	kCodePageInvalid = -1,
+	kUtf8 = 0,
+	kCodePage437,
+	kCodePage850,
+	kCodePage866,
+	kWindows932,
+	kWindows949,
+	kWindows950,
+	kWindows1250,
+	kWindows1251,
+	kWindows1252,
+	kWindows1253,
+	kWindows1254,
+	kWindows1255,
+	kWindows1256,
+	kWindows1257
+};
 
-U32String convertToU32String(const char *str, CodePage page = kUtf8);
-String convertFromU32String(const U32String &str, CodePage page = kUtf8);
+const uint32 *getCodePageConversionTable(const CodePage page);
+
 } // End of namespace Common
 
 #endif
