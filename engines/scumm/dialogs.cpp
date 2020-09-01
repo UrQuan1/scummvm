@@ -404,6 +404,15 @@ void InfoDialog::setInfoText(const U32String &message) {
 	//reflowLayout(); // FIXME: Should we call this here? Depends on the usage patterns, I guess...
 }
 
+void InfoDialog::handleKeyDown(Common::KeyState state) {
+	const uint16 key = _vm->convertKey(state);
+
+	if (key) {
+		setResult(key);
+		close();
+	}
+}
+
 void InfoDialog::reflowLayout() {
 	const int screenW = g_system->getOverlayWidth();
 	const int screenH = g_system->getOverlayHeight();
@@ -468,7 +477,9 @@ PauseDialog::PauseDialog(ScummEngine *scumm, int res)
 }
 
 void PauseDialog::handleKeyDown(Common::KeyState state) {
-	if (state.ascii == ' ')  // Close pause dialog if space key is pressed
+	const uint16 key = _vm->convertKey(state);
+
+	if (key == SCUMM_KEY_PAUSE)  // Close pause dialog if space key is pressed
 		close();
 	else
 		ScummDialog::handleKeyDown(state);
@@ -494,13 +505,14 @@ ConfirmDialog::ConfirmDialog(ScummEngine *scumm, int res)
 
 void ConfirmDialog::handleKeyDown(Common::KeyState state) {
 	Common::KeyCode keyYes, keyNo;
+	const uint16 key = _vm->convertKey(state);
 
 	Common::getLanguageYesNo(keyYes, keyNo);
 
-	if (state.keycode == Common::KEYCODE_n || state.ascii == _noKey || state.ascii == keyNo) {
+	if (key == _noKey || key == keyNo) {
 		setResult(0);
 		close();
-	} else if (state.keycode == Common::KEYCODE_y || state.ascii == _yesKey || state.ascii == keyYes) {
+	} else if (key == _yesKey || key == keyYes) {
 		setResult(1);
 		close();
 	} else
@@ -509,10 +521,10 @@ void ConfirmDialog::handleKeyDown(Common::KeyState state) {
 
 #pragma mark -
 
-ValueDisplayDialog::ValueDisplayDialog(const Common::U32String &label, int minVal, int maxVal,
+ValueDisplayDialog::ValueDisplayDialog(ScummEngine *scumm, const Common::U32String &label, int minVal, int maxVal,
 		int val, uint16 incKey, uint16 decKey)
 	: GUI::Dialog(0, 0, 0, 0),
-	_label(label), _min(minVal), _max(maxVal),
+	_vm(scumm), _label(label), _min(minVal), _max(maxVal),
 	_value(val), _incKey(incKey), _decKey(decKey), _timer(0) {
 	assert(_min <= _value && _value <= _max);
 }
@@ -549,16 +561,18 @@ void ValueDisplayDialog::reflowLayout() {
 }
 
 void ValueDisplayDialog::handleKeyDown(Common::KeyState state) {
-	if (state.ascii == _incKey || state.ascii == _decKey) {
-		if (state.ascii == _incKey && _value < _max)
+	const uint16 key = _vm->convertKey(state);
+
+	if (key == _incKey || key == _decKey) {
+		if (key == _incKey && _value < _max)
 			_value++;
-		else if (state.ascii == _decKey && _value > _min)
+		else if (key == _decKey && _value > _min)
 			_value--;
 
 		setResult(_value);
 		_timer = g_system->getMillis() + kDisplayDelay;
 		g_gui.scheduleTopDialogRedraw();
-	} else {
+	} else if (key) {
 		close();
 	}
 }
@@ -581,7 +595,9 @@ void SubtitleSettingsDialog::handleTickle() {
 }
 
 void SubtitleSettingsDialog::handleKeyDown(Common::KeyState state) {
-	if (state.keycode == Common::KEYCODE_t && state.hasFlags(Common::KBD_CTRL)) {
+	const uint16 key = _vm->convertKey(state);
+
+	if (key == SCUMM_KEY_CTRL_T) {
 		cycleValue();
 
 		reflowLayout();

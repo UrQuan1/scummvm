@@ -574,7 +574,7 @@ void ScummEngine::processKeyboard() {
 			vol--;
 
 		// Display the music volume
-		ValueDisplayDialog dlg(_("Music volume: "), 0, 16, vol,
+		ValueDisplayDialog dlg(this, _("Music volume: "), 0, 16, vol,
 		                       SCUMM_KEY_MUSIC_VOLUME_INC, SCUMM_KEY_MUSIC_VOLUME_DEC);
 		vol = runDialog(dlg);
 
@@ -594,7 +594,7 @@ void ScummEngine::processKeyboard() {
 			_defaultTalkDelay++;
 
 		// Display the talk speed
-		ValueDisplayDialog dlg(_("Subtitle speed: "), 0, 9, 9 - _defaultTalkDelay,
+		ValueDisplayDialog dlg(this, _("Subtitle speed: "), 0, 9, 9 - _defaultTalkDelay,
 		                       SCUMM_KEY_TEXT_SPEED_INC, SCUMM_KEY_TEXT_SPEED_DEC);
 		_defaultTalkDelay = 9 - runDialog(dlg);
 

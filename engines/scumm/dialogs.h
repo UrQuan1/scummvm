@@ -85,10 +85,7 @@ public:
 		setResult(0);
 		close();
 	}
-	void handleKeyDown(Common::KeyState state) override {
-		setResult(state.ascii);
-		close();
-	}
+	void handleKeyDown(Common::KeyState state) override;
 
 	void reflowLayout() override;
 
@@ -127,7 +124,7 @@ protected:
  */
 class ValueDisplayDialog : public GUI::Dialog {
 public:
-	ValueDisplayDialog(const Common::U32String &label, int minVal, int maxVal, int val, uint16 incKey, uint16 decKey);
+	ValueDisplayDialog(ScummEngine *scumm, const Common::U32String &label, int minVal, int maxVal, int val, uint16 incKey, uint16 decKey);
 
 	void open() override;
 	void drawDialog(GUI::DrawLayer layerToDraw) override;
@@ -143,6 +140,7 @@ protected:
 	enum {
 		kDisplayDelay = 1500
 	};
+	ScummEngine *_vm;
 	Common::U32String _label;
 	const int _min, _max;
 	const uint16 _incKey, _decKey;
