@@ -18,6 +18,7 @@ MODULE_OBJS := \
 	ini-file.o \
 	installshield_cab.o \
 	json.o \
+	keyboard.o \
 	language.o \
 	localization.o \
 	macresman.o \

@@ -23,6 +23,7 @@
 #ifndef COMMON_KEYBOARD_H
 #define COMMON_KEYBOARD_H
 
+#include "common/codepages.h"
 #include "common/scummsys.h"
 
 #if defined(__amigaos4__) || defined(__MORPHOS__)
@@ -259,6 +260,14 @@ enum {
 
 };
 
+struct INT16hKeyMap {
+	KeyCode keycode;
+	uint16 normal;
+	uint16 shift;
+	uint16 ctrl;
+	uint16 alt;
+};
+
 /**
  * Keyboard status, as used in the Event struct.
  */
@@ -328,6 +337,27 @@ struct KeyState {
 		// combination should suffice.
 		return keycode == x.keycode && hasFlags(x.flags & ~KBD_STICKY);
 	}
+
+
+	/** @name DOS INT 16h handlers */
+	/**@{*/
+
+	uint16 getINT16h00hKey(const CodePage page = kCodePage437) const;
+
+	uint16 getINT16h10hKey(const CodePage page = kCodePage437) const;
+
+	byte getINT16h00hCharacter(const CodePage page = kCodePage437) const;
+
+	byte getINT16h10hCharacter(const CodePage page = kCodePage437) const;
+
+private:
+	/**
+	 * Calculates the scan code / ASCII character pair returned in AH / AL by
+	 * INT 16h functions 00h and 10h. The upper and lower bytes are the scan
+	 * code and character code, respectively.
+	 */
+	uint16 mapKeyStateToINT16hKey(const INT16hKeyMap *mapPtr, const CodePage page) const;
+	/**@}*/
 };
 
 } // End of namespace Common
