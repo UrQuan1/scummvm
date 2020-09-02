@@ -34,11 +34,11 @@ int ScummHelp::numPages(byte gameId) {
 	switch (gameId) {
 	case GID_MANIAC:
 	case GID_ZAK:
-		return 4;
+		return 3;
 	case GID_INDY4:
-		return 5;
+		return 4;
 	case GID_INDY3:
-		return 6;
+		return 5;
 	case GID_LOOM:
 	case GID_MONKEY_EGA:
 	case GID_MONKEY_VGA:
@@ -49,7 +49,7 @@ int ScummHelp::numPages(byte gameId) {
 	case GID_DIG:
 	case GID_FT:
 	case GID_CMI:
-		return 3;
+		return 2;
 /*	TODO - I don't know the controls for these games
 	case GID_PUTTDEMO:
 	case GID_PUTTPUTT:
@@ -88,28 +88,10 @@ void ScummHelp::updateStrings(byte gameId, byte version, Common::Platform platfo
 		ADD_BIND("-, +", _("Text speed slower / faster"));
 		ADD_BIND(_("Enter"), _("Simulate left mouse button"));
 		ADD_BIND(_("Tab"), _("Simulate right mouse button"));
+		ADD_BIND(_("Ctrl") + U32String(" f"), _("Run in fast mode"));
+		ADD_BIND(_("Ctrl") + U32String(" g"), _("Run in really fast mode"));
 		break;
 	case 2:
-		title = _("Special keyboard commands:");
-		ADD_BIND("~, #", _("Show / Hide console"));
-		ADD_BIND(_("Ctrl") + U32String(" d"), _("Start the debugger"));
-		ADD_BIND(_("Ctrl") + U32String(" s"), _("Show memory consumption"));
-		ADD_BIND(_("Ctrl") + U32String(" f"), _("Run in fast mode (*)"));
-		ADD_BIND(_("Ctrl") + U32String(" g"), _("Run in really fast mode (*)"));
-		ADD_BIND(_("Ctrl") + U32String(" m"), _("Toggle mouse capture"));
-		ADD_BIND(_("Ctrl") + U32String(" ") + _("Alt") + U32String(" 1-8"), _("Switch between graphics filters"));
-		ADD_BIND(_("Ctrl") + U32String(" ") + _("Alt") + U32String(" +, -"), _("Increase / Decrease scale factor"));
-		ADD_BIND(_("Ctrl") + U32String(" ") + _("Alt") + U32String(" a"), _("Toggle aspect-ratio correction"));
-		ADD_LINE;
-		ADD_LINE;
-		// FIXME: This should use word-wrapping, and should not assume
-		//        that the font is mono-spaced.
-		ADD_TEXT(_("* Note that using ctrl-f and"));
-		ADD_TEXT(_("  ctrl-g are not recommended"));
-		ADD_TEXT(_("  since they may cause crashes"));
-		ADD_TEXT(_("  or incorrect game behavior."));
-		break;
-	case 3:
 		if (gameId == GID_LOOM)
 			title = _("Spinning drafts on the keyboard:");
 		else
@@ -253,7 +235,7 @@ void ScummHelp::updateStrings(byte gameId, byte version, Common::Platform platfo
 			break;
 		}
 		break;
-	case 4:
+	case 3:
 		title = _("Other game controls:");
 		if (version <= 2) {
 			ADD_TEXT(_("Inventory:"));
@@ -298,7 +280,7 @@ void ScummHelp::updateStrings(byte gameId, byte version, Common::Platform platfo
 			ADD_TEXT(_("  actually toggles Mouse Fighting Off/On"));
 		}
 		break;
-	case 5:
+	case 4:
 		switch (gameId) {
 		case GID_INDY3:
 		case GID_INDY4:
@@ -325,7 +307,7 @@ void ScummHelp::updateStrings(byte gameId, byte version, Common::Platform platfo
 			break;
 		}
 		break;
-	case 6:
+	case 5:
 		switch (gameId) {
 		case GID_INDY3:
 			title = _("Biplane controls (numpad):");
