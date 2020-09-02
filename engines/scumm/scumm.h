@@ -532,6 +532,7 @@ protected:
 	bool isOriginalMenuKey() const;
 	bool isMainMenuKey() const;
 	bool isRestartKey() const;
+	bool isQuitKey() const;
 	bool isCutsceneExitKey() const;
 	bool isSnapScrollKey() const;
 

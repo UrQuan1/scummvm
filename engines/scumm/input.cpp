@@ -140,14 +140,6 @@ void ScummEngine::parseEvent(Common::Event event) {
 			_fastMode ^= 2;
 		} else if (event.kbd.hasFlags(Common::KBD_CTRL) && event.kbd.keycode == Common::KEYCODE_s) {
 			_res->resourceStats();
-		} else if (event.kbd.hasFlags(Common::KBD_ALT) && event.kbd.keycode == Common::KEYCODE_x) {
-			// TODO: Some SCUMM games quit when Alt-x is pressed. However, not
-			// all of them seem to exhibit this behavior. LordHoto found that
-			// the Loom manual does not mention this hotkey. On the other hand
-			// the Sam&Max manual mentions that Alt-x does so on "most"
-			// platforms. We should really check which games exhibit this
-			// behavior and only use it for them.
-			quitGame();
 		} else if (_game.id == GID_MONKEY && _game.platform == Common::kPlatformSegaCD &&
 			event.kbd.keycode >= Common::KEYCODE_UP && event.kbd.keycode <= Common::KEYCODE_LEFT) {
 			// WORKAROUND: This enables dialog choices to be scrolled through in the
@@ -262,6 +254,12 @@ bool ScummEngine::isRestartKey() const {
 	return ((_mouseAndKeyboardStat == SCUMM_KEY_SHIFT_F7 && _game.platform == Common::kPlatformC64) ||
 	        (_mouseAndKeyboardStat == SCUMM_KEY_CTRL_R && _game.platform == Common::kPlatformApple2GS) ||
 	        (_mouseAndKeyboardStat == SCUMM_KEY_F8));
+}
+
+bool ScummEngine::isQuitKey() const {
+	return ((_mouseAndKeyboardStat == SCUMM_KEY_ALT_X && _game.version >= 3) ||
+	        (_mouseAndKeyboardStat == SCUMM_KEY_CTRL_C && _game.version >= 4) ||
+	        (_mouseAndKeyboardStat == SCUMM_KEY_ALT_Q && _game.version >= 5));
 }
 
 bool ScummEngine::isCutsceneExitKey() const {
@@ -551,6 +549,9 @@ void ScummEngine::processKeyboard() {
 		confirmRestartDialog();
 		// Reset the keyboard state to avoid triggering the script-based dialog.
 		_mouseAndKeyboardStat = 0;
+
+	} else if (restartKeyEnabled && isQuitKey()) {
+		confirmExitDialog();
 
 	} else if (pauseKeyEnabled && _mouseAndKeyboardStat == SCUMM_KEY_PAUSE) {
 		pauseGame();
