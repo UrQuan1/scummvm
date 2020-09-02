@@ -322,14 +322,9 @@ Common::Keymap *DefaultEventManager::getGlobalKeymap() {
 #elif defined(POSIX)
 		// On other *nix systems, Control-Q quits
 		act->addDefaultInputMapping("C+q");
-#else
-		// Ctrl-z quits
-		act->addDefaultInputMapping("C+z");
-
-#ifdef WIN32
-		// On Windows, also use the default Alt-F4 quit combination
+#elif defined(WIN32)
+		// On Windows, Alt-F4 quits
 		act->addDefaultInputMapping("A+F4");
-#endif
 #endif
 
 		globalKeymap->addAction(act);
