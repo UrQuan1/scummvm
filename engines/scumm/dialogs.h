@@ -128,7 +128,7 @@ public:
 	void handleKeyDown(Common::KeyState state) override;
 
 protected:
-	char _yesKey, _noKey;
+	char _yesKey;
 };
 
 /**

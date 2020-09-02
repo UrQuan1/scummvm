@@ -510,7 +510,7 @@ void MessageDialog::open() {
 #pragma mark -
 
 ConfirmDialog::ConfirmDialog(ScummEngine *scumm, int res)
-	: InfoDialog(scumm, res), _yesKey('y'), _noKey('n') {
+	: InfoDialog(scumm, res), _yesKey('y') {
 
 	if (_message.empty())
 		return;
@@ -533,14 +533,13 @@ void ConfirmDialog::handleKeyDown(Common::KeyState state) {
 
 	Common::getLanguageYesNo(keyYes, keyNo);
 
-	if (key == _noKey || key == keyNo) {
-		setResult(0);
-		close();
-	} else if (key == _yesKey || key == keyYes) {
+	if (key == _yesKey || key == keyYes) {
 		setResult(1);
 		close();
-	} else
-		ScummDialog::handleKeyDown(state);
+	} else if (key) {
+		setResult(0);
+		close();
+	}
 }
 
 #pragma mark -
