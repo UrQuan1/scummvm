@@ -272,6 +272,12 @@ bool ScummEngine::isCutsceneExitKey() const {
 	        (_mouseAndKeyboardStat == SCUMM_KEY_ESCAPE));
 }
 
+bool ScummEngine::isSnapScrollKey() const {
+	return ((_mouseAndKeyboardStat == SCUMM_KEY_SHIFT_S && _game.version == 2) ||
+	        (_mouseAndKeyboardStat == SCUMM_KEY_ALT_I && _game.version == 3) ||
+	        (_mouseAndKeyboardStat == SCUMM_KEY_CTRL_R && _game.version == 4));
+}
+
 void ScummEngine_v0::processInput() {
 	// F1 - F3
 	if (_keyPressed.keycode >= Common::KEYCODE_F1 && _keyPressed.keycode <= Common::KEYCODE_F3) {
@@ -557,7 +563,7 @@ void ScummEngine::processKeyboard() {
 	} else if (cutsceneExitKeyEnabled && isCutsceneExitKey()) {
 		abortCutscene();
 
-	} else if (snapScrollKeyEnabled && _mouseAndKeyboardStat == SCUMM_KEY_CTRL_R) {
+	} else if (snapScrollKeyEnabled && isSnapScrollKey()) {
 		_snapScroll ^= 1;
 		if (_snapScroll) {
 			messageDialog(_("Snap scroll on"));

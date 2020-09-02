@@ -533,6 +533,7 @@ protected:
 	bool isMainMenuKey() const;
 	bool isRestartKey() const;
 	bool isCutsceneExitKey() const;
+	bool isSnapScrollKey() const;
 
 	// Cursor/palette
 	void updateCursor();
