@@ -600,6 +600,14 @@ void ScummEngine::processKeyboard(Common::KeyState lastKeyHit) {
 
 		if (VAR_CHARINC != 0xFF)
 			VAR(VAR_CHARINC) = _defaultTalkDelay;
+		if (_game.id == GID_INDY3) {
+			_scummVars[66] = 9 - _defaultTalkDelay;
+		} else if (_game.id == GID_ZAK && _game.version == 3) {
+			_scummVars[76] = 9 - _defaultTalkDelay;
+		} else if (_game.id == GID_LOOM && _game.version == 3 &&
+			_game.platform != Common::kPlatformPCEngine) {
+			_scummVars[165] = 9 - _defaultTalkDelay;
+		}
 
 	} else {
 
