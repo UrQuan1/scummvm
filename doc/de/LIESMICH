@@ -1047,7 +1047,6 @@ benötigt. Die Aktions-Symbole im PET können anstelle der Tab-Taste verwendet w
 
 Verschiedene Steuerungselemente:
 Strg + C: Öffnet den Cheat-Raum für Entwickler
-Strg + D: Öffnet den Debugger.
 
 3.20) Hinweise zu The Curse of Monkey Island:
 ----- ---------------------------------------
@@ -1760,6 +1759,7 @@ zwischen SCUMM-Spielen und anderen Spielen.
                              Seitenverhältniskorrektur streckt das Bild
                              stattdessen auf 320x240 Pixel oder um ein
                              Vielfaches davon.
+    Strg+Alt+d             - Startet den Debugger.
     Strg+Alt+f             - Lineare Filterung EIN/AUS
     Alt+Enter              - Wechselt zwischen Vollbild- und Fenstermodus.
     Alt+s                  - Macht Bildschirmfoto (nur für SDL-System).
@@ -1770,13 +1770,11 @@ zwischen SCUMM-Spielen und anderen Spielen.
   SCUMM:
     Alt+x                  - Beenden
     Strg 0-9 und Alt 0-9   - Lädt und speichert entsprechenden Speicherstand.
-    Strg+d                 - Startet den Debugger.
     Strg+f                 - Schneller Modus EIN/AUS
     Strg+g                 - SEHR schneller Modus EIN/AUS
     Strg+t                 - Wechselt zwischen „Nur Sprachausgabe“,
                              „Sprachausgabe und Untertitel“ und
                              „Nur Untertitel“.
-    Tilde (~)              - Zeigt/verbirgt Debugging-Konsole.
     [ und ]                - Musiklautstärke, leiser/lauter
     - und +                - Texttempo, langsamer/schneller
     F5                     - Ruft Menü zum Speichern und Laden auf.
@@ -1794,7 +1792,6 @@ zwischen SCUMM-Spielen und anderen Spielen.
     Tabulator              - Simuliert Klick mit rechter Maustaste.
 
   Beneath a Steel Sky:
-    Strg+d                 - Startet den Debugger.
     Strg+f                 - Schneller Modus EIN/AUS
     Strg+g                 - SEHR schneller Modus EIN/AUS
     F5                     - Ruft Menü zum Speichern und Laden auf.
@@ -1802,7 +1799,6 @@ zwischen SCUMM-Spielen und anderen Spielen.
     Punkt (.)              - Überspringt aktuelle Textzeile.
 
   Blade Runner:
-    Strg-d                 - Startet den Debugger.
     Leertaste              - Kampf-Modus ein-/ausschalten
     Enter oder Escape      - Überspringt ein Video oder eine Dialogzeile
     Escape                 - Ruft das Spielmenü auf
@@ -1819,7 +1815,6 @@ zwischen SCUMM-Spielen und anderen Spielen.
     F5 oder Escape         - Ruft Menü zum Speichern und Laden auf.
 
   Baphomets Fluch II:
-    Strg+d                 - Startet den Debugger.
     Strg+f                 - Schneller Modus EIN/AUS
     p                      - Spielpause
 
@@ -1834,7 +1829,6 @@ zwischen SCUMM-Spielen und anderen Spielen.
     q                      - Schnelles Laufen EIN/AUS
 
   Flight of the Amazon Queen:
-    Strg+d                 - Startet den Debugger.
     Strg+f                 - Schneller Modus EIN/AUS
     F1                     - Tagebuch benutzen (speichern/laden)
     F11                    - Schnelles Speichern
@@ -1854,13 +1848,11 @@ zwischen SCUMM-Spielen und anderen Spielen.
     Escape                 - Befehlsmenü aufrufen
 
   Nippon Safes
-    Strg+d                 - Startet den Debugger.
     l                      - Spiel laden
     s                      - Spiel speichern
 
   Simon the Sorcerer 1 und 2:
     Strg 0-9 und Alt 0-9   - Lädt und speichert entsprechenden Speicherstand.
-    Strg+d                 - Startet den Debugger.
     Strg+f                 - Schneller Modus EIN/AUS
     F1-F3                  - Texttempo, schneller - langsamer
     F10                    - Zeigt alle Figuren und Objekte, die näher
@@ -1882,7 +1874,6 @@ zwischen SCUMM-Spielen und anderen Spielen.
                              [nur Simon the Sorcerer 2 CD].
 
   Simon the Sorcerer's Game Pack
-    Strg-d                 - Startet den Debugger.
     Strg-f                 - Schneller Modus EIN/AUS
     F12                    - Hohes Tempo in Swampy Adventures EIN/AUS
     - und +                - Musiklautstärke, leiser/lauter
@@ -1891,7 +1882,6 @@ zwischen SCUMM-Spielen und anderen Spielen.
     Pause                  - Spielpause
 
   Floyd - Es gibt noch Helden
-    Strg+d                 - Startet den Debugger.
     Strg+f                 - Schneller Modus EIN/AUS
     F7                     - Wechselt Figuren.
     F9                     - Objektnamen-Anzeige EIN/AUS
@@ -1904,7 +1894,6 @@ zwischen SCUMM-Spielen und anderen Spielen.
 
   The Legend of Kyrandia:
     Strg 0-9 und Alt 0-9   - Lädt und speichert entsprechenden Speicherstand.
-    Strg-d                 - Startet den Debugger.
 
   TeenAgent
     F5                     - Zeigt globales Menü.

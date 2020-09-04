@@ -1192,6 +1192,7 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     Ctrl-Alt + a -         - Zvětšit/Zmenšit faktor zvětšení
     Ctrl-Alt a             - Přepínat korekci poměru stran. Většina her používá rozlišení 320x200 pixelů, což může na většině novějších monitorů vypadat splácle. Korekce poměru stran obraz roztáhne, aby místo toho použil
                              320x240, nebo jeho násobky
+    Ctrl-Alt d             - Spustit ladění
     Alt-Enter              - Přepíná celou obrazovku/do okna
     Alt-s                  - Vytvořit snímek obrazovky (pouze jádro SDL)
     Ctrl-F7                - Otevřít virtuální klávesnici (pokud povolena)
@@ -1201,7 +1202,6 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
   SCUMM:
     Alt-x                  - Ukončit
     Ctrl 0-9 a Alt 0-9     - Nahrát a uložit stav hry
-    Ctrl-d                 - Spustit ladění
     Ctrl-f                 - Zapnout rychlý režim
     Ctrl-g                 - Přepnout do velmi VELMI rychlého režimu
     Ctrl-t                 - Přepínat mezi 'Pouze řeč',
@@ -1218,7 +1218,6 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     Tab                    - Simulovat stisknutí pravého tlačítka myši
 
   Beneath a Steel Sky:
-    Ctrl-d                 - Spustí ladění
     Ctrl-f                 - Zapnout rychlý režim
     Ctrl-g                 - Přepnout do velmi VELMI rychlého režimu
     F5                     - Zobrazí rámeček pro uložení/načtení
@@ -1229,7 +1228,6 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     F5 nebo Escape         - Zobrazí rámeček pro uložení/načtení
 
   Broken Sword II:
-    Ctrl-d                 - Spustit ladění
     Ctrl-f                 - Zapnout rychlý režim
     p                      - Pozastavení
 
@@ -1244,7 +1242,6 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     q                      - Zapnutí/vypnutí rychlého chození
 
   Flight of the Amazon Queen:
-    Ctrl-d                 - Spustit ladění
     Ctrl-f                 - Zapnout rychlý režim
     F1                     - Použít Deník (ukládání/načítání)
     F11                    - Rychlé načtení
@@ -1264,13 +1261,11 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     Escape                 - Zobrazit menu příkazů
 
   Nippon Safes:
-    Ctrl-d                 - Spustit ladění
     l                      - Načíst hru
     s                      - Uložit hru
 
   Simon the Sorcerer 1 a 2:
     Ctrl 0-9 a Alt 0-9     - Načíst a uložit stav hry
-    Ctrl-d                 - Spustit ladění
     Ctrl-f                 - Zapnout rychlý režim
     F1 - F3                - Rychlost textu, rychlejší - pomalejší
     F10                    - Zobrazí všechny postavy a objekty s kterými můžete něco dělat
@@ -1284,7 +1279,6 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     v                      - Přepínat mezi titulky a kombinací řeči a titulků [Pouze Simon the Sorcerer 2 CD]
 
   Simon the Sorcerer's Puzzle Pack:
-    Ctrl-d                 - Spustit ladění
     Ctrl-f                 - Zapnout rychlý režim
     F12                    - Zapnout/vypnout režim rychle rychlosti ve Swampy Adventures
     - a +                  - Hlasitost hudby, snížit/zvýšit
@@ -1293,7 +1287,6 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     Pause                  - Pozastavení
 
   The Feeble Files:
-    Ctrl-d                 - Spustit ladění
     Ctrl-f                 - Zapnout rychlý režim
     F7                     - Vyměnit postavy
     F9                     - Zapnout/vypnout jména hitboxů
@@ -1304,8 +1297,6 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
 
   The Legend of Kyrandia:
     Ctrl 0-9 a Alt 0-9     - Načíst a uložit stav hry
-
-    Ctrl-d                 - Spustit ladění
 
   TeenAgent
     F5                     - Zobrazí Globální Menu

@@ -1589,6 +1589,7 @@ games and other games.
                              modern monitors. Aspect-ratio correction
                              stretches the image to use 320x240 pixels
                              instead, or a multiple thereof
+    Ctrl-Alt d             - Start the debugger
     Ctrl-Alt f             - Enable/disable graphics filtering
     Ctrl-Alt s             - Cycle through scaling modes
     Alt-Enter              - Toggles full screen/windowed
@@ -1600,12 +1601,10 @@ games and other games.
   SCUMM:
     Alt-x                  - Quit
     Ctrl 0-9 and Alt 0-9   - Load and save game state
-    Ctrl-d                 - Starts the debugger
     Ctrl-f                 - Toggle fast mode
     Ctrl-g                 - Runs in really REALLY fast mode
     Ctrl-t                 - Switch between 'Speech only',
                              'Speech and Subtitles' and 'Subtitles only'
-    Tilde (~)              - Show/hide the debugging console
     [ and ]                - Music volume, down/up
     - and +                - Text speed, slower/faster
     F5                     - Displays a save/load box
@@ -1621,11 +1620,7 @@ games and other games.
     Enter                  - Simulate left mouse button press
     Tab                    - Simulate right mouse button press
 
-  AGI/SCI (Sierra):
-    Ctrl-Shift-d           - Starts the debugger
-
   Beneath a Steel Sky:
-    Ctrl-d                 - Starts the debugger
     Ctrl-f                 - Toggle fast mode
     Ctrl-g                 - Runs in really REALLY fast mode
     F5                     - Displays a save/load box
@@ -1633,7 +1628,6 @@ games and other games.
     Period (.)             - Skips current line of text
 
   Blade Runner:
-    Ctrl-d                 - Starts the debugger
     Space                  - Toggle combat mode
     Enter or Escape        - Skips a video or a line of dialogue
     Escape                 - Show game menu
@@ -1650,7 +1644,6 @@ games and other games.
     F5 or Escape           - Displays save/load box
 
   Broken Sword II:
-    Ctrl-d                 - Starts the debugger
     Ctrl-f                 - Toggle fast mode
     p                      - Pauses
 
@@ -1665,7 +1658,6 @@ games and other games.
     q                      - Quick walking on/off
 
   Flight of the Amazon Queen:
-    Ctrl-d                 - Starts the debugger
     Ctrl-f                 - Toggle fast mode
     F1                     - Use Journal (saving/loading)
     F11                    - Quicksave
@@ -1685,13 +1677,11 @@ games and other games.
     Escape                 - Bring on command menu
 
   Nippon Safes:
-    Ctrl-d                 - Starts the debugger
     l                      - Load game
     s                      - Save game
 
   Simon the Sorcerer 1 and 2:
     Ctrl 0-9 and Alt 0-9   - Load and save game state
-    Ctrl-d                 - Starts the debugger
     Ctrl-f                 - Toggle fast mode
     F1 - F3                - Text speed, faster - slower
     F10                    - Shows all characters and objects you can
@@ -1713,7 +1703,6 @@ games and other games.
                              [Simon the Sorcerer 2 CD only]
 
   Simon the Sorcerer's Puzzle Pack:
-    Ctrl-d                 - Starts the debugger
     Ctrl-f                 - Toggle fast mode
     F12                    - High speed mode on/off in Swampy Adventures
     - and +                - Music volume, down/up
@@ -1723,7 +1712,6 @@ games and other games.
 
   Starship Titanic:
     Ctrl-c                 - Open up the developer's cheat room
-    Ctrl-d                 - Open up the ScummVM Debugger
     Left click             - Move action
     Shift-Left click       - Edit room glyph chevrons and
                               quick movement transitions
@@ -1760,7 +1748,6 @@ games and other games.
 	c                      - starmap show constellations sphere
 
   The Feeble Files:
-    Ctrl-d                 - Starts the debugger
     Ctrl-f                 - Toggle fast mode
     F7                     - Switch characters
     F9                     - Hitbox names on/off
@@ -1773,7 +1760,6 @@ games and other games.
 
   The Legend of Kyrandia:
     Ctrl 0-9 and Alt 0-9   - Load and save game state
-    Ctrl-d                 - Starts the debugger
 
   TeenAgent
     F5                     - Displays the Global Menu

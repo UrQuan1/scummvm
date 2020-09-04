@@ -22,6 +22,7 @@ Common shortcuts (all games)
         :kbd:`Ctrl + Alt + 1-8` ,Switch between graphics filters
         :kbd:`Ctrl + Alt` and :kbd:`+` or :kbd:`-`,Increase/Decrease the scale factor
         :kbd:`Ctrl + Alt +  a` ,Toggle aspect-ratio correction on/off
+        :kbd:`Ctrl + Alt + d` ,Start the debugger
         :kbd:`Ctrl + Alt + f` ,Enable/disable graphics filtering
         :kbd:`Ctrl + Alt + s` ,Cycle through scaling modes
         :kbd:`Alt + Enter` ,Toggles full screen/windowed
@@ -41,11 +42,9 @@ SCUMM games
         :kbd:`Alt + x` ,Quit
         :kbd:`Ctrl + 0-9` ,Save game state
         :kbd:`Alt + 0-9`,Load saved game state
-        :kbd:`Ctrl + d`  ,Starts the debugger
         :kbd:`Ctrl + f` ,Toggle fast mode
         :kbd:`Ctrl + g` ,Runs in really REALLY fast mode
         :kbd:`Ctrl + t` ,"Switch between 'Speech only', 'Speech and Subtitles' and 'Subtitles only'"
-        :kbd:`~` ,Show/hide the debugging console
         :kbd:`[` and :kbd:`]`,"Music volume, down/up"
         :kbd:`-` and :kbd:`+` ,"Text speed, slower/faster"
         :kbd:`F5`  ,Displays a save/load box
@@ -63,7 +62,6 @@ Beneath a Steel Sky
   	:header-rows: 1
 
         Shortcut, Description
-        :kbd:`Ctrl + d`  ,Starts the debugger
         :kbd:`Ctrl + f` ,Toggle fast mode
         :kbd:`Ctrl + g`  ,Runs in REALLY fast mode
         :kbd:`F5` ,Displays a save/load box
@@ -80,7 +78,6 @@ Blade Runner
   	:header-rows: 1
 
         Shortcut, Description
-        :kbd:`Ctrl + d` ,Starts the debugger
         :kbd:`Space`  ,Toggles combat mode
         :kbd:`Enter` or :kbd:`Esc`  ,Skips a video or a line of dialogue
         :kbd:`Esc` ,Shows game menu
@@ -111,7 +108,6 @@ Broken Sword II
   	:header-rows: 1
 
         Shortcut, Description
-        :kbd:`Ctrl + d` ,Starts the debugger
         :kbd:`Ctrl + f` ,Toggles fast mode
         :kbd:`p` ,Pause
 
@@ -142,7 +138,6 @@ Flight of the Amazon Queen
   	:header-rows: 1
 
         Shortcut, Description
-        :kbd:`Ctrl + d` ,Starts the debugger
         :kbd:`Ctrl + f` ,Toggles fast mode
         :kbd:`F1`,Use Journal (saving/loading)
         :kbd:`F11`  ,Quicksave
@@ -196,7 +191,6 @@ Nippon Safes
   	:header-rows: 1
 
         Shortcut, Description
-        :kbd:`Ctrl + d` ,Starts the debugger
         :kbd:`l`,Load game
         :kbd:`s`,Save game
 
@@ -211,7 +205,6 @@ Simon the Sorcerer 1 and 2
         Shortcut, Description
         :kbd:`Ctrl + 0-9` ,Save game state
         :kbd:`Alt + 0-9`, Load saved game state
-        :kbd:`Ctrl + d` ,Starts the debugger
         :kbd:`Ctrl + f` ,Toggles fast mode
         :kbd:`F1` and :kbd:`F3`  ,"Text speed, faster - slower"
         :kbd:`F10`  ,Shows all characters and objects you can interact with
@@ -222,7 +215,6 @@ Simon the Sorcerer 1 and 2
         :kbd:`b`  ,Toggles background sounds on/off
         :kbd:`t`  ,Switches between speech only and combined speech and subtitles
         :kbd:`v`  ,Switches between subtitles only and combined speech and subtitles
-        :kbd:`Ctrl + d` ,Starts the debugger
         :kbd:`Ctrl + f` ,Toggles fast mode
         :kbd:`F12` ,Toggles high speed mode on/off in Swampy Adventures
         :kbd:`-` and :kbd:`+`  ,"Music volume, down/up"
@@ -238,7 +230,6 @@ Starship Titanic
 
         Shortcut, Description
         :kbd:`Ctrl + c`  ,Opens the developer's cheat room
-        :kbd:`Ctrl + d` ,Starts the debugger
         Left click ,Move action
         :kbd:`Shift` + Left click ,Edit room glyph chevrons and quick movement transitions
         Right click ,Edit room glyph chevrons and quick transitions
@@ -282,7 +273,6 @@ The Feeble Files
   	:header-rows: 1
 
         Shortcut, Description
-        :kbd:`Ctrl + d` ,Starts the debugger
         :kbd:`Ctrl + f` ,Toggles fast mode
         :kbd:`F7`,Switches characters
         :kbd:`F9`,Toggles hitbox names on/off
@@ -301,7 +291,6 @@ The Legend of Kyrandia
         Shortcut, Description
         :kbd:`Ctrl + 0-9` ,Save game state
         :kbd:`Alt + 0-9`, Load saved game state
-        :kbd:`Ctrl + d` ,Starts the debugger
 
 TeenAgent
 ----------

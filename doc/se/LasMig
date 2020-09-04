@@ -880,18 +880,17 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
                              se förvrängt ut på moderna skärmar.
                              Korrigering av bildförhållanden sträcker
                              bilden proportionellt till 320x240.
+    Ctrl-Alt d             - Öppnar debug-fönstret
 
     Alt-Enter              - Växlar mellan fullskärm och fönster
     Alt-s                  - Skärmdump (endast med SDL-back-end)
 
   SCUMM:
     Ctrl 0-9 och Alt 0-9   - Ladda och spara speldata
-    Ctrl-d                 - Öppnar debug-fönstret
     Ctrl-f                 - Aktivera snabbläge
     Ctrl-g                 - Aktivera EXTRA snabbt läge
     Ctrl-t                 - Växla mellan “Endast tal”,
                              “Tal och undertexter” och ”Endast undertexter”
-    Tilde (~)              - Visa/dölj debug-konsolen
     [ och ]                - Musikvolym höj/sänk
     - och +                - Texthastighet långsammare/snabbare
     F5                     - Visar en ladda/spara-ruta
@@ -908,7 +907,6 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     Tab                    - Simulerar höger musklick
 
   Beneath a Steel Sky:
-    Ctrl-d                 - Öppnar debug-fönstret
     Ctrl-f                 - Aktivera snabbläge
     Ctrl-g                 - Aktivera EXTRA snabbt läge
     F5                     - Visar en ladda/spara-ruta
@@ -919,7 +917,6 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     F5 eller Escape        - Visar en ladda/spara-ruta
 
   Broken Sword II:
-    Ctrl-d                 - Öppnar debug-fönstret
     Ctrl-f                 - Aktivera snabbläge
     p                      - Paus
 
@@ -934,7 +931,6 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     q                      - Snabb gång på/av
 
   Flight of the Amazon Queen:
-    Ctrl-d                 - Öppnar debug-fönstret
     Ctrl-f                 - Aktivera snabbläge
     F1                     - Använd dagbok (spara/ladda)
     F11                    - Snabbspara
@@ -954,13 +950,11 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     Escape                 - Öppna kommandomeny
 
   Nippon Safes
-    Ctrl-d                 - Öppnar debug-fönstret
     l                      - Ladda data
     s                      - Spara data
 
   Simon the Sorcerer 1 och 2:
     Ctrl 0-9 och Alt 0-9   - Ladda och spara data
-    Ctrl-d                 - Öppnar debug-fönstret
     Ctrl-f                 - Aktivera snabbläge
     F1 - F3                - Texthastighet snabbare - långsammare
     F10                    - Visar alla karaktärer och föremål du kan
@@ -982,7 +976,6 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
                              [endast Simon the Sorcerer 2 CD]
 
   Simon the Sorcerer's Puzzle Pack
-    Ctrl-d                 - Öppnar debug-fönstret
     Ctrl-f                 - Aktivera snabbläge
     F12                    - Snabbläge av/på i Swampy Adventures
     - och +                - Musikvolym sänk/höj
@@ -991,7 +984,6 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     Pause                  - Paus
 
   The Feeble Files
-    Ctrl-d                 - Öppnar debug-fönstret
     Ctrl-f                 - Aktivera snabbläge
     F7                     - Byt karaktär
     F9                     - Hitbox-namn av/på
@@ -1004,7 +996,6 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
 
   The Legend of Kyrandia:
     Ctrl 0-9 och Alt 0-9   - Ladda och spara speldata
-    Ctrl-d                 - Öppnar debug-fönstret
 
   TeenAgent
     F5                     - Visar den globala menyn
