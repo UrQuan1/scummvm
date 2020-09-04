@@ -83,14 +83,9 @@ static const int8 shake_positions[NUM_SHAKE_POSITIONS] = {
  * that the screen has 40 vertical strips (i.e. 320 pixel), and 25 horizontal
  * strips (i.e. 200 pixel). There is a hack in transitionEffect that
  * makes it work correctly in games which have a different screen height
- * (for example, 240 pixel), but nothing is done regarding the width, so this
- * code won't work correctly in COMI. Also, the number of iteration depends
- * on min(vertStrips, horizStrips}. So the 13 is derived from 25/2, rounded up.
- * And the 25 = min(25,40). Hence for Zak256 instead of 13 and 25, the values
- * 15 and 30 should be used, and for COMI probably 30 and 60.
+ * (for example, 240 pixel).
  */
 struct TransitionEffect {
-	byte numOfIterations;
 	int8 deltaTable[16];	// four times l / t / r / b
 	byte stripTable[16];	// ditto
 };
@@ -98,7 +93,6 @@ struct TransitionEffect {
 static const TransitionEffect transitionEffects[6] = {
 	// Iris effect (looks like an opening/closing camera iris)
 	{
-		13,		// Number of iterations
 		{
 			1,  1, -1,  1,
 		   -1,  1, -1, -1,
@@ -115,7 +109,6 @@ static const TransitionEffect transitionEffects[6] = {
 
 	// Box wipe (a box expands from the upper-left corner to the lower-right corner)
 	{
-		25,		// Number of iterations
 		{
 			0,  1,  2,  1,
 			2,  0,  2,  1,
@@ -132,7 +125,6 @@ static const TransitionEffect transitionEffects[6] = {
 
 	// Box wipe (a box expands from the lower-right corner to the upper-left corner)
 	{
-		25,		// Number of iterations
 		{
 		   -2, -1,  0, -1,
 		   -2, -1, -2,  0,
@@ -149,7 +141,6 @@ static const TransitionEffect transitionEffects[6] = {
 
 	// Inverse box wipe
 	{
-		25,		// Number of iterations
 		{
 			0, -1, -2, -1,
 		   -2,  0, -2, -1,
@@ -166,7 +157,6 @@ static const TransitionEffect transitionEffects[6] = {
 
 	// Inverse iris effect, specially tailored for V1/V2 games
 	{
-		9,		// Number of iterations
 		{
 			-1, -1,  1, -1,
 			-1,  1,  1,  1,
@@ -183,7 +173,6 @@ static const TransitionEffect transitionEffects[6] = {
 
 	// Horizontal wipe (a box expands from left to right side). For MM NES
 	{
-		16,		// Number of iterations
 		{
 			  2,  0,  2,  0,
 			  2,  0,  2,  0,
@@ -3900,6 +3889,7 @@ void ScummEngine::transitionEffect(int a) {
 	int l, t, r, b;
 	const int height = MIN((int)_virtscr[kMainVirtScreen].h, _screenHeight);
 	const int delay = (VAR_FADE_DELAY != 0xFF) ? VAR(VAR_FADE_DELAY) * kFadeDelay : kPictureDelay;
+	const int numOfIterations = (a == 0 || a == 4) ? (height / 8 + 1) / 2 : height / 8;
 
 	for (i = 0; i < 16; i++) {
 		delta[i] = transitionEffects[a].deltaTable[i];
@@ -3910,7 +3900,7 @@ void ScummEngine::transitionEffect(int a) {
 	}
 
 	bottom = height / 8;
-	for (j = 0; j < transitionEffects[a].numOfIterations; j++) {
+	for (j = 0; j < numOfIterations; j++) {
 		for (i = 0; i < 4; i++) {
 			l = tab_2[i * 4];
 			t = tab_2[i * 4 + 1];
