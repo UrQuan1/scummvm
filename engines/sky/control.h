@@ -114,7 +114,7 @@ struct MegaSet;
 #define SLOW 0
 #define FAST 1
 
-#define SPEED_MULTIPLY	12
+#define SPEED_MULTIPLY	20
 
 //-
 #define SAVE_EXT	 1
