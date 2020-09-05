@@ -743,7 +743,6 @@ uint16 Control::doSpeedSlide() {
 		int newY = ofsY + mouse.y;
 		if (newY < MPNL_Y + 95) newY = MPNL_Y + 95;
 		if (newY > MPNL_Y + 105) newY = MPNL_Y + 105;
-		if ((newY == 110) || (newY == 108)) newY = 109;
 		if (newY != _slide->_y) {
 			_slode->drawToScreen(NO_MASK);
 			_slide->setXY(_slide->_x, (uint16)newY);
