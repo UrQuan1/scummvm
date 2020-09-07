@@ -282,7 +282,7 @@ void Control::initPanel() {
 
 	uint16 volY = (127 - _skyMusic->giveVolume()) / 4 + 59 - MPNL_Y; // volume slider's Y coordinate
 	uint16 spdY = (SkyEngine::_systemVars->gameSpeed - 2) / SPEED_MULTIPLY;
-	spdY += MPNL_Y + 83; // speed slider's initial position
+	spdY += MPNL_Y + 85; // speed slider's initial position
 
 	_sprites.controlPanel	= _skyDisk->loadFile(60500);
 	_sprites.button			= _skyDisk->loadFile(60501);
@@ -732,7 +732,7 @@ uint16 Control::doMusicSlide() {
 uint16 Control::doSpeedSlide() {
 	Common::Point mouse = _system->getEventManager()->getMousePos();
 	int ofsY = _slide->_y - mouse.y;
-	uint16 speedDelay = _slide->_y - (MPNL_Y + 93);
+	uint16 speedDelay = _slide->_y - (MPNL_Y + 95);
 	speedDelay *= SPEED_MULTIPLY;
 	speedDelay += 2;
 	while (_mouseClicked) {
@@ -741,15 +741,15 @@ uint16 Control::doSpeedSlide() {
 			return SPEED_CHANGED;
 		mouse = _system->getEventManager()->getMousePos();
 		int newY = ofsY + mouse.y;
-		if (newY < MPNL_Y + 93) newY = MPNL_Y + 93;
-		if (newY > MPNL_Y + 104) newY = MPNL_Y + 104;
+		if (newY < MPNL_Y + 95) newY = MPNL_Y + 95;
+		if (newY > MPNL_Y + 105) newY = MPNL_Y + 105;
 		if ((newY == 110) || (newY == 108)) newY = 109;
 		if (newY != _slide->_y) {
 			_slode->drawToScreen(NO_MASK);
 			_slide->setXY(_slide->_x, (uint16)newY);
 			_slide->drawToScreen(WITH_MASK);
 			_slide2->drawToScreen(WITH_MASK);
-			speedDelay = newY - (MPNL_Y + 93);
+			speedDelay = newY - (MPNL_Y + 95);
 			speedDelay *= SPEED_MULTIPLY;
 			speedDelay += 2;
 		}
