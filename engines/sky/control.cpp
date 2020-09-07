@@ -281,7 +281,7 @@ void Control::initPanel() {
 	memset(_screenBuf, 0, GAME_SCREEN_WIDTH * FULL_SCREEN_HEIGHT);
 
 	uint16 volY = (127 - _skyMusic->giveVolume()) / 4 + 59 - MPNL_Y; // volume slider's Y coordinate
-	uint16 spdY = (SkyEngine::_systemVars->gameSpeed - 2) / SPEED_MULTIPLY;
+	uint16 spdY = (SkyEngine::_systemVars->gameSpeed) / SPEED_MULTIPLY;
 	spdY += MPNL_Y + 85; // speed slider's initial position
 
 	_sprites.controlPanel	= _skyDisk->loadFile(60500);
@@ -734,7 +734,6 @@ uint16 Control::doSpeedSlide() {
 	int ofsY = _slide->_y - mouse.y;
 	uint16 speedDelay = _slide->_y - (MPNL_Y + 95);
 	speedDelay *= SPEED_MULTIPLY;
-	speedDelay += 2;
 	while (_mouseClicked) {
 		delay(ANIM_DELAY);
 		if (!_controlPanel)
@@ -750,7 +749,6 @@ uint16 Control::doSpeedSlide() {
 			_slide2->drawToScreen(WITH_MASK);
 			speedDelay = newY - (MPNL_Y + 95);
 			speedDelay *= SPEED_MULTIPLY;
-			speedDelay += 2;
 		}
 		buttonControl(_slide);
 		_text->drawToScreen(WITH_MASK);
