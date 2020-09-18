@@ -1535,9 +1535,9 @@ void Control::restartGame() {
 
 void Control::delay(unsigned int amount) {
 	Common::Event event;
-
-	uint32 start = _system->getMillis();
-	uint32 cur = start;
+	uint32 time;
+	uint32 delay;
+	const uint32 wakeUpTime = _system->getMillis() + amount;
 	_keyPressed.reset();
 	_action = kSkyActionNone;
 
@@ -1574,14 +1574,20 @@ void Control::delay(unsigned int amount) {
 			}
 		}
 
-		uint this_delay = 20; // 1?
-		if (this_delay > amount)
-			this_delay = amount;
+		_system->updateScreen();
 
-		if (this_delay > 0)	_system->delayMillis(this_delay);
+		time = _system->getMillis();
+		if (time + 10 < wakeUpTime)
+			delay = 10;
+		else
+			delay = (time < wakeUpTime) ? wakeUpTime - time : 0;
 
-		cur = _system->getMillis();
-	} while (cur < start + amount);
+		if (delay) {
+			_system->delayMillis(delay);
+			time += delay;
+		}
+
+	} while (time < wakeUpTime);
 }
 
 void Control::showGameQuitMsg() {

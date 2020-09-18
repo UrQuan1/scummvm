@@ -419,14 +419,15 @@ void *SkyEngine::fetchItem(uint32 num) {
 }
 
 void SkyEngine::delay(int32 amount) {
-	Common::Event event;
-
-	uint32 start = _system->getMillis();
-	_action = kSkyActionNone;
-	_keyPressed.reset();
-
 	if (amount < 0)
 		amount = 0;
+
+	Common::Event event;
+	uint32 time;
+	uint32 delay;
+	const uint32 wakeUpTime = _system->getMillis() + amount;
+	_action = kSkyActionNone;
+	_keyPressed.reset();
 
 	do {
 		while (_eventMan->pollEvent(event)) {
@@ -458,10 +459,18 @@ void SkyEngine::delay(int32 amount) {
 
 		_system->updateScreen();
 
-		if (amount > 0)
-			_system->delayMillis((amount > 10) ? 10 : amount);
+		time = _system->getMillis();
+		if (time + 10 < wakeUpTime)
+			delay = 10;
+		else
+			delay = (time < wakeUpTime) ? wakeUpTime - time : 0;
 
-	} while (_system->getMillis() < start + amount);
+		if (delay) {
+			_system->delayMillis(delay);
+			time += delay;
+		}
+
+	} while (time < wakeUpTime);
 }
 
 bool SkyEngine::isDemo() {
