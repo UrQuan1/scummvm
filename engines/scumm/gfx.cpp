@@ -4069,7 +4069,6 @@ void ScummEngine::scrollEffect(int dir) {
 					vsPitch,
 					0, (vs->h - step) * m,
 					vs->w * m, step * m);
-				_system->updateScreen();
 			}
 
 			waitForTimer(delay);
@@ -4092,7 +4091,6 @@ void ScummEngine::scrollEffect(int dir) {
 					vsPitch,
 					0, 0,
 					vs->w * m, step * m);
-				_system->updateScreen();
 			}
 
 			waitForTimer(delay);
@@ -4116,7 +4114,6 @@ void ScummEngine::scrollEffect(int dir) {
 					vsPitch,
 					(vs->w - step) * m, 0,
 					step * m, vs->h * m);
-				_system->updateScreen();
 			}
 
 			waitForTimer(delay);
@@ -4140,7 +4137,6 @@ void ScummEngine::scrollEffect(int dir) {
 					vsPitch,
 					0, 0,
 					step, vs->h);
-				_system->updateScreen();
 			}
 
 			waitForTimer(delay);
