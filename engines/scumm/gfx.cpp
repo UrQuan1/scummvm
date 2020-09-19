@@ -67,7 +67,7 @@ struct StripTable {
 
 enum {
 	kScrolltime = 500,  // ms scrolling is supposed to take
-	kPictureDelay = 20,
+	kPictureDelay = 3,
 	kFadeDelay = 4 // 1/4th of a jiffie
 };
 
@@ -3888,7 +3888,7 @@ void ScummEngine::transitionEffect(int a) {
 	int bottom;
 	int l, t, r, b;
 	const int height = MIN((int)_virtscr[kMainVirtScreen].h, _screenHeight);
-	const int delay = (VAR_FADE_DELAY != 0xFF) ? VAR(VAR_FADE_DELAY) * kFadeDelay : kPictureDelay;
+	const int delay = (VAR_FADE_DELAY != 0xFF) ? VAR(VAR_FADE_DELAY) : (_game.version >= 2) ? kPictureDelay : 0;
 	const int numOfIterations = (a == 0 || a == 4) ? (height / 8 + 1) / 2 : height / 8;
 
 	for (i = 0; i < 16; i++) {
