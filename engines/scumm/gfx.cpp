@@ -68,7 +68,8 @@ struct StripTable {
 enum {
 	kScrolltime = 500,  // ms scrolling is supposed to take
 	kPictureDelay = 3,
-	kFadeDelay = 4 // 1/4th of a jiffie
+	kFadeDelay = 4, // 1/4th of a jiffie
+	kDissolveDelay = 3
 };
 
 #define NUM_SHAKE_POSITIONS 8
@@ -3948,10 +3949,11 @@ void ScummEngine::transitionEffect(int a) {
 void ScummEngine::dissolveEffect(int width, int height) {
 	VirtScreen *vs = &_virtscr[kMainVirtScreen];
 	int *offsets;
-	int blits_before_refresh, blits;
+	int blitsBeforeRefresh, blits;
 	int x, y;
 	int w, h;
 	int i;
+	const int delay = kDissolveDelay * 4;
 
 	// There's probably some less memory-hungry way of doing this. But
 	// since we're only dealing with relatively small images, it shouldn't
@@ -3959,15 +3961,6 @@ void ScummEngine::dissolveEffect(int width, int height) {
 
 	w = vs->w / width;
 	h = vs->h / height;
-
-	// When used correctly, vs->width % width and vs->height % height
-	// should both be zero, but just to be safe...
-
-	if (vs->w % width)
-		w++;
-
-	if (vs->h % height)
-		h++;
 
 	offsets = (int *) malloc(w * h * sizeof(int));
 	if (offsets == NULL)
@@ -4013,18 +4006,12 @@ void ScummEngine::dissolveEffect(int width, int height) {
 	}
 
 	// Blit the image piece by piece to the screen. The idea here is that
-	// the whole update should take about a quarter of a second, assuming
+	// the whole update should take about an eight of a second, assuming
 	// most of the time is spent in waitForTimer(). It looks good to me,
 	// but might still need some tuning.
 
 	blits = 0;
-	blits_before_refresh = (3 * w * h) / 25;
-
-	// Speed up the effect for CD Loom since it uses it so often. I don't
-	// think the original had any delay at all, so on modern hardware it
-	// wasn't even noticeable.
-	if (_game.id == GID_LOOM && (_game.version == 4))
-		blits_before_refresh *= 2;
+	blitsBeforeRefresh = (w * h) / 10; // 120 ms
 
 	for (i = 0; i < w * h; i++) {
 		x = offsets[i] % vs->pitch;
@@ -4038,17 +4025,13 @@ void ScummEngine::dissolveEffect(int width, int height) {
 			_system->copyRectToScreen(vs->getPixels(x, y), vs->pitch, x, y + vs->topline, width, height);
 
 
-		if (++blits >= blits_before_refresh) {
+		if (++blits >= blitsBeforeRefresh) {
 			blits = 0;
-			waitForTimer(30);
+			waitForTimer(delay);
 		}
 	}
 
 	free(offsets);
-
-	if (blits != 0) {
-		waitForTimer(30);
-	}
 }
 
 void ScummEngine::scrollEffect(int dir) {
