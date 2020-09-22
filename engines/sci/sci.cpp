@@ -898,7 +898,7 @@ void SciEngine::sleep(uint32 msecs) {
 	const uint32 wakeUpTime = g_system->getMillis() + msecs;
 
 	for (;;) {
-		// let backend process events and update the screen
+		// let backend process events
 		_eventMan->getSciEvent(kSciEventPeek);
 
 		// There is no point in waiting any more if we are just waiting to quit
@@ -907,13 +907,15 @@ void SciEngine::sleep(uint32 msecs) {
 		}
 
 #ifdef ENABLE_SCI32
-		// If a game is in a wait loop, kFrameOut is not called, but mouse
-		// movement is still occurring and the screen needs to be updated to
+		// If a game is in a wait loop, kAnimate / kFrameOut is not called, but
+		// mouse movement is still occurring and the screen needs to be updated to
 		// reflect it
 		if (getSciVersion() >= SCI_VERSION_2) {
 			g_sci->_gfxFrameout->updateScreen();
-		}
+		} else
 #endif
+			_eventMan->updateScreen();
+
 		time = g_system->getMillis();
 		if (time + 10 < wakeUpTime) {
 			g_system->delayMillis(10);

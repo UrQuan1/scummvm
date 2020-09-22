@@ -110,7 +110,6 @@ reg_t kGetEvent(EngineState *s, int argc, reg_t *argv) {
 		// one of these ugly loops and should be updating the screen &
 		// throttling the VM.
 		if (++s->_eventCounter > 2) {
-			g_sci->_gfxFrameout->updateScreen();
 			s->speedThrottler(10); // 10ms is an arbitrary value
 			s->_throttleTrigger = true;
 		}
@@ -274,6 +273,15 @@ reg_t kGetEvent(EngineState *s, int argc, reg_t *argv) {
 		// Game is benchmarking, don't add a delay
 	} else if (getSciVersion() < SCI_VERSION_2) {
 		g_system->delayMillis(10);
+	}
+
+	if (++s->_eventCounter > 2) {
+#ifdef ENABLE_SCI32
+		if (getSciVersion() >= SCI_VERSION_2) {
+			g_sci->_gfxFrameout->updateScreen();
+		} else
+#endif
+			g_sci->getEventManager()->updateScreen();
 	}
 
 	return s->r_acc;
