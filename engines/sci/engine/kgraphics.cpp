@@ -1173,6 +1173,7 @@ reg_t kAnimate(EngineState *s, int argc, reg_t *argv) {
 	bool cycle = (argc > 1) ? ((argv[1].toUint16()) ? true : false) : false;
 
 	g_sci->_gfxAnimate->kernelAnimate(castListReference, cycle, argc, argv);
+	s->_eventCounter = 0;
 
 	// WORKAROUND: At the end of Ecoquest 1, during the credits, the game
 	// doesn't call kGetEvent(), so no events are processed (e.g. window

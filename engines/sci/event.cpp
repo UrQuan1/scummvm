@@ -444,10 +444,6 @@ SciEvent EventManager::getSciEvent(SciEventType mask) {
 	SciEvent event = { kSciEventNone, kSciKeyModNone, 0, Common::Point() };
 #endif
 
-	if (getSciVersion() < SCI_VERSION_2) {
-		updateScreen();
-	}
-
 	// Get all queued events from graphics driver
 	do {
 		event = getScummVMEvent();
