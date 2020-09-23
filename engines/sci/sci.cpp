@@ -919,7 +919,7 @@ void SciEngine::sleep(uint32 msecs) {
 			g_sci->_gfxFrameout->updateScreen();
 		} else
 #endif
-			_eventMan->updateScreen();
+			g_system->updateScreen();
 
 		time = g_system->getMillis();
 		if (time + 10 < wakeUpTime) {
