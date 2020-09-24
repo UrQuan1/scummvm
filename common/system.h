@@ -933,13 +933,12 @@ public:
 	virtual void updateScreen() = 0;
 
 	/**
-	 * Set current shake position, a feature needed for some SCUMM screen
-	 * effects. The effect causes the displayed graphics to be shifted upwards
-	 * by the specified (always positive) offset. The area at the bottom of the
-	 * screen which is moved into view by this is filled with black. This does
-	 * not cause any graphic data to be lost - that is, to restore the original
-	 * view, the game engine only has to call this method again with offset
-	 * equal to zero. No calls to copyRectToScreen are necessary.
+	 * Set current shake position, a feature needed for some screen effects.
+	 * The effect causes the displayed graphics to be shifted by the specified
+	 * offset. The area which is moved into view by this is filled with black.
+	 * This does not cause any graphic data to be lost - that is, to restore
+	 * the original view, the game engine only has to call this method again
+	 * with offset equal to zero. No calls to copyRectToScreen are necessary.
 	 * @param shakeXOffset	the shake x offset
 	 * @param shakeYOffset	the shake y offset
 	 *
