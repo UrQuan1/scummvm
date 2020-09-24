@@ -1240,8 +1240,9 @@ void GfxFrameout::throttle() {
 		++_throttleState;
 	}
 
-	g_sci->getEngineState()->speedThrottler(throttleTime);
-	g_sci->getEngineState()->_throttleTrigger = true;
+	EngineState *s = g_sci->getEngineState();
+	if (++s->_frameCounter > 1)
+		s->speedThrottler(throttleTime);
 }
 
 void GfxFrameout::shakeScreen(int16 numShakes, const ShakeDirection direction) {

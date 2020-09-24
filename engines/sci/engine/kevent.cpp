@@ -94,25 +94,6 @@ reg_t kGetEvent(EngineState *s, int argc, reg_t *argv) {
 #ifdef ENABLE_SCI32
 	if (getSciVersion() >= SCI_VERSION_2) {
 		mousePos = curEvent.mousePosSci;
-
-		// Some games, like LSL6hires (when interacting with the menu bar) and
-		// Phant2 (when on the "click mouse" screen after restoring a game),
-		// have unthrottled loops that call kGetEvent but do not call kFrameOut.
-		// In these cases we still need to call OSystem::updateScreen to update
-		// the mouse cursor (in SSCI this was not necessary because mouse
-		// updates were made directly to hardware from an interrupt handler),
-		// and we need to throttle these calls so the game does not use 100%
-		// CPU.
-		// This situation seems to be detectable by looking at how many times
-		// kGetEvent has been called between calls to kFrameOut. During normal
-		// game operation, there are usually just 0 or 1 kGetEvent calls between
-		// kFrameOut calls; any more than that indicates that we are probably in
-		// one of these ugly loops and should be updating the screen &
-		// throttling the VM.
-		if (++s->_eventCounter > 2) {
-			s->speedThrottler(10); // 10ms is an arbitrary value
-			s->_throttleTrigger = true;
-		}
 	} else {
 #endif
 		mousePos = curEvent.mousePos;
@@ -264,17 +245,10 @@ reg_t kGetEvent(EngineState *s, int argc, reg_t *argv) {
 		g_sci->_soundCmd->updateSci0Cues();
 	}
 
-	// Wait a bit here, so that the CPU isn't maxed out when the game
-	// is waiting for user input (e.g. when showing text boxes) - bug
-	// #3037874. Make sure that we're not delaying while the game is
-	// benchmarking, as that will affect the final benchmarked result -
-	// check bugs #3058865 and #3127824
-	if (s->_gameIsBenchmarking) {
-		// Game is benchmarking, don't add a delay
-	} else if (getSciVersion() < SCI_VERSION_2) {
-		g_system->delayMillis(10);
-	}
-
+	// There are usually one - and at most two - kGetEvent calls between
+	// kAnimate (SCI16) or kFrameOut (SCI32) calls; any more than that
+	// indicates that we are in an unthrottled loop and should be updating the
+	// screen and throttling the VM here instead.
 	if (++s->_eventCounter > 2) {
 #ifdef ENABLE_SCI32
 		if (getSciVersion() >= SCI_VERSION_2) {
@@ -282,6 +256,8 @@ reg_t kGetEvent(EngineState *s, int argc, reg_t *argv) {
 		} else
 #endif
 			g_sci->getEventManager()->updateScreen();
+
+		s->speedThrottler();
 	}
 
 	return s->r_acc;

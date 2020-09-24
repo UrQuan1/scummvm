@@ -563,7 +563,6 @@ void GfxPalette::kernelSetIntensity(uint16 fromColor, uint16 toColor, uint16 int
 		// Call speed throttler from here as well just in case we need it
 		//  At least in kq6 intro the scripts call us in a tight loop for fadein/fadeout
 		state->speedThrottler(30);
-		state->_throttleTrigger = true;
 	}
 }
 
@@ -594,8 +593,6 @@ bool GfxPalette::kernelAnimate(byte fromColor, byte toColor, int speed) {
 		_schedules.push_back(newSchedule);
 		scheduleCount++;
 	}
-
-	g_sci->getEngineState()->_throttleTrigger = true;
 
 	for (scheduleNr = 0; scheduleNr < scheduleCount; scheduleNr++) {
 		if (_schedules[scheduleNr].from == fromColor) {
