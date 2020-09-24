@@ -710,17 +710,15 @@ void GfxAnimate::kernelAnimate(reg_t listReference, bool cycle, int argc, reg_t 
 
 	_ports->setPort(oldPort);
 
-	// Now trigger speed throttler
-	throttleSpeed();
+	isGameBenchmarking();
+
+	if (++_s->_frameCounter > 1)
+		_s->speedThrottler();
 }
 
-void GfxAnimate::throttleSpeed() {
+void GfxAnimate::isGameBenchmarking() {
 	switch (_lastCastData.size()) {
-	case 0:
-		// No entries drawn -> no speed throttler triggering
-		break;
 	case 1: {
-
 		// One entry drawn -> check if that entry was a speed benchmark view, if not enable speed throttler
 		AnimateEntry *onlyCast = &_lastCastData[0];
 		if ((onlyCast->viewId == 0) && (onlyCast->loopNo == 13) && (onlyCast->celNo == 0)) {
@@ -748,13 +746,10 @@ void GfxAnimate::throttleSpeed() {
 			}
 		}
 		_s->_gameIsBenchmarking = false;
-		_s->_throttleTrigger = true;
 		break;
 	}
 	default:
-		// More than 1 entry drawn -> time for speed throttling
 		_s->_gameIsBenchmarking = false;
-		_s->_throttleTrigger = true;
 		break;
 	}
 }

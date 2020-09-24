@@ -105,8 +105,8 @@ void EngineState::reset(bool isRestoring) {
 	gcCountDown = 0;
 
 	_eventCounter = 0;
+	_frameCounter = 0;
 	_throttleLastTime = 0;
-	_throttleTrigger = false;
 	_gameIsBenchmarking = false;
 
 	_lastSaveVirtualId = SAVEGAMEID_OFFICIALRANGE_START;
@@ -121,17 +121,19 @@ void EngineState::reset(bool isRestoring) {
 }
 
 void EngineState::speedThrottler(uint32 neededSleep) {
-	if (_throttleTrigger) {
-		uint32 curTime = g_system->getMillis();
-		uint32 duration = curTime - _throttleLastTime;
+	// Make sure that we're not delaying while the game is benchmarking, as
+	// that will affect the final benchmarked result - bugs #3058865 and
+	// #3127824
+	if (!_gameIsBenchmarking) {
+		uint32 time = g_system->getMillis();
+		uint32 duration = time - _throttleLastTime;
 
 		if (duration < neededSleep) {
-			g_sci->sleep(neededSleep - duration);
-			_throttleLastTime = g_system->getMillis();
-		} else {
-			_throttleLastTime = curTime;
+			uint32 sleepTime = neededSleep - duration;
+			g_sci->sleep(sleepTime);
+			time += sleepTime;
 		}
-		_throttleTrigger = false;
+		_throttleLastTime = time;
 	}
 }
 
@@ -147,6 +149,7 @@ uint16 EngineState::wait(uint16 ticks) {
 		time += sleepTime;
 	}
 
+	resetLoopCounters();
 	uint16 tickDelta = (uint16)(((long)time - lastWaitTime) * 60 / 1000);
 	lastWaitTime = time;
 	return tickDelta;
@@ -155,6 +158,12 @@ uint16 EngineState::wait(uint16 ticks) {
 void EngineState::sleep(uint16 ticks) {
 	ticks *= g_debug_sleeptime_factor;
 	g_sci->sleep(ticks * 1000 / 60);
+	resetLoopCounters();
+}
+
+void EngineState::resetLoopCounters() {
+	_eventCounter = 0;
+	_frameCounter = 0;
 }
 
 void EngineState::initGlobals() {

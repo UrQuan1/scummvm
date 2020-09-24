@@ -113,14 +113,20 @@ public:
 	uint32 lastWaitTime; /**< The last time the game invoked Wait() */
 	uint32 _screenUpdateTime;	/**< The last time the game updated the screen */
 
-	void speedThrottler(uint32 neededSleep);
+	/**
+	 * The speedthrottler will take over throttling in unthrottled loops. If we
+	 * are in a loop with kAnimate (SCI16) or kFrameOut (SCI32), it will be
+	 * called from there, otherwise from kGetEvent.
+	 */
+	void speedThrottler(uint32 neededSleep = 16);
 	uint16 wait(uint16 ticks);
 	void sleep(uint16 ticks);
 
-	uint32 _eventCounter; /**< total times kGetEvent was invoked since the last call to kAnimate (SCI16) or kFrameOut (SCI32) */
-	uint32 _throttleLastTime; /**< last time kAnimate was invoked */
-	bool _throttleTrigger;
+	uint32 _eventCounter; /**< total times kGetEvent was invoked since the last call to kWait, kAnimate (SCI16) or kFrameOut (SCI32) */
+	uint32 _frameCounter; /**< total times kAnimate (SCI16) or kFrameOut (SCI32) was invoked since the last call to kWait */
+	uint32 _throttleLastTime; /**< The last time speedThrottler() was invoked */
 	bool _gameIsBenchmarking;
+	void resetLoopCounters();
 
 	/* Kernel File IO stuff */
 

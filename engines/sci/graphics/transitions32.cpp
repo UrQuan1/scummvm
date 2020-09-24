@@ -68,7 +68,6 @@ GfxTransitions32::~GfxTransitions32() {
 
 void GfxTransitions32::throttle(const uint32 ms) {
 	g_sci->getEngineState()->speedThrottler(ms);
-	g_sci->getEngineState()->_throttleTrigger = true;
 }
 
 void GfxTransitions32::clearShowRects() {
