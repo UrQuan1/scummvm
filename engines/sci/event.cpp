@@ -422,13 +422,13 @@ SciEvent EventManager::getScummVMEvent() {
 
 void EventManager::updateScreen() {
 	// Update the screen here, since it's called very often.
-	// Throttle the screen update rate to 60fps.
+	// Throttle the screen update rate to 70fps.
 	EngineState *s = g_sci->getEngineState();
 	const uint32 now = g_system->getMillis();
-	if (now - s->_screenUpdateTime >= 1000 / 60) {
+	if (now - s->_screenUpdateTime >= 1000 / kRefreshRate) {
 		g_system->updateScreen();
 		s->_screenUpdateTime = now;
-		// Throttle the checking of shouldQuit() to 60fps as well, since
+		// Throttle the checking of shouldQuit() to 70fps as well, since
 		// Engine::shouldQuit() invokes 2 virtual functions
 		// (EventManager::shouldQuit() and EventManager::shouldReturnToLauncher()),
 		// which is very expensive to invoke constantly without any
