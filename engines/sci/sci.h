@@ -132,6 +132,11 @@ enum kLanguage {
 	K_LANG_PORTUGUESE = 351
 };
 
+/** Display refresh rate limit */
+enum RefreshRates {
+	kRefreshRate = 70
+};
+
 class SciEngine : public Engine {
 	friend class Console;
 public:

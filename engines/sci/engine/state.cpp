@@ -174,7 +174,7 @@ void EngineState::speedThrottler(double neededSleep) {
 void EngineState::waitForVerticalRetrace() {
 	uint32 time = g_system->getMillis();
 
-	uint32 ms = getIntegralTime(1000 / 70.0);
+	uint32 ms = getIntegralTime(1000 / (double)kRefreshRate);
 	uint32 duration = time - _lastVerticalRetraceTime;
 	uint32 sleepTime = ms - (duration < ms ? duration : 0);
 	sleepTime *= g_debug_sleeptime_factor;

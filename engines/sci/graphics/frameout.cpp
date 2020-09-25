@@ -1200,7 +1200,7 @@ void GfxFrameout::updateScreen(const int delta) {
 	// Using OSystem::getMillis instead of Sci::getTickCount here because these
 	// values need to be monotonically increasing for the duration of the
 	// GfxFrameout object or else the screen will stop updating
-	const uint32 now = g_system->getMillis() * 60 / 1000;
+	const uint32 now = g_system->getMillis() * kRefreshRate / 1000;
 	if (now <= _lastScreenUpdateTick + delta) {
 		return;
 	}
