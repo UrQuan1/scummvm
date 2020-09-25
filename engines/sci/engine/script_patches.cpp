@@ -5335,8 +5335,8 @@ static const uint16 kq6PatchCassimaSecretPassage[] = {
 //  their mouths are animated by inner loops that call kDrawCel with unthrottled
 //  inner inner loops that spin to create a delay between frames. This prevents
 //  updating the screen and responding to input. We replace the spin loops with
-//  calls to kGameIsRestarting, which detects and throttles these calls so that
-//  the speed is reasonable, the screen updates, and the game is responsive.
+//  calls to kWait, so that the speed is reasonable, the screen updates, and the
+//  game is responsive.
 //
 // Applies to: All versions
 // Responsible method: participle:doVerb, tomato:doVerb
@@ -5352,8 +5352,9 @@ static const uint16 kq6SignatureTalkingInventory[] = {
 
 static const uint16 kq6PatchTalkingInventory[] = {
 	PATCH_ADDTOOFFSET(+2),
-	0x39, 0x00,                         // pushi 00
-	0x43, 0x2c, 0x00,                   // callk GameIsRestarting [ custom throttling ]
+	0x78,                               // push1
+	0x39, 0x06,                         // pushi 6 (100ms)
+	0x43, 0x41, PATCH_UINT16(0x02),     // callk Wait, 2
 	0x34, PATCH_UINT16(0x0000),         // ldi 0000 [ exit loop ]
 	PATCH_END
 };

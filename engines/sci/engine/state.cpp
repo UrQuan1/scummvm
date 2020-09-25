@@ -148,23 +148,6 @@ void EngineState::speedThrottler(uint32 neededSleep) {
 				neededSleep = 66; // 15 fps
 			}
 			break;
-		case GID_KQ6:
-			// KQ6 has talking inventory items that animate in the inventory window.
-			// This is done with unthrottled inner loops which we replace with
-			// calls to kGameIsRestarting so that the screen updates and responds
-			// to input. Since this can happen in any room, we detect if the caller
-			// is inventory script 907. See kq6PatchTalkingInventory.
-			if (_executionStack.size() >= 2) {
-				Common::List<ExecStack>::const_iterator iter = _executionStack.reverse_begin();
-				--iter; // skip this kernel call
-				if (iter->type == EXEC_STACK_TYPE_CALL) {
-					int callerScriptNumber = _segMan->getScript(iter->addr.pc.getSegment())->getScriptNumber();
-					if (callerScriptNumber == 907) {
-						neededSleep = 100; // talk animation interval, 10 fps
-					}
-				}
-			}
-			break;
 		case GID_SQ4:
 			// In SQ4 (CD) the sequel police appear way too quickly in the
 			// Skate-o-rama rooms, resulting in all sorts of timer issues, like
