@@ -68,7 +68,7 @@ struct SaveInfoSection {
 
 #define SaveInfoSectionSize (4+4+4 + 4+4 + 4+2)
 
-#define CURRENT_VER 99
+#define CURRENT_VER 100
 #define INFOSECTION_VERSION 2
 
 #pragma mark -
@@ -1100,10 +1100,10 @@ void ScummEngine::saveLoadWithSerializer(Common::Serializer &s) {
 	s.skip(4, VER(8), VER(9)); // _randSeed1
 	s.skip(4, VER(8), VER(9)); // _randSeed2
 
-	// Converted _shakeEnabled to boolean and added a _shakeFrame field.
+	// Converted _shakeEnabled to boolean.
 	s.syncAsSint16LE(_shakeEnabled, VER(8), VER(9));
 	s.syncAsByte(_shakeEnabled, VER(10));
-	s.syncAsUint32LE(_shakeFrame, VER(10));
+	s.skip(4, VER(10), VER(99)); // _shakeFrame
 
 	s.syncAsByte(_keepText, VER(8));
 

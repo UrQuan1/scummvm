@@ -1539,7 +1539,6 @@ void ScummEngine::setShake(int mode) {
 		_fullRedraw = true;
 
 	_shakeEnabled = mode != 0;
-	_shakeFrame = 0;
 	_system->setShakePos(0, 0);
 }
 
