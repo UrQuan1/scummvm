@@ -424,9 +424,10 @@ void EventManager::updateScreen() {
 	// Update the screen here, since it's called very often.
 	// Throttle the screen update rate to 60fps.
 	EngineState *s = g_sci->getEngineState();
-	if (g_system->getMillis() - s->_screenUpdateTime >= 1000 / 60) {
+	const uint32 now = g_system->getMillis();
+	if (now - s->_screenUpdateTime >= 1000 / 60) {
 		g_system->updateScreen();
-		s->_screenUpdateTime = g_system->getMillis();
+		s->_screenUpdateTime = now;
 		// Throttle the checking of shouldQuit() to 60fps as well, since
 		// Engine::shouldQuit() invokes 2 virtual functions
 		// (EventManager::shouldQuit() and EventManager::shouldReturnToLauncher()),
