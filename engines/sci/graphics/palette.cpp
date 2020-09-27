@@ -556,6 +556,10 @@ void GfxPalette::kernelUnsetFlag(uint16 fromColor, uint16 toColor, uint16 flag) 
 }
 
 void GfxPalette::kernelSetIntensity(uint16 fromColor, uint16 toColor, uint16 intensity, bool setPalette) {
+	// Palette intensity in non-VGA SCI1 games has been removed
+	if (getTotalColorCount() < 256)
+		return;
+
 	memset(&_sysPalette.intensity[0] + fromColor, intensity, toColor - fromColor);
 	if (setPalette) {
 		setOnScreen();

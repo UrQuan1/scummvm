@@ -642,10 +642,6 @@ reg_t kPaletteSetIntensity(EngineState *s, int argc, reg_t *argv) {
 	uint16 intensity = argv[2].toUint16();
 	bool setPalette = (argc < 4) ? true : (argv[3].isNull()) ? true : false;
 
-	// Palette intensity in non-VGA SCI1 games has been removed
-	if (g_sci->_gfxPalette16->getTotalColorCount() < 256)
-		return s->r_acc;
-
 	g_sci->_gfxPalette16->kernelSetIntensity(fromColor, toColor, intensity, setPalette);
 	return s->r_acc;
 }
