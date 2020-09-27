@@ -68,13 +68,12 @@ struct StripTable {
 enum {
 	kScrolltime = 500,  // ms scrolling is supposed to take
 	kPictureDelay = 20,
-	kFadeDelay = 4 // 1/4th of a jiffie
+	kFadeDelay = 4, // 1/4th of a jiffie
+	kShakeDelayOld = 6,
+	kShakeDelayNew = 8
 };
 
 #define NUM_SHAKE_POSITIONS 8
-static const int8 shake_positions[NUM_SHAKE_POSITIONS] = {
-    2, 3, 1, 0, 1, 2, 1, 0
-};
 
 /**
  * The following structs define four basic fades/transitions used by
@@ -521,12 +520,6 @@ void ScummEngine::drawDirtyScreenParts() {
 		vs->setDirtyRange(vs->h, 0);
 	} else {
 		updateDirtyScreen(kMainVirtScreen);
-	}
-
-	// Handle shaking
-	if (_shakeEnabled) {
-		_shakeFrame = (_shakeFrame + 1) % NUM_SHAKE_POSITIONS;
-		_system->setShakePos(0, -shake_positions[_shakeFrame]);
 	}
 }
 
@@ -1539,7 +1532,21 @@ void ScummEngine::setShake(int mode) {
 		_fullRedraw = true;
 
 	_shakeEnabled = mode != 0;
+	_shakeLastTime = 0;
 	_system->setShakePos(0, 0);
+}
+
+void ScummEngine::shakeEffect() {
+	static const byte shakePositions[] = {2, 3, 1, 0, 1, 2, 1, 0};
+	const double msecDelay = (_game.version == 5 ? kShakeDelayOld : kShakeDelayNew) * (1000 / getTimerFrequency());
+	const double shakeTime = _shakeLastTime + msecDelay;
+	const uint32 time = _system->getMillis();
+
+	if (time >= (uint32)shakeTime) {
+		_system->setShakePos(0, -shakePositions[_shakeFrame]);
+		_shakeFrame = (_shakeFrame + 1) % NUM_SHAKE_POSITIONS;
+		_shakeLastTime = (time < (uint32)(shakeTime + msecDelay)) ? shakeTime : time;
+	}
 }
 
 #pragma mark -

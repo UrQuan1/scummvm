@@ -273,6 +273,7 @@ ScummEngine::ScummEngine(OSystem *syst, const DetectorResult &dr)
 	_snapScroll = false;
 	_shakeEnabled = false;
 	_shakeFrame = 0;
+	_shakeLastTime = 0;
 	_screenStartStrip = 0;
 	_screenEndStrip = 0;
 	_screenTop = 0;
@@ -2191,6 +2192,9 @@ void ScummEngine::waitForTimer(int msec_delay) {
 	while (!shouldQuit()) {
 		_sound->updateCD(); // Loop CD Audio if needed
 		parseEvents();
+
+		if (_shakeEnabled)
+			shakeEffect();
 
 #ifndef DISABLE_TOWNS_DUAL_LAYER_MODE
 		if (_townsScreen)

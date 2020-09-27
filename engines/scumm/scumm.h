@@ -972,7 +972,9 @@ protected:
 protected:
 	bool _shakeEnabled;
 	byte _shakeFrame;
+	double _shakeLastTime;
 	void setShake(int mode);
+	void shakeEffect();
 
 	int _drawObjectQueNr;
 	byte _drawObjectQue[200];
