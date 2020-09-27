@@ -73,7 +73,7 @@ enum {
 
 #define NUM_SHAKE_POSITIONS 8
 static const int8 shake_positions[NUM_SHAKE_POSITIONS] = {
-	0, 1 * 2, 2 * 2, 1 * 2, 0 * 2, 2 * 2, 3 * 2, 1 * 2
+    2, 3, 1, 0, 1, 2, 1, 0
 };
 
 /**
@@ -526,7 +526,7 @@ void ScummEngine::drawDirtyScreenParts() {
 	// Handle shaking
 	if (_shakeEnabled) {
 		_shakeFrame = (_shakeFrame + 1) % NUM_SHAKE_POSITIONS;
-		_system->setShakePos(0, shake_positions[_shakeFrame]);
+		_system->setShakePos(0, -shake_positions[_shakeFrame]);
 	}
 }
 
