@@ -3607,7 +3607,7 @@ static const struct ADGameDescription SciGameDescriptions[] = {
 		{"ressci.000", 0, "c54f26d9f43f908151263254b6d97053", 108134481},
 		{"resmap.000", 0, "de154a223a9ef4ea7358b76adc38ef5b", 2956},
 		AD_LISTEND},
-		Common::EN_ANY, Common::kPlatformWindows, ADGF_DROPPLATFORM, GUIO_PHANTASMAGORIA2 },
+		Common::EN_ANY, Common::kPlatformDOS, ADGF_DROPPLATFORM, GUIO_PHANTASMAGORIA2 },
 
 	// Phantasmagoria 2 - German DOS/Windows (supplied by AReim1982)
 	// Note: Fully uncensored, but one scene is missing probably because of a mastering error (Curtis + Therese meeting near water cooler)
