@@ -9574,26 +9574,6 @@ static const uint16 phant2WaitParam1Patch[] = {
 	PATCH_END
 };
 
-// The interface bars at the top and bottom of the screen fade in and out when
-// hovered over. This fade is performed by a script loop that calls kFrameOut
-// directly and uses global[227] as the fade delta for each frame. It normally
-// is set to 1, which means that these fades are quite slow. We replace the use
-// of global[227] with an immediate value for a reasonable fade speed.
-// Applies to at least: US English
-static const uint16 phant2SlowIFadeSignature[] = {
-	0x43, 0x21, SIG_UINT16(0x0000),     // callk FrameOut, 0
-	SIG_MAGICDWORD,
-	0x67, 0x03,                         // pTos 03 (scratch)
-	0x81, 0xe3,                         // lag global[227]
-	SIG_END
-};
-
-static const uint16 phant2SlowIFadePatch[] = {
-	PATCH_ADDTOOFFSET(+6),              // skip to lag
-	0x35, 0x05,                         // ldi 5
-	PATCH_END
-};
-
 // The game uses a spin loop during music transitions which causes the mouse to
 // appear unresponsive during scene changes. Replace the spin loop with a call
 // to ScummVM kWait.
@@ -10046,7 +10026,6 @@ static const uint16 phant2ScrollbarArrowPatch[] = {
 
 //          script, description,                                      signature                                  patch
 static const SciScriptPatcherEntry phantasmagoria2Signatures[] = {
-	{  true,     0, "speed up interface fades",                    3, phant2SlowIFadeSignature,                  phant2SlowIFadePatch },
 	{  true,     0, "fix bad arguments to get game version",       1, phant2GetVersionSignature,                 phant2GetVersionPatch },
 	{  true,  3000, "replace spin loop in alien password window",  1, phant2WaitParam1Signature,                 phant2WaitParam1Patch },
 	{  true,  4081, "replace spin loop after ratboy puzzle",       1, phant2RatboySignature,                     phant2RatboyPatch },
