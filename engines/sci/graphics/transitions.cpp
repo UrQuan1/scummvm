@@ -299,8 +299,6 @@ void GfxTransitions::copyRectToScreen(const Common::Rect rect, bool blackoutFlag
 	}
 }
 
-// Note: don't do too many steps in here, otherwise cpu will crap out because of
-// the load
 void GfxTransitions::fadeOut() {
 	byte oldPalette[3 * 256], workPalette[3 * 256];
 	int16 stepNr, colorNr;
@@ -323,12 +321,10 @@ void GfxTransitions::fadeOut() {
 			}
 		}
 		g_system->getPaletteManager()->setPalette(workPalette + 3, 1, tillColorNr);
-		g_sci->getEngineState()->sleep(2);
+		g_sci->getEngineState()->waitForVerticalRetrace();
 	}
 }
 
-// Note: don't do too many steps in here, otherwise cpu will crap out because of
-// the load
 void GfxTransitions::fadeIn() {
 	int16 stepNr;
 	// Sierra did not fade in/out color 255 for sci1.1, but they used it in
@@ -337,7 +333,6 @@ void GfxTransitions::fadeIn() {
 
 	for (stepNr = 0; stepNr <= 100; stepNr += 10) {
 		_palette->kernelSetIntensity(1, tillColorNr + 1, stepNr, true);
-		g_sci->getEngineState()->sleep(2);
 	}
 }
 

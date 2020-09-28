@@ -110,6 +110,7 @@ public:
 
 	/* Non-VM information */
 
+	uint32 _lastVerticalRetraceTime; /**< The last time waitForVerticalRetrace() was invoked */
 	uint32 lastWaitTime; /**< The last time the game invoked Wait() */
 	uint32 _screenUpdateTime;	/**< The last time the game updated the screen */
 
@@ -119,14 +120,15 @@ public:
 	 * called from there, otherwise from kGetEvent.
 	 */
 	void speedThrottler(double neededSleep = 1000 / 60.0);
+	void waitForVerticalRetrace();
 	uint16 wait(uint16 ticks);
 	void sleep(uint16 ticks);
 
 	uint32 getIntegralTime(const double fMsecs); /**< Decomposes milliseconds into integral and fractional parts, incrementing the integer if needed */
 	double _msecFractionalParts; /**< The accumulated fractional parts of arguments passed to getIntegralTime() */
 
-	uint32 _eventCounter; /**< total times kGetEvent was invoked since the last call to kWait, kAnimate (SCI16) or kFrameOut (SCI32) */
-	uint32 _frameCounter; /**< total times kAnimate (SCI16) or kFrameOut (SCI32) was invoked since the last call to kWait */
+	uint32 _eventCounter; /**< total times kGetEvent was invoked since the last call to waitForVerticalRetrace(), kWait, kAnimate (SCI16) or kFrameOut (SCI32) */
+	uint32 _frameCounter; /**< total times kAnimate (SCI16) or kFrameOut (SCI32) was invoked since the last call to waitForVerticalRetrace() or kWait */
 	uint32 _throttleLastTime; /**< The last time speedThrottler() was invoked */
 	bool _gameIsBenchmarking;
 	void resetLoopCounters();

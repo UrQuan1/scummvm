@@ -29,6 +29,7 @@
 #include "sci/resource.h"
 #include "sci/util.h"
 #include "sci/engine/features.h"
+#include "sci/engine/state.h"
 #include "sci/graphics/palette32.h"
 #include "sci/graphics/remap32.h"
 #include "sci/graphics/screen.h"
@@ -1017,6 +1018,8 @@ void GfxPalette32::setFade(const uint16 percent, const uint8 fromColor, uint16 t
 	for (int i = fromColor; i <= toColor; i++) {
 		_fadeTable[i] = percent;
 	}
+
+	g_sci->getEngineState()->waitForVerticalRetrace();
 }
 
 void GfxPalette32::fadeOff() {
