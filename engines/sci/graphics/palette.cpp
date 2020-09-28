@@ -559,6 +559,7 @@ void GfxPalette::kernelSetIntensity(uint16 fromColor, uint16 toColor, uint16 int
 	memset(&_sysPalette.intensity[0] + fromColor, intensity, toColor - fromColor);
 	if (setPalette) {
 		setOnScreen();
+		g_sci->getEngineState()->waitForVerticalRetrace();
 	}
 }
 

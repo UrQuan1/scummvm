@@ -69,6 +69,7 @@ static const uint16 s_halfWidthSJISMap[256] = {
 EngineState::EngineState(SegManager *segMan)
 : _segMan(segMan),
 	_dirseeker(),
+	_lastVerticalRetraceTime(0),
 	lastWaitTime(0),
 	_screenUpdateTime(0) {
 
@@ -168,6 +169,20 @@ void EngineState::speedThrottler(double neededSleep) {
 		}
 		_throttleLastTime = time;
 	}
+}
+
+void EngineState::waitForVerticalRetrace() {
+	uint32 time = g_system->getMillis();
+
+	uint32 ms = getIntegralTime(1000 / 70.0);
+	uint32 duration = time - _lastVerticalRetraceTime;
+	uint32 sleepTime = ms - (duration < ms ? duration : 0);
+	sleepTime *= g_debug_sleeptime_factor;
+	g_sci->sleep(sleepTime);
+	time += sleepTime;
+
+	_lastVerticalRetraceTime = time;
+	resetLoopCounters();
 }
 
 uint16 EngineState::wait(uint16 ticks) {

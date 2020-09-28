@@ -672,6 +672,8 @@ reg_t kPaletteAnimate(EngineState *s, int argc, reg_t *argv) {
 		}
 		if (paletteChanged)
 			g_sci->_gfxPalette16->kernelAnimateSet();
+
+		s->waitForVerticalRetrace();
 	}
 
 	return s->r_acc;
