@@ -128,7 +128,6 @@ void EngineState::speedThrottler(double neededSleep) {
 	// that will affect the final benchmarked result - bugs #3058865 and
 	// #3127824
 	if (!_gameIsBenchmarking && g_sci->isSpeedThrottlerEnabled()) {
-		uint32 ms = getIntegralTime(neededSleep);
 		// WORKAROUNDS for scripts that are polling too quickly.
 		switch (g_sci->getGameId()) {
 		case GID_CASTLEBRAIN:
@@ -142,7 +141,7 @@ void EngineState::speedThrottler(double neededSleep) {
 			// stones to display, otherwise the game scripts reset them too soon.
 			// Fixes bug #3127824.
 			if (currentRoomNumber() == 100)
-				ms = getIntegralTime(4 * (1000 / 60.0)); // 15 fps
+				neededSleep = 4 * (1000 / 60.0); // 15 fps
 			break;
 		case GID_SQ4:
 			// In SQ4 (CD) the sequel police appear way too quickly in the
@@ -152,61 +151,52 @@ void EngineState::speedThrottler(double neededSleep) {
 			// more, in order to prevent timer bugs related to the sequel police.
 			if (currentRoomNumber() == 405 || currentRoomNumber() == 406 ||
 				currentRoomNumber() == 410 || currentRoomNumber() == 411) {
-				ms = getIntegralTime(4 * (1000 / 60.0)); // 15 fps
+				neededSleep = 4 * (1000 / 60.0); // 15 fps
 			}
 			break;
 		default:
 			break;
 		}
 
-		uint32 time = g_system->getMillis();
-		uint32 duration = time - _throttleLastTime;
-
-		if (duration < ms) {
-			uint32 sleepTime = ms - duration;
-			g_sci->sleep(sleepTime);
-			time += sleepTime;
-		}
-		_throttleLastTime = time;
+		sleepMillis(neededSleep, _throttleLastTime);
 	}
 }
 
 void EngineState::waitForVerticalRetrace() {
-	uint32 time = g_system->getMillis();
-
-	uint32 ms = getIntegralTime(1000 / (double)kRefreshRate);
-	uint32 duration = time - _lastVerticalRetraceTime;
-	uint32 sleepTime = ms - (duration < ms ? duration : 0);
-	sleepTime *= g_debug_sleeptime_factor;
-	g_sci->sleep(sleepTime);
-	time += sleepTime;
-
-	_lastVerticalRetraceTime = time;
+	sleepMillis(1000 / (double)kRefreshRate, _lastVerticalRetraceTime);
 	resetLoopCounters();
 }
 
 uint16 EngineState::wait(uint16 ticks) {
+	uint32 previousLastWaitTime = lastWaitTime;
+	sleepMillis(ticks * (1000 / 60.0), lastWaitTime);
+	resetLoopCounters();
+
+	uint16 tickDelta = (uint16)(((long)lastWaitTime - previousLastWaitTime) * 60 / 1000);
+	return tickDelta;
+}
+
+void EngineState::sleep(uint16 ticks) {
+	sleepMillis(ticks * (1000 / 60.0), lastWaitTime);
+	resetLoopCounters();
+}
+
+void EngineState::sleepMillis(const double fMsecs, uint32 &referenceTime, const bool forceSleep) {
 	uint32 time = g_system->getMillis();
 
-	uint32 ms = getIntegralTime(ticks * (1000 / 60.0));
-	uint32 duration = time - lastWaitTime;
-	if (ms > duration) {
-		uint32 sleepTime = ms - duration;
+	const uint32 ms = getIntegralTime(fMsecs);
+	const uint32 duration = time - referenceTime;
+	uint32 sleepTime = (ms > duration) ? ms - duration : 0;
+	if (!sleepTime && forceSleep)
+		sleepTime = ms;
+
+	if (sleepTime) {
 		sleepTime *= g_debug_sleeptime_factor;
 		g_sci->sleep(sleepTime);
 		time += sleepTime;
 	}
 
-	resetLoopCounters();
-	uint16 tickDelta = (uint16)(((long)time - lastWaitTime) * 60 / 1000);
-	lastWaitTime = time;
-	return tickDelta;
-}
-
-void EngineState::sleep(uint16 ticks) {
-	ticks *= g_debug_sleeptime_factor;
-	g_sci->sleep(getIntegralTime(ticks * (1000 / 60.0)));
-	resetLoopCounters();
+	referenceTime = time;
 }
 
 uint32 EngineState::getIntegralTime(const double fMsecs) {
