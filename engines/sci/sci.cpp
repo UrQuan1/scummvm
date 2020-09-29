@@ -578,8 +578,6 @@ bool SciEngine::initGame() {
 	if (_vocabulary)
 		_vocabulary->reset();
 
-	_gamestate->lastWaitTime = _gamestate->_screenUpdateTime = g_system->getMillis();
-
 	// Load game language into printLang property of game object
 	setSciLanguage();
 
