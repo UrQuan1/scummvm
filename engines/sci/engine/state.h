@@ -123,6 +123,7 @@ public:
 	void waitForVerticalRetrace();
 	uint16 wait(uint16 ticks);
 	void sleep(uint16 ticks);
+	void sleepMillis(const double fMsecs, uint32 &referenceTime, const bool forceSleep = false);
 
 	uint32 getIntegralTime(const double fMsecs); /**< Decomposes milliseconds into integral and fractional parts, incrementing the integer if needed */
 	double _msecFractionalParts; /**< The accumulated fractional parts of arguments passed to getIntegralTime() */
