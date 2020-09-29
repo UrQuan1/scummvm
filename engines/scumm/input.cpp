@@ -567,9 +567,9 @@ void ScummEngine::processKeyboard() {
 	} else if (snapScrollKeyEnabled && isSnapScrollKey()) {
 		_snapScroll ^= 1;
 		if (_snapScroll) {
-			messageDialog(_("Snap scroll on"));
+			messageDialog(_("Horizontal Screen Snap"));
 		} else {
-			messageDialog(_("Snap scroll off"));
+			messageDialog(_("Horizontal Screen Scroll"));
 		}
 
 		if (VAR_CAMERA_FAST_X != 0xFF)
@@ -585,7 +585,7 @@ void ScummEngine::processKeyboard() {
 			vol--;
 
 		// Display the music volume
-		ValueDisplayDialog dlg(this, _("Music volume: "), 0, 16, vol,
+		ValueDisplayDialog dlg(this, _("Music Volume: "), 0, 16, vol,
 		                       SCUMM_KEY_MUSIC_VOLUME_INC, SCUMM_KEY_MUSIC_VOLUME_DEC);
 		vol = runDialog(dlg);
 
@@ -605,7 +605,7 @@ void ScummEngine::processKeyboard() {
 			_defaultTalkDelay++;
 
 		// Display the talk speed
-		ValueDisplayDialog dlg(this, _("Subtitle speed: "), 0, 9, 9 - _defaultTalkDelay,
+		ValueDisplayDialog dlg(this, _("Text Speed: "), 0, 9, 9 - _defaultTalkDelay,
 		                       SCUMM_KEY_TEXT_SPEED_INC, SCUMM_KEY_TEXT_SPEED_DEC);
 		_defaultTalkDelay = 9 - runDialog(dlg);
 
