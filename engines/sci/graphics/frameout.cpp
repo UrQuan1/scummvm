@@ -66,7 +66,6 @@ GfxFrameout::GfxFrameout(SegManager *segMan, GfxPalette32 *palette, GfxTransitio
 	_cursor(cursor),
 	_segMan(segMan),
 	_transitions(transitions),
-	_throttleState(0),
 	_remapOccurred(false),
 	_overdrawThreshold(0),
 	_throttleKernelFrameOut(true),
@@ -1231,18 +1230,9 @@ void GfxFrameout::kernelFrameOut(const bool shouldShowBits) {
 }
 
 void GfxFrameout::throttle() {
-	uint8 throttleTime;
-	if (_throttleState == 2) {
-		throttleTime = 16;
-		_throttleState = 0;
-	} else {
-		throttleTime = 17;
-		++_throttleState;
-	}
-
 	EngineState *s = g_sci->getEngineState();
 	if (++s->_frameCounter > 1)
-		s->speedThrottler(throttleTime);
+		s->speedThrottler();
 }
 
 void GfxFrameout::shakeScreen(int16 numShakes, const ShakeDirection direction) {

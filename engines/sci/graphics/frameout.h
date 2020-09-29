@@ -302,11 +302,6 @@ private:
 	uint32 _lastScreenUpdateTick;
 
 	/**
-	 * State tracker to provide more accurate 60fps video throttling.
-	 */
-	uint8 _throttleState;
-
-	/**
 	 * The internal display pixel buffer. During `frameOut`, this buffer is
 	 * drawn into according to the draw and erase rects calculated by
 	 * `calcLists`, then drawn out to the hardware surface according to the
