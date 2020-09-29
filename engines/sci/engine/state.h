@@ -118,9 +118,12 @@ public:
 	 * are in a loop with kAnimate (SCI16) or kFrameOut (SCI32), it will be
 	 * called from there, otherwise from kGetEvent.
 	 */
-	void speedThrottler(uint32 neededSleep = 16);
+	void speedThrottler(double neededSleep = 1000 / 60.0);
 	uint16 wait(uint16 ticks);
 	void sleep(uint16 ticks);
+
+	uint32 getIntegralTime(const double fMsecs); /**< Decomposes milliseconds into integral and fractional parts, incrementing the integer if needed */
+	double _msecFractionalParts; /**< The accumulated fractional parts of arguments passed to getIntegralTime() */
 
 	uint32 _eventCounter; /**< total times kGetEvent was invoked since the last call to kWait, kAnimate (SCI16) or kFrameOut (SCI32) */
 	uint32 _frameCounter; /**< total times kAnimate (SCI16) or kFrameOut (SCI32) was invoked since the last call to kWait */
