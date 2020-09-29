@@ -168,8 +168,14 @@ void EngineState::waitForVerticalRetrace() {
 }
 
 uint16 EngineState::wait(uint16 ticks) {
+	// WORKAROUND: In SCI32, the script patches make use of kWait to replace
+	// various spinloops. This works well, but there is a small semantic
+	// difference; kWait will not sleep on the first call to it. This may be
+	// significant if that was the only frame we planned to sleep on.
+	const bool spinLoop = (getSciVersion() >= SCI_VERSION_2);
+
 	uint32 previousLastWaitTime = lastWaitTime;
-	sleepMillis(ticks * (1000 / 60.0), lastWaitTime);
+	sleepMillis(ticks * (1000 / 60.0), lastWaitTime, spinLoop);
 	resetLoopCounters();
 
 	uint16 tickDelta = (uint16)(((long)lastWaitTime - previousLastWaitTime) * 60 / 1000);
