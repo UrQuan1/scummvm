@@ -2808,8 +2808,8 @@ void ScummEngine_v7::pauseEngineIntern(bool pause) {
 
 void ScummEngine::messageDialog(const Common::U32String &message) {
 	if (!_messageDialog)
-		_messageDialog = new InfoDialog(this, message);
-	((InfoDialog *)_messageDialog)->setInfoText(message);
+		_messageDialog = new MessageDialog(this, message);
+	((MessageDialog *)_messageDialog)->setInfoText(message);
 	runDialog(*_messageDialog);
 }
 

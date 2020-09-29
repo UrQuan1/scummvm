@@ -96,6 +96,19 @@ protected:
 };
 
 /**
+ * A dialog used to display messages.
+ * Automatically closes after a brief time has passed.
+ */
+class MessageDialog : public InfoDialog {
+public:
+	MessageDialog(ScummEngine *scumm, const U32String &message);
+	void open() override;
+	void handleTickle() override;
+protected:
+	uint32 _timer;
+};
+
+/**
  * The pause dialog, visible whenever the user activates pause mode. Goes
  * away uon any key or mouse button press.
  */
@@ -137,9 +150,6 @@ public:
 	void reflowLayout() override;
 
 protected:
-	enum {
-		kDisplayDelay = 1500
-	};
 	ScummEngine *_vm;
 	Common::U32String _label;
 	const int _min, _max;
@@ -149,26 +159,6 @@ protected:
 	uint32 _timer;
 };
 
-/**
- * A dialog used to display and cycle subtitle settings.
- * Automatically closes after a brief time has passed.
- */
-class SubtitleSettingsDialog : public InfoDialog {
-public:
-	SubtitleSettingsDialog(ScummEngine *scumm, int value);
-
-	void open() override;
-	void handleTickle() override;
-	void handleMouseDown(int x, int y, int button, int clickCount) override {
-		close();
-	}
-	void handleKeyDown(Common::KeyState state) override;
-protected:
-	int _value;
-	uint32 _timer;
-
-	void cycleValue();
-};
 
 class DebugInputDialog : public InfoDialog {
 public:

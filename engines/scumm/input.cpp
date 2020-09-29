@@ -435,21 +435,25 @@ void ScummEngine_v7::processKeyboard() {
 
 void ScummEngine_v6::processKeyboard() {
 	if (_mouseAndKeyboardStat == SCUMM_KEY_CTRL_T) {
-		SubtitleSettingsDialog dialog(this, _voiceMode);
-		_voiceMode = runDialog(dialog);
+		_voiceMode++;
+		if (_voiceMode > 2)
+			_voiceMode = 0;
 
 		switch (_voiceMode) {
 		case 0:
 			ConfMan.setBool("speech_mute", false);
 			ConfMan.setBool("subtitles", false);
+			messageDialog(_("Voice Only"));
 			break;
 		case 1:
 			ConfMan.setBool("speech_mute", false);
 			ConfMan.setBool("subtitles", true);
+			messageDialog(_("Voice and Text"));
 			break;
 		case 2:
 			ConfMan.setBool("speech_mute", true);
 			ConfMan.setBool("subtitles", true);
+			messageDialog(_("Text Display Only"));
 			break;
 		default:
 			break;

@@ -55,6 +55,10 @@ using GUI::WIDGET_ENABLED;
 
 namespace Scumm {
 
+enum DisplayDelays {
+	kDisplayDelay = 1500
+};
+
 struct ResString {
 	int num;
 	char string[80];
@@ -485,6 +489,25 @@ void PauseDialog::handleKeyDown(Common::KeyState state) {
 		ScummDialog::handleKeyDown(state);
 }
 
+#pragma mark -
+
+MessageDialog::MessageDialog(ScummEngine *scumm, const U32String &message)
+	: InfoDialog(scumm, message), _timer(0) {
+}
+
+void MessageDialog::handleTickle() {
+	if (g_system->getMillis() > _timer) {
+		close();
+	}
+}
+
+void MessageDialog::open() {
+	InfoDialog::open();
+	_timer = g_system->getMillis() + kDisplayDelay;
+}
+
+#pragma mark -
+
 ConfirmDialog::ConfirmDialog(ScummEngine *scumm, int res)
 	: InfoDialog(scumm, res), _yesKey('y'), _noKey('n') {
 
@@ -581,55 +604,6 @@ void ValueDisplayDialog::open() {
 	GUI::Dialog::open();
 	setResult(_value);
 	_timer = g_system->getMillis() + kDisplayDelay;
-}
-
-SubtitleSettingsDialog::SubtitleSettingsDialog(ScummEngine *scumm, int value)
-	: InfoDialog(scumm, U32String("")), _value(value), _timer(0) {
-
-}
-
-void SubtitleSettingsDialog::handleTickle() {
-	InfoDialog::handleTickle();
-	if (g_system->getMillis() > _timer)
-		close();
-}
-
-void SubtitleSettingsDialog::handleKeyDown(Common::KeyState state) {
-	const uint16 key = _vm->convertKey(state);
-
-	if (key == SCUMM_KEY_CTRL_T) {
-		cycleValue();
-
-		reflowLayout();
-		g_gui.scheduleTopDialogRedraw();
-	} else {
-		close();
-	}
-}
-
-void SubtitleSettingsDialog::open() {
-	cycleValue();
-	InfoDialog::open();
-	setResult(_value);
-}
-
-void SubtitleSettingsDialog::cycleValue() {
-	static const char *const subtitleDesc[] = {
-		_s("Speech Only"),
-		_s("Speech and Subtitles"),
-		_s("Subtitles Only")
-	};
-
-	_value += 1;
-	if (_value > 2)
-		_value = 0;
-
-	if (_value == 1 && g_system->getOverlayWidth() <= 320)
-		setInfoText(_c("Speech & Subs", "lowres"));
-	else
-		setInfoText(_(subtitleDesc[_value]));
-
-	_timer = g_system->getMillis() + 1500;
 }
 
 DebugInputDialog::DebugInputDialog(ScummEngine *scumm, char* text)
