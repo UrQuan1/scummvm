@@ -68,7 +68,9 @@ static const uint16 s_halfWidthSJISMap[256] = {
 
 EngineState::EngineState(SegManager *segMan)
 : _segMan(segMan),
-	_dirseeker() {
+	_dirseeker(),
+	lastWaitTime(0),
+	_screenUpdateTime(0) {
 
 	reset(false);
 }
@@ -99,8 +101,6 @@ void EngineState::reset(bool isRestoring) {
 	r_acc = NULL_REG;
 	r_prev = NULL_REG;
 	r_rest = 0;
-
-	lastWaitTime = 0;
 
 	gcCountDown = 0;
 
