@@ -56,7 +56,8 @@ using GUI::WIDGET_ENABLED;
 namespace Scumm {
 
 enum DisplayDelays {
-	kDisplayDelay = 1500
+	kDisplayDelay = 1500,
+	kDisplayDelayShort = 1000
 };
 
 struct ResString {
@@ -593,7 +594,7 @@ void ValueDisplayDialog::handleKeyDown(Common::KeyState state) {
 			_value--;
 
 		setResult(_value);
-		_timer = g_system->getMillis() + kDisplayDelay;
+		_timer = g_system->getMillis() + (_vm->_game.version >= 5 ? kDisplayDelayShort : kDisplayDelay);
 		g_gui.scheduleTopDialogRedraw();
 	} else if (key) {
 		close();
@@ -603,7 +604,7 @@ void ValueDisplayDialog::handleKeyDown(Common::KeyState state) {
 void ValueDisplayDialog::open() {
 	GUI::Dialog::open();
 	setResult(_value);
-	_timer = g_system->getMillis() + kDisplayDelay;
+	_timer = g_system->getMillis() + (_vm->_game.version >= 5 ? kDisplayDelayShort : kDisplayDelay);
 }
 
 DebugInputDialog::DebugInputDialog(ScummEngine *scumm, char* text)
