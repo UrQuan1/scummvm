@@ -187,6 +187,7 @@ void GfxPaint16::invertRect(const Common::Rect &rect) {
 	if (g_sci->getResMan()->getViewType() == kViewEga) {
 		Common::Rect r = rect;
 		int16 x, y;
+		byte lastColor = (byte)(g_sci->_gfxPalette16->getTotalColorCount() - 1);
 		byte curVisual;
 
 		r.clip(_ports->_curPort->rect);
@@ -197,7 +198,7 @@ void GfxPaint16::invertRect(const Common::Rect &rect) {
 		for (y = r.top; y < r.bottom; y++) {
 			for (x = r.left; x < r.right; x++) {
 				curVisual = _screen->getVisual(x, y);
-				_screen->putPixel(x, y, GFX_SCREEN_MASK_VISUAL, curVisual ^ 0x0f, 0, 0);
+				_screen->putPixel(x, y, GFX_SCREEN_MASK_VISUAL, curVisual ^ lastColor, 0, 0);
 			}
 		}
 	} else {
