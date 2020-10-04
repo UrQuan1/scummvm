@@ -207,11 +207,6 @@ void KeyboardProcess(CORO_PARAM, const void *) {
 			ProcessKeyEvent(PLR_ACTION);
 			continue;
 
-		/*** l = LOOK ***/
-		case Common::KEYCODE_l:		// LOOK
-			ProcessKeyEvent(PLR_LOOK);
-			continue;
-
 		case Common::KEYCODE_ESCAPE:
 			ProcessKeyEvent(PLR_ESCAPE);
 			continue;
