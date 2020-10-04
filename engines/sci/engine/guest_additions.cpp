@@ -893,6 +893,12 @@ void GuestAdditions::syncMessageTypeFromScummVMUsingDefaultStrategy() const {
 		_state->variables[VAR_GLOBAL][kGlobalVarGK1NarratorMode] = NULL_REG;
 	}
 
+	if (g_sci->getGameId() == GID_KQ7 && (value & kMessageTypeSubtitles) && !ConfMan.getBool("enable_kq7_subtitles")) {
+		// The KQ7 subtitles are unfinished, and they are disabled in the original
+		// game. They can only be explicitly enabled through the game option.
+		_state->variables[VAR_GLOBAL][kGlobalVarMessageType] = make_reg(0, value & ~kMessageTypeSubtitles);
+	}
+
 	if (g_sci->getGameId() == GID_QFG4) {
 		// QFG4 uses a game flag to control the Audio button's state in the control panel.
 		//  This flag must be kept in sync with the standard global 90 speech bit.

@@ -386,19 +386,6 @@ Common::Error SciEngine::run() {
 			_gamestate->gameIsRestarting = GAMEISRESTARTING_RESTORE;
 	}
 
-	// Show any special warnings for buggy scripts with severe game bugs,
-	// which have been patched by Sierra
-	if (getGameId() == GID_KQ7 && ConfMan.getBool("subtitles")) {
-		showScummVMDialog(_("Subtitles are enabled, but subtitling in King's"
-						  " Quest 7 was unfinished and disabled in the release"
-						  " version of the game. ScummVM allows the subtitles"
-						  " to be re-enabled, but because they were removed from"
-						  " the original game, they do not always render"
-						  " properly or reflect the actual game speech."
-						  " This is not a ScummVM bug -- it is a problem with"
-						  " the game's assets."));
-	}
-
 	// Show a warning if the user has selected a General MIDI device, no GM patch exists
 	// (i.e. patch 4) and the game is one of the known 8 SCI1 games that Sierra has provided
 	// after market patches for in their "General MIDI Utility".

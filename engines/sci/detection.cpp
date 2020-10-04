@@ -272,6 +272,18 @@ static const ADExtraGuiOptionsMap optionsList[] = {
 		true
 	}
 	},
+
+	// KQ7 - Subtitles
+	{
+		GAMEOPTION_KQ7_SUBTITLES,
+		{
+			_s("Enable unfinished subtitles"),
+			_s("Enable the subtitles that were removed from the release version of the game "
+			"(note that they do not always render properly or reflect the actual game speech)"),
+			"enable_kq7_subtitles",
+			false
+		}
+	},
 	AD_EXTRA_GUI_OPTIONS_TERMINATOR
 };
 

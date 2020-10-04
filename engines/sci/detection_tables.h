@@ -1981,12 +1981,13 @@ static const struct ADGameDescription SciGameDescriptions[] = {
                             GUIO_LINKSPEECHTOSFX, \
                             GUIO_NOASPECT, \
                             GAMEOPTION_SPEEDTHROTTLER)
-#define GUIO_KQ7      GUIO6(GUIO_NOASPECT, \
+#define GUIO_KQ7      GUIO7(GUIO_NOASPECT, \
                             GUIO_LINKMUSICTOSFX, \
                             GUIO_LINKSPEECHTOSFX, \
                             GAMEOPTION_SPEEDTHROTTLER, \
                             GAMEOPTION_HQ_VIDEO, \
-                            GAMEOPTION_UPSCALE_VIDEOS)
+                            GAMEOPTION_UPSCALE_VIDEOS, \
+                            GAMEOPTION_KQ7_SUBTITLES)
 
 	// King's Quest 7 - English Windows (from the King's Quest Collection)
 	// Executable scanning reports "2.100.002", VERSION file reports "1.4"
