@@ -148,7 +148,7 @@ void GfxTransitions::updateScreenAndWait(uint32 shouldBeAtMsec) {
 	updateScreen();
 	// if we have still some time left, delay accordingly
 	uint32 msecPos = g_system->getMillis() - _transitionStartTime;
-	if (shouldBeAtMsec > msecPos)
+	if (shouldBeAtMsec > msecPos && g_sci->isSpeedThrottlerEnabled())
 		g_system->delayMillis(shouldBeAtMsec - msecPos);
 }
 

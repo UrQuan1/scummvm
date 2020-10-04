@@ -138,6 +138,16 @@ namespace Sci {
 
 static const ADExtraGuiOptionsMap optionsList[] = {
 	{
+		GAMEOPTION_SPEEDTHROTTLER,
+		{
+			_s("Throttle game speed"),
+			_s("Limit the speed of unthrottled game loops and screen animations"),
+			"speedthrottler",
+			true
+		}
+	},
+
+	{
 		GAMEOPTION_EGA_UNDITHER,
 		{
 			_s("Skip EGA dithering pass (full color backgrounds)"),
