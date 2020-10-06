@@ -161,6 +161,7 @@ public:
 	bool isDemo() const;
 	bool isCD() const;
 	bool forceHiresGraphics() const;
+	bool isSpeedThrottlerEnabled() const;
 
 	/** Returns true if the game's original platform is big-endian. */
 	bool isBE() const;
@@ -332,6 +333,7 @@ private:
 	Common::RandomSource _rng;
 	Common::MacResManager _macExecutable;
 	bool _forceHiresGraphics; // user-option for GK1, KQ6, PQ4
+	bool _isSpeedThrottlerEnabled; // user-option
 };
 
 

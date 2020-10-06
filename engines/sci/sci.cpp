@@ -110,6 +110,7 @@ SciEngine::SciEngine(OSystem *syst, const ADGameDescription *desc, SciGameId gam
 	_opcode_formats = 0;
 
 	_forceHiresGraphics = false;
+	_isSpeedThrottlerEnabled = false;
 
 	// Set up the engine specific debug levels
 	DebugMan.addDebugChannel(kDebugLevelError, "Error", "Script error debugging");
@@ -301,6 +302,8 @@ Common::Error SciEngine::run() {
 		// for any game that does not have this option.
 		_forceHiresGraphics = ConfMan.getBool("enable_high_resolution_graphics");
 	}
+
+	_isSpeedThrottlerEnabled = ConfMan.getBool("speedthrottler");
 
 	if (getSciVersion() < SCI_VERSION_2) {
 		// Initialize the game screen
@@ -801,6 +804,10 @@ bool SciEngine::isCD() const {
 
 bool SciEngine::forceHiresGraphics() const {
 	return _forceHiresGraphics;
+}
+
+bool SciEngine::isSpeedThrottlerEnabled() const {
+	return _isSpeedThrottlerEnabled;
 }
 
 bool SciEngine::isBE() const{
