@@ -1622,6 +1622,7 @@ GlobalOptionsDialog::GlobalOptionsDialog(LauncherDialog *launcher)
 	_guiLanguagePopUp = nullptr;
 	_guiLanguageUseGameLanguageCheckbox = nullptr;
 	_useSystemDialogsCheckbox = nullptr;
+	_busyWaitCheckbox = nullptr;
 #ifdef USE_UPDATES
 	_updatesPopUpDesc = nullptr;
 	_updatesPopUp = nullptr;
@@ -2053,6 +2054,13 @@ void GlobalOptionsDialog::addMiscControls(GuiObject *boss, const Common::String 
 		_useSystemDialogsCheckbox->setState(ConfMan.getBool("gui_browser_native", _domain));
 	}
 
+	_busyWaitCheckbox = new CheckboxWidget(boss, prefix + "BusyWait",
+		_("Enhanced timing precision"),
+		_("Maximize timing accuracy by avoiding scheduling overhead (high CPU usage).")
+	);
+
+	_busyWaitCheckbox->setState(ConfMan.getBool("busy_wait", _domain));
+
 #ifdef USE_UPDATES
 	_updatesPopUpDesc = new StaticTextWidget(boss, prefix + "UpdatesPopupDesc", _("Update check:"), _("How often to check ScummVM updates"));
 	_updatesPopUp = new PopUpWidget(boss, prefix + "UpdatesPopup");
@@ -2306,6 +2314,8 @@ void GlobalOptionsDialog::apply() {
 	if (_useSystemDialogsCheckbox) {
 		ConfMan.setBool("gui_browser_native", _useSystemDialogsCheckbox->getState(), _domain);
 	}
+
+	ConfMan.setBool("busy_wait", _busyWaitCheckbox->getState(), _domain);
 
 	GUI::ThemeEngine::GraphicsMode gfxMode = (GUI::ThemeEngine::GraphicsMode)_rendererPopUp->getSelectedTag();
 	Common::String oldGfxConfig = ConfMan.get("gui_renderer");

@@ -302,6 +302,7 @@ void registerDefaults() {
 	// If number of game entries in scummvm.ini exceeds the specified
 	// number, then skip scanning. -1 = scan always
 	ConfMan.registerDefault("gui_list_max_scan_entries", -1);
+	ConfMan.registerDefault("busy_wait", false);
 	ConfMan.registerDefault("game", "");
 
 #ifdef USE_FLUIDSYNTH

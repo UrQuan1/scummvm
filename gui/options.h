@@ -296,6 +296,7 @@ protected:
 	PopUpWidget *_guiLanguagePopUp;
 	CheckboxWidget *_guiLanguageUseGameLanguageCheckbox;
 	CheckboxWidget *_useSystemDialogsCheckbox;
+	CheckboxWidget *_busyWaitCheckbox;
 
 
 #ifdef USE_UPDATES
