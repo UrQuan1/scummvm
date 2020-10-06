@@ -370,13 +370,6 @@ Shorty mode
 
 	*shorty* 
 
-.. _nodelay:
-
-Frame limiter high performance mode
-	This mode may result in high CPU usage! It avoids use of delayMillis() function.
-
-	*nodelaymillisfl* 
-
 .. _fpsfl:
 
 Max frames per second limit

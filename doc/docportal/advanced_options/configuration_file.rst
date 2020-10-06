@@ -240,7 +240,6 @@ There are many recognized configuration keywords. In the table below, each keywo
 		":ref:`native_fb01 <fb01>`",,false,
 		":ref:`native_mt32 <nativemt32>`",boolean,false,
 		":ref:`NaughtyMode <naughty>`",,true,
-		":ref:`nodelaymillisfl <nodelay>`",,false,
 		":ref:`ntsc <ntsc>`",,?,
 		":ref:`object_labels <labels>`",,true,
 		":ref:`opl_driver <opl>`",string,,"

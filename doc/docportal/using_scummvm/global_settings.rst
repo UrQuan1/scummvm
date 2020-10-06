@@ -394,6 +394,11 @@ Switch the GUI language to the game language
 
 	*gui_use_game_language* 
 
+Enhanced timing accuracy
+	Maximizes timing accuracy by avoiding scheduling overhead that may be caused by SDL_Delay() (high CPU usage).
+
+	*busy_wait* 
+
 ,,,,,,,,,,,,,
 
 _`Cloud tab`
