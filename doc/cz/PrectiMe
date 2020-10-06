@@ -1185,7 +1185,7 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     Ctrl-F5                - Zobrazí Globální Menu
     Cmd-q                  - Ukončit (Mac OS X)
     Ctrl-q                 - Ukončit (další unixy včetně Linux)
-    Ctrl-z                 - Ukončit (další platformy)
+    Alt-F4                 - Ukončit (Windows)
     Ctrl-u                 - Zeslabí všechny zvuky
     Ctrl-m                 - Přepínat zachycení myši
     Ctrl-Alt 1-8           - Přepínat mezi grafickými filtry

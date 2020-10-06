@@ -1578,7 +1578,6 @@ games and other games.
     Cmd-q                  - Quit (Mac OS X)
     Ctrl-q                 - Quit (other unices including Linux)
     Alt-F4                 - Quit (Windows)
-    Ctrl-z                 - Quit (other platforms)
     Ctrl-u                 - Mute all sounds
     Ctrl-m                 - Toggle mouse capture
     Ctrl-Alt 1-8           - Switch between graphics filters

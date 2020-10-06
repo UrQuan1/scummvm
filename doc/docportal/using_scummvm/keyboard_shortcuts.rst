@@ -16,7 +16,6 @@ Common shortcuts (all games)
         :kbd:`Cmd + q` ,Quit (Mac OS X)
         :kbd:`Ctrl + q` ,Quit (other unices including Linux)
         :kbd:`Alt + F4`,Quit (Windows)
-        :kbd:`Ctrl + z`,Quit (other platforms)
         :kbd:`Ctrl + u` ,Mute all sounds
         :kbd:`Ctrl + m` ,Toggle mouse capture
         :kbd:`Ctrl + Alt + 1-8` ,Switch between graphics filters

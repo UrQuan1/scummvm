@@ -869,7 +869,7 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
     Ctrl-F5                - Öppnar menyn
     Cmd-q                  - Avsluta (Mac OS X)
     Ctrl-q                 - Avsluta (andra system inklusive Linux)
-    Ctrl-z ELLER Alt-x     - Avsluta (andra plattformar)
+    Alt-F4                 - Avsluta (Windows)
     Ctrl-u                 - Stäng av allt ljud
     Ctrl-m                 - Aktivera musrestriktion
     Ctrl-Alt 1-8           - Växla grafikfilter

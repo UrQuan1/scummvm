@@ -1748,7 +1748,6 @@ zwischen SCUMM-Spielen und anderen Spielen.
     Cmd+q                  - Beenden (Mac OS X)
     Strg+q                 - Beenden (andere UNIX-Systeme einschließlich Linux)
     Alt+F4                 - Beenden (Windows)
-    Strg+z ODER Alt+x      - Beenden (andere Plattformen)
     Strg+u                 - Allen Ton abschalten - EIN/AUS
     Strg+m                 - Mausbegrenzung in Fenster EIN/AUS
     Strg+Alt 1-8           - Wechselt zwischen Grafikfiltern.
