@@ -639,6 +639,13 @@ Alternate intro
 **SCI**
 =================
 
+.. _speedthrottler:
+
+Throttle game speed
+	Limit the speed of the game loop and some screen transitions
+
+	*speedthrottler* 
+
 .. _dither:
 
 Skip EGA dithering pass (full color backgrounds)

@@ -2697,6 +2697,8 @@ Sierra games using the AGI engine add the following non-standard keywords:
 
 Sierra games using the SCI engine add the following non-standard keywords:
 
+    speedthrottler     bool     Limit the speed of the game loop and some
+                                screen transitions
     disable_dithering  bool     Remove dithering artifacts from EGA games
     prefer_digitalsfx  bool     If true, digital sound effects are preferred
                                 instead of synthesized ones

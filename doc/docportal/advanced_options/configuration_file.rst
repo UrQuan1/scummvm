@@ -289,6 +289,7 @@ There are many recognized configuration keywords. In the table below, each keywo
 		":ref:`skiphallofrecordsscenes <skiphall>`",boolean,false,
 		":ref:`smooth_scrolling <smooth>`",boolean,true,
 		":ref:`speech_mute <speechmute>`",boolean,false,
+        ":ref:`speedthrottler <speedthrottler>`",boolean,true,
 		":ref:`stretch_mode <stretchmode>`",string,,"
 	- center 
 	- pixel-perfect 
