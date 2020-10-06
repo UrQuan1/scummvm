@@ -1193,7 +1193,8 @@ ScummVM podporuje různé zkratky ve hře. Liší se mezi různými hrami SCUMM 
     Ctrl-Alt a             - Přepínat korekci poměru stran. Většina her používá rozlišení 320x200 pixelů, což může na většině novějších monitorů vypadat splácle. Korekce poměru stran obraz roztáhne, aby místo toho použil
                              320x240, nebo jeho násobky
     Alt-Enter              - Přepíná celou obrazovku/do okna
-    Alt-s                  - Vytvořit snímek obrazovky (pouze jádro SDL)
+    Cmd-Shift-3            - Vytvořit snímek obrazovky (Mac OS X)
+    Print Screen           - Vytvořit snímek obrazovky (další platformy)
     Ctrl-F7                - Otevřít virtuální klávesnici (pokud povolena)
                              Může být také spuštěna dlouhým stiskem
                              prostředního tlačítka nebo kolečka myši.

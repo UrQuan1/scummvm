@@ -882,7 +882,8 @@ ScummVM stöder ett antal kortkommandon medan du spelar. De är olika för SCUMM
                              bilden proportionellt till 320x240.
 
     Alt-Enter              - Växlar mellan fullskärm och fönster
-    Alt-s                  - Skärmdump (endast med SDL-back-end)
+    Cmd-Shift-3            - Skärmdump (Mac OS X)
+    Print Screen           - Skärmdump (andra plattformar)
 
   SCUMM:
     Ctrl 0-9 och Alt 0-9   - Ladda och spara speldata

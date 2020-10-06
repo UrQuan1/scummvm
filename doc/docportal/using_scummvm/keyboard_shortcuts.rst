@@ -24,7 +24,8 @@ Common shortcuts (all games)
         :kbd:`Ctrl + Alt + f` ,Enable/disable graphics filtering
         :kbd:`Ctrl + Alt + s` ,Cycle through scaling modes
         :kbd:`Alt + Enter` ,Toggles full screen/windowed
-        :kbd:`Alt + s` ,Take a screenshot (SDL backend only)
+        :kbd:`Cmd + Shift + 3`, Take a screenshot (Mac OS X)
+        :kbd:`Print Screen`, Take a screenshot (other platforms)
         :kbd:`Ctrl + F7`  ,"Open virtual keyboard (if enabled). 
         This can also be opened with a long press of the middle mouse button or wheel."
 

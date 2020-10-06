@@ -1591,7 +1591,8 @@ games and other games.
     Ctrl-Alt f             - Enable/disable graphics filtering
     Ctrl-Alt s             - Cycle through scaling modes
     Alt-Enter              - Toggles full screen/windowed
-    Alt-s                  - Make a screenshot (SDL backend only)
+    Cmd-Shift-3            - Make a screenshot (Mac OS X)
+    Print Screen           - Make a screenshot (other platforms)
     Ctrl-F7                - Open virtual keyboard (if enabled)
                              This can also be triggered by a long press
                              of the middle mouse button or wheel.
@@ -2852,7 +2853,8 @@ options to be shown.
 ## 9.0) Screenshots (SDL backend only)
 
 On systems using the SDL backend (for example Windows, Mac or Linux) you
-can use alt+s to take snapshots (see section 5.4 - Hotkeys).
+can use Print Screen (Cmd-Shift-3 on Mac) to take snapshots (see section
+5.4 - Hotkeys).
 
 You can specify the directory in which you want the screenshots to be
 created in the config file. To do so add a screenshotpath value under

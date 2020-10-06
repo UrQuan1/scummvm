@@ -1761,7 +1761,8 @@ zwischen SCUMM-Spielen und anderen Spielen.
                              Vielfaches davon.
     Strg+Alt+f             - Lineare Filterung EIN/AUS
     Alt+Enter              - Wechselt zwischen Vollbild- und Fenstermodus.
-    Alt+s                  - Macht Bildschirmfoto (nur für SDL-System).
+    Cmd-Shift-3            - Macht Bildschirmfoto (Mac OS X)
+    Print Screen           - Macht Bildschirmfoto (andere Plattformen)
     Strg+F7                - Öffnet virtuelle Tastatur (falls aktiviert).
                              Diese kann auch durch langes Drücken der mittleren
                              Maustaste bzw. des Mausrads aufgerufen werden.
@@ -3040,8 +3041,8 @@ aktualisiert, was die spielspezifischen Optionen zum Vorschein bringt.
 9.0) Bildschirmfotos (nur SDL-Backend):
 ---- ----------------------------------
 Auf Systemen, die das SDL-Backen verwenden (zum Beispiel Windows, Mac oder Linux)
-können Sie die Tastenkombination "Alt+S" zum Erstellen von Bildschirmfotos verwenden
-(siehe auch 5.4 - Tastenkürzel).
+können Sie die Tastenkombination "Print Screen" (Cmd-Shift-3 auf Mac) zum Erstellen
+von Bildschirmfotos verwenden (siehe auch 5.4 - Tastenkürzel).
 
 Sie können das Verzeichnis, in dem die erstellten Bildschirmfotos abgelegt werden sollen,
 in der ScummVM-Konfigurationsdatei festlegen. Dazu müssen Sie einen Eintrag "screenshotpath"
