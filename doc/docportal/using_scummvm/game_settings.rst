@@ -308,6 +308,13 @@ Always use sharp monochrome text
 **AGI**
 =================
 
+.. _speedthrottler:
+
+Throttle game speed
+	Limit the speed of the game loop and some screen transitions
+
+	*speedthrottler* 
+
 .. _osl:
 
 Use original save/load screens

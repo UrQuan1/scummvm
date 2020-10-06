@@ -2688,6 +2688,8 @@ The following keywords are recognized:
 
 Sierra games using the AGI engine add the following non-standard keywords:
 
+    speedthrottler     bool     Limit the speed of the game loop and some
+                                screen transitions
     originalsaveload   bool     If true, the original save/load screens are
                                 used instead of the enhanced ScummVM ones
     altamigapalette    bool     Use an alternative palette, common for all
